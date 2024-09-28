@@ -1,5 +1,57 @@
 <?php include_once("../layout/header-b.html"); ?>
 
-<main id="main"></main>
+<main id="join">
+    <article class="container-1280">
+        <form id="join-page">
+            <h2 class="title">회원가입</h2>
+            <p class="sub-title">유니버스 엔터의 회원이 되어 다양한 정보를 놓치지 마세요!</p>
+
+            <p class="required-text"><span class="star">＊</span> 필수 입력</p>
+            <div class="check">
+                <input type="checkbox" name="assent" id="assent-1" class="check-box">
+                <div class="label-box">
+                    <span class="check-icon" aria-hidden="true"></span>
+                    <label for="assent-1" class="assent">[필수] 만 14세 이상입니다</label>
+                </div>
+            </div>
+            <div class="form-style">
+                <label for="id">아이디<span class="star">＊</span></label>
+                <div class="form-id">
+                    <input type="text" placeholder="아이디 입력 (영문자, 숫자, 조합 6-20자)" id="id" name="id" required>
+                    <button class="id-check">중복 확인</button>
+                </div>
+            </div>
+            <div class="form-style">
+                <label for="pw">비밀번호<span class="star">＊</span></label>
+                <input class="form-input" type="password" placeholder="비밀번호 입력 (문자, 숫자, 특수문자  포함 8 - 20자)" id="pw" name="pw" required>
+            </div>
+            <div class="form-style">
+                <label for="pw-2">비밀번호 확인<span class="star">＊</span></label>
+                <input class="form-input" type="password" placeholder="비밀번호 재입력" id="pw-2" name="pw-2" required>
+            </div>
+            <div class="form-style">
+                <label for="name">이름<span class="star">＊</span></label>
+                <input class="form-input" type="text" placeholder="이름을 입력해주세요" id="name" name="name" required>
+            </div>
+            <div class="form-style">
+                <label for="call">전화번호<span class="star">＊</span></label>
+                <input class="form-input" type="text" placeholder="휴대폰 번호 입력 (‘-’ 제외 11자리 입력)" id="call" name="call" required>
+            </div>
+            <div class="form-style">
+                <label for="email">이메일 주소<span class="star">＊</span></label>
+                <div class="form-email">
+                    <input type="email" placeholder="이메일 주소" id="email" name="email" required>
+                    <p>@</p>
+                    <select name="email" class="form-input">
+                        <option value="naver">naver.com</option>
+                        <option value="daum">daum.net</option>
+                        <option value="google">google.com</option>
+                        <option value="input">직접 입력</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </article>
+</main>
 
 <?php include_once("../layout/footer.html"); ?>
