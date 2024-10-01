@@ -18,3 +18,15 @@ $(function() {
 // sub-artist -----
 
 });
+
+// sub-goods---------------------------------------
+var goodsSwiper = new Swiper("#subGoods .bestBox .swiper.mySwiper", {
+    slidesPerView: 2,
+    slidesPerGroup: 2,
+    spaceBetween: 60,
+    navigation: {
+        nextEl: "#subGoods .bestBox .swiper-button",
+        prevEl: "#subGoods .bestBox .swiper-button",
+    },
+});
+// sub-goods---------------------------------------

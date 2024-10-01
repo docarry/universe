@@ -7,23 +7,63 @@
     
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="byeon" role="tabpanel" aria-labelledby="byeon-tab">
-                <h5>BYEON WOO SEOCK</h5>
-                <p>홈 탭의 내용이 여기에 표시됩니다.</p>
+                <h2>BYEON WOO SEOCK</h2>
+                <div class="artist-content">
+                    
+                    <!-- 웹 슬라이드 -->
+                    <div class="frame-wrap">
+                        <div class="frame large" id="sub-artist-frame1">
+                            <img src="/img/subArtist/artist-main-img-byeon-1.jpg" alt="Image 1" id="sub-artist-img1">
+                        </div>
+                        <div class="frame small" id="sub-artist-frame2" onclick="changeImage('sub-artist-frame2')">
+                            <img src="/img/subArtist/artist-main-img-byeon-2.jpg" alt="Image 2" id="sub-artist-img2">
+                        </div>
+                        <div class="frame small" id="sub-artist-frame3" onclick="changeImage('sub-artist-frame3')">
+                            <img src="/img/subArtist/artist-main-img-byeon-3.jpg" alt="Image 3" id="sub-artist-img3">
+                        </div>
+                    </div>
+
+                    <!-- 모바일 슬라이드 -->
+                    <div class="swiper mySwiper sub-artist-main-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-byeon-1.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-byeon-2.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-byeon-3.jpg" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+    
+                    <!-- 아티스트 소개 -->
+                    <div class="sub-artist-info">
+                        <p>
+                            변우석은 2016년 데뷔 이후 독보적인 스타일로 모델계를 점령,<br>
+                            드라마 <디어 마이 프렌즈>를 시작으로 배우로서 활동 영역을 넓혀갔다.<br>
+                            <br>
+                            매력적인 목소리와 비주얼을 바탕으로 드라마 <청춘기록>, <힘쎈여자 강남순>, <선재 업고 튀어>, 영화 <20세기 소녀>, <소울메이트> 등에서 개성있는 연기를 펼치며<br>
+                            꾸준히 배우로서 커리어를 다져가고 있다.
+                        </p>
+
+                        <a href="/sub/goods.html" class="goods-btn">GOODS 보러가기</a>
+                    </div>
+
+                </div>
+
+
             </div>
             <div class="tab-pane fade" id="nam" role="tabpanel" aria-labelledby="nam-tab">
-                <h5>NAM WOO HYUN</h5>
+                <h2>NAM WOO HYUN</h2>
                 <p>프로필 탭의 내용이 여기에 표시됩니다.</p>
             </div>
             <div class="tab-pane fade" id="lee" role="tabpanel" aria-labelledby="lee-tab">
-                <h5>LEE JI EUN</h5>
+                <h2>LEE JI EUN</h2>
                 <p>연락처 탭의 내용이 여기에 표시됩니다.</p>
             </div>
             <div class="tab-pane fade" id="park" role="tabpanel" aria-labelledby="park-tab">
-                <h5>PARK SEO JOON</h5>
+                <h2>PARK SEO JOON</h2>
                 <p>연락처 탭의 내용이 여기에 표시됩니다.</p>
             </div>
             <div class="tab-pane fade" id="yoon" role="tabpanel" aria-labelledby="yoon-tab">
-                <h5>YOON KYE SANG</h5>
+                <h2>YOON KYE SANG</h2>
                 <p>연락처 탭의 내용이 여기에 표시됩니다.</p>
             </div>
         </div>
