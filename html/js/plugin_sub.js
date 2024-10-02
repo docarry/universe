@@ -42,4 +42,8 @@ var subArtistDiscoswiper = new Swiper("#sub-artist-disco-swiper", {
     },
 });
 
+<<<<<<< HEAD
 // sub-artist 슬라이드-----
+=======
+// sub-artist 슬라이드-----
+>>>>>>> origin/bae

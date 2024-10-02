@@ -35,6 +35,7 @@ var goodsSwiper = new Swiper("#subGoods #bestBox .swiper.mySwiper", {
         prevEl: "#subGoods #bestBox .swiper-button",
     },
 });
+<<<<<<< HEAD
 // sub-goods---------------------------------------
 =======
 $(function() {
@@ -75,3 +76,6 @@ var goodsSwiper = new Swiper("#subGoods #bestBox .swiper.mySwiper", {
 });
 // sub-goods---------------------------------------
 >>>>>>> origin/shim
+=======
+// sub-goods---------------------------------------
+>>>>>>> origin/bae
