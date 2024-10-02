@@ -1,15 +1,15 @@
 
 // 메인 배너 슬라이드
-var swiper = new Swiper("#main-banner.mySwiper", {
+var mainSwiper = new Swiper("#main-banner.mySwiper", {
     slidesPerView: 1,
     spaceBetween: 30,
     effect: "fade",
     speed:800,
     loop: true,
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
+    // autoplay: {
+    //     delay: 3000,
+    //     disableOnInteraction: false,
+    // },
     navigation: {
     nextEl: "#main-banner .swiper-button-next",
     prevEl: "#main-banner .swiper-button-prev",
@@ -23,27 +23,27 @@ var swiper = new Swiper("#main-banner.mySwiper", {
 
 
 // 아티스트 슬라이드
-var swiper = new Swiper("#artist-slide.mySwiper", {
+var artistSwiper = new Swiper("#artist-slide.mySwiper", {
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: true,  // 슬라이드가 항상 중앙에 위치하도록 설정
-    slidesPerView: "auto", // 슬라이드 크기에 맞춰 자동으로 조정
+    slidesPerView: 3, // 슬라이드 크기에 맞춰 자동으로 조정
+    freeMode : false,
     coverflowEffect: {
     rotate: 0,
-    stretch: 0,
-    depth: 100,
+    stretch: 300,
+    depth: -500,
     modifier: 1,
-    slideShadows: true,
+    slideShadows: false,
     },
     pagination: {
     el: "#artist-slide .swiper-pagination",
     },
     loop: true,
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
-    spaceBetween: -400,
+    // autoplay: {
+    //     delay: 3000,
+    //     disableOnInteraction: false,
+    // },
 });
 
 
@@ -154,24 +154,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // 릴리즈 슬라이드
-var swiper = new Swiper("#release-slide.mySwiper", {
+// var releaseSwiper = new Swiper("#release-slide.mySwiper", {
+//     effect: "coverflow",
+//     grabCursor: true,
+//     centeredSlides: true, 
+//     coverflowEffect: {
+//     rotate: 0,
+//     stretch: 0,
+//     depth: 100,
+//     modifier: 1,
+//     slideShadows: false,
+//     },
+//     pagination: {
+//     el: "#release-slide .swiper-pagination",
+//     },
+//     loop: true,
+//     // autoplay: {
+//     //     delay: 3000,
+//     //     disableOnInteraction: false,
+//     // },
+//     slidesPerView: 3,
+// });
+var releaseSwiper = new Swiper("#release-slide.mySwiper", {
     effect: "coverflow",
     grabCursor: true,
-    centeredSlides: true, 
+    centeredSlides: true,
+    slidesPerView: 3,
     coverflowEffect: {
-    rotate: 0,
-    stretch: 0,
-    depth: 400,
-    modifier: 1,
-    slideShadows: true,
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: false,
     },
     pagination: {
-    el: "#release-slide .swiper-pagination",
+      el: "#release-slide .swiper-pagination",
     },
-    loop: true,
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
-    slidesPerView: 3,
-});
+  });
