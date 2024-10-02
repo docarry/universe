@@ -7,23 +7,157 @@
     
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="byeon" role="tabpanel" aria-labelledby="byeon-tab">
-                <h5>BYEON WOO SEOCK</h5>
-                <p>홈 탭의 내용이 여기에 표시됩니다.</p>
+                <h2>BYEON WOO SEOCK</h2>
+                <div class="artist-content">
+                    
+                    <!-- 웹 슬라이드 -->
+                    <div class="frame-wrap">
+                        <div class="frame large" id="sub-artist-frame1">
+                            <img src="/img/subArtist/artist-main-img-byeon-1.jpg" alt="Image 1" id="sub-artist-img1">
+                        </div>
+                        <div class="frame small" id="sub-artist-frame2" onclick="changeImage('sub-artist-frame2')">
+                            <img src="/img/subArtist/artist-main-img-byeon-2.jpg" alt="Image 2" id="sub-artist-img2">
+                        </div>
+                        <div class="frame small" id="sub-artist-frame3" onclick="changeImage('sub-artist-frame3')">
+                            <img src="/img/subArtist/artist-main-img-byeon-3.jpg" alt="Image 3" id="sub-artist-img3">
+                        </div>
+                    </div>
+
+                    <!-- 모바일 슬라이드 -->
+                    <div class="swiper mySwiper" id="sub-artist-main-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-byeon-1.jpg" alt="변우석 첫번째 프로필 사진"></div>
+                            <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-byeon-2.jpg" alt="변우석 두번째 프로필 사진"></div>
+                            <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-byeon-3.jpg" alt="변우석 세번째 프로필 사진"></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+    
+                    <!-- 아티스트 소개 -->
+                    <div class="sub-artist-info-1">
+                        <p>
+                            변우석은 2016년 데뷔 이후 독보적인 스타일로 모델계를 점령,<br>
+                            드라마 <디어 마이 프렌즈>를 시작으로 배우로서 활동 영역을 넓혀갔다.<br>
+                            <br>
+                            매력적인 목소리와 비주얼을 바탕으로 드라마 <청춘기록>, <힘쎈여자 강남순>, <br>
+                            <선재 업고 튀어>, 영화 <20세기 소녀>, <소울메이트> 등에서 개성있는 연기를 펼치며<br>
+                            꾸준히 배우로서 커리어를 다져가고 있다.
+                        </p>
+                        <a href="/sub/goods.html" class="goods-btn">GOODS 보러가기</a>
+                    </div>
+
+                    <!-- 필모그라피 -->
+                    <div class="sub-artist-info-2 sub-artist-info">
+                        <h3>Filmography</h3>
+                        <div class="info-detail">
+
+                            <ul class="nav nav-tabs info-2-title" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <h4><a class="nav-link active" id="drama-tab" data-bs-toggle="tab" href="#drama" role="tab" aria-controls="drama" aria-selected="true">드라마</a></h4>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <h4><a class="nav-link" id="movie-tab" data-bs-toggle="tab" href="#movie" role="tab" aria-controls="movie" aria-selected="false">영화</a></h4>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <h4><a class="nav-link" id="broadcast-tab" data-bs-toggle="tab" href="#broadcast" role="tab" aria-controls="broadcast" aria-selected="false">방송활동</a></h4>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <h4><a class="nav-link" id="musicvideo-tab" data-bs-toggle="tab" href="#musicvideo" role="tab" aria-controls="musicvideo" aria-selected="false">뮤직비디오</a></h4>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content info-2-detail" id="myTabContent">
+                                <div class="tab-pane fade show active filmography-tab1" id="drama" role="tabpanel" aria-labelledby="drama-tab">
+                                    <ul class="actors-history">
+                                        <li><span class="year">2024</span><span class="role"><span class="role-title">선재업고 튀어</span>류선재 역</span></li>
+                                        <li><span class="year">2023</span><span class="role"><span class="role-title">힘쎈여자 강남순</span>류시오 역</span></li>
+                                        <li><span class="year">2021</span><span class="role"><span class="role-title">꽃 피면 달 생각하고</span>이표 역</span></li>
+                                        <li><span class="year">2020</span><span class="role"><span class="role-title">청춘기록</span>원해효 역</span></li>
+                                        <li><span class="year">2019</span><span class="role"><span class="role-title">조선혼담공작소 꽃파당</span>도준 역</span></li>
+                                        <li><span class="year">2018</span><span class="role"><span class="role-title">모두의 연애</span>변우석 역</span></li>
+                                        <li><span class="year">2017</span><span class="role"><span class="role-title">드라마 스테이지 - 직립 보행의 역사</span>정종민 역</span></li>
+                                        <li><span class="year">2016</span><span class="role"><span class="role-title">디어 마이 프렌즈</span>손종식 역</span></li>
+                                    </ul>
+                                    <button class="btn-more"><span>MORE</span></button>
+                                </div>
+                                <div class="tab-pane fade" id="movie" role="tabpanel" aria-labelledby="movie-tab">
+                                    <ul class="actors-history">
+                                        <li><span class="year">2023</span><span class="role"><span class="role-title">소울메이트</span>함진우 역</span></li>
+                                        <li><span class="year">2022</span><span class="role"><span class="role-title">20세기 소녀</span>푼운호 역</span></li>
+                                        <li><span class="year">2019</span><span class="role"><span class="role-title">백두산</span>경호팀 1 역</span></li>
+                                        <li><span class="year">2017</span><span class="role"><span class="role-title">청년경찰</span>클럽 연예인 역</span></li>
+                                    </ul>
+                                </div>
+                                <div class="tab-pane fade" id="broadcast" role="tabpanel" aria-labelledby="broadcast-tab">
+                                    <ul class="actors-history">
+                                        <li><span class="year">2024</span><span class="role"><span class="role-title">유퀴즈 온 더 블럭</span>245회</span></li>
+                                        <li><span class="year">2022</span><span class="role"><span class="role-title">런닝맨</span>601회</span></li>
+                                        <li><span class="year">2017</span><span class="role"><span class="role-title">어느 날 갑자기 백만 원</span>진행</span></li>
+                                        <li><span class="year">2016</span><span class="role"><span class="role-title">옥수동 수제자</span>9회</span></li>
+                                    </ul>
+                                </div>
+                                <div class="tab-pane fade" id="musicvideo" role="tabpanel" aria-labelledby="musicvideo-tab">
+                                    <ul class="actors-history">
+                                        <li><span class="year">2019</span><span class="role"><span class="role-title">이소라</span>‘신청곡’</span></li>
+                                        <li><span class="year">2018</span><span class="role"><span class="role-title">HANCLEF</span>‘Maiden Flight’</span></li>
+                                        <li><span class="year">2017</span><span class="role"><span class="role-title">박정현</span>‘달아요’</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                
+                    </div>
+
+                    <!-- 앨범 -->
+                    <div class="sub-artist-info-3 sub-artist-info">
+                        <h3>Discography</h3>
+                        <div class="info-detail">
+                            <div class="swiper mySwiper" id="sub-artist-disco-swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="/img/subArtist/artist-disco-img-byeon-1.jpg" alt="선재 업고 튀어 OST Part 1">
+                                        <span class="disco-title">선재 업고 튀어 OST Part 1</span>
+                                        <span class="disco-sub">선재 업고 튀어 OST</span>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="/img/subArtist/artist-disco-img-byeon-2.jpg" alt="선재 업고 튀어 OST Part 4">
+                                        <span class="disco-title">선재 업고 튀어 OST Part 4</span>
+                                        <span class="disco-sub">선재 업고 튀어 OST</span>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="/img/subArtist/artist-disco-img-byeon-3.jpg" alt="선재 업고 튀어 OST">
+                                        <span class="disco-title">선재 업고 튀어 OST Part 4</span>
+                                        <span class="disco-sub">선재 업고 튀어 OST</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+
             </div>
             <div class="tab-pane fade" id="nam" role="tabpanel" aria-labelledby="nam-tab">
-                <h5>NAM WOO HYUN</h5>
+                <h2>NAM WOO HYUN</h2>
                 <p>프로필 탭의 내용이 여기에 표시됩니다.</p>
             </div>
             <div class="tab-pane fade" id="lee" role="tabpanel" aria-labelledby="lee-tab">
-                <h5>LEE JI EUN</h5>
+                <h2>LEE JI EUN</h2>
                 <p>연락처 탭의 내용이 여기에 표시됩니다.</p>
             </div>
             <div class="tab-pane fade" id="park" role="tabpanel" aria-labelledby="park-tab">
-                <h5>PARK SEO JOON</h5>
+                <h2>PARK SEO JOON</h2>
                 <p>연락처 탭의 내용이 여기에 표시됩니다.</p>
             </div>
             <div class="tab-pane fade" id="yoon" role="tabpanel" aria-labelledby="yoon-tab">
-                <h5>YOON KYE SANG</h5>
+                <h2>YOON KYE SANG</h2>
                 <p>연락처 탭의 내용이 여기에 표시됩니다.</p>
             </div>
         </div>

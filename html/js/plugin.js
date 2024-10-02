@@ -6,10 +6,10 @@ var mainSwiper = new Swiper("#main-banner.mySwiper", {
     effect: "fade",
     speed:800,
     loop: true,
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
+    // autoplay: {
+    //     delay: 3000,
+    //     disableOnInteraction: false,
+    // },
     navigation: {
     nextEl: "#main-banner .swiper-button-next",
     prevEl: "#main-banner .swiper-button-prev",
