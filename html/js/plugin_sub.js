@@ -1,10 +1,10 @@
 
-// 서브 아티스트 슬라이드
-var subArtistMainswiper = new Swiper(".sub-artist-main-swiper", {
+// sub-artist 슬라이드-----
+var subArtistMainswiper = new Swiper("#sub-artist-main-swiper", {
     slidesPerView: 1,
     spaceBetween: 30,
     pagination: {
-        el: ".sub-artist-main-swiper .swiper-pagination",
+        el: "#sub-artist-main-swiper .swiper-pagination",
         clickable: true,
     },
 });
@@ -30,3 +30,16 @@ function changeImage(clickedFrameId) {
         frame2.querySelector('img').src = largeImageSrc;
     }
 }
+
+var subArtistDiscoswiper = new Swiper("#sub-artist-disco-swiper", {
+    slidesPerView: "auto",
+    centeredSlides: true, 
+    spaceBetween: 22,
+    loop: true,
+    navigation: {
+        nextEl: "#sub-artist-disco-swiper .swiper-button-next",
+        prevEl: "#sub-artist-disco-swiper .swiper-button-prev",
+    },
+});
+
+// sub-artist 슬라이드-----

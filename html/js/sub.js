@@ -19,14 +19,19 @@ $(function() {
 
 });
 
+
+
+
+
+
 // sub-goods---------------------------------------
-var goodsSwiper = new Swiper("#subGoods .bestBox .swiper.mySwiper", {
+var goodsSwiper = new Swiper("#subGoods #bestBox .swiper.mySwiper", {
     slidesPerView: 2,
     slidesPerGroup: 2,
-    spaceBetween: 60,
+    spaceBetween: 20,
     navigation: {
-        nextEl: "#subGoods .bestBox .swiper-button",
-        prevEl: "#subGoods .bestBox .swiper-button",
+        nextEl: "#subGoods #bestBox .swiper-button",
+        prevEl: "#subGoods #bestBox .swiper-button",
     },
 });
 // sub-goods---------------------------------------

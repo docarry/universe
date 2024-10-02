@@ -136,8 +136,34 @@ $(function(){
         }
 
 
+    // 메인 배너 슬라이드 반응형 이미지 바꾸기
+    $(window).on('resize', function() {
+        if (window.innerWidth <= 580) {
+            $('#main-banner .img01').attr('src', '/img/mainbanner/m-main011.jpg');
+            $('#main-banner .img02').attr('src', '/img/mainbanner/m-main011.jpg');
+            $('#main-banner .img03').attr('src', '/img/mainbanner/m-main011.jpg');
+            $('#main-banner .img04').attr('src', '/img/mainbanner/m-main011.jpg');
+        } else if (window.innerWidth > 580 && window.innerWidth <= 991) {
+            $('#main-banner .img01').attr('src', '/img/mainbanner/m-main01.jpg');
+            $('#main-banner .img02').attr('src', '/img/mainbanner/m-main01.jpg');
+            $('#main-banner .img03').attr('src', '/img/mainbanner/m-main01.jpg');
+            $('#main-banner .img04').attr('src', '/img/mainbanner/m-main01.jpg');
+        } else if (window.innerWidth > 991) {
+            $('#main-banner .img01').attr('src', '/img/mainbanner/main01.jpg');
+            $('#main-banner .img02').attr('src', '/img/mainbanner/main02.jpg');
+            $('#main-banner .img03').attr('src', '/img/mainbanner/main03.jpg');
+            $('#main-banner .img04').attr('src', '/img/mainbanner/main04.jpg');
+        }
+    });
+    // 초기 로딩 시 이미지 변경
+    $(window).trigger('resize');
+
+
 });
 
+
+
+// 메인 인덱스 굿즈 효과
 const items = document.querySelectorAll('.item');
 
 // 각 .item에 마우스 오버/아웃 이벤트 추가
