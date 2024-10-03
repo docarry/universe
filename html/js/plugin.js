@@ -24,20 +24,21 @@ var mainSwiper = new Swiper("#main-banner.mySwiper", {
 
 // 아티스트 슬라이드
 var artistSwiper = new Swiper("#artist-slide.mySwiper", {
+    spaceBetween: 100,
+    initialSlide: 2,
     effect: "coverflow",
     grabCursor: true,
-    centeredSlides: true,  // 슬라이드가 항상 중앙에 위치하도록 설정
-    slidesPerView: 3, // 슬라이드 크기에 맞춰 자동으로 조정
-    freeMode : false,
+    centeredSlides: true,
+    slidesPerView: "auto",
     coverflowEffect: {
-    rotate: 0,
-    stretch: 300,
-    depth: -500,
-    modifier: 1,
-    slideShadows: false,
+        rotate: 0,
+        stretch: 0,
+        depth: 0,
+        modifier: 1,
+        slideShadows: false,
     },
     pagination: {
-    el: "#artist-slide .swiper-pagination",
+        el: "#artist-slide .swiper-pagination",
     },
     loop: true,
     // autoplay: {
@@ -69,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         ],
         eventDidMount: function(event) {
-            let dayNumber = event.el.closest('.fc-daygrid-day').querySelector('.fc-daygrid-day-number').classList.add('test');
+            let dayNumber = event.el.closest('#calendar01 .fc-daygrid-day').querySelector('#calendar01 .fc-daygrid-day-number').classList.add('test');
 
             if (dayNumber) { 
                 dayNumber.style.color = '#ff0000'; 
@@ -87,9 +88,9 @@ document.addEventListener('DOMContentLoaded', function() {
         fixedWeekCount: true,
         contentHeight: 250,
         dayCellDidMount: function(info){ 
-            let dateTextContent = info.el.querySelector('.fc-daygrid-day-number').textContent;
-            info.el.querySelector('.fc-daygrid-day-number').textContent = dateTextContent.replace('일', '');
-            let dayNumberElem = info.el.querySelector('.fc-daygrid-day-number');
+            let dateTextContent = info.el.querySelector('#calendar01 .fc-daygrid-day-number').textContent;
+            info.el.querySelector('#calendar01 .fc-daygrid-day-number').textContent = dateTextContent.replace('일', '');
+            let dayNumberElem = info.el.querySelector('#calendar01 .fc-daygrid-day-number');
             let dateText = dayNumberElem.textContent.trim();
             if (dateText) {
                 let paddedDate = dateText.padStart(2, '0'); 
@@ -101,8 +102,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 // 스케쥴 변우석 2번
 document.addEventListener('DOMContentLoaded', function() {
-    var today = new Date();
-    var calendar = new FullCalendar.Calendar(document.getElementById('calendar02'), {
+    var todayByeon02 = new Date();
+    var calendarByeon02 = new FullCalendar.Calendar(document.getElementById('calendar02'), {
         headerToolbar: { center: 'title' },
         locale: 'ko',
         initialView: 'dayGridWeek',
