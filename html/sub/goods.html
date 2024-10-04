@@ -2,26 +2,36 @@
 
 <main id="subGoods" class="d-flex flex-column align-items-center">
     <section id="mainBanner">
-        <span class="textBox01 d-flex flex-column">
-            <span class="textBox02 d-flex flex-column">
+        <span class="textBox-PC d-none d-md-flex flex-column">
+            <span class="textBox01 d-flex flex-column">
                 <p class="bannerText01">
                     Goods Shop
                 </p>
                 <p class="bannerText02">
-                    세심하게 디자인된 다양한 상품들로,<br class="d-none">
+                    세심하게 디자인된 다양한 상품들로,<br class="dN784">
                     여러분의 일상에 색다른 즐거움을!
                 </p>
             </span>
-            <p class="bannerText03">
+            <p class="textBox02 d-none d-md-block">
                 우주엔터테인먼트(unv)에 오신 것을 환영합니다.<br>
-                우리는 아티스트들에게 세계 무대에서의 성공을 선사하기 위해,<br class="block1400">
+                우리는 아티스트들에게 세계 무대에서의 성공을 선사하기 위해,<br class="dN1320">
                 창의성과 혁신을 바탕으로 독특한 매력과 재능을 최대한으로 끌어내는 것을 목표로 합니다.<br>
-                우리의 팀은 각 분야의 전문가들로 구성되어 있으며,<br class="d-none">
+                우리의 팀은 각 분야의 전문가들로 구성되어 있으며,<br class="dN874">
                 끊임없는 연구와 분석을 통해 최고의 결과를 만들어가고 있습니다.
             </p>                
         </span>
+        <span class="textBox-MT d-flex flex-column d-md-none">
+            <p class="bannerText01">
+                Goods Shop
+            </p>
+            <p class="bannerText02">
+                팬 여러분들을 위한 소중한 공간입니다.<br>
+                세심하게 디자인된 다양한 상품들로,<br>
+                여러분의 일상에 색다른 즐거움을!
+            </p>
+        </span>
     </section>
-    <span class="contentTitle d-flex flex-column align-items-center">
+    <span class="contentTitle d-none d-md-flex flex-column align-items-center">
         <h2>Goods</h2>
         <p>팬 여러분들을 위한 소중한 공간입니다.</p>
     </span>
@@ -35,7 +45,9 @@
             <ul class="d-flex justify-content-between">
                 <li>
                     <a class="d-flex flex-column" href="#none">
-                        <span class="goods01 d-block"></span>
+                        <span class="goodsContainer goods01 d-flex justify-content-center align-items-center">
+                            <img src="/img/subGoods/goodsNam01.png" alt="님우현 공식응원봉">
+                        </span>
                         <span class="d-flex flex-column">
                             <span class="itemName">공식응원봉</span>
                             <span class="itemPrice">47,000원</span>
@@ -44,16 +56,20 @@
                 </li>
                 <li>
                     <a class="d-flex flex-column" href="#none">
-                        <span class="goods02 d-block"></span>
+                        <span class="goodsContainer goods02 d-flex justify-content-center align-items-center">
+                            <img src="/img/subGoods/goodsNam02.png" alt="님우현 2023년도 키링">
+                        </span>
                         <span class="d-flex flex-column">
                             <span class="itemName">키링 2023</span>
                             <span class="itemPrice">23,000원</span>
                         </span>
                     </a>
                 </li>
-                <li class="d-md-block">
+                <li class="d-none d-md-block">
                     <a class="d-flex flex-column" href="#none">
-                        <span class="goods03 d-block"></span>
+                        <span class="goodsContainer goods03 d-flex justify-content-center align-items-center">
+                            <img src="/img/subGoods/goodsNam03.png" alt="님우현 스웨트 셔츠">
+                        </span>
                         <span class="d-flex flex-column">
                             <span class="itemName">스웨트 셔츠</span>
                             <span class="itemPrice">64,000원</span>
@@ -71,7 +87,9 @@
             <ul class="d-flex justify-content-between">
                 <li>
                     <a class="d-flex flex-column" href="#none">
-                        <span class="goods01 d-block"></span>
+                        <span class="goodsContainer goods01 d-flex justify-content-center align-items-center">
+                            <img src="/img/subGoods/goodsLee01.png" alt="이지은 공식응원봉">
+                        </span>
                         <span class="d-flex flex-column">
                             <span class="itemName">공식응원봉</span>
                             <span class="itemPrice">47,000원</span>
@@ -80,16 +98,20 @@
                 </li>
                 <li>
                     <a class="d-flex flex-column" href="#none">
-                        <span class="goods02 d-block"></span>
+                        <span class="goodsContainer goods02 d-flex justify-content-center align-items-center">
+                            <img src="/img/subGoods/goodsLee02.png" alt="이지은 마스킹테이프 세트">
+                        </span>
                         <span class="d-flex flex-column">
                             <span class="itemName">MASKING TAPE SET</span>
                             <span class="itemPrice">11,000원</span>
                         </span>
                     </a>
                 </li>
-                <li class="d-md-block">
+                <li class="d-none d-md-block">
                     <a class="d-flex flex-column" href="#none">
-                        <span class="goods03 d-block"></span>
+                        <span class="goodsContainer goods03 d-flex justify-content-center align-items-center">
+                            <img src="/img/subGoods/goodsLee03.png" alt="이지은 후드 티셔츠">
+                        </span>
                         <span class="d-flex flex-column">
                             <span class="itemName">HOODIE</span>
                             <span class="itemPrice">47,000원</span>
@@ -102,19 +124,68 @@
     <section id="bestBox" class="d-flex flex-column">
         <span class="contentTitle d-flex flex-column align-items-center">
                 <h2>Best</h2>
-                <p>빛나는 순간을 함께한 Best Item을 만나보세요!</p>
+                <p>빛나는 순간을 함께한<br class="dN350">
+                    Best Item을 만나보세요!</p>
         </span>
         <div class="swiper mySwiper d-flex flex-column align-items-center">
             <div class="swiper-wrapper">
-                <div class="bestSlide01 swiper-slide"></div>
-                <div class="bestSlide02 swiper-slide"></div>
-                <div class="bestSlide03 swiper-slide"></div>
-                <div class="bestSlide04 swiper-slide"></div>
-                <div class="bestSlide05 swiper-slide"></div>
-                <div class="bestSlide06 swiper-slide"></div>
+                <div class="swiper-slide">
+                    <a class="bestSlide01 d-flex align-items-end" href="#none">
+                        <span class="bestInfo d-flex justify-content-between">
+                            <span class="bestName">Official Light Stick</span>
+                            <span class="bestPrice">39,000원</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a class="bestSlide02 d-flex align-items-end" href="#none">
+                        <span class="bestInfo d-flex justify-content-between">
+                            <span class="bestName">V (BTS) ‘Layover’ LP</span>
+                            <span class="bestPrice">52,000원</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a class="bestSlide03 d-flex align-items-end" href="#none">
+                        <span class="bestInfo d-flex justify-content-between">
+                            <span class="bestName">TOUR ROUTING T-Shirt</span>
+                            <span class="bestPrice">34,000원</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a class="bestSlide04 d-flex align-items-end" href="#none">
+                        <span class="bestInfo d-flex justify-content-between">
+                            <span class="bestName">PHOTO S/S T-SHIRT</span>
+                            <span class="bestPrice">39,000원</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a class="bestSlide05 d-flex align-items-end" href="#none">
+                        <span class="bestInfo d-flex justify-content-between">
+                            <span class="bestName">L/S T-shirt</span>
+                            <span class="bestPrice">58,000원</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a class="bestSlide06 d-flex align-items-end" href="#none">
+                        <span class="bestInfo d-flex justify-content-between">
+                            <span class="bestName">CARAT S/S T_SHIRT</span>
+                            <span class="bestPrice">42,000원</span>
+                        </span>
+                    </a>
+                </div>
             </div>
-            <div class="swiper-button">n</div>
-            <div class="swiper-button">p</div>
+            <div class="swiperAttachedBtn">
+                <div class="swiper-button prevBtn">
+                    <img src="/img/icon/btnSet_left.svg" alt="이전 상품 보기">
+                </div>
+                <div class="swiper-button nextBtn">
+                    <img src="/img/icon/btnSet_right.svg" alt="다음 상품 보기">
+                </div>
+            </div>
         </div>
     </section>
     <section id="contentBox" class="d-flex flex-column">
@@ -127,7 +198,9 @@
             <ul class="d-flex justify-content-between">
                 <li>
                     <a class="d-flex flex-column" href="#none">
-                        <span class="goods01 d-block"></span>
+                        <span class="goodsContainer goods01 d-flex justify-content-center align-items-center">
+                            <img src="/img/subGoods/goodsByun01.png" alt="변우석 공식응원봉">
+                        </span>
                         <span class="d-flex flex-column">
                             <span class="itemName">공식응원봉</span>
                             <span class="itemPrice">47,000원</span>
@@ -136,16 +209,20 @@
                 </li>
                 <li>
                     <a class="d-flex flex-column" href="#none">
-                        <span class="goods02 d-block"></span>
+                        <span class="goodsContainer goods02 d-flex justify-content-center align-items-center">
+                            <img src="/img/subGoods/goodsByun02.png" alt="변우석 키링">
+                        </span>
                         <span class="d-flex flex-column">
                             <span class="itemName">KEYRING</span>
                             <span class="itemPrice">22,000원</span>
                         </span>
                     </a>
                 </li>
-                <li class="d-md-block">
+                <li class="d-none d-md-block">
                     <a class="d-flex flex-column" href="#none">
-                        <span class="goods03 d-block"></span>
+                        <span class="goodsContainer goods03 d-flex justify-content-center align-items-center">
+                            <img src="/img/subGoods/goodsByun03.png" alt="변우석 볼캡 모자">
+                        </span>
                         <span class="d-flex flex-column">
                             <span class="itemName">BALL CAP</span>
                             <span class="itemPrice">34,000원</span>
@@ -163,7 +240,9 @@
             <ul class="d-flex justify-content-between">
                 <li>
                     <a class="d-flex flex-column" href="#none">
-                        <span class="goods01 d-block"></span>
+                        <span class="goodsContainer goods01 d-flex justify-content-center align-items-center">
+                            <img src="/img/subGoods/goodsYoon01.png" alt="윤계상 공식응원봉">
+                        </span>
                         <span class="d-flex flex-column">
                             <span class="itemName">공식응원봉</span>
                             <span class="itemPrice">47,000원</span>
@@ -172,16 +251,20 @@
                 </li>
                 <li>
                     <a class="d-flex flex-column" href="#none">
-                        <span class="goods02 d-block"></span>
+                        <span class="goodsContainer goods02 d-flex justify-content-center align-items-center">
+                            <img src="/img/subGoods/goodsYoon02.png" alt="윤계상 담요">
+                        </span>
                         <span class="d-flex flex-column">
                             <span class="itemName">Blanket</span>
                             <span class="itemPrice">48,000원</span>
                         </span>
                     </a>
                 </li>
-                <li class="d-md-block">
+                <li class="d-none d-md-block">
                     <a class="d-flex flex-column" href="#none">
-                        <span class="goods03 d-block"></span>
+                        <span class="goodsContainer goods03 d-flex justify-content-center align-items-center">
+                            <img src="/img/subGoods/goodsYoon03.png" alt="윤계상 키링">
+                        </span>
                         <span class="d-flex flex-column">
                             <span class="itemName">keyring</span>
                             <span class="itemPrice">28,000원</span>
@@ -199,7 +282,9 @@
             <ul class="d-flex justify-content-between">
                 <li>
                     <a class="d-flex flex-column" href="#none">
-                        <span class="goods01 d-block"></span>
+                        <span class="goodsContainer goods01 d-flex justify-content-center align-items-center">
+                            <img src="/img/subGoods/goodsPark01.png" alt="박서준 후드 티셔츠">
+                        </span>
                         <span class="d-flex flex-column">
                             <span class="itemName">Heavy Flace Hoodie</span>
                             <span class="itemPrice">98,000원</span>
@@ -208,16 +293,20 @@
                 </li>
                 <li>
                     <a class="d-flex flex-column" href="#none">
-                        <span class="goods02 d-block"></span>
+                        <span class="goodsContainer goods02 d-flex justify-content-center align-items-center">
+                            <img src="/img/subGoods/goodsPark02.png" alt="박서준 키링">
+                        </span>
                         <span class="d-flex flex-column">
                             <span class="itemName">KEYRING</span>
                             <span class="itemPrice">18,000원</span>
                         </span>
                     </a>
                 </li>
-                <li class="d-md-block">
+                <li class="d-none d-md-block">
                     <a class="d-flex flex-column" href="#none">
-                        <span class="goods03 d-block"></span>
+                        <span class="goodsContainer goods03 d-flex justify-content-center align-items-center">
+                            <img src="/img/subGoods/goodsPark03.png" alt="박서준 반팔 티셔츠">
+                        </span>
                         <span class="d-flex flex-column">
                             <span class="itemName">T-SHIRT</span>
                             <span class="itemPrice">48,000원</span>
