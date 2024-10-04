@@ -90,31 +90,67 @@ $(function() {
             $('.toggle-nav').removeClass('active'); // active 클래스 제거
         }
     });
+    
 // sub-artist -----
 
 });
 
+// sub-artist -----
+document.addEventListener('DOMContentLoaded', function() {
+    const moreButtons = document.querySelectorAll('.btn-more');
+    
+    moreButtons.forEach(button => {
+        const listItems = button.previousElementSibling.querySelectorAll('li');
+        const hiddenItems = Array.from(listItems).filter(item => item.classList.contains('hidden'));
+        let currentIndex = 0;
+        
+        // 초기 상태: 숨김 처리
+        listItems.forEach((item, index) => {
+            if (index >= 4) {
+                item.style.display = 'none'; // 처음 4개 항목만 표시
+            }
+        });
 
-
-
-
-
-// sub-goods---------------------------------------
-var goodsSwiper = new Swiper("#subGoods #bestBox .swiper.mySwiper", {
-    slidesPerView: 2,
-    slidesPerGroup: 2,
-    spaceBetween: 20,
-    navigation: {
-        nextEl: "#subGoods #bestBox .swiper-button",
-        prevEl: "#subGoods #bestBox .swiper-button",
-    },
+        button.addEventListener('click', function() {
+            const img = button.querySelector('img');
+            if (currentIndex < hiddenItems.length) {
+                // 4개씩 표시
+                const itemsToShow = hiddenItems.slice(currentIndex, currentIndex + 4);
+                itemsToShow.forEach(item => {
+                    item.style.display = 'block';
+                    item.classList.remove('hidden');
+                });
+                currentIndex += 4;
+                
+                // 모든 항목이 표시되었는지 확인
+                if (currentIndex >= hiddenItems.length) {
+                    button.querySelector('span').textContent = 'CLOSE'; // 모든 항목이 표시된 경우 "CLOSE"
+                    img.src = '/img/icon/btn-more-gray-close.svg';
+                }
+            } else {
+                // "CLOSE" 클릭 시 원래 상태로 되돌리기
+                listItems.forEach((item, index) => {
+                    if (index >= 4) {
+                        item.style.display = 'none'; // 다시 숨김
+                        item.classList.add('hidden');
+                    }
+                });
+                currentIndex = 0; // 인덱스 초기화
+                button.querySelector('span').textContent = 'MORE'; // 버튼 텍스트 변경
+                img.src = '/img/icon/btn-more-gray-plus.svg'; // 이미지 변경
+            }
+        });
+    });
 });
+<<<<<<< HEAD
 // sub-goods---------------------------------------
 >>>>>>> origin/shim
 =======
 // sub-goods---------------------------------------
 >>>>>>> origin/bae
 =======
+=======
+>>>>>>> origin/bae
 // sub-artist -----
 
 
@@ -138,6 +174,7 @@ var goodsSwiper = new Swiper("#subGoods #bestBox .swiper.mySwiper", {
     // 마커가 지도 위에 표시되도록 설정합니다
     marker.setMap(map);
 
+<<<<<<< HEAD
 // kakao api---------------------------------------
 >>>>>>> origin/eo
 =======
@@ -235,3 +272,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // kakao api---------------------------------------
 >>>>>>> origin/shim
+=======
+// kakao api---------------------------------------
+>>>>>>> origin/bae

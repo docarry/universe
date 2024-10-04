@@ -50,6 +50,7 @@ var subArtistDiscoswiper = new Swiper(".sub-artist-disco-swiper", {
     keyboard: {
         enabled: true,
     },
+<<<<<<< HEAD
     navigation: {
         nextEl: ".sub-artist-info-3 .swiper-button-next",
         prevEl: ".sub-artist-info-3 .swiper-button-prev",
@@ -160,6 +161,9 @@ var subArtistDiscoswiper = new Swiper(".sub-artist-disco-swiper", {
         enabled: true,
     },
     navigation: {
+=======
+    navigation: {
+>>>>>>> origin/bae
         nextEl: ".sub-artist-info-3 .swiper-button-next",
         prevEl: ".sub-artist-info-3 .swiper-button-prev",
     },
@@ -207,5 +211,9 @@ var goodsSwiper = new Swiper("#subGoods #bestBox .swiper.mySwiper", {
         },
     },
 });
+<<<<<<< HEAD
 // sub-goods---------------------------------------
 >>>>>>> origin/shim
+=======
+// sub-goods---------------------------------------
+>>>>>>> origin/bae
