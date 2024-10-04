@@ -1,0 +1,313 @@
+<?php include_once("./layout/header.html"); ?>
+
+
+<main id="main">
+    
+    <!-- 메인 배너 -->
+    <section id="mainBanner">
+        <div id="main-banner" class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img class="img01" src="/img/mainbanner/main01.jpg" alt="메인 배너  변우석 이미지입니다">
+                    <p class="main01">Now it's time to<br> 
+                        Showcase your dreams</p>
+                </div>
+                <div class="swiper-slide">
+                    <img class="img02" src="/img/mainbanner/main02.jpg" alt="메인 배너 박서준 이미지입니다">
+                    <p class="main02">A stage filled with passion,<br>
+                        Let's create together</p>
+                </div>
+                <div class="swiper-slide">
+                    <img class="img03" src="/img/mainbanner/main03.jpg" alt="메인 배너 윤계상 이미지입니다">
+                    <p class="main03">Unleash your potential,<br>
+                        Captivate the world</p>
+                </div>
+                <div class="swiper-slide ">
+                    <img class="img04" src="/img/mainbanner/main04.jpg" alt="메인 배너 아이유 이미지입니다">
+                    <p class="main04">Turning dreams into reality,<br>
+                        Sharing shining moments</p>
+                </div>
+            </div>
+            <div class="swiper-pagination d-flex justify-content-center align-items-center gap-40"></div>
+        </div>
+    </section>
+
+
+    <!-- 유니버스 소개 -->
+    <section id="introduction">
+        <div class="title d-flex flex-column justify-content-center align-items-center gap-80">
+            <h2>In <span>Universe</span></h2>
+            <p>유니버스 엔터테인먼트는 <br class="disN" >당신의 꿈을 실현할 수 있는 가장 <br class="introN">이상적인 파트너입니다.<br>
+                우리는 차별화된 접근과 탁월한 관리로,<br>
+                창의성과 열정을 지닌 인재들이 <br class="disN">글로벌 무대에서 빛날 수 <br class="introN">있도록 지원합니다.</p>
+        </div>
+    </section>
+
+
+    <!-- 아티스트 -->
+        <!-- <div id="artist-slide" class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide artist01"></div>
+                <div class="swiper-slide artist02"></div>
+                <div class="swiper-slide artist03"></div>
+                <div class="swiper-slide artist04"></div>
+                <div class="swiper-slide artist05"></div>
+            </div>
+            <div class="swiper-pagination d-flex justify-content-center align-items-center gap-40"></div>
+        </div>
+    </section> -->
+    <section id="artist">
+        <div class="title d-flex flex-column justify-content-center align-items-center gap-10">
+            <h2>ARTIST</h2>
+            <p>유니버스 엔터에서 주목받는 아티스트들을 확인해보세요. <br class="disN">매력적인 세계가 여러분을 기다립니다.</p>
+        </div>
+        <div id="artist-slide" class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="/img/artist/img01.jpg" alt="아티스트 박서준 이미지 입니다">
+                </div>
+                <div class="swiper-slide">
+                    <img src="/img/artist/img02.jpg" alt="아티스트 아이유 이미지 입니다">
+                </div>
+                <div class="swiper-slide">
+                    <img src="/img/artist/img03.jpg" alt="아티스트 변우석 이미지 입니다">
+                </div>
+                <div class="swiper-slide">
+                    <img src="/img/artist/img04.jpg" alt="아티스트 윤계상 이미지 입니다">
+                </div>
+                <div class="swiper-slide">
+                    <img src="/img/artist/img05.jpg" alt="아티스트 남우현 이미지 입니다">
+                </div>
+            </div>
+            <div class="swiper-pagination d-flex justify-content-center align-items-center gap-40"></div>
+        </div>
+    </section>
+
+
+    <!-- 스케쥴 -->
+    <section id="schedule">
+        <div class="title d-flex flex-column justify-content-center align-items-center gap-10">
+            <h2>schedule</h2>
+            <p>배우들이 준비한 다채로운 일정과 이벤트를 한눈에 확인해 보세요.</p>
+        </div>
+        <div class="schedule-artist mt-5">
+            <!-- Tabs -->
+            <ul class="schedule-name nav nav-tabs d-flex justify-content-center align-items-center" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="byeon-tab" data-bs-toggle="tab" href="#byeon" role="tab" aria-controls="byeon" aria-selected="true">변우석</a>
+                    <span class="nav-line"></span>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="lee-tab" data-bs-toggle="tab" href="#lee" role="tab" aria-controls="lee" aria-selected="false">이지은</a>
+                    <span class="nav-line"></span>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="yoon-tab" data-bs-toggle="tab" href="#yoon" role="tab" aria-controls="yoon" aria-selected="false">윤계상</a>
+                    <span class="nav-line"></span>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="nam-tab" data-bs-toggle="tab" href="#nam" role="tab" aria-controls="nam" aria-selected="false">남우현</a>
+                    <span class="nav-line"></span>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="park-tab" data-bs-toggle="tab" href="#park" role="tab" aria-controls="park" aria-selected="false">박서준</a>
+                </li>
+            </ul>
+            <!-- Tab Content -->
+            <div class="tab-content" id="scheduleTabContent">
+                <div class="tab-pane fade show active" id="byeon" role="tabpanel" aria-labelledby="byeon-tab">
+                    <div class="artist-schedule">
+                        <span>변우석</span>
+                        <img src="/img/schedule/img01.jpg" alt="변우석 이미지입니다">
+                    </div>
+                    <div id="calendar01"></div>
+                    <div id="calendar02"></div>
+                </div>
+                <div class="tab-pane fade" id="lee" role="tabpanel" aria-labelledby="lee-tab">
+                    <div class="artist-schedule">
+                        <span>이지은</span>
+                        <img src="/img/schedule/img05.jpg" alt="이지은(아이유) 이미지입니다">
+                    </div>
+                    <div id="calendar03"></div>
+                    <div id="calendar04"></div>
+                </div>
+                <div class="tab-pane fade" id="yoon" role="tabpanel" aria-labelledby="yoon-tab">
+                    <div class="artist-schedule">
+                        <span>윤계상</span>
+                        <img src="/img/schedule/img04.jpg" alt="변우석 이미지입니다">
+                    </div>
+                    <div id="calendar05"></div>
+                    <div id="calendar06"></div>
+                </div>
+                <div class="tab-pane fade" id="nam" role="tabpanel" aria-labelledby="nam-tab">
+                    <div class="artist-schedule">
+                        <span>남우혁</span>
+                        <img src="/img/schedule/img03.jpg" alt="변우석 이미지입니다">
+                    </div>
+                    <div id="calendar07"></div>
+                    <div id="calendar08"></div>
+                </div>
+                <div class="tab-pane fade" id="park" role="tabpanel" aria-labelledby="park-tab">
+                    <div class="artist-schedule">
+                        <span>박서준</span>
+                        <img src="/img/schedule/img02.jpg" alt="변우석 이미지입니다">
+                    </div>
+                    <div id="calendar09"></div>
+                    <div id="calendar10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 릴리즈 -->
+    <!-- <section id="release">
+        <div class="title d-flex flex-column justify-content-center align-items-center gap-10">
+            <h2>release</h2>
+            <p>배우들이 직접 참여한 OST와 음반에도 귀 기울여 보세요.</p>
+        </div>
+        <div id="release-slide" class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="releaseInfo">
+                        <h3>선재 업고 튀어 OST<br>
+                            Part 1</h3>
+                        <p>ECLIPSE</p>
+                    </div>
+                    <img src="/img/release/img01.jpg" alt="변우석 앨범 이미지 입니다">
+                </div>
+                <div class="swiper-slide">
+                    <div class="releaseInfo">
+                        <h3>The Winning<br>
+                            6th Mini Album</h3>
+                        <p>IU</p>
+                    </div>
+                    <img src="/img/release/img03.jpg" alt="아이유(이지은) 앨범 이미지 입니다">
+                </div>
+                <div class="swiper-slide">
+                    <div class="releaseInfo">
+                        <h3>WHITREE<br>
+                            The 1st Album</h3>
+                        <p>Nam Woo Hyun</p>
+                    </div>
+                    <img src="/img/release/img02.jpg" alt="남우현 앨범 이미지 입니다">
+                </div>
+                <div class="swiper-slide">
+                    <div class="releaseInfo">
+                        <h3>THEN & NOW</h3>
+                        <p>GOD</p>
+                    </div>
+                    <img src="/img/release/img04.jpg" alt="윤계상 앨범 이미지 입니다">
+                </div>
+                <div class="swiper-slide">
+                    <div class="releaseInfo">
+                        <h3>마녀의 연애 OST<br>
+                            Part 3</h3>
+                        <p>Park Seo Jun</p>
+                    </div>
+                    <img src="/img/release/img05.jpg" alt="박서준 앨범 이미지 입니다">
+                </div>
+            </div>
+            <div class="swiper-pagination d-flex justify-content-center align-items-center gap-40"></div>
+        </div>
+        <a href="#none" class="moreBtn">더보기 +</a>
+    </section> -->
+
+    <!-- <section id="release">
+        <div class="title">
+            <h2>release</h2>
+            <p>배우들이 직접 참여한 OST와 음반에도 귀 기울여 보세요.</p>
+        </div>
+        <div id="release-slide" class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="releaseInfo">
+                        <h3>선재 업고 튀어 OST<br>
+                            Part 1</h3>
+                        <p>ECLIPSE</p>
+                    </div>
+                    <img src="/img/release/img01.jpg" alt="변우석 앨범 이미지 입니다">
+                </div>
+                <div class="swiper-slide">
+                    <div class="releaseInfo">
+                        <h3>The Winning<br>
+                            6th Mini Album</h3>
+                        <p>IU</p>
+                    </div>
+                    <img src="/img/release/img03.jpg" alt="아이유(이지은) 앨범 이미지 입니다">
+                </div>
+                <div class="swiper-slide">
+                    <div class="releaseInfo">
+                        <h3>WHITREE<br>
+                            The 1st Album</h3>
+                        <p>Nam Woo Hyun</p>
+                    </div>
+                    <img src="/img/release/img02.jpg" alt="남우현 앨범 이미지 입니다">
+                </div>
+                <div class="swiper-slide">
+                    <div class="releaseInfo">
+                        <h3>THEN & NOW</h3>
+                        <p>GOD</p>
+                    </div>
+                    <img src="/img/release/img04.jpg" alt="윤계상 앨범 이미지 입니다">
+                </div>
+                <div class="swiper-slide">
+                    <div class="releaseInfo">
+                        <h3>마녀의 연애 OST<br>
+                            Part 3</h3>
+                        <p>Park Seo Jun</p>
+                    </div>
+                    <img src="/img/release/img05.jpg" alt="박서준 앨범 이미지 입니다">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            </div>
+    </section> -->
+
+
+    <!-- 굿즈 -->
+    <!-- <section id="goods">
+        <div class="title d-flex flex-column justify-content-center align-items-center gap-10">
+            <h2>GOODS</h2>
+            <p>팬 여러분을 위한 소중한 공간입니다. <br class="disN">세심하게 디자인된 다양한 상품들로, <br class="disN">여러분의 일상에 색다른 즐거움을!</p>
+        </div>
+        <div class="gallery-wrap">
+            <div class="item item-1">
+                <div class="gallery-dim">
+                    <p>모자</p>
+                    <p>아티스트들의 <br>
+                        특별한 굿즈들을 만나보세요!</p>
+                    <a href="#none">보러가기<span></span></a>
+                </div>
+            </div>
+            <div class="item item-2">
+                <div class="gallery-dim">
+                    <p>키링</p>
+                    <p>아티스트들의 <br>
+                        특별한 굿즈들을 만나보세요!</p>
+                    <a href="#none">보러가기<span></span></a>
+                </div>
+            </div>
+            <div class="item item-3">
+                <div class="gallery-dim">
+                    <p>응원봉</p>
+                    <p>아티스트들의 <br>
+                        특별한 굿즈들을 만나보세요!</p>
+                    <a href="#none">보러가기<span></span></a>
+                </div>
+            </div>
+            <div class="item item-4">
+                <div class="gallery-dim">
+                    <p>후드티</p>
+                    <p>아티스트들의 <br>
+                        특별한 굿즈들을 만나보세요!</p>
+                    <a href="#none">보러가기<span></span></a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+</main>
+
+
+<?php include_once("./layout/footer.html"); ?>
