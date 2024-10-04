@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         button.addEventListener('click', function() {
+            const img = button.querySelector('img');
             if (currentIndex < hiddenItems.length) {
                 // 4개씩 표시
                 const itemsToShow = hiddenItems.slice(currentIndex, currentIndex + 4);
@@ -48,7 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // 모든 항목이 표시되었는지 확인
                 if (currentIndex >= hiddenItems.length) {
-                    button.textContent = 'CLOSE'; // 모든 항목이 표시된 경우 "CLOSE"
+                    button.querySelector('span').textContent = 'CLOSE'; // 모든 항목이 표시된 경우 "CLOSE"
+                    img.src = '/img/icon/btn-more-gray-close.svg';
                 }
             } else {
                 // "CLOSE" 클릭 시 원래 상태로 되돌리기
@@ -59,24 +61,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
                 currentIndex = 0; // 인덱스 초기화
-                button.textContent = 'MORE'; // 버튼 텍스트 변경
+                button.querySelector('span').textContent = 'MORE'; // 버튼 텍스트 변경
+                img.src = '/img/icon/btn-more-gray-plus.svg'; // 이미지 변경
             }
         });
     });
 });
 // sub-artist -----
 
-// sub-goods---------------------------------------
-var goodsSwiper = new Swiper("#subGoods #bestBox .swiper.mySwiper", {
-    slidesPerView: 2,
-    slidesPerGroup: 2,
-    spaceBetween: 20,
-    navigation: {
-        nextEl: "#subGoods #bestBox .swiper-button",
-        prevEl: "#subGoods #bestBox .swiper-button",
-    },
-});
-// sub-goods---------------------------------------
 
 // kakao api---------------------------------------
     var container = document.getElementById('map-box');
