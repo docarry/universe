@@ -39,11 +39,13 @@ function changeImage(event, clickedFrameClass) {
 
 
 var subArtistDiscoswiper = new Swiper(".sub-artist-disco-swiper", {
-    slidesPerView: "auto",
+    loop:true,
+    // effect: 'creative',
+    grabCursor: true,
+    centeredSlides: false,
+    slidesPerView: 'auto',
+    spaceBetween: 0,
     slidesPerGroup : 1,
-    centeredSlides: false, 
-    spaceBetween: 22,
-    loop: true,
     keyboard: {
         enabled: true,
     },
@@ -51,17 +53,48 @@ var subArtistDiscoswiper = new Swiper(".sub-artist-disco-swiper", {
         nextEl: ".sub-artist-info-3 .swiper-button-next",
         prevEl: ".sub-artist-info-3 .swiper-button-prev",
     },
+    autoHeight: true,
     breakpoints: {
-        320: {
-            slidesPerView: 1,  //브라우저가 320보다 클 때
-            spaceBetween: 40,
-        },
+        // 320: {
+        //     slidesPerView: 1,  //브라우저가 320보다 클 때
+        //     spaceBetween: 40,
+        //     slidesPerGroup : 1,
+        //     keyboard: {
+        //         enabled: true,
+        //     },
+        // },
         
-        768: {
-            slidesPerView: "auto ",  //브라우저가 768보다 클 때
-            spaceBetween: 20,
-        },
+        // 768: {
+        //     slidesPerView: "auto ",  //브라우저가 768보다 클 때
+        //     spaceBetween: 22,
+        //     slidesPerGroup : 1,
+        //     keyboard: {
+        //         enabled: true,
+        //     },
+        // },
     },
 });
 
 // sub-artist 슬라이드-----
+
+
+
+// sub-goods---------------------------------------
+var goodsSwiper = new Swiper("#subGoods #bestBox .swiper.mySwiper", {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 20,
+    loop: true,
+    navigation: {
+        nextEl: "#subGoods #bestBox .nextBtn",
+        prevEl: "#subGoods #bestBox .prevBtn",
+    },
+    breakpoints: {
+        580: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 20,
+        },
+    },
+});
+// sub-goods---------------------------------------
