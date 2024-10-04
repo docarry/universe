@@ -71,6 +71,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 321cde2 (feat : bae 수정사항 반영)
 // sub-goods---------------------------------------
 =======
 $(function() {
@@ -145,6 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <<<<<<< HEAD
 // sub-goods---------------------------------------
 >>>>>>> origin/shim
+<<<<<<< HEAD
 =======
 // sub-goods---------------------------------------
 >>>>>>> origin/bae
@@ -275,3 +279,5 @@ document.addEventListener('DOMContentLoaded', function() {
 =======
 // kakao api---------------------------------------
 >>>>>>> origin/bae
+=======
+>>>>>>> parent of 321cde2 (feat : bae 수정사항 반영)

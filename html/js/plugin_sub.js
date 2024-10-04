@@ -79,6 +79,7 @@ var subArtistDiscoswiper = new Swiper(".sub-artist-disco-swiper", {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // sub-artist 슬라이드-----
 =======
 // sub-artist 슬라이드-----
@@ -217,3 +218,6 @@ var goodsSwiper = new Swiper("#subGoods #bestBox .swiper.mySwiper", {
 =======
 // sub-goods---------------------------------------
 >>>>>>> origin/bae
+=======
+// sub-artist 슬라이드-----
+>>>>>>> parent of 321cde2 (feat : bae 수정사항 반영)
