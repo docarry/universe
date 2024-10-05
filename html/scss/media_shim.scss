@@ -31,8 +31,6 @@
     }
 }
 
-<<<<<<< HEAD
-=======
 @media (max-width: 1500px) {
     #subGoods{
         #mainBanner{
@@ -93,7 +91,6 @@
     }
 }
 
->>>>>>> origin/han
 @media (max-width: 1320px) {
     #subGoods{
         #mainBanner{
@@ -110,8 +107,6 @@
     }
 }
 
-<<<<<<< HEAD
-=======
 @media (max-width: 1300px) {
     #subGoods{
         #mainBanner{
@@ -202,7 +197,6 @@
     }
 }
 
->>>>>>> origin/han
 @media (max-width: 1080px) {
     #subGoods{
         #mainBanner{
@@ -222,8 +216,6 @@
     }
 }
 
-<<<<<<< HEAD
-=======
 @media (max-width: 1000px) {
     #subGoods{
         #mainBanner{
@@ -254,7 +246,6 @@
     }
 }
 
->>>>>>> origin/han
 @media (max-width: 991px) {
     #subGoods{
         #mainBanner{
@@ -267,8 +258,6 @@
         }
         #contentBox{
             padding: 0 2rem;
-<<<<<<< HEAD
-=======
             .artist{
                 ul{
                     li{
@@ -280,7 +269,6 @@
                     }
                 }
             }
->>>>>>> origin/han
         }
         #bestBox{
             padding: 0 2rem;
@@ -288,8 +276,6 @@
     }
 }
 
-<<<<<<< HEAD
-=======
 @media (max-width: 900px) {
     #subGoods{
         #mainBanner{
@@ -320,7 +306,6 @@
     }
 }
 
->>>>>>> origin/han
 @media (max-width: 874px) {
     #subGoods{
         #mainBanner{
@@ -337,8 +322,6 @@
     }
 }
 
-<<<<<<< HEAD
-=======
 @media (max-width: 850px) {
     #subGoods{
         #bestBox{
@@ -383,7 +366,6 @@
     }
 }
 
->>>>>>> origin/han
 @media (max-width: 784px) {
     #subGoods{
         #mainBanner{
@@ -402,45 +384,15 @@
 
 @media (max-width: 767px) {
     #subGoods{
-<<<<<<< HEAD
-        gap: 0;
-        padding-bottom: 60px;
-        #mainBanner{
-            background: none;
-            height: auto;
-            &::before{
-                display: none;
-            }
-=======
         #mainBanner{
             height: 400px;
             margin-bottom: 60px;
->>>>>>> origin/han
             .textBox-MT{
                 width: 100%;
                 padding: 100px 0;
             }
         }
         #contentBox{
-<<<<<<< HEAD
-            gap: 0;
-            padding: 0;
-            margin-bottom: 40px;
-            .nam{
-                border-radius: 20px 20px 0 0;
-            }
-            .lee{
-                border-radius: 0 0 20px 20px;
-            }
-            .byun{
-                border-radius: 20px 20px 0 0;
-            }
-            .yoon{
-                border-radius: 0;
-            }
-            .park{
-                border-radius: 0 0 20px 20px;
-=======
             .artist{
                 ul{
                     li{
@@ -452,13 +404,10 @@
                         }
                     }
                 }
->>>>>>> origin/han
             }
         }
         #bestBox{
             margin-bottom: 40px;
-<<<<<<< HEAD
-=======
             .swiper.mySwiper{
                 .swiper-wrapper{
                     .swiper-slide{
@@ -570,7 +519,6 @@
                     }
                 }
             }
->>>>>>> origin/han
         }
     }
 }
@@ -578,17 +526,12 @@
 @media (max-width: 580px) {
     #subGoods{
         #mainBanner{
-<<<<<<< HEAD
-            .textBox-MT{
-                padding: 40px 0;
-=======
             height: 234px;
             margin-bottom: 40px;
             @include SubGoodsMainBanner (-80px, -160px, 130%);
             .textBox-MT{
                 padding: 40px 0;
                 bottom: calc(50% - 117px);
->>>>>>> origin/han
                 .bannerText01{
                     @include f-24-700-36;
                 }
@@ -600,8 +543,6 @@
         #contentBox{
             .artist{
                 ul{
-<<<<<<< HEAD
-=======
                     li{
                         width: 100%;
                         a{
@@ -610,15 +551,12 @@
                             }
                         }
                     }
->>>>>>> origin/han
                     li:nth-child(2){
                         display: none;
                     }
                 }
             }
         }
-<<<<<<< HEAD
-=======
         #bestBox{
             .swiper.mySwiper{
                 .swiper-wrapper{
@@ -806,6 +744,5 @@
         #mainBanner{
             @include SubGoodsMainBanner (-50px, -30px, 130%);
         }
->>>>>>> origin/han
     }
 }
