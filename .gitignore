@@ -1,2 +1,9 @@
 sftp.json
-html/scss/*.scss
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+# Thumbnails
+.Spotlight-V100
+.Trashes.DS_Store
