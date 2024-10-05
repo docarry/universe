@@ -1,0 +1,347 @@
+// 믹스인
+@import './_var.scss';
+@mixin SubGoodsMainBanner ($x, $y, $size) {
+    background-image: url(/img/subGoods/subGoodsMainBanner.jpg);
+    background-repeat: no-repeat;
+    background-position: $x $y;
+    background-size: $size;
+}
+@mixin goods ($width: 60%) {
+    width: $width;
+    height: auto;
+    transition: all 0.4s ease-in-out;
+    &:hover{
+        width: calc($width + 10%);
+    }   
+}
+@mixin best ($name) {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url('/img/subGoods/#{$name}.jpg') no-repeat center / cover;
+}
+
+// 공통
+// .dNn: n에서 살릴 태그
+.dN1320,
+.dN874,
+.dN784,
+.dN350{
+    display: none;
+}
+
+
+// 스타일
+#subGoods{
+    background-color: #fff;
+    gap: 100px;
+    a{
+        color: #fff;
+    }
+    // 메인 배너 디자인
+    #mainBanner{
+        position: relative;
+        width: 100%;
+        max-width: 1920px;
+        height: 430px;
+        @include SubGoodsMainBanner (-160px, -610px, 130%);
+        &::before{
+            content: '';
+            display: block;
+            height: 100%;
+            background: rgba(0, 0, 0, .4);
+        }
+        .textBox-PC{
+            position: absolute;
+            left: calc(50% - 640px);
+            bottom: calc(50% - 115px);
+            width: 100%;
+            max-width: 1280px;
+            gap: 2.5rem;
+            color: #fff;
+            .textBox01{
+                gap: 0.625rem;
+                .bannerText01{
+                    font-size: 3.125rem;
+                    font-weight: 700;
+                    line-height: 4.5rem;
+                }
+                .bannerText02{
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    line-height: 2.25rem;
+                }
+            }
+            .textBox02{
+                font-size: 1rem;
+                font-weight: 700;
+                line-height: 1.5rem;
+            }
+        }
+        .textBox-MT{
+            position: absolute;
+            left: 0;
+            bottom: calc(50% - 200px);
+            width: 100%;
+            max-width: 767px;
+            text-align: center;
+            gap: 2.5rem;
+            color: #fff;
+            .bannerText01{
+                @include f-36-700-52;
+            }
+            .bannerText02{
+                @include f-24-400-36;
+            }
+        }
+    }
+    .contentTitle{
+        width: 100%;
+        max-width: 1280px;
+        color: #000;
+    }
+    #bestBox{
+        width: 100%;
+        max-width: 1280px;
+        gap: 60px;
+        .swiper.mySwiper{
+            width: 100%;
+            gap: 20px;
+            .swiper-wrapper{
+                .swiper-slide{
+                    width: calc((100% - 20px) / 2);
+                    height: 732px;
+                    border-radius: 20px;
+                    overflow: hidden;
+                    a{
+                        position: relative;
+                        .bestInfo{
+                            width: 100%;
+                            position: absolute;
+                            top: 100%;
+                            left: 0;
+                            overflow: hidden;
+                            background-color: #333;
+                            padding: 20px 40px;
+                            border-radius: 20px;
+                            transition: all 0.4s ease-in-out;
+                        }
+                        &:hover .bestInfo{
+                            top: 0;
+                        }
+                    }
+                    .bestSlide01{
+                        @include best (bestS1-1);
+                    }
+                    .bestSlide02{
+                        @include best (bestS1-2);
+                    }
+                    .bestSlide03{
+                        @include best (bestS2-1);
+                    }
+                    .bestSlide04{
+                        @include best (bestS2-2);
+                    }
+                    .bestSlide05{
+                        @include best (bestS3-1);
+                    }
+                    .bestSlide06{
+                        @include best (bestS3-2);
+                    }
+                }
+            }
+            .swiperAttachedBtn{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .nextBtn{
+                    border-radius: 0 6px 6px 0;
+                    padding: 4px 7px 4px 8px;
+                    background-color: #333;
+                }
+                .prevBtn{
+                    border-radius: 6px 0 0 6px;
+                    padding: 4px 8px 4px 7px;
+                    background-color: #333;
+                }
+            }
+        }
+    }
+    #contentBox{
+        width: 100%;
+        max-width: 1280px;
+        text-align: center;
+        gap: 60px;
+        .artist{
+            gap: 40px;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            border-radius: 20px;
+            background-color: #333;
+            position: relative;
+            h3{
+                color: #fff;
+            }
+            .moreBtn{
+                gap: 4px;
+                position: absolute;
+                top: 40px;
+                right: 10px;
+            }
+            ul{
+                li{
+                    width: calc((100% - 40px) / 3);
+                    a{
+                        gap: 20px;
+                        .goodsContainer{
+                            position: relative;
+                            width: 100%;
+                            height: 420px;
+                            border-radius: 20px;
+                            overflow: hidden;
+                            background-color: #ededed;
+                        }
+                        span:last-child{
+                            gap: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        .nam{
+            ul{
+                li{
+                    a{
+                        .goods01{
+                            img{
+                                @include goods (64%);                                
+                            }
+                        }
+                    }
+                    a{
+                        .goods02{
+                            img{
+                                @include goods (56%);
+                            }
+                        }
+                    }
+                    a{
+                        .goods03{
+                            img{
+                            @include goods (80%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .lee{
+            ul{
+                li{
+                    a{
+                        .goods01{
+                            img{
+                                @include goods (70%);
+                            }
+                        }
+                    }
+                    a{
+                        .goods02{
+                            img{
+                                @include goods (76%);
+                            }
+                        }
+                    }
+                    a{
+                        .goods03{
+                            img{
+                                @include goods (74%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .byun{
+            ul{
+                li{
+                    a{
+                        .goods01{
+                            img{
+                            @include goods (36%);
+                            }
+                        }
+                    }
+                    a{
+                        .goods02{
+                            img{
+                                @include goods (54%);
+                            }
+                        }
+                    }
+                    a{
+                        .goods03{
+                            img{
+                                @include goods (80%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .yoon{
+            ul{
+                li{
+                    a{
+                        .goods01{
+                            img{
+                                @include goods (80%);
+                            }
+                        }
+                    }
+                    a{
+                        .goods02{
+                            img{
+                                @include goods (66%);
+                            }
+                        }
+                    }
+                    a{
+                        .goods03{
+                            img{
+                                @include goods (50%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .park{
+            ul{
+                li{
+                    a{
+                        .goods01{
+                            img{
+                            @include goods (74%);
+                            }
+                        }
+                    }
+                    a{
+                        .goods02{
+                            img{
+                                @include goods (64%);
+                            }
+                        }
+                    }
+                    a{
+                        .goods03{
+                            img{
+                                @include goods (78%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -71,23 +71,90 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // kakao api---------------------------------------
-    var container = document.getElementById('map-box');
-    var options = {
-        center: new kakao.maps.LatLng(37.499557, 127.031397),
-        level: 3
+    // var container = document.getElementById('map-box');
+    // var options = {
+    //     center: new kakao.maps.LatLng(37.499557, 127.031397),
+    //     level: 3
+    // };
+
+    // var map = new kakao.maps.Map(container, options);
+
+    // // 마커가 표시될 위치입니다 
+    // var markerPosition  = new kakao.maps.LatLng(37.499557, 127.031397); 
+
+    // // 마커를 생성합니다
+    // var marker = new kakao.maps.Marker({
+    //     position: markerPosition
+    // });
+
+    // // 마커가 지도 위에 표시되도록 설정합니다
+    // marker.setMap(map);
+
+
+
+    var mapContainer = document.getElementById('map-box'), // 지도를 표시할 div 
+  mapOption = { 
+        center: new kakao.maps.LatLng(37.499557, 127.031397), // 지도의 중심좌표
+        level: 4 // 지도의 확대 레벨
     };
 
-    var map = new kakao.maps.Map(container, options);
+var map = new kakao.maps.Map(mapContainer, mapOption);
 
-    // 마커가 표시될 위치입니다 
-    var markerPosition  = new kakao.maps.LatLng(37.499557, 127.031397); 
+var imageSrc = 'https://i.ibb.co/2vHfqFB/2216335-location-map-map-pin-marker-pin-icon.png', // 마커이미지의 주소입니다    
+    imageSize = new kakao.maps.Size(68, 74), // 마커이미지의 크기입니다
+    imageOption = {offset: new kakao.maps.Point(36, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
 
-    // 마커를 생성합니다
-    var marker = new kakao.maps.Marker({
-        position: markerPosition
-    });
+// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+    markerPosition = new kakao.maps.LatLng(37.499557, 127.031397); // 마커가 표시될 위치입니다
 
-    // 마커가 지도 위에 표시되도록 설정합니다
-    marker.setMap(map);
+// 마커를 생성합니다
+var marker = new kakao.maps.Marker({
+    position: markerPosition,
+    image: markerImage // 마커이미지 설정 
+});
 
+// 마커가 지도 위에 표시되도록 설정합니다
+marker.setMap(map);  
+
+// 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+var content = '<div class="customoverlay">' +
+    '  <a href="https://map.kakao.com/link/map/11394059" target="_blank">' +
+    '    <span class="title">유니버스 엔터테인먼트</span>' +
+    '  </a>' +
+    '</div>';
+
+// 커스텀 오버레이가 표시될 위치입니다 
+var position = new kakao.maps.LatLng(37.499557, 127.031397);  
+
+// 커스텀 오버레이를 생성합니다
+var customOverlay = new kakao.maps.CustomOverlay({
+    map: map,
+    position: position,
+    content: content,
+    yAnchor: 1 
+});
 // kakao api---------------------------------------
+
+
+// sub-info---------------------------------------
+document.addEventListener("DOMContentLoaded", function() {
+    const infoContactElements = document.querySelectorAll('.info-contact h3, .info-email, .info-number');
+    
+    function checkVisibility() {
+        infoContactElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            // 요소가 뷰포트에 들어왔는지 확인
+            if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                element.classList.add('visible'); // 클래스 추가
+            }
+        });
+    }
+    
+    // 스크롤 시 체크
+    document.addEventListener("scroll", checkVisibility);
+    // 초기 로드 시 체크
+    checkVisibility();
+});
+// sub-info---------------------------------------
+
