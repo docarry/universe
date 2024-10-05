@@ -31,6 +31,69 @@
     }
 }
 
+<<<<<<< HEAD
+=======
+@media (max-width: 1500px) {
+    #subGoods{
+        #mainBanner{
+            @include SubGoodsMainBanner (-110px, -440px, 130%);
+        }
+        #contentBox{
+            .artist{
+                ul{
+                    li{
+                        a{
+                            .goodsContainer{
+                                height: 400px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #bestBox{
+            .swiper.mySwiper{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        height: 696px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    #subGoods{
+        #mainBanner{
+            @include SubGoodsMainBanner (-110px, -400px, 130%);
+        }
+        #contentBox{
+            .artist{
+                ul{
+                    li{
+                        a{
+                            .goodsContainer{
+                                height: 363px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #bestBox{
+            .swiper.mySwiper{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        height: 573px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+>>>>>>> origin/han
 @media (max-width: 1320px) {
     #subGoods{
         #mainBanner{
@@ -47,6 +110,99 @@
     }
 }
 
+<<<<<<< HEAD
+=======
+@media (max-width: 1300px) {
+    #subGoods{
+        #mainBanner{
+            @include SubGoodsMainBanner (-80px, -310px, 130%);
+        }
+        #contentBox{
+            .artist{
+                ul{
+                    li{
+                        a{
+                            .goodsContainer{
+                                height: 330px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #bestBox{
+            .swiper.mySwiper{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        height: 581px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    #subGoods{
+        #mainBanner{
+            @include SubGoodsMainBanner (-90px, -270px, 130%);
+        }
+        #contentBox{
+            .artist{
+                ul{
+                    li{
+                        a{
+                            .goodsContainer{
+                                height: 294px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #bestBox{
+            .swiper.mySwiper{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        height: 520px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    #subGoods{
+        #mainBanner{
+            @include SubGoodsMainBanner (-100px, -220px, 130%);
+        }
+        #contentBox{
+            .artist{
+                ul{
+                    li{
+                        a{
+                            .goodsContainer{
+                                height: 258px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #bestBox{
+            .swiper.mySwiper{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        height: 464px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+>>>>>>> origin/han
 @media (max-width: 1080px) {
     #subGoods{
         #mainBanner{
@@ -66,6 +222,39 @@
     }
 }
 
+<<<<<<< HEAD
+=======
+@media (max-width: 1000px) {
+    #subGoods{
+        #mainBanner{
+            @include SubGoodsMainBanner (-100px, -180px, 130%);
+        }
+        #contentBox{
+            .artist{
+                ul{
+                    li{
+                        a{
+                            .goodsContainer{
+                                height: 265px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #bestBox{
+            .swiper.mySwiper{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        height: 475px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+>>>>>>> origin/han
 @media (max-width: 991px) {
     #subGoods{
         #mainBanner{
@@ -78,6 +267,20 @@
         }
         #contentBox{
             padding: 0 2rem;
+<<<<<<< HEAD
+=======
+            .artist{
+                ul{
+                    li{
+                        a{
+                            .goodsContainer{
+                                height: 296px;
+                            }
+                        }
+                    }
+                }
+            }
+>>>>>>> origin/han
         }
         #bestBox{
             padding: 0 2rem;
@@ -85,6 +288,39 @@
     }
 }
 
+<<<<<<< HEAD
+=======
+@media (max-width: 900px) {
+    #subGoods{
+        #mainBanner{
+            @include SubGoodsMainBanner (-100px, -150px, 130%);
+        }
+        #contentBox{
+            .artist{
+                ul{
+                    li{
+                        a{
+                            .goodsContainer{
+                                height: 264px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #bestBox{
+            .swiper.mySwiper{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        height: 474px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+>>>>>>> origin/han
 @media (max-width: 874px) {
     #subGoods{
         #mainBanner{
@@ -101,6 +337,53 @@
     }
 }
 
+<<<<<<< HEAD
+=======
+@media (max-width: 850px) {
+    #subGoods{
+        #bestBox{
+            .swiper.mySwiper{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        height: 445px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    #subGoods{
+        #mainBanner{
+            @include SubGoodsMainBanner (-100px, -110px, 130%);
+        }
+        #contentBox{
+            .artist{
+                ul{
+                    li{
+                        a{
+                            .goodsContainer{
+                                height: 230px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #bestBox{
+            .swiper.mySwiper{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        height: 416px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+>>>>>>> origin/han
 @media (max-width: 784px) {
     #subGoods{
         #mainBanner{
@@ -119,6 +402,7 @@
 
 @media (max-width: 767px) {
     #subGoods{
+<<<<<<< HEAD
         gap: 0;
         padding-bottom: 60px;
         #mainBanner{
@@ -127,12 +411,18 @@
             &::before{
                 display: none;
             }
+=======
+        #mainBanner{
+            height: 400px;
+            margin-bottom: 60px;
+>>>>>>> origin/han
             .textBox-MT{
                 width: 100%;
                 padding: 100px 0;
             }
         }
         #contentBox{
+<<<<<<< HEAD
             gap: 0;
             padding: 0;
             margin-bottom: 40px;
@@ -150,10 +440,137 @@
             }
             .park{
                 border-radius: 0 0 20px 20px;
+=======
+            .artist{
+                ul{
+                    li{
+                        width: calc((100% - 20px) / 2);
+                        a{
+                            .goodsContainer{
+                                height: 338px;
+                            }
+                        }
+                    }
+                }
+>>>>>>> origin/han
             }
         }
         #bestBox{
             margin-bottom: 40px;
+<<<<<<< HEAD
+=======
+            .swiper.mySwiper{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        height: 365px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 750px) {
+    #subGoods{
+        #bestBox{
+            .swiper.mySwiper{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        height: 387px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    #subGoods{
+        #mainBanner{
+            @include SubGoodsMainBanner (-90px, -90px, 130%);
+        }
+        #contentBox{
+            .artist{
+                ul{
+                    li{
+                        a{
+                            .goodsContainer{
+                                height: 299px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #bestBox{
+            .swiper.mySwiper{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        height: 358px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    #subGoods{
+        #mainBanner{
+            @include SubGoodsMainBanner (-90px, -70px, 130%);
+        }
+        #contentBox{
+            .artist{
+                ul{
+                    li{
+                        a{
+                            .goodsContainer{
+                                height: 276px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #bestBox{
+            .swiper.mySwiper{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        height: 329px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    #subGoods{
+        #mainBanner{
+            @include SubGoodsMainBanner (-90px, -50px, 130%);
+        }
+        #contentBox{
+            .artist{
+                ul{
+                    li{
+                        a{
+                            .goodsContainer{
+                                height: 249px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #bestBox{
+            .swiper.mySwiper{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        height: 300px;
+                    }
+                }
+            }
+>>>>>>> origin/han
         }
     }
 }
@@ -161,8 +578,17 @@
 @media (max-width: 580px) {
     #subGoods{
         #mainBanner{
+<<<<<<< HEAD
             .textBox-MT{
                 padding: 40px 0;
+=======
+            height: 234px;
+            margin-bottom: 40px;
+            @include SubGoodsMainBanner (-80px, -160px, 130%);
+            .textBox-MT{
+                padding: 40px 0;
+                bottom: calc(50% - 117px);
+>>>>>>> origin/han
                 .bannerText01{
                     @include f-24-700-36;
                 }
@@ -174,11 +600,212 @@
         #contentBox{
             .artist{
                 ul{
+<<<<<<< HEAD
+=======
+                    li{
+                        width: 100%;
+                        a{
+                            .goodsContainer{
+                                height: 511px;
+                            }
+                        }
+                    }
+>>>>>>> origin/han
                     li:nth-child(2){
                         display: none;
                     }
                 }
             }
         }
+<<<<<<< HEAD
+=======
+        #bestBox{
+            .swiper.mySwiper{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        height: 553px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    #subGoods{
+        #mainBanner{
+            @include SubGoodsMainBanner (-90px, -150px, 130%);
+        }
+    }
+    #contentBox{
+        .artist{
+            ul{
+                li{
+                    a{
+                        .goodsContainer{
+                            height: 491px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    #subGoods{
+        #mainBanner{
+            @include SubGoodsMainBanner (-70px, -120px, 130%);
+        }
+        #contentBox{
+            .artist{
+                ul{
+                    li{
+                        a{
+                            .goodsContainer{
+                                height: 448px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #bestBox{
+            .swiper.mySwiper{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        height: 474px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    #subGoods{
+        #mainBanner{
+            @include SubGoodsMainBanner (-70px, -100px, 130%);
+        }
+        #contentBox{
+            .artist{
+                ul{
+                    li{
+                        a{
+                            .goodsContainer{
+                                height: 378px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #bestBox{
+            .swiper.mySwiper{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        height: 442px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    #subGoods{
+        #mainBanner{
+            height: 224px;
+            @include SubGoodsMainBanner (-50px, -90px, 130%);
+            .textBox-MT{
+                padding: 40px 0;
+                bottom: calc(50% - 112px);
+            }
+        }
+        #contentBox{
+            .artist{
+                ul{
+                    li{
+                        a{
+                            .goodsContainer{
+                                height: 341px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #bestBox{
+            .swiper.mySwiper{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        height: 377px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 370px) {
+    #subGoods{
+        #mainBanner{
+            @include SubGoodsMainBanner (-50px, -80px, 130%);
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    #subGoods{
+        #mainBanner{
+            @include SubGoodsMainBanner (-50px, -70px, 130%);
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    #subGoods{
+        #mainBanner{
+            @include SubGoodsMainBanner (-50px, -50px, 130%);
+        }
+        #contentBox{
+            .artist{
+                ul{
+                    li{
+                        a{
+                            .goodsContainer{
+                                height: 286px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #bestBox{
+            .contentTitle{
+                p{
+                    text-align: center;
+                    .dN350{
+                        display: block;
+                    }
+                }
+            }
+            .swiper.mySwiper{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        height: 325px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 330px) {
+    #subGoods{
+        #mainBanner{
+            @include SubGoodsMainBanner (-50px, -30px, 130%);
+        }
+>>>>>>> origin/han
     }
 }

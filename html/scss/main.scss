@@ -67,7 +67,7 @@
         color: #fff;
         text-align: center;
         background-color: #333;
-        padding: 220px 0;
+        padding: 160px 0;
         .title{
             h2{
                 font-size: 4.125rem;
@@ -86,58 +86,6 @@
 
 
     // 아티스트
-    //     #artist-slide{
-    //         width: 100%;
-    //         max-height: 806px;
-    //         height: 806px;
-    //         // overflow: hidden;
-    //         border-radius: 20px;
-    //         // &.swiper-3d .swiper-wrapper{
-    //         //     transform-style: flat;
-    //         // }
-    //         .swiper-wrapper{
-    //             max-width: 1280px;
-    //             border-radius: 20px;
-    //             .swiper-slide{
-    //                 box-sizing:border-box;
-    //                 border-radius: 20px;
-    //                 min-width: 1030px;
-    //                 // overflow: hidden;
-    //                 &.swiper-slide-active {
-    //                     max-width: 900px !important;
-    //                     max-height: 690px !important;
-    //                 }
-    //             }
-    //             .artist01{
-    //                 background: url('/img/artist/img01.jpg') no-repeat center 0% / cover;
-    //             }
-    //             .artist02{
-    //                 background: url('/img/artist/img02.jpg') no-repeat center 0% / cover;
-    //             }
-    //             .artist03{
-    //                 background: url('/img/artist/img03.jpg') no-repeat center 0% / cover;
-    //             }
-    //             .artist04{
-    //                 background: url('/img/artist/img04.jpg') no-repeat center 0% / cover;
-    //             }
-    //             .artist05{
-    //                 background: url('/img/artist/img05.jpg') no-repeat center 0% / cover;
-    //             }
-    //         }
-    //         .swiper-pagination-bullet {
-    //             width: 4px;
-    //             height: 4px;
-    //             opacity: 1;
-    //             background-color: #fff;
-    //         }
-    //         .swiper-pagination-bullet-active {
-    //             width: 12px;
-    //             height: 12px;
-    //             border: 2px solid #FFF;
-    //             background-color: transparent;
-    //         }
-    //     }
-    // }
     #artist{
         padding: 100px 0;
         color: #FFF;
@@ -150,52 +98,66 @@
                 @include subTitleP;
             }
         }
-        #artist-slide{
+        .artistBox{
+            overflow: hidden;
             width: 100%;
-            padding: 60px 0;
-            .swiper-wrapper{
+            position: relative;
+            #artist-slide{
                 width: 100%;
-                .swiper-slide {
-                    max-width: 1050px;
-                    max-height: 806px;
-                    &.swiper-slide-active {
-                        max-width: 1050px !important;
-                        max-height: 806px !important;
-                        transform: translate3d(0, calc(100% - 94%), 0px) !important;
-                        opacity: 1;
-                    }
-                    &.swiper-slide-prev {
-                        max-width: 1180px !important;
-                        max-height: 920px !important;
-                        transform: translate3d(46%, 0px, 0px) !important;
-                        opacity: .2;
-                    }
-                    &.swiper-slide-next {
-                        max-width: 1180px !important;
-                        max-height: 920px !important;
-                        transform: translate3d(-46%, 0px, 0px) !important;
-                        opacity: .2;
-                    }
-                    img {
-                        display: block;
-                        width: 100%;
-                        height: 100%;
-                        border-radius: 20px;
-                        object-fit: cover;
+                .swiper-wrapper{
+                    height: 992px;
+                    padding: 60px 0 72px;
+                    .swiper-slide {
+                        opacity: 0;
+                        &.swiper-slide-active {
+                            transform: scale(1.5) !important;
+                            background-size: 85% !important;
+                            opacity: 1;
+                        }
+                        &.swiper-slide-prev {
+                            transform: scale(1.7) !important;
+                            background-position: right 50% !important;
+                            background-size: 85% !important;
+                            opacity: 0.2;
+                        }
+                        &.swiper-slide-next {
+                            transform: scale(1.7) !important;
+                            background-position: left 50% !important;
+                            background-size: 85% !important;
+                            opacity: 0.2;
+                        }
                     }
                 }
-            }
-            .swiper-pagination-bullet {
-                width: 4px;
-                height: 4px;
-                opacity: 1;
-                background-color: #fff;
-            }
-            .swiper-pagination-bullet-active {
-                width: 12px;
-                height: 12px;
-                border: 2px solid #FFF;
-                background-color: transparent;
+                .artist01{
+                    background: url('/img/artist/img01.png') no-repeat center / cover;
+                }
+                .artist02{
+                    background: url('/img/artist/img02.png') no-repeat center / cover;
+                }
+                .artist03{
+                    background: url('/img/artist/img03.png') no-repeat center / cover;
+                }
+                .artist04{
+                    background: url('/img/artist/img04.png') no-repeat center / cover;
+                }
+                .artist05{
+                    background: url('/img/artist/img05.png') no-repeat center / cover;
+                }
+                .swiper-pagination-bullets.swiper-pagination-horizontal{
+                    bottom: 0;
+                }
+                .swiper-pagination-bullet {
+                    width: 4px;
+                    height: 4px;
+                    opacity: 1;
+                    background-color: #fff;
+                }
+                .swiper-pagination-bullet-active {
+                    width: 12px;
+                    height: 12px;
+                    border: 2px solid #FFF;
+                    background-color: transparent;
+                }
             }
         }
     }
@@ -249,10 +211,9 @@
                 max-width: 1280px;
                 width: 100%;
                 margin: 0 auto;
-                > .active{
+                &> .active{
                     display: flex;
                     flex-direction: column;
-                    gap: 28px;
                 }
                 .tab-pane{
                     .artist-schedule{
@@ -272,25 +233,52 @@
                             width: 94px;
                         }
                     }
-                    #calendar01 {
+                    .week01,
+                    .week02{
+                        width: 100%;
+                        color: #000;
+                        background-color: #fff;
+                        margin-top: 28px;
+                    }
+                    .fc-theme-standard td, 
+                    .fc-theme-standard th,
+                    .fc-scrollgrid-liquid{
+                        border: 0 !important;
+                    }
+                    .fc-daygrid-body table tbody tr[role="row"]:not(:nth-child(1)),
+                    .fc-toolbar.fc-header-toolbar,
+                    .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
+                        display: none;
+                    }
+                    .fc-scroller-liquid-absolute,
+                    .fc-scroller {
+                        overflow: hidden !important;
+                    }
+                    #calendar01,
+                    #calendar02{
                         max-width: 1280px;
-                        margin: 0 auto;
-                        .fc-daygrid-day{
-                            &.fc-day-today{
-                                background-color: transparent;
+                        color: #000;
+                        background-color: #fff;
+                        .fc-daygrid-day {
+                            &.fc-day-today {
+                                background-color: transparent !important;
+                                .fc-daygrid-day-top {
+                                    > a {
+                                        border: solid 2px #333;
+                                        padding: 30px;
+                                        border-radius: 50%;
+                                        font-weight: bold;
+                                    }
+                                }
                             }
                         }
-                        .fc-daygrid-day-top{
+                        .fc-daygrid-day-top {
                             display: block;
                             height: 150px;
                             line-height: 150px;
                             text-align: center;
-                            > a{
-                                border: solid 2px #333;
-                                padding: 30px;
-                                border-radius: 50%;
-                                font-weight: bold;
-                                &.test{
+                            & > a {
+                                &.eventText {
                                     border: solid 2px #ff0000;
                                     padding: 30px;
                                     border-radius: 50%;
@@ -298,77 +286,21 @@
                                 }
                             }
                         }
-                        .fc-daygrid-day-number{
-                            font-size: 32px;
+                        .fc-daygrid-day-number {
+                            @include f-24-700-36;
                             text-align: center;
                         }
-                        .fc-col-header-cell-cushion{
+                        .fc-col-header-cell-cushion {
                             display: block;
                             padding: 0;
+                            height: 50px;
                             line-height: 50px;
-                            font-size: 32px;
-                            font-weight: normal;
-                        }
-                        .fc-daygrid-body table tbody tr[role="row"]:not(:nth-child(1)),
-                        .fc-toolbar.fc-header-toolbar,
-                        .fc-daygrid-body-unbalanced .fc-daygrid-day-events{
-                            display: none;
-                        }
-                        .fc-scrollgrid-liquid{
-                            border: 0 !important;
-                        }
-                        .fc-scroller-liquid-absolute,
-                        .fc-scroller{
-                            overflow: hidden !important;
+                            font-size: 24px;
+                            font-weight: 700;
                         }
                     }
-                    .calendar02 {
-                        max-width: 1280px;
-                        margin: 0 auto;
-                        &.fc-daygrid-day.fc-day-today{
-                            background-color: transparent;
-                            .fc-daygrid-day-top > a{
-                                border: solid 2px #333;
-                                padding: 30px;
-                                border-radius: 50%;
-                                font-weight: bold;
-                            }
-                        }
-                        &.fc-daygrid-day-top{
-                            display: block;
-                            height: 150px;
-                            line-height: 150px;
-                            text-align: center;
-                        }
-                        &.fc-daygrid-day-number{
-                            font-size: 32px;
-                            text-align: center;
-                        }
-                        &.fc-col-header-cell-cushion{
-                            display: block;
-                            padding: 0;
-                            line-height: 50px;
-                            font-size: 32px;
-                            font-weight: normal;
-                        }
-                        &.fc-daygrid-body table tbody tr[role="row"]:not(:nth-child(1)),
-                        &.fc-toolbar.fc-header-toolbar,
-                        &.fc-daygrid-body-unbalanced .fc-daygrid-day-events{
-                            display: none;
-                        }
-                        &.fc-scrollgrid-liquid{
-                            border: 0 !important;
-                        }
-                        &.fc-scroller-liquid-absolute,
-                        &.fc-scroller{
-                            overflow: hidden !important;
-                        }
-                        &.fc-daygrid-day-top > a.test{
-                            border: solid 2px #ff0000;
-                            padding: 30px;
-                            border-radius: 50%;
-                            font-weight: bold;
-                        }
+                    .fc-view-harness{
+                        height: 200px !important;
                     }
                 }
             }

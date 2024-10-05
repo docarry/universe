@@ -60,6 +60,11 @@
     line-height: 52px;
     font-weight: 400;
 }
+@mixin f-28-700-42{
+    font-size: 1.75rem;
+    line-height: 42px;
+    font-weight: 700;
+}
 @mixin f-24-700-36{
     font-size: 1.5rem;
     line-height: 36px;
