@@ -13,22 +13,44 @@
 @media (max-width: 1440px) {
     #sub-artist{
         .container-1280{
-            padding: 0 1rem;
+            margin: 0 1rem;
             #myTabContent{
                 .tab-pane{
                     .artist-content{
                         .sub-artist-info-3{
-                            .sub-artist-disco-swiper{
-                                .swiper-wrapper{
-                                    .swiper-slide{
-                                        .disco-title{
-                                            font-size: 1.3rem;
+                            .info-detail{
+                                .sub-artist-disco-swiper{
+                                    .swiper-wrapper{
+                                        .swiper-slide.swiper-slide-active{
+                                            .img-wrap{
+                                                .sub-disco{
+                                                    height: 250px;
+                                                }
+                                            }
                                         }
-                                        .disco-sub{
-    
+                                        .swiper-slide.swiper-slide-next{
+                                            margin-left: 57px;
+                                        }
+                                        .swiper-slide{
+                                            &:not(.swiper-slide-active){
+                                                .img-wrap{
+                                                    .text{
+                                                        .disco-title{
+                                                            font-size: .875rem;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            .img-wrap{
+                                                .sub-disco{
+                                                    height: 166px;
+                                                }
+                                            }
                                         }
                                     }
-    
+                                }
+                                .swiper-button-next{
+                                    right: var(--swiper-navigation-sides-offset, -6px);
                                 }
                             }
                         }
@@ -46,47 +68,73 @@
 
 @media (max-width: 1280px) {
     #sub-artist{
-        // .container-1280{
-        //     #myTabContent{
-        //         .tab-pane{
-        //             .artist-content{
-        //                 .sub-artist-info{
-
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
+        .container-1280{
+            #myTabContent{
+                .tab-pane{
+                    h2{
+                        font-size: 2.5rem;
+                    }
+                    .artist-content{
+                        .sub-artist-info{
+                            gap: 5rem;
+                            h3{
+                                font-size: 2.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
         .nav-sticky{
-            #artist-list{
+            #sub-artist-list{
                 padding: 0.625rem 0.4rem 0.625rem;
             }
         }
     }
 }
 
-@media (max-width: 990px) {
+@media (max-width: 1080px){
     #sub-artist{
         .container-1280{
             #myTabContent{
                 .tab-pane{
                     h2{
-                        font-size: 3rem;
+                        font-size: 2.375rem;
                     }
                     .artist-content{
                         .frame-wrap{
-                            gap: 2rem;
+                            gap: 1rem;
                         }
                         .sub-artist-info{
+                            gap: 2rem;
                             h3{
-                                font-size: 2rem;
-                            }
-                            .info-detail{
-                                padding: 0.625rem 0 0 6rem;
+                                font-size: 2.375rem;
                             }
                         }
-                        .sub-artist-info-1{
-                            padding-left: 1rem;
+                        .sub-artist-info-3{
+                            .info-detail{
+                                .sub-artist-disco-swiper{
+                                    .swiper-wrapper{
+                                        .swiper-slide.swiper-slide-active{
+                                            .img-wrap{
+                                                .sub-disco{
+                                                    height: 220px;
+                                                }
+                                            }
+                                        }
+                                        .swiper-slide.swiper-slide-next{
+                                            margin-left: 52px;
+                                        }
+                                        .swiper-slide{
+                                            .img-wrap{
+                                                .sub-disco{
+                                                    height: 148px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -94,16 +142,15 @@
         }
     }
 }
-
-@media (max-width: 768px) {
+@media (max-width: 990px) {
     #sub-artist{
-        padding-top: 5.25rem;
+        padding: 5.25rem 0 0;
         .btn-more{
-            padding-top: .375rem;
+            margin-top: 1.875rem;
         }
         .container-1280{
             width: 100%;
-            padding: 0;
+            margin: 0 auto;
             #myTabContent{
                 .tab-pane{
                     h2{
@@ -117,23 +164,25 @@
                         .sub-artist-main-swiper{
                             display: block;
                             margin-top: 2.5rem;
-                            padding: 0;
                             .swiper-pagination{
                                 position: relative;
                                 margin-top: 2.5rem;
+                                bottom: 0;
                             }
                         }
                         .sub-artist-info{
+                            gap: 2.5rem;
                             h3{
                                 @include f-36-700-52;
-                                padding: 0 0 2.5rem;
                                 width: 100%;
                             }
                             .info-detail{
                                 width: 100%;
-                                padding: 0;
+                                .actors-history{
+                                    padding-top: 1.875rem;
+                                    gap: 1.5rem;
+                                }
                             }
-
                         }
                         .sub-artist-info-1{
                             width: 100%;
@@ -150,14 +199,14 @@
                             margin: 0;
                             flex-direction: column;
                             padding: 2.5rem 1.25rem;
-                            // h3{
-                            //     // padding: 0 0 2.5rem ;
-                            // }
+                            h3{
+                                padding: 0;
+                            }
                             .info-detail{
-                                // padding: 0;
                                 .info-2-title{
+                                    gap: 1.25rem;
+                                    padding: 0;
                                     .nav-item{
-                                        padding-right: 1.25rem;
                                         h4{
                                             @include f-18-400-26;
                                             .nav-link{
@@ -168,38 +217,34 @@
                                         }
                                     }
                                 }
-                                .info-2-detail{
-                                    padding-top: 1.875rem;
-                                    .tab-pane{
-                                        .actors-history{
-                                            li{
-                                                padding-bottom: 1.5rem;
-                                            }
-                                        }
-                                    }
-                                }
                             }
                         }
                         .sub-artist-info-3{
                             margin: 0;
                             flex-direction: column;
                             padding: 2.5rem 1.25rem;
+                            .info-detail{
+                                .sub-artist-disco-swiper{
+                                    display: none;
+                                }
+                                .swiper-button-prev,
+                                .swiper-button-next{
+                                    display: none;
+                                }
+                                .sub-artist-disco-m-swiper{
+                                    display: block;
+                                }
+                            }
                         }
                         .sub-artist-info-4{
                             flex-direction: column;
-                            margin-bottom: 0;
+                            margin: 0;
                             padding: 2.5rem 1.25rem;
                             .info-detail{
                                 h4{
                                     @include f-18-700-26;
                                     &::after{
                                         width: 67px;
-                                    }
-                                }
-                                .actors-history{
-                                    padding-top: 1.875rem;
-                                    li{
-                                        padding-bottom: 1.5rem;
                                     }
                                 }
                             }
@@ -214,7 +259,7 @@
             top: 40px;
             left: 20px;
             position: absolute;
-            #artist-list{
+            #sub-artist-list{
                 width: 100%;
                 padding: 0;
                 position: relative;
@@ -222,6 +267,7 @@
                 height: 100%;
                 border: 0;
                 flex-direction: row;
+                gap: 0.625rem;
                 .toggle-nav{
                     color: #a4a4a4;
                     background-color: #fff;
@@ -248,7 +294,7 @@
                     gap: 1.25rem;
                     width: 70%;
                     position: relative;
-                    margin-left: .625rem;
+                    flex-direction: row;
                     &.show{
                         .nav-item{
                             left: 0;
@@ -286,11 +332,84 @@
             }
         }
     }
-    
+
+}
+
+@media (max-width: 768px) {
+    #sub-artist{
+        .container-1280{
+            #myTabContent{
+                .tab-pane{
+                    .artist-content{
+                        .sub-artist-info-3{
+                            .info-detail{
+                                .sub-artist-disco-m-swiper{
+                                    .swiper-wrapper{
+                                        .swiper-slide{
+                                            .img-wrap{
+                                                .sub-disco{
+                                                    width: 260px;
+                                                    height: 260px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 580px) {
 
+}
+
+@media (max-width: 500px) {
+    #sub-artist{
+        .container-1280{
+            #myTabContent{
+                .tab-pane{
+                    .artist-content{
+                        .sub-artist-info-4{
+                            .info-detail{
+                                h4{
+                                    &::after{
+                                        width: 58px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    #sub-artist{
+        .container-1280{
+            #myTabContent{
+                .tab-pane{
+                    .artist-content{
+                        .sub-artist-info-4{
+                            .info-detail{
+                                h4{
+                                    &::after{
+                                        width: 51px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 480px) {
@@ -298,7 +417,10 @@
         .nav-sticky{
             width: 100px;
             background-color: #fff;
-            #artist-list{
+            left: 0;
+            padding-left: 20px;
+            z-index: 1;
+            #sub-artist-list{
                 display: block;
                 .toggle-nav{
                     &::after{
@@ -309,7 +431,6 @@
                         transform: rotate(-45deg);
                         margin: 0.4rem 0 0 0.5rem ;
                     }
-                    &.active{}
 
                 }
                 .item-wrap{
@@ -328,5 +449,4 @@
 }
 
 @media (max-width: 320px) {
-
 }
