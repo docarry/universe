@@ -1,0 +1,452 @@
+@import './_var.scss';
+// 필수(768,580,320)
+@media (max-width: 1720px) {
+    #sub-artist{
+        .nav-sticky{
+            position: relative;
+            top: 17%;
+        }
+    }
+}
+
+
+@media (max-width: 1440px) {
+    #sub-artist{
+        .container-1280{
+            margin: 0 1rem;
+            #myTabContent{
+                .tab-pane{
+                    .artist-content{
+                        .sub-artist-info-3{
+                            .info-detail{
+                                .sub-artist-disco-swiper{
+                                    .swiper-wrapper{
+                                        .swiper-slide.swiper-slide-active{
+                                            .img-wrap{
+                                                .sub-disco{
+                                                    height: 250px;
+                                                }
+                                            }
+                                        }
+                                        .swiper-slide.swiper-slide-next{
+                                            margin-left: 57px;
+                                        }
+                                        .swiper-slide{
+                                            &:not(.swiper-slide-active){
+                                                .img-wrap{
+                                                    .text{
+                                                        .disco-title{
+                                                            font-size: .875rem;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            .img-wrap{
+                                                .sub-disco{
+                                                    height: 166px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                .swiper-button-next{
+                                    right: var(--swiper-navigation-sides-offset, -6px);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .nav-sticky{
+            #artist-list{
+                padding: 0.625rem 1.25rem 0.625rem 2.5rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    #sub-artist{
+        .container-1280{
+            #myTabContent{
+                .tab-pane{
+                    h2{
+                        font-size: 2.5rem;
+                    }
+                    .artist-content{
+                        .sub-artist-info{
+                            gap: 5rem;
+                            h3{
+                                font-size: 2.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .nav-sticky{
+            #sub-artist-list{
+                padding: 0.625rem 0.4rem 0.625rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 1080px){
+    #sub-artist{
+        .container-1280{
+            #myTabContent{
+                .tab-pane{
+                    h2{
+                        font-size: 2.375rem;
+                    }
+                    .artist-content{
+                        .frame-wrap{
+                            gap: 1rem;
+                        }
+                        .sub-artist-info{
+                            gap: 2rem;
+                            h3{
+                                font-size: 2.375rem;
+                            }
+                        }
+                        .sub-artist-info-3{
+                            .info-detail{
+                                .sub-artist-disco-swiper{
+                                    .swiper-wrapper{
+                                        .swiper-slide.swiper-slide-active{
+                                            .img-wrap{
+                                                .sub-disco{
+                                                    height: 220px;
+                                                }
+                                            }
+                                        }
+                                        .swiper-slide.swiper-slide-next{
+                                            margin-left: 52px;
+                                        }
+                                        .swiper-slide{
+                                            .img-wrap{
+                                                .sub-disco{
+                                                    height: 148px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 990px) {
+    #sub-artist{
+        padding: 5.25rem 0 0;
+        .btn-more{
+            margin-top: 1.875rem;
+        }
+        .container-1280{
+            width: 100%;
+            margin: 0 auto;
+            #myTabContent{
+                .tab-pane{
+                    h2{
+                        @include f-36-700-52;
+                        padding-left: 1.25rem;
+                    }
+                    .artist-content{
+                        .frame-wrap{
+                            display: none;
+                        }
+                        .sub-artist-main-swiper{
+                            display: block;
+                            margin-top: 2.5rem;
+                            .swiper-pagination{
+                                position: relative;
+                                margin-top: 2.5rem;
+                                bottom: 0;
+                            }
+                        }
+                        .sub-artist-info{
+                            gap: 2.5rem;
+                            h3{
+                                @include f-36-700-52;
+                                width: 100%;
+                            }
+                            .info-detail{
+                                width: 100%;
+                                .actors-history{
+                                    padding-top: 1.875rem;
+                                    gap: 1.5rem;
+                                }
+                            }
+                        }
+                        .sub-artist-info-1{
+                            width: 100%;
+                            position: relative;
+                            padding: 2.5rem 1.25rem;
+                            p{
+                                padding: 0;
+                            }
+                            .goods-btn{
+                                margin-top: 2.5rem
+                            }
+                        }
+                        .sub-artist-info-2{
+                            margin: 0;
+                            flex-direction: column;
+                            padding: 2.5rem 1.25rem;
+                            h3{
+                                padding: 0;
+                            }
+                            .info-detail{
+                                .info-2-title{
+                                    gap: 1.25rem;
+                                    padding: 0;
+                                    .nav-item{
+                                        h4{
+                                            @include f-18-400-26;
+                                            .nav-link{
+                                                &.active{
+                                                    @include f-18-700-26;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .sub-artist-info-3{
+                            margin: 0;
+                            flex-direction: column;
+                            padding: 2.5rem 1.25rem;
+                            .info-detail{
+                                .sub-artist-disco-swiper{
+                                    display: none;
+                                }
+                                .swiper-button-prev,
+                                .swiper-button-next{
+                                    display: none;
+                                }
+                                .sub-artist-disco-m-swiper{
+                                    display: block;
+                                }
+                            }
+                        }
+                        .sub-artist-info-4{
+                            flex-direction: column;
+                            margin: 0;
+                            padding: 2.5rem 1.25rem;
+                            .info-detail{
+                                h4{
+                                    @include f-18-700-26;
+                                    &::after{
+                                        width: 67px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .nav-sticky{
+            margin: 0;
+            width: 435px;
+            top: 40px;
+            left: 20px;
+            position: absolute;
+            #sub-artist-list{
+                width: 100%;
+                padding: 0;
+                position: relative;
+                top: 0;
+                height: 100%;
+                border: 0;
+                flex-direction: row;
+                gap: 0.625rem;
+                .toggle-nav{
+                    color: #a4a4a4;
+                    background-color: #fff;
+                    margin: 0;
+                    display: flex;
+                    gap: .25rem;
+                    align-items: center;
+                    &::after{
+                        content: '';
+                        width: 10px;
+                        height: 10px;
+                        border-top: solid 2px #a4a4a4;
+                        border-right: solid 2px #a4a4a4;
+                        transform: rotate(45deg);
+                        margin-top: 0.0625rem;
+                    }
+                    &.active::after {
+                        margin-left: .5rem;
+                        transform: rotate(-135deg);
+                    }
+                }
+                .item-wrap{
+                    display: flex;
+                    gap: 1.25rem;
+                    width: 70%;
+                    position: relative;
+                    flex-direction: row;
+                    &.show{
+                        .nav-item{
+                            left: 0;
+                            position: relative;
+                            opacity: 1;
+                            visibility: visible;
+                            z-index: 999;
+                            margin-bottom: 0;
+                            .nav-link{
+                                color: #333;
+                            }
+                        }
+                    }
+                    .nav-item{
+                        width: 100%;
+                        position: absolute;
+                        left: -100px;
+                        top: 0;
+                        visibility: hidden;
+                        opacity: 0;
+                        transition: all 0.4s ease;
+                        z-index: -1;
+                        .nav-link{
+                            transition: all 0.4s ease;
+                            color: #fff;
+                        }
+                        .nav-link,.nav-link.active{
+                            font-weight: 400;
+                            
+                        }
+                    }
+
+    
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+    #sub-artist{
+        .container-1280{
+            #myTabContent{
+                .tab-pane{
+                    .artist-content{
+                        .sub-artist-info-3{
+                            .info-detail{
+                                .sub-artist-disco-m-swiper{
+                                    .swiper-wrapper{
+                                        .swiper-slide{
+                                            .img-wrap{
+                                                .sub-disco{
+                                                    width: 260px;
+                                                    height: 260px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 580px) {
+
+}
+
+@media (max-width: 500px) {
+    #sub-artist{
+        .container-1280{
+            #myTabContent{
+                .tab-pane{
+                    .artist-content{
+                        .sub-artist-info-4{
+                            .info-detail{
+                                h4{
+                                    &::after{
+                                        width: 58px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    #sub-artist{
+        .container-1280{
+            #myTabContent{
+                .tab-pane{
+                    .artist-content{
+                        .sub-artist-info-4{
+                            .info-detail{
+                                h4{
+                                    &::after{
+                                        width: 51px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    #sub-artist{
+        .nav-sticky{
+            width: 100px;
+            background-color: #fff;
+            left: 0;
+            padding-left: 20px;
+            z-index: 1;
+            #sub-artist-list{
+                display: block;
+                .toggle-nav{
+                    &::after{
+                        transform: rotate(-225deg);
+                        margin: 0.0625rem 0 0.3rem 0.5rem ;
+                    }
+                    &.active::after {
+                        transform: rotate(-45deg);
+                        margin: 0.4rem 0 0 0.5rem ;
+                    }
+
+                }
+                .item-wrap{
+                    display: block;
+                    margin-top: .625rem;
+
+                    &.show{
+                        .nav-item{
+                            margin-bottom: 0.625rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 320px) {
+}
