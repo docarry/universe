@@ -1,5 +1,6 @@
 
-// sub-artist 슬라이드----- 
+// sub-artist----- 
+// 메인 슬라이드
 var subArtistMainswiper = new Swiper(".sub-artist-main-swiper", {
     slidesPerView: 1,
     spaceBetween: 30,
@@ -12,7 +13,6 @@ var subArtistMainswiper = new Swiper(".sub-artist-main-swiper", {
         clickable: true,
     },
 });
-
 function changeImage(event, clickedFrameClass) {
     // 클릭한 프레임의 부모 요소를 찾음
     const frameWrap = event.currentTarget.closest('.frame-wrap');
@@ -37,9 +37,9 @@ function changeImage(event, clickedFrameClass) {
     }
 }
 
-
+// 앨범 슬라이드
 var subArtistDiscoswiper = new Swiper(".sub-artist-disco-swiper", {
-    loop:true,
+    loop: true,
     // effect: 'creative',
     grabCursor: true,
     centeredSlides: false,
@@ -54,28 +54,27 @@ var subArtistDiscoswiper = new Swiper(".sub-artist-disco-swiper", {
         prevEl: ".sub-artist-info-3 .swiper-button-prev",
     },
     autoHeight: true,
+});
+var subArtistDiscoMswiper = new Swiper(".sub-artist-disco-m-swiper", {
+    slidesPerView: 2,
+    spaceBetween: 28,
+    loop: true,
+    keyboard: {
+        enabled: true,
+    },
     breakpoints: {
-        // 320: {
-        //     slidesPerView: 1,  //브라우저가 320보다 클 때
-        //     spaceBetween: 40,
-        //     slidesPerGroup : 1,
-        //     keyboard: {
-        //         enabled: true,
-        //     },
-        // },
-        
-        // 768: {
-        //     slidesPerView: "auto ",  //브라우저가 768보다 클 때
-        //     spaceBetween: 22,
-        //     slidesPerGroup : 1,
-        //     keyboard: {
-        //         enabled: true,
-        //     },
-        // },
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+        },
+        580: {
+            slidesPerView: 2,
+            spaceBetween: 28,
+        },
     },
 });
 
-// sub-artist 슬라이드-----
+// sub-artist-----
 
 
 

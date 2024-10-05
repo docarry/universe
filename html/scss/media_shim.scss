@@ -1,0 +1,184 @@
+@import './_var.scss';
+@import './shim.min.css';
+
+@media (max-width: 1600px) {
+    #mainBanner{
+        background: url(/img/subGoods/subGoodsMainBanner.jpg) no-repeat -480px -720px/150%;
+    }
+}
+
+@media (max-width: 1560px) {
+    #subGoods{
+        #mainBanner{
+            .textBox-PC{
+                max-width: none;
+                padding: 0 8.75rem;
+                left: 0;
+            }
+        }
+        .contentTitle{
+            max-width: none;
+            padding: 0 8.75rem;
+        }
+        #contentBox{
+            max-width: none;
+            padding: 0 8.75rem;
+        }
+        #bestBox{
+            max-width: none;
+            padding: 0 8.75rem;
+        }
+    }
+}
+
+@media (max-width: 1320px) {
+    #subGoods{
+        #mainBanner{
+            height: 454px;
+            .textBox-PC{
+                bottom: calc(50% - 127px);
+                .textBox02{
+                    .dN1320{
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1080px) {
+    #subGoods{
+        #mainBanner{
+            .textBox-PC{
+                padding: 0 5rem;
+            }
+        }
+        .contentTitle{
+            padding: 0 5rem;
+        }
+        #contentBox{
+            padding: 0 5rem;
+        }
+        #bestBox{
+            padding: 0 5rem;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    #subGoods{
+        #mainBanner{
+            .textBox-PC{
+                padding: 0 2rem;
+            }
+        }
+        .contentTitle{
+            padding: 0 2rem;
+        }
+        #contentBox{
+            padding: 0 2rem;
+        }
+        #bestBox{
+            padding: 0 2rem;
+        }
+    }
+}
+
+@media (max-width: 874px) {
+    #subGoods{
+        #mainBanner{
+            height: 478px;
+            .textBox-PC{
+                bottom: calc(50% - 139px);
+                .textBox02{
+                    .dN874{
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 784px) {
+    #subGoods{
+        #mainBanner{
+            height: 478px;
+            .textBox-PC{
+                bottom: calc(50% - 139px);
+                .bannerText02{
+                    .dN784{
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    #subGoods{
+        gap: 0;
+        padding-bottom: 60px;
+        #mainBanner{
+            background: none;
+            height: auto;
+            &::before{
+                display: none;
+            }
+            .textBox-MT{
+                width: 100%;
+                padding: 100px 0;
+            }
+        }
+        #contentBox{
+            gap: 0;
+            padding: 0;
+            margin-bottom: 40px;
+            .nam{
+                border-radius: 20px 20px 0 0;
+            }
+            .lee{
+                border-radius: 0 0 20px 20px;
+            }
+            .byun{
+                border-radius: 20px 20px 0 0;
+            }
+            .yoon{
+                border-radius: 0;
+            }
+            .park{
+                border-radius: 0 0 20px 20px;
+            }
+        }
+        #bestBox{
+            margin-bottom: 40px;
+        }
+    }
+}
+
+@media (max-width: 580px) {
+    #subGoods{
+        #mainBanner{
+            .textBox-MT{
+                padding: 40px 0;
+                .bannerText01{
+                    @include f-24-700-36;
+                }
+                .bannerText02{
+                    @include f-18-400-26;
+                }
+            }
+        }
+        #contentBox{
+            .artist{
+                ul{
+                    li:nth-child(2){
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,149 @@
+@import './_var.scss';
+// 필수(768,580,320)
+
+@media (max-width: 990px) {
+    #sub-info .info-page{
+        .info-container .info-location {
+            display: block;
+            .loc-box{
+                width: 100%;
+                .loc-text-box{
+                    padding: 125px 0;
+                }
+            }
+            #map-box{
+                width: 100%;
+                height: 444px;
+            }
+        }
+    } 
+}
+
+@media (max-width: 768px) {
+    #sub-info .info-page{
+        .banner {
+            height: 344px;
+            .banner-container{
+                .banner-text{
+                    text-align: center;
+                    // animation: slideIn 2s ease forwards;
+                    .main-title{
+                        @include f-36-700-52;
+                        margin-bottom: 20px;
+                        animation: slideIn 2s ease forwards;
+                    }
+                    .sub-title{
+                        @include f-18-400-26;
+                        margin-bottom: 0;
+                        animation: slideIn 2s ease forwards;
+                        animation-delay: 0.3s; // 서브 타이틀이 메인 타이틀 뒤에 슬라이드
+                        opacity: 0; // 초기 상태로 설정
+                        br{
+                            display: block;
+                        }
+                    }
+                    .sub-content{
+                        display: none;
+                        animation: slideIn 2s ease forwards;
+                        animation-delay: 0.3s; // 서브 타이틀이 메인 타이틀 뒤에 슬라이드
+                        opacity: 0; // 초기 상태로 설정
+                    }
+                }
+            }
+        }
+        .info-container{
+            .all-color{
+                margin: 40px 20px;
+            }
+            .info-CI {
+                padding: 40px 20px;
+                h3{
+                    margin: 0;
+                    margin-bottom: 20px;
+                }
+                .logo-grid{
+                    height: 528px;
+                    .main-logo-content{
+                        img {
+                            width: 49%;
+                        }
+                        h4{
+                            @include f-14-700-20;
+                        }
+                    }
+                    .sub-logo-content{
+                        ul{
+                            margin-top: 90px;
+                            .symbol-logo{
+                                width: 87px;
+                                h4{
+                                    @include f-14-700-20;
+                                }
+                            }
+                            .vertical-logo{
+                                width: 154px;
+                                h4{
+                                    @include f-14-700-20;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .info-detail{
+            height: 224px;
+            margin-top: 40px;
+            .detail-text {
+                @include f-16-700-24;
+            }
+        } 
+        .info-container{
+            .info-location {
+                margin-top: 40px;
+                padding: 0 20px;
+                .loc-box{
+                    margin-bottom: 40px;
+                    .loc-text-box{
+                        h4{
+                            @include f-36-700-52;
+                        }
+                        .loc-ko{
+                            @include f-18-700-26;
+                        }
+                        .loc-eg{
+                            @include f-18-700-26;
+                        }
+                    }
+                }
+            }
+            .info-contact{
+                margin: 40px 0;
+                h3{
+                    @include f-36-700-52;
+                }
+                p{
+                    @include f-18-700-26;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 580px) {
+    #sub-info .info-page{
+        .banner{
+            height: 244px;
+            .banner-container .banner-text{
+                .main-title {
+                    @include f-24-700-36;
+                    br{
+                        display: block;
+                    }
+                }
+            } 
+        }
+    }
+}
+
+@media (max-width: 320px) {}

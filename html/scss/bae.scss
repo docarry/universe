@@ -1,0 +1,520 @@
+@import './_var.scss';
+
+#sub-artist{
+    background-color: #fff;
+    padding: 6.25rem 0;
+    display: flex;
+    position: relative;
+    .btn-more{
+        @include f-16-700-24;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        background: transparent;
+        color: #a4a4a4;
+        cursor: pointer;
+        border: 0;
+        gap: 0.25rem;
+        margin-top: 5rem;
+    }
+    .container-1280{
+        width: 1280px;
+        margin: 0 auto;
+        #myTabContent{
+            .tab-pane{
+                h2{
+                    @include f-50-700-72;
+                }
+                .artist-content{
+                    position: relative;
+                    // 웹 슬라이드
+                    .frame-wrap{
+                        display: flex;
+                        justify-content: center;
+                        align-items: end;
+                        gap: 2.1875rem;
+                        margin-top: 3.75rem;
+                        .frame{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            overflow: hidden;
+                            transition: all 0.4s ease;
+                            cursor: pointer;
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                            &.large{
+                                width: 100%;
+                                height: 650px;
+                            }
+                            &.small{
+                                width: 43%;
+                                height: 280px;
+                            }
+                        }
+                        
+                    }
+
+                    // 모바일 슬라이드
+                    .sub-artist-main-swiper{
+                        width: 100%;
+                        height: 100%;
+                        display: none;
+                        .swiper-wrapper{
+                            .swiper-slide{
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                // background-color: #fff;
+                                img{
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                }
+                            }
+                        }
+                        .swiper-pagination{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 0.75rem;
+                        }
+                        .swiper-pagination-bullet.swiper-pagination-bullet-active{
+                            width: 6px;
+                            height: 6px;
+                            border-radius: 50%;
+                            border: solid 2px #000;
+                            background-color: #fff;
+                        }
+                        .swiper-pagination-bullet{
+                            width: 2px;
+                            height: 2px;
+                            opacity: 1;
+                            background-color: #000;
+                        }
+                    }
+
+                    // 아티스트 정보 sub-artist-page 공통 레이아웃
+                    .sub-artist-info{ 
+                        display: flex;
+                        margin-top: 6.25rem;
+                        gap: 11.25rem;
+                        h3{
+                            @include f-50-700-72;
+                            padding-left: .625rem;
+                            width: 35%; 
+                        }
+                        .info-detail{
+                            width: 65%;
+                            .actors-history{
+                                display: flex;
+                                flex-direction: column;
+                                gap: 2.5rem;
+                                padding-top: 5rem;
+                            }
+                        }
+                        
+                    }
+
+                    // 1 아티스트 소개
+                    .sub-artist-info-1{
+                        width: 49%;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        padding-left: 2.1875rem;
+                        p{
+                            padding: .625rem 0 2.5rem;
+                        }
+                        .goods-btn{
+                            display: block;
+                            width: 140px;
+                            background-color: #fff;
+                            border: solid 1px #767676;
+                            box-sizing: border-box;
+                            border-radius: 30px;
+                            color: #767676;
+                            @include f-14-700-20;
+                            padding: 0.375rem 1rem;
+                            text-align: center;
+                        }
+                    }
+
+                    // 2 필모그라피
+                    .sub-artist-info-2{
+                        .info-detail{
+                            .info-2-title{
+                                gap: 2.5rem;
+                                padding-top: .625rem;
+                                h4{
+                                    @include f-24-400-36;
+                                    .nav-link{
+                                        color: #000;
+                                        &.active{
+                                            @include f-24-700-36;
+                                            &::after{
+                                                content: '';
+                                                display: block;
+                                                width: 100%;
+                                                height: 2px;
+                                                background-color: #000;
+                                                
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .info-2-detail{
+                                .tab-pane{
+                                    .actors-history{
+                                        li{
+                                            &.hidden{
+                                                display: none;
+                                            }
+                                            .year{
+                                                @include f-16-700-24;
+                                                padding-right: 2.5rem;
+                                            }
+                                            .role{
+                                                @include f-16-400-24;
+                                                .role-title{
+                                                    padding-right: .625rem;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    // 3 앨범
+                    .sub-artist-info-3{
+                        .info-detail{
+                            position: relative;
+                            .sub-artist-disco-swiper,
+                            .sub-artist-disco-m-swiper{
+                                .swiper-slide{
+                                    .img-wrap{
+                                        display: flex;
+                                        flex-direction: column;
+                                        text-align: center;
+                                        align-items: center;
+                                        transition: transform 0.3s ease;
+                                        .sub-disco-byeon-1{
+                                            background: url('/img/subArtist/artist-disco-img-byeon-1.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-byeon-2{
+                                            background: url('/img/subArtist/artist-disco-img-byeon-2.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-byeon-3{
+                                            background: url('/img/subArtist/artist-disco-img-byeon-3.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-byeon-4{
+                                            background: url('/img/subArtist/artist-disco-img-byeon-1.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-byeon-5{
+                                            background: url('/img/subArtist/artist-disco-img-byeon-2.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-byeon-6{
+                                            background: url('/img/subArtist/artist-disco-img-byeon-3.jpg') no-repeat center / cover;
+                                        }
+
+                                        .sub-disco-nam-1{
+                                            background: url('/img/subArtist/artist-disco-img-nam-1.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-nam-2{
+                                            background: url('/img/subArtist/artist-disco-img-nam-2.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-nam-3{
+                                            background: url('/img/subArtist/artist-disco-img-nam-3.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-nam-4{
+                                            background: url('/img/subArtist/artist-disco-img-nam-4.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-nam-5{
+                                            background: url('/img/subArtist/artist-disco-img-nam-5.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-nam-6{
+                                            background: url('/img/subArtist/artist-disco-img-nam-6.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-nam-7{
+                                            background: url('/img/subArtist/artist-disco-img-nam-7.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-nam-8{
+                                            background: url('/img/subArtist/artist-disco-img-nam-8.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-nam-9{
+                                            background: url('/img/subArtist/artist-disco-img-nam-9.jpg') no-repeat center / cover;
+                                        }
+
+                                        .sub-disco-lee-1{
+                                            background: url('/img/subArtist/artist-disco-img-lee-1.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-lee-2{
+                                            background: url('/img/subArtist/artist-disco-img-lee-2.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-lee-3{
+                                            background: url('/img/subArtist/artist-disco-img-lee-3.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-lee-4{
+                                            background: url('/img/subArtist/artist-disco-img-lee-4.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-lee-5{
+                                            background: url('/img/subArtist/artist-disco-img-lee-5.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-lee-6{
+                                            background: url('/img/subArtist/artist-disco-img-lee-6.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-lee-7{
+                                            background: url('/img/subArtist/artist-disco-img-lee-7.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-lee-8{
+                                            background: url('/img/subArtist/artist-disco-img-lee-8.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-lee-9{
+                                            background: url('/img/subArtist/artist-disco-img-lee-9.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-lee-10{
+                                            background: url('/img/subArtist/artist-disco-img-lee-10.jpg') no-repeat center / cover;
+                                        }
+
+                                        .sub-disco-park-1{
+                                            background: url('/img/subArtist/artist-disco-img-byeon-1.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-park-2{
+                                            background: url('/img/subArtist/artist-disco-img-byeon-2.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-park-3{
+                                            background: url('/img/subArtist/artist-disco-img-byeon-3.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-park-4{
+                                            background: url('/img/subArtist/artist-disco-img-byeon-1.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-park-5{
+                                            background: url('/img/subArtist/artist-disco-img-byeon-2.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-park-6{
+                                            background: url('/img/subArtist/artist-disco-img-byeon-3.jpg') no-repeat center / cover;
+                                        }
+
+                                        .sub-disco-yoon-1{
+                                            background: url('/img/subArtist/artist-disco-img-byeon-1.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-yoon-2{
+                                            background: url('/img/subArtist/artist-disco-img-byeon-2.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-yoon-3{
+                                            background: url('/img/subArtist/artist-disco-img-byeon-3.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-yoon-4{
+                                            background: url('/img/subArtist/artist-disco-img-byeon-1.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-yoon-5{
+                                            background: url('/img/subArtist/artist-disco-img-byeon-2.jpg') no-repeat center / cover;
+                                        }
+                                        .sub-disco-yoon-6{
+                                            background: url('/img/subArtist/artist-disco-img-byeon-3.jpg') no-repeat center / cover;
+                                        }
+                                        span{
+                                            display: block;
+                                        }
+                                    }
+                                }
+                            }
+                            .sub-artist-disco-swiper{
+                                margin: 0 auto;
+                                overflow: hidden;
+                                .swiper-wrapper{
+                                    display: flex;
+                                    width: 100%;
+                                    align-items: center;
+                                    .swiper-slide.swiper-slide-active {
+                                        .img-wrap{
+                                            width: 120%;
+                                            opacity: 1;
+                                            .sub-disco{
+                                                height: 300px;
+                                            }
+                                            .text{
+                                                color: #000;
+                                                .disco-title{
+                                                    text-transform: uppercase;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .swiper-slide.swiper-slide-next{
+                                        margin-left: 70px;
+                                    }
+                                    .swiper-slide.swiper-slide-next + div{
+                                        margin-left: -24px;
+                                    }
+                                    .swiper-slide{   
+                                        width: 33.33%;
+                                        &:not(.swiper-slide-active){
+                                            .img-wrap{
+                                                width: 80%;
+                                                opacity: 0.5;
+                                                filter: brightness(1);
+                                                color: #a4a4a4;
+                                                margin-top: -40px;
+                                                .text{
+                                                    .disco-title{
+                                                        @include f-16-700-24;
+                                                    }
+                                                    .disco-sub{
+                                                        display: none;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .img-wrap{
+                                            position: relative;
+                                            opacity: 1;
+                                            .sub-disco{
+                                                width: 100%;
+                                                height: 200px;
+                                                display: block;
+                                            }
+                                            .text{
+                                                .disco-title{
+                                                    margin-top: 1.25rem;
+                                                    @include f-18-700-26;
+                                                }
+                                                .disco-sub{
+                                                    margin-top: .625rem;
+                                                    @include f-16-700-24;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .swiper-button-prev{
+                                left: var(--swiper-navigation-sides-offset,-16px);
+                                width: 30px;
+                                height: 30px;
+                                background-color: #333;
+                                border-radius: 10px;
+                            }
+                            .swiper-button-next{
+                                right: var(--swiper-navigation-sides-offset,-12px);
+                                width: 30px;
+                                height: 30px;
+                                background-color: #333;
+                                border-radius: 10px;
+                            }
+                            .swiper-button-prev::after,
+                            .swiper-button-next::after {
+                            display: none;
+                            }
+                            .sub-artist-disco-m-swiper{
+                                width: 100%;
+                                height: 100%;
+                                display: none;
+                                .swiper-wrapper{
+                                    .swiper-slide{
+                                        .img-wrap{
+                                            .sub-disco{
+                                                width: 350px;
+                                                height: 350px;
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+                                            .text{
+                                                .disco-title{
+                                                    margin-top: 1.25rem;
+                                                    @include f-16-700-24;
+                                                    color: #000;
+                                                }
+                                                .disco-sub{
+                                                    margin-top: .625rem;
+                                                    @include f-14-700-20;
+                                                    color: #767676;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    // 4 수상내역
+                    .sub-artist-info-4{
+                        .info-detail{
+                            h4{
+                                @include f-24-700-36;
+                                &::after{
+                                    content: '';
+                                    display: block;
+                                    width: 89px;
+                                    height: 2px;
+                                    background-color: #000;
+                                }
+                            }
+                            .actors-history{
+                                li{
+                                    .year{
+                                        @include f-16-700-24;
+                                        padding-right: 2.5rem;
+                                    }
+                                    .role{
+                                        @include f-16-400-24;
+                                        .role-title{
+                                            padding-right: .625rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .nav-sticky{
+        width: 10%;
+        top: 34%;
+        right: 0;
+        position: fixed;
+        #sub-artist-list{
+            top: 0; 
+            right: 0;
+            width: 100%;
+            padding: 0.625rem 0 0.625rem 2.5rem;
+            z-index: 10;
+            border-left: 2px solid #ededed;
+            position: sticky;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 2.5rem;
+            .toggle-nav{
+                @include f-16-700-24;
+            }
+            .item-wrap{
+                display: flex;
+                flex-direction: column;
+                gap: 0.625rem;
+                .nav-item{
+                    .nav-link{
+                        @include f-16-500-24;
+                        color: #000;
+                    }
+                    .nav-link.active{
+                        font-weight: 700;
+                    }
+                }
+    
+            }
+        }
+    }
+}
