@@ -1,9 +1,27 @@
 @import './_var.scss';
-@import './shim.min.css';
+@import './shim.scss';
+
+@media (max-width: 1800px) {
+    #subGoods{
+        #mainBanner{
+            @include SubGoodsMainBanner (-140px, -570px, 130%);
+        }
+    }
+}
+
+@media (max-width: 1700px) {
+    #subGoods{
+        #mainBanner{
+            @include SubGoodsMainBanner (-120px, -510px, 130%);
+        }
+    }
+}
 
 @media (max-width: 1600px) {
-    #mainBanner{
-        background: url(/img/subGoods/subGoodsMainBanner.jpg) no-repeat -480px -720px/150%;
+    #subGoods{
+        #mainBanner{
+            @include SubGoodsMainBanner (-120px, -480px, 130%);
+        }
     }
 }
 

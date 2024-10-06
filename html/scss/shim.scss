@@ -16,20 +16,17 @@
 }
 @mixin best ($name) {
     position: relative;
-    width: 630px;
-    height: 720px;
-    border-radius: 20px;
+    width: 100%;
+    height: 100%;
     background: url('/img/subGoods/#{$name}.jpg') no-repeat center / cover;
-    // background-size: cover;
-    // transition: all 0.4s ease-in-out;
-    overflow: hidden;
 }
 
 // 공통
 // .dNn: n에서 살릴 태그
 .dN1320,
 .dN874,
-.dN784{
+.dN784,
+.dN350{
     display: none;
 }
 
@@ -82,8 +79,14 @@
             }
         }
         .textBox-MT{
+            position: absolute;
+            left: 0;
+            bottom: calc(50% - 200px);
+            width: 100%;
+            max-width: 767px;
             text-align: center;
-            gap: 40px;
+            gap: 2.5rem;
+            color: #fff;
             .bannerText01{
                 @include f-36-700-52;
             }
@@ -105,23 +108,62 @@
             width: 100%;
             gap: 20px;
             .swiper-wrapper{
-                .bestSlide01.swiper-slide{
-                    @include best (bestS1-1);
+                .swiper-slide{
+                    width: calc((100% - 20px) / 2);
+                    height: 732px;
+                    border-radius: 20px;
+                    overflow: hidden;
+                    a{
+                        position: relative;
+                        .bestInfo{
+                            width: 100%;
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            transform: translateY(100%); /* 완전히 보이지 않게 아래로 이동 */
+                            overflow: hidden;
+                            background-color: #333;
+                            padding: 20px 40px;
+                            border-radius: 20px;
+                            transition: all 0.4s ease-in-out;
+                        }
+                        &:hover .bestInfo{
+                            transform: translateY(0); /* hover 시 위로 올라와 a 태그의 bottom에 맞도록 */
+                        }
+                    }
+                    .bestSlide01{
+                        @include best (bestS1-1);
+                    }
+                    .bestSlide02{
+                        @include best (bestS1-2);
+                    }
+                    .bestSlide03{
+                        @include best (bestS2-1);
+                    }
+                    .bestSlide04{
+                        @include best (bestS2-2);
+                    }
+                    .bestSlide05{
+                        @include best (bestS3-1);
+                    }
+                    .bestSlide06{
+                        @include best (bestS3-2);
+                    }
                 }
-                .bestSlide02.swiper-slide{
-                    @include best (bestS1-2);
+            }
+            .swiperAttachedBtn{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .nextBtn{
+                    border-radius: 0 6px 6px 0;
+                    padding: 4px 7px 4px 8px;
+                    background-color: #333;
                 }
-                .bestSlide03.swiper-slide{
-                    @include best (bestS2-1);
-                }
-                .bestSlide04.swiper-slide{
-                    @include best (bestS2-2);
-                }
-                .bestSlide05.swiper-slide{
-                    @include best (bestS3-1);
-                }
-                .bestSlide06.swiper-slide{
-                    @include best (bestS3-2);
+                .prevBtn{
+                    border-radius: 6px 0 0 6px;
+                    padding: 4px 8px 4px 7px;
+                    background-color: #333;
                 }
             }
         }
@@ -145,7 +187,7 @@
                 gap: 4px;
                 position: absolute;
                 top: 40px;
-                right: 10px;
+                right: 20px;
             }
             ul{
                 li{

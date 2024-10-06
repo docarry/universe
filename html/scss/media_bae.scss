@@ -64,6 +64,14 @@
             }
         }
     }
+    #sub-schedule{
+        .container-1280{
+            padding: 0 1rem;
+            .schedule-content{
+                
+            }
+        }
+    }
 }
 
 @media (max-width: 1280px) {
@@ -88,6 +96,26 @@
         .nav-sticky{
             #sub-artist-list{
                 padding: 0.625rem 0.4rem 0.625rem;
+            }
+        }
+    }
+    #sub-schedule{
+        .container-1280{
+            width: 100%;
+            .schedule-content{
+
+                .sub-schedule-detail{
+                    .tab-pane{
+                        .fc{
+                            .fc-button-group{
+                                width: 150px;
+                            }
+                        }
+                        .fc-toolbar-title{
+                            font-size: 2.8rem;
+                        }
+                    }
+                }
             }
         }
     }
@@ -135,6 +163,39 @@
                                     }
                                 }
                             }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #sub-schedule{
+        .container-1280{
+            width: 100%;
+            .schedule-content{
+                .schedule-name{
+                    .nav-item{
+                        .nav-link{
+                            padding: 0 2rem;
+                        }
+                    }
+                }
+                .sub-schedule-detail{
+                    .tab-pane{
+                        .fc{
+                            .fc-button-group{
+                                width: 100px;
+                                height: 60px;
+                            }
+                        }
+                        .fc-today-button.fc-button.fc-button-primary{
+                            height: 60px;
+                            width: 80px;
+                            margin-left: 3rem;
+                            font-size: 1.25rem;
+                        }
+                        .fc-toolbar-title{
+                            font-size: 1.5rem;
                         }
                     }
                 }
