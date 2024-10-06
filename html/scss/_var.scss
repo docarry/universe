@@ -19,14 +19,14 @@
 
 // 더보기 버튼
 @mixin moreBtn{
+    width: 95px;
+    line-height: 36px;
     color: #767676;
     font-size: 1rem;
     font-weight: 700;
-    line-height: 24px;
-    padding: 6px 18px;
     border-radius: 30px;
     border: 1px solid #767676;
-    display: block;
+    display: inline-block;
 }
 
 // 폰트

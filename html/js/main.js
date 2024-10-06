@@ -2,6 +2,15 @@
 
 $(function(){
 
+        // 탑버튼 고정
+        $(window).on('scroll', function(){
+            if($(window).scrollTop() > 0){
+                $('#topBtn').addClass('btnShow');
+            }else{
+                $('#topBtn').removeClass('btnShow');
+            }
+        });
+
 
         // PC Default 투명 돋보기 클릭시 검색창 노출
         $('#header .pc-searchOn').on('click', function(){
@@ -165,24 +174,52 @@ $(function(){
 
 
 // 메인 인덱스 굿즈 효과
-const items = document.querySelectorAll('.item');
+const galleryItems = document.querySelectorAll('.gallery-wrap .item');
 
-// 각 .item에 마우스 오버/아웃 이벤트 추가
-items.forEach(item => {
+galleryItems.forEach(item => {
     item.addEventListener('mouseenter', () => {
+        galleryItems.forEach(otherItem => {
+            otherItem.classList.remove('stretchWidth'); // 모든 아이템에서 클래스 제거
+            otherItem.style.width = '20%'; // 기본적으로 20%로 설정
+            
+            const img = otherItem.querySelector('.goodsImg');
+            if (img) {
+                img.classList.remove('stretchImg'); // 이미지의 stretchImg 클래스 제거
+            }
+        });
+        
+        item.classList.add('stretchWidth'); // 현재 아이템에 stretchWidth 클래스 추가
+        item.style.width = '60%'; // 선택된 아이템은 60%
+        
+        const img = item.querySelector('.goodsImg');
+        if (img) {
+            img.classList.add('stretchImg'); // 이미지에 stretchImg 클래스 추가
+        }
+
         const galleryDim = item.querySelector('.gallery-dim');
         if (galleryDim) {
-            galleryDim.classList.add('show');
+            galleryDim.classList.add('show'); // dim 효과 추가
         }
     });
 
     item.addEventListener('mouseleave', () => {
+        galleryItems.forEach(otherItem => {
+            otherItem.classList.remove('stretchWidth');
+            otherItem.style.width = '24%'; // 다시 기본값으로 설정
+            
+            const img = otherItem.querySelector('.goodsImg');
+            if (img) {
+                img.classList.remove('stretchImg'); // 이미지의 stretchImg 클래스 제거
+            }
+        });
+        
         const galleryDim = item.querySelector('.gallery-dim');
         if (galleryDim) {
-            galleryDim.classList.remove('show');
+            galleryDim.classList.remove('show'); // dim 효과 제거
         }
     });
 });
+<<<<<<< HEAD
 
 
 
@@ -483,4 +520,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+>>>>>>> origin/han
+=======
 >>>>>>> origin/han
