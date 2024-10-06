@@ -1,0 +1,432 @@
+@import './_var.scss';
+
+
+// PC 헤더 Default 투명
+#header{
+    position: relative;
+    
+    .header-bg{
+        position: relative;
+        z-index: 999999999;
+        padding: 0rem 8.75rem;
+        margin: 0 auto;
+        .hdcontainer{
+            h1{
+                height: 5rem;
+                flex-shrink: 0;
+                .blind{
+                    position:absolute;
+                    width:1px;
+                    height:1px;
+                    clip:rect(0 0 0 0);
+                    margin:-1px;
+                    overflow:hidden;
+                }
+            }
+            .maunUtil{
+                nav{
+                    .depth01{
+                        li{
+                            &:hover a{
+                                color: #FFD24E;
+                            }
+                            a{
+                                color: #FFF;
+                                padding: 0 1.25rem;
+                                @include f-16-700-24;
+                            }
+                        }
+                    }
+                }
+                .utility{
+                    .pc-searchOn{
+                        padding: 2px;
+                    }
+                }
+            }
+        }
+    }
+    // PC 검색창
+    #pc-search{
+        position: absolute;
+        width: 500px;
+        height: 130px;
+        padding: 40px 30px;
+        right: 0;
+        top: 80px;
+        margin-right: 8.75rem;
+        background-color: rgba(255, 255, 255, 0.60);
+        transition: all .6s ease-in-out;
+        transform: translateY(-300px);
+        z-index: 99999999;
+        &.searchOn{
+            transform: translateY(0);
+        }
+        .searchBox{
+            padding: 10px 20px 10px 22px;
+            border-bottom: 1px solid #767676;
+            #pc-searchText{
+                color: #000;
+                @include f-18-400-26;
+                outline: none;
+                background-color: transparent;
+                &::placeholder{
+                    color: #767676;
+                }
+            }
+            .pc-searchBtn{ 
+                width: 24px;
+                height: 24px;
+                background: url('/img/icon/Search-gray.svg');
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+// PC 헤더 블랙 버전
+#header-b{
+    position: relative;
+    
+    .header-b-bg{
+        background-color: #000;
+        position: relative;
+        z-index: 999999999;
+        padding: 0rem 8.75rem;
+        margin: 0 auto;
+        .hdcontainer{
+            h1{
+                height: 5rem;
+                flex-shrink: 0;
+                .blind{
+                    position:absolute;
+                    width:1px;
+                    height:1px;
+                    clip:rect(0 0 0 0);
+                    margin:-1px;
+                    overflow:hidden;
+                }
+            }
+            .maunUtil{
+                nav{
+                    .depth01{
+                        li{
+                            &:hover a{
+                                color: #FFD24E;
+                            }
+                            a{
+                                color: #FFF;
+                                padding: 0 1.25rem;
+                                @include f-16-700-24;
+                            }
+                        }
+                    }
+                }
+                .utility{
+                    .pc-searchOn{
+                        img{
+                            padding: 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // PC 검색창
+    #pc-search{
+        position: absolute;
+        width: 500px;
+        height: 130px;
+        padding: 40px 30px;
+        right: 0;
+        top: 80px;
+        margin-right: 8.75rem;
+        background-color: rgba(0, 0, 0, 0.70);
+        transition: all .6s ease-in-out;
+        transform: translateY(-300px);
+        z-index: 99999999;
+        &.searchOn{
+            transform: translateY(0);
+        }
+        .searchBox{
+            padding: 10px 20px 10px 22px;
+            border-bottom: 1px solid #767676;
+            #pc-searchText{
+                color: #fff;
+                @include f-18-400-26;
+                outline: none;
+                background-color: transparent;
+                &::placeholder{
+                    color: #767676;
+                }
+            }
+            .pc-searchBtn{ 
+                width: 24px;
+                height: 24px;
+                background: url('/img/icon/Search.svg');
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+// M 헤더
+#m-header{
+    position: relative;
+
+    .m-header-bg{
+        background-color: #000;
+        position: relative;
+        z-index: 999999999;
+        padding: 10px 24px;
+        height: 58px;
+        .hdcontainer{
+    
+            // 햄버거 버튼
+            .navBtn{
+                border: 0;
+                background-color: transparent;
+                gap: 8px;
+                &.slideOn{
+                    &+.m-nav{
+                        transform: translateX(0);
+                    }
+                }
+                span{
+                    display: block;
+                    width: 34px;
+                    height: 3px;
+                    background-color: #fff;
+                    border-radius: 10px;
+                }
+            }
+            .m-nav{
+                position: absolute;
+                width: 406px;
+                top: 100%;
+                left: 0;
+                z-index: 9999999999;
+                background-color: rgba(0, 0, 0, 0.70);
+                padding: 0 10px;
+                transform: translateX(-500px);
+                transition: all .6s ease-in-out;
+                .depth01{
+                    li{
+                        padding: 10px 20px 10px 32px;
+                        &:last-child{
+                            border: 0;
+                        }
+                        height: 80px;
+                        border-bottom: 1px solid #767676;
+                        a{
+                            color: #fff;
+                            @include f-16-700-24;
+                            &::before{
+                                content: "";
+                                width: 5px;
+                                height: 5px;
+                                background-color: #fff;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                }
+                .depth02{
+                    gap: 2px;
+                    padding: 10px 0 24px 32px;
+                    li{
+                        a{
+                            color: #A4A4A4;
+                            @include f-14-500-20;
+                        }
+                    }
+                }
+            }
+            h1{
+                .emptyBox{
+                    width: 56px;
+                }
+            }
+        }
+    }
+
+    // M 검색창
+    #m-search{
+        position: absolute;
+        width: 100%;
+        height: 130px;
+        padding: 40px 30px;
+        right: 0;
+        top: 100%;
+        background-color: rgba(0, 0, 0, 0.70);
+        transition: all .6s ease-in-out;
+        transform: translateY(-200px);
+        z-index: 99999999;
+        &.searchOn{
+            transform: translateY(0);
+        }
+        .searchBox{
+            padding: 10px 20px 10px 22px;
+            border-bottom: 1px solid #767676;
+            #m-searchText{
+                color: #fff;
+                @include f-18-400-26;
+                outline: none;
+                background-color: transparent;
+                &::placeholder{
+                    color: #767676;
+                }
+            }
+            .m-searchBtn{
+                width: 24px;
+                height: 24px;
+                background: url('/img/icon/Search.svg');
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+
+// PC 푸터
+#footer{
+    width: 100%;
+    padding: 3.75rem 5.625rem;
+    background-color: #fff;
+    .footerTop{
+        padding-bottom: 2.375rem;
+        border-bottom: .125rem solid #000;
+        .footerLink{
+            li{
+                a{
+                    color: #000;
+                    @include f-14-500-20;
+                    &::after{
+                        content: "";
+                        display: inline-block;
+                        height: 0.625rem;
+                        width: 0.0625rem;
+                        background-color: #767676;
+                        margin: 0 1rem;
+                    }
+                }
+                &:last-child a::after{
+                    display: none;
+                }
+            }
+        }
+    }
+    .footerBottom{
+        padding-top: 2.375rem;
+        .footerInfo01{
+            .infoText{
+                text-transform: uppercase;
+                ul{
+                    li{
+                        color: #000;
+                        @include f-14-500-20;
+                    }
+                }
+            }
+        }
+        .footerInfo02{
+            p{
+                color: #000;
+                font-size: 0.75rem;
+                font-weight: 500;
+                line-height: 1.125rem;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+
+// 1280 푸터
+#footer-1280{
+    width: 100%;
+    padding: 3.75rem 5.625rem;
+    background-color: #fff;
+    .footerTop{
+        padding-bottom: 2.375rem;
+        border-bottom: .125rem solid #000;
+        .footerLink{
+            li{
+                a{
+                    color: #000;
+                    @include f-14-500-20;
+                    &::after{
+                        content: "";
+                        display: inline-block;
+                        height: 0.625rem;
+                        width: 0.0625rem;
+                        background-color: #767676;
+                        margin: 0 1rem;
+                    }
+                }
+                &:last-child a::after{
+                    display: none;
+                }
+            }
+        }
+    }
+    .footerBottom{
+        padding-top: 2.375rem;
+        .footerInfo01{
+            .infoText{
+                text-transform: uppercase;
+                color: #000;
+                @include f-14-500-20;
+            }
+        }
+        .footerInfo02{
+            p{
+                color: #000;
+                font-size: 0.75rem;
+                font-weight: 500;
+                line-height: 1.125rem;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+
+// M 푸터 100%
+#m-footer{
+    background-color: #fff;
+    .m-footerBox{
+        width: 500px;
+        padding: 40px 0;
+        margin: 0 auto;
+        .info01{
+            .footerLink{
+                li{
+                    a{
+                        color: #000;
+                        @include f-14-500-20;
+                        display: block;
+                        &::after{
+                            content: "";
+                            display: inline-block;
+                            height: 0.625rem;
+                            width: 0.0625rem;
+                            background-color: #767676;
+                            margin: 0 1rem;
+                        }
+                    }
+                    &:last-child a::after{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .info02{
+            @include f-14-400-20;
+            color: #A4A4A4;
+        }
+    }
+}
