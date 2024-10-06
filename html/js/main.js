@@ -1,6 +1,15 @@
 
 $(function(){
 
+        // 탑버튼 고정
+        $(window).on('scroll', function(){
+            if($(window).scrollTop() > 0){
+                $('#topBtn').addClass('btnShow');
+            }else{
+                $('#topBtn').removeClass('btnShow');
+            }
+        });
+
 
         // PC Default 투명 돋보기 클릭시 검색창 노출
         $('#header .pc-searchOn').on('click', function(){
@@ -164,321 +173,48 @@ $(function(){
 
 
 // 메인 인덱스 굿즈 효과
-const items = document.querySelectorAll('.item');
+const galleryItems = document.querySelectorAll('.gallery-wrap .item');
 
-// 각 .item에 마우스 오버/아웃 이벤트 추가
-items.forEach(item => {
+galleryItems.forEach(item => {
     item.addEventListener('mouseenter', () => {
+        galleryItems.forEach(otherItem => {
+            otherItem.classList.remove('stretchWidth'); // 모든 아이템에서 클래스 제거
+            otherItem.style.width = '20%'; // 기본적으로 20%로 설정
+            
+            const img = otherItem.querySelector('.goodsImg');
+            if (img) {
+                img.classList.remove('stretchImg'); // 이미지의 stretchImg 클래스 제거
+            }
+        });
+        
+        item.classList.add('stretchWidth'); // 현재 아이템에 stretchWidth 클래스 추가
+        item.style.width = '60%'; // 선택된 아이템은 60%
+        
+        const img = item.querySelector('.goodsImg');
+        if (img) {
+            img.classList.add('stretchImg'); // 이미지에 stretchImg 클래스 추가
+        }
+
         const galleryDim = item.querySelector('.gallery-dim');
         if (galleryDim) {
-            galleryDim.classList.add('show');
+            galleryDim.classList.add('show'); // dim 효과 추가
         }
     });
 
     item.addEventListener('mouseleave', () => {
+        galleryItems.forEach(otherItem => {
+            otherItem.classList.remove('stretchWidth');
+            otherItem.style.width = '24%'; // 다시 기본값으로 설정
+            
+            const img = otherItem.querySelector('.goodsImg');
+            if (img) {
+                img.classList.remove('stretchImg'); // 이미지의 stretchImg 클래스 제거
+            }
+        });
+        
         const galleryDim = item.querySelector('.gallery-dim');
         if (galleryDim) {
-            galleryDim.classList.remove('show');
+            galleryDim.classList.remove('show'); // dim 효과 제거
         }
     });
-});
-
-
-
-// 변우석 스케줄, 캘린더 1번
-document.addEventListener('DOMContentLoaded', function() {
-    var today01 = new Date();
-    var calendar01 = new FullCalendar.Calendar(document.getElementById('calendar01'), {
-        headerToolbar: { center: 'title' },
-        locale: 'ko',
-        initialView: 'dayGridWeek',
-        initialDate: today01.toISOString().split('T')[0],
-        events: [
-            {
-                title: '공연)2024 이슬라이브 페스티벌-가평',
-                start: new Date(today01.getFullYear(), today01.getMonth(), today01.getDate() - 0),
-                allDay: true
-            },
-            {
-                title: '공연)2024 페스티벌-양평',
-                start: new Date(today01.getFullYear(), today01.getMonth(), today01.getDate() - 4),
-                allDay: true
-            }
-        ],
-        eventDidMount: function(event) {
-            let dayGridDay = event.el.closest('.fc-daygrid-day');
-            let dayNumberElem = dayGridDay.querySelector('.fc-daygrid-day-number');
-
-            if (dayNumberElem) {
-                // 이벤트 날짜를 두 자리 형식으로 패딩 처리
-                let eventDate = new Date(event.event.start);
-                let day = eventDate.getDate().toString().padStart(2, '0'); // 01, 02 형식으로 변환
-                dayNumberElem.textContent = day;
-
-                // 스타일 적용 (border 빨간색)
-                let eventLink = dayGridDay.querySelector('.fc-daygrid-day-top a');
-                if (eventLink) {
-                    eventLink.classList.add('eventText'); // 클래스 추가
-                }
-                
-                // 이벤트가 오늘 날짜와 겹칠 경우, 이벤트 border가 우선시되도록 처리
-                if (eventDate.toDateString() === today01.toDateString()) {
-                    eventLink.style.border = 'solid 2px #ff0000'; // 이벤트 border를 우선시
-                }
-            }
-        },
-        views: {
-            dayGridWeek: {
-                dayHeaderContent: function(arg) {
-                    const dayNames = ['일', '월', '화', '수', '목', '금', '토'];
-                    return dayNames[arg.date.getDay()];
-                }
-            }
-        },
-        fixedWeekCount: true,
-        contentHeight: 250,
-        dayCellDidMount: function(info) {
-            let dayNumberElem = info.el.querySelector('.fc-daygrid-day-number');
-            if (dayNumberElem) {
-                let date = new Date(info.date);
-                let day = date.getDate().toString().padStart(2, '0'); // 01, 02 형식으로 변환
-                dayNumberElem.textContent = day;
-
-                // 일요일이면 텍스트 색상 빨간색으로 변경
-                if (date.getDay() === 0) { // 일요일인 경우
-                    dayNumberElem.style.color = '#ff0000'; // 텍스트 빨간색으로 변경
-                }
-
-                // 오늘 날짜가 있을 경우
-                if (date.toDateString() === today01.toDateString()) {
-                    // 오늘 날짜에 대한 스타일을 먼저 적용
-                    let todayLink = info.el.querySelector('.fc-daygrid-day-top a');
-                    if (todayLink) {
-                        todayLink.style.border = 'solid 2px #333'; // 기본적으로 오늘 날짜의 border
-                    }
-                }
-            }
-        },
-        eventClick: function(info) {
-            // 클릭한 이벤트의 날짜와 정보를 업데이트
-            let eventDate = new Date(info.event.start);
-            const dayNames = ['일', '월', '화', '수', '목', '금', '토'];
-
-            let formattedDate = (eventDate.getMonth() + 1) + '월 ' + eventDate.getDate().toString().padStart(2, '0') + '일 (' + dayNames[eventDate.getDay()] + ')';
-
-            // 날짜 차이를 계산하여 D-Day 형식으로 표시
-            let today = new Date();
-            today.setHours(0, 0, 0, 0);
-            eventDate.setHours(0, 0, 0, 0);
-
-            let diffTime = eventDate.getTime() - today.getTime();
-            let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-            let ddayText = '';
-            if (diffDays > 0) {
-                ddayText = `D+${diffDays}`;
-            } else if (diffDays < 0) {
-                ddayText = `D${diffDays}`;
-            } else {
-                ddayText = `D-Day`;
-            }
-
-            // dateText 요소에 포맷된 날짜 업데이트
-            let dateTextElem = document.querySelector('.dateText');
-            if (dateTextElem) {
-                dateTextElem.textContent = formattedDate;
-            }
-
-            // dateTextDday 요소에 D-Day 형식 업데이트
-            let dateTextDdayElem = document.querySelector('.dateTextDday');
-            if (dateTextDdayElem) {
-                dateTextDdayElem.textContent = ddayText;
-            }
-
-            // dateContent 요소에 이벤트의 title 정보 업데이트
-            let dateContentElem = document.querySelector('.dateContent');
-            if (dateContentElem) {
-                dateContentElem.textContent = info.event.title;
-            }
-        }
-    });
-    calendar01.render();
-
-    // 기본적으로 첫 번째 이벤트의 정보를 표시
-    var firstEvent = calendar01.getEvents()[0];
-    if (firstEvent) {
-        let firstEventDate = new Date(firstEvent.start);
-        const dayNames = ['일', '월', '화', '수', '목', '금', '토'];
-
-        let formattedDate = (firstEventDate.getMonth() + 1) + '월 ' + firstEventDate.getDate().toString().padStart(2, '0') + '일 (' + dayNames[firstEventDate.getDay()] + ')';
-
-        let today = new Date();
-        today.setHours(0, 0, 0, 0);
-        firstEventDate.setHours(0, 0, 0, 0);
-
-        let diffTime = firstEventDate.getTime() - today.getTime();
-        let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-        let ddayText = '';
-        if (diffDays > 0) {
-            ddayText = `D+${diffDays}`;
-        } else if (diffDays < 0) {
-            ddayText = `D${diffDays}`;
-        } else {
-            ddayText = `D-Day`;
-        }
-
-        let dateTextElem = document.querySelector('.dateText');
-        if (dateTextElem) {
-            dateTextElem.textContent = formattedDate;
-        }
-
-        let dateTextDdayElem = document.querySelector('.dateTextDday');
-        if (dateTextDdayElem) {
-            dateTextDdayElem.textContent = ddayText;
-        }
-
-        let dateContentElem = document.querySelector('.dateContent');
-        if (dateContentElem) {
-            dateContentElem.textContent = firstEvent.title;
-        }
-    }
-});
-
-// 변우석 스케줄, 캘린더 2번
-document.addEventListener('DOMContentLoaded', function() {
-    var today02 = new Date();
-    today02.setDate(today02.getDate() + 7); // 현재 날짜에서 7일 추가하여 다음 주로 설정
-
-    var calendar02 = new FullCalendar.Calendar(document.getElementById('calendar02'), {
-        headerToolbar: { center: 'title' },
-        locale: 'ko',
-        initialView: 'dayGridWeek',
-        initialDate: today02.toISOString().split('T')[0],
-        events: [
-            {
-                title: '공연)2024 다음주 페스티벌-서울',
-                start: new Date(today02.getFullYear(), today02.getMonth(), today02.getDate() - 0),
-                allDay: true
-            }
-        ],
-        eventDidMount: function(event) {
-            let dayGridDay = event.el.closest('.fc-daygrid-day');
-            let dayNumberElem = dayGridDay.querySelector('.fc-daygrid-day-number');
-
-            if (dayNumberElem) {
-                let eventDate = new Date(event.event.start);
-                let day = eventDate.getDate().toString().padStart(2, '0');
-                dayNumberElem.textContent = day;
-
-                let eventLink = dayGridDay.querySelector('.fc-daygrid-day-top a');
-                if (eventLink) {
-                    eventLink.classList.add('eventText');
-                }
-            }
-        },
-        views: {
-            dayGridWeek: {
-                dayHeaderContent: function(arg) {
-                    const dayNames = ['일', '월', '화', '수', '목', '금', '토'];
-                    return dayNames[arg.date.getDay()];
-                }
-            }
-        },
-        fixedWeekCount: true,
-        contentHeight: 250,
-        dayCellDidMount: function(info) {
-            let dayNumberElem = info.el.querySelector('.fc-daygrid-day-number');
-            if (dayNumberElem) {
-                let date = new Date(info.date);
-                let day = date.getDate().toString().padStart(2, '0');
-                dayNumberElem.textContent = day;
-
-                if (date.getDay() === 0) {
-                    dayNumberElem.style.color = '#ff0000';
-                }
-            }
-        },
-        eventClick: function(info) {
-            let eventDate = new Date(info.event.start);
-            const dayNames = ['일', '월', '화', '수', '목', '금', '토'];
-
-            let formattedDate = (eventDate.getMonth() + 1) + '월 ' + eventDate.getDate().toString().padStart(2, '0') + '일 (' + dayNames[eventDate.getDay()] + ')';
-
-            let today = new Date();
-            today.setHours(0, 0, 0, 0);
-            eventDate.setHours(0, 0, 0, 0);
-
-            let diffTime = eventDate.getTime() - today.getTime();
-            let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-            let ddayText = '';
-            if (diffDays > 0) {
-                ddayText = `D+${diffDays}`;
-            } else if (diffDays < 0) {
-                ddayText = `D${diffDays}`;
-            } else {
-                ddayText = 'D-Day';
-            }
-
-            // dateText 요소에 포맷된 날짜 업데이트
-            let dateTextElem = document.querySelector('.week02 .dateText');
-            if (dateTextElem) {
-                dateTextElem.textContent = formattedDate;
-            }
-
-            // dateTextDday 요소에 D-Day 형식 업데이트
-            let dateTextDdayElem = document.querySelector('.week02 .dateTextDday');
-            if (dateTextDdayElem) {
-                dateTextDdayElem.textContent = ddayText;
-            }
-
-            // dateContent 요소에 이벤트의 title 정보 업데이트
-            let dateContentElem = document.querySelector('.week02 .dateContent');
-            if (dateContentElem) {
-                dateContentElem.textContent = info.event.title;
-            }
-        }
-    });
-    calendar02.render();
-
-    // 기본적으로 첫 번째 이벤트의 정보를 표시
-    var firstEvent02 = calendar02.getEvents()[0];
-    if (firstEvent02) {
-        let firstEventDate = new Date(firstEvent02.start);
-        const dayNames = ['일', '월', '화', '수', '목', '금', '토'];
-
-        let formattedDate = (firstEventDate.getMonth() + 1) + '월 ' + firstEventDate.getDate().toString().padStart(2, '0') + '일 (' + dayNames[firstEventDate.getDay()] + ')';
-
-        let today = new Date();
-        today.setHours(0, 0, 0, 0);
-        firstEventDate.setHours(0, 0, 0, 0);
-
-        let diffTime = firstEventDate.getTime() - today.getTime();
-        let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-        let ddayText = '';
-        if (diffDays > 0) {
-            ddayText = `D+${diffDays}`;
-        } else if (diffDays < 0) {
-            ddayText = `D${diffDays}`;
-        } else {
-            ddayText = `D-Day`;
-        }
-
-        let dateTextElem = document.querySelector('.week02 .dateText');
-        if (dateTextElem) {
-            dateTextElem.textContent = formattedDate;
-        }
-
-        let dateTextDdayElem = document.querySelector('.week02 .dateTextDday');
-        if (dateTextDdayElem) {
-            dateTextDdayElem.textContent = ddayText;
-        }
-
-        let dateContentElem = document.querySelector('.week02 .dateContent');
-        if (dateContentElem) {
-            dateContentElem.textContent = firstEvent02.title;
-        }
-    }
 });

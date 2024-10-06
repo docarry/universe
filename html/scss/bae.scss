@@ -1,5 +1,10 @@
 @import './_var.scss';
 
+.container-1280{
+    width: 1280px;
+    margin: 0 auto;
+}
+
 #sub-artist{
     background-color: #fff;
     padding: 6.25rem 0;
@@ -18,8 +23,6 @@
         margin-top: 5rem;
     }
     .container-1280{
-        width: 1280px;
-        margin: 0 auto;
         #myTabContent{
             .tab-pane{
                 h2{
@@ -514,6 +517,243 @@
                     }
                 }
     
+            }
+        }
+    }
+}
+
+#sub-schedule{
+    padding: 6.25rem 0;
+    .container-1280{
+        .schedule-title{
+            color: #fff;
+            text-transform: uppercase;
+            h2{
+                @include f-50-700-72;
+            }
+            p{
+                @include f-24-500-36;
+            }    
+        }
+        .schedule-content{
+            .schedule-name{
+                margin: 6.25rem 0 2.5rem;
+                .nav-item{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .nav-link{
+                        color: #FFF;
+                        @include f-24-400-36;
+                        padding: 0 4.75rem;
+                        &.active{
+                            background-color: transparent;
+                            @include f-24-700-36;
+                        }
+                    }
+                    .nav-line{
+                        width: 1px;
+                        height: 20px;
+                        background-color: #fff;
+                    }
+                }
+            }
+            .sub-schedule-detail {
+                &> .active{
+                display: flex;
+                flex-direction: column;
+                }
+                .tab-pane {
+                    gap: 2.5rem;
+                    .artist-schedule-name{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: .4375rem 2.5rem;
+                        background-color: #fff;
+                        border-radius: 20px 20px 0px 0px;
+                        h4{
+                        color: #000;
+                        }
+                        img {
+                            width: 110px;
+                        }
+                    }
+                    .sub-calendar-container{
+                        background-color: #fff;
+                        border-radius: 0 0 20px 20px;
+                        border: 0;
+                        padding-top: 6.25rem
+
+                    }
+                    .fc-daygrid-event {
+                        cursor: pointer;
+                    }
+                    .fc-direction-ltr .fc-daygrid-event .fc-event-time,
+                    .fc-daygrid-event-dot{
+                        display: none;
+                    }
+                    .fc-button:focus, 
+                    .fc-button:active {
+                        border: none;
+                        outline: none;
+                        box-shadow: none;
+                    }
+                    .fc-event-title {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        max-width: 160px;
+                        padding-left: 16px;
+                        display: block;
+                        &::before {
+                            content: '';
+                            width: 12px;
+                            height: 12px;
+                            background-color: #ff0000;
+                            border-radius: 50%;
+                            display: inline-block;
+                            margin-right: 8px;
+                        }
+                    }
+                    .fc-h-event{
+                        border: 0;
+                        background-color: transparent;
+                    }
+                    .fc-event-title-container{
+                        @include f-16-700-24;
+                        color: #000;
+                    }
+                    .fc-today-button.fc-button.fc-button-primary{
+                        width: 99px;
+                        height: 72px;
+                        background-color: #dedede;
+                        border: 0;
+                        color: #000;
+                        border-radius: 10px;
+                        @include f-24-700-36;
+                    }
+                    .fc .fc-button .fc-icon{
+                        font-size: 2.5rem;
+                    }
+                    .fc-direction-ltr .fc-button-group > .fc-button:not(:last-child){
+                        border-radius: 10px 0 0 10px;
+                        background-color: #000;
+                        border: 0;
+                    }
+                    .fc-direction-ltr .fc-button-group > .fc-button:not(:first-child){
+                        border-radius: 0 10px 10px 0;
+                        background-color: #000;
+                        border: 0;
+                    }
+                    .fc-prevYear-button.fc-button.fc-button-primary,
+                    .fc-nextYear-button.fc-button.fc-button-primary{
+                        display: none;
+                    }
+                    .fc .fc-toolbar.fc-header-toolbar{
+                        margin: 0 2.5rem 8.75rem;
+                        justify-content: flex-start;
+                        gap: 10rem;
+                    }
+                    .fc .fc-button-group{
+                        width: 170px;
+                        height: 72px
+                    }
+                    .fc-toolbar-title{
+                        @include f-50-700-72;
+                    }
+                    .fc-daygrid-day.fc-day-today{
+                        background-color: transparent;
+                    }
+                    .fc-theme-standard td, .fc-theme-standard th, .fc-scrollgrid-liquid{
+                        border: 0 !important;
+                    }
+                    .fc-daygrid-day.fc-day-today {
+                        background-color: transparent !important;
+                    }
+                    .fc-daygrid-day-top {
+                        display: block;
+                        height: 150px;
+                        line-height: 150px;
+                        text-align: center;
+                    }
+                    .fc-daygrid-day-number,
+                    .fc-col-header-cell-cushion {
+                        @include f-24-700-36;
+                        text-align: center;
+                        color: #000;
+                    }
+                    .fc-daygrid-day.fc-day-today .fc-daygrid-day-top > a {
+                        border: solid 2px #333;
+                        padding: 30px;
+                        border-radius: 50%;
+                        font-weight: bold;
+                    }
+                    .fc-col-header,
+                    .fc-scroller.fc-scroller-liquid-absolute,
+                    .fc-daygrid-body.fc-daygrid-body-unbalanced,
+                    .fc-scrollgrid-sync-table{
+                        width: 100% !important;
+                    }
+                    .fc-scroller-liquid-absolute,
+                    .fc-scroller {
+                        overflow: hidden !important;
+                    }
+                    .sub-calendar-container .fc-daygrid-day-top > a.eventText {
+                        border: solid 2px #f86666;
+                        padding: 30px;
+                        border-radius: 50%;
+                        font-weight: bold;
+                    }
+                }
+            }
+            .event-popup {
+                display: block;
+                position: absolute;
+                border: 1px solid #000;
+                padding: 20px;
+                z-index: 999;
+                width: 350px;
+                min-height: 160px;
+                border-radius: 20px;
+                background-color: #f8f8f8;
+                color: #000;
+                box-sizing: border-box;
+                opacity: 0;
+                transition: opacity 0.2s ease-in-out;
+                pointer-events: none; /* 팝업이 비활성 상태일 때 클릭 불가 */
+                .popup-header{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 10px;
+                    strong{
+                        @include f-16-700-24;
+                    }
+                    .popup-close-btn {
+                        font-size: 30px;
+                        cursor: pointer;
+                        background: none;
+                        border: none;
+                        color: #000;
+                    }
+                }
+                h5{
+                    @include f-16-400-24;
+                    margin: 10px 0;
+                }
+                /* 선 추가 */
+                .event-divider {
+                    display: block;
+                    height: 1px;
+                    background-color: #ccc;
+                    margin-top: 10px;
+                }
+                &.show{
+                    background-color: #fff;
+                    opacity: 1;
+                    pointer-events: auto; /* 팝업이 활성화되면 클릭 가능 */
+                }
             }
         }
     }
