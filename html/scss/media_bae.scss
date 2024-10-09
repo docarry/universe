@@ -1,66 +1,16 @@
 @import './_var.scss';
 // 필수(768,580,320)
 @media (max-width: 1720px) {
-    #sub-artist{
-        .nav-sticky{
-            position: relative;
-            top: 17%;
-        }
-    }
+
 }
 
 
 @media (max-width: 1440px) {
     #sub-artist{
-        .container-1280{
-            margin: 0 1rem;
-            #myTabContent{
-                .tab-pane{
-                    .artist-content{
-                        .sub-artist-info-3{
-                            .info-detail{
-                                .sub-artist-disco-swiper{
-                                    .swiper-wrapper{
-                                        .swiper-slide.swiper-slide-active{
-                                            .img-wrap{
-                                                .sub-disco{
-                                                    height: 250px;
-                                                }
-                                            }
-                                        }
-                                        .swiper-slide.swiper-slide-next{
-                                            margin-left: 57px;
-                                        }
-                                        .swiper-slide{
-                                            &:not(.swiper-slide-active){
-                                                .img-wrap{
-                                                    .text{
-                                                        .disco-title{
-                                                            font-size: .875rem;
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                            .img-wrap{
-                                                .sub-disco{
-                                                    height: 166px;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                                .swiper-button-next{
-                                    right: var(--swiper-navigation-sides-offset, -6px);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        .nav-sticky{
-            #artist-list{
-                padding: 0.625rem 1.25rem 0.625rem 2.5rem;
+        .artist-banner{
+            .banner-text{
+                width: 90%;
+                margin: 0 auto;
             }
         }
     }
@@ -75,35 +25,58 @@
 }
 
 @media (max-width: 1280px) {
+    .container-1280{
+        width: 100%;
+    }
     #sub-artist{
-        .container-1280{
-            #myTabContent{
-                .tab-pane{
-                    h2{
-                        font-size: 2.5rem;
+        .artist-banner{
+            .banner-text{
+                .title{
+                    font-size: 2.5rem;
+                    padding-bottom: 0;
+                }
+                .sub-title{
+                    font-size: 1.25rem;
+                    padding-bottom: 1rem;
+                }
+                .detail{
+                    font-size: .875rem;
+                }
+            }
+        }
+        .artist-wrap{
+            padding: 0 1rem;
+            width: 100%;
+            .artist-content{
+                .artist-name{
+                    .nav-item{
+                        .nav-link{
+                            padding: 0 3rem;
+                        }
                     }
-                    .artist-content{
-                        .sub-artist-info{
-                            gap: 5rem;
-                            h3{
-                                font-size: 2.5rem;
+                }
+                .sub-artist-detail{
+                    .tab-pane{
+                        .artist-info{
+                            .sub-artist-info-1{
+
                             }
                         }
                     }
                 }
             }
         }
-        .nav-sticky{
-            #sub-artist-list{
-                padding: 0.625rem 0.4rem 0.625rem;
-            }
-        }
     }
     #sub-schedule{
         .container-1280{
-            width: 100%;
             .schedule-content{
-
+                .schedule-name{
+                    .nav-item{
+                        .nav-link{
+                            padding: 0 3rem;
+                        }
+                    }
+                }
                 .sub-schedule-detail{
                     .tab-pane{
                         .fc{
@@ -123,40 +96,45 @@
 
 @media (max-width: 1080px){
     #sub-artist{
-        .container-1280{
-            #myTabContent{
-                .tab-pane{
-                    h2{
-                        font-size: 2.375rem;
+        .artist-wrap{
+            padding: 0 1rem;
+            .artist-content{
+                .artist-name{
+                    margin: 4rem 0;
+                    .nav-item{
+                        .nav-link{
+                            padding: 0 2rem;
+                        }
                     }
-                    .artist-content{
-                        .frame-wrap{
-                            gap: 1rem;
-                        }
-                        .sub-artist-info{
-                            gap: 2rem;
-                            h3{
-                                font-size: 2.375rem;
+                }
+                .sub-artist-detail{
+                    .tab-pane{
+                        .artist-info{
+                            .sub-artist-info-1{
+                                padding-left: 1.5rem;
                             }
-                        }
-                        .sub-artist-info-3{
-                            .info-detail{
-                                .sub-artist-disco-swiper{
-                                    .swiper-wrapper{
-                                        .swiper-slide.swiper-slide-active{
-                                            .img-wrap{
-                                                .sub-disco{
-                                                    height: 220px;
-                                                }
-                                            }
+                            .sub-artist-info-3{
+                                .filmo-wrap{
+                                    flex-wrap: wrap;
+                                    .filmo{
+                                        .hidden{
+                                            display: none;
                                         }
-                                        .swiper-slide.swiper-slide-next{
-                                            margin-left: 52px;
+                                    }
+                                    .filmo-1,
+                                    .filmo-2{
+                                        width: 48%;
+                                    }
+                                    .filmo-3{
+                                        width: 100%;
+                                        h6{
+                                            margin-top: 2.5rem;
                                         }
-                                        .swiper-slide{
-                                            .img-wrap{
-                                                .sub-disco{
-                                                    height: 148px;
+                                        ul{
+                                            li{
+                                                .detail{
+                                                    flex-direction: row;
+                                                    gap: .625rem;
                                                 }
                                             }
                                         }
@@ -171,7 +149,6 @@
     }
     #sub-schedule{
         .container-1280{
-            width: 100%;
             .schedule-content{
                 .schedule-name{
                     .nav-item{
@@ -182,16 +159,7 @@
                 }
                 .sub-schedule-detail{
                     .tab-pane{
-                        .fc{
-                            .fc-button-group{
-                                width: 100px;
-                                height: 60px;
-                            }
-                        }
                         .fc-today-button.fc-button.fc-button-primary{
-                            height: 60px;
-                            width: 80px;
-                            margin-left: 3rem;
                             font-size: 1.25rem;
                         }
                         .fc-toolbar-title{
@@ -204,191 +172,52 @@
     }
 }
 @media (max-width: 990px) {
+    .dB-990{
+        display: block;
+    }
     #sub-artist{
-        padding: 5.25rem 0 0;
-        .btn-more{
-            margin-top: 1.875rem;
-        }
-        .container-1280{
-            width: 100%;
-            margin: 0 auto;
-            #myTabContent{
-                .tab-pane{
-                    h2{
-                        @include f-36-700-52;
-                        padding-left: 1.25rem;
-                    }
-                    .artist-content{
-                        .frame-wrap{
-                            display: none;
-                        }
-                        .sub-artist-main-swiper{
-                            display: block;
-                            margin-top: 2.5rem;
-                            .swiper-pagination{
-                                position: relative;
-                                margin-top: 2.5rem;
-                                bottom: 0;
-                            }
-                        }
-                        .sub-artist-info{
-                            gap: 2.5rem;
-                            h3{
-                                @include f-36-700-52;
-                                width: 100%;
-                            }
-                            .info-detail{
-                                width: 100%;
-                                .actors-history{
-                                    padding-top: 1.875rem;
-                                    gap: 1.5rem;
-                                }
-                            }
-                        }
-                        .sub-artist-info-1{
-                            width: 100%;
-                            position: relative;
-                            padding: 2.5rem 1.25rem;
-                            p{
-                                padding: 0;
-                            }
-                            .goods-btn{
-                                margin-top: 2.5rem
-                            }
-                        }
-                        .sub-artist-info-2{
-                            margin: 0;
-                            flex-direction: column;
-                            padding: 2.5rem 1.25rem;
-                            h3{
-                                padding: 0;
-                            }
-                            .info-detail{
-                                .info-2-title{
-                                    gap: 1.25rem;
-                                    padding: 0;
-                                    .nav-item{
-                                        h4{
-                                            @include f-18-400-26;
-                                            .nav-link{
-                                                &.active{
-                                                    @include f-18-700-26;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        .sub-artist-info-3{
-                            margin: 0;
-                            flex-direction: column;
-                            padding: 2.5rem 1.25rem;
-                            .info-detail{
-                                .sub-artist-disco-swiper{
-                                    display: none;
-                                }
-                                .swiper-button-prev,
-                                .swiper-button-next{
-                                    display: none;
-                                }
-                                .sub-artist-disco-m-swiper{
-                                    display: block;
-                                }
-                            }
-                        }
-                        .sub-artist-info-4{
-                            flex-direction: column;
-                            margin: 0;
-                            padding: 2.5rem 1.25rem;
-                            .info-detail{
-                                h4{
-                                    @include f-18-700-26;
-                                    &::after{
-                                        width: 67px;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        .nav-sticky{
-            margin: 0;
-            width: 435px;
-            top: 40px;
-            left: 20px;
-            position: absolute;
-            #sub-artist-list{
+        .artist-wrap{
+            padding: 0;
+            .artist-content{
                 width: 100%;
-                padding: 0;
-                position: relative;
-                top: 0;
-                height: 100%;
-                border: 0;
-                flex-direction: row;
-                gap: 0.625rem;
-                .toggle-nav{
-                    color: #a4a4a4;
-                    background-color: #fff;
-                    margin: 0;
-                    display: flex;
-                    gap: .25rem;
-                    align-items: center;
-                    &::after{
-                        content: '';
-                        width: 10px;
-                        height: 10px;
-                        border-top: solid 2px #a4a4a4;
-                        border-right: solid 2px #a4a4a4;
-                        transform: rotate(45deg);
-                        margin-top: 0.0625rem;
-                    }
-                    &.active::after {
-                        margin-left: .5rem;
-                        transform: rotate(-135deg);
-                    }
-                }
-                .item-wrap{
-                    display: flex;
-                    gap: 1.25rem;
-                    width: 70%;
-                    position: relative;
-                    flex-direction: row;
-                    &.show{
-                        .nav-item{
-                            left: 0;
-                            position: relative;
-                            opacity: 1;
-                            visibility: visible;
-                            z-index: 999;
-                            margin-bottom: 0;
-                            .nav-link{
-                                color: #333;
+                .artist-name{
+                    .nav-item{
+                        .nav-link{
+                            font-size: 1.25rem;
+                            &.active{
+                                font-size: 1.375rem;
                             }
                         }
                     }
-                    .nav-item{
-                        width: 100%;
-                        position: absolute;
-                        left: -100px;
-                        top: 0;
-                        visibility: hidden;
-                        opacity: 0;
-                        transition: all 0.4s ease;
-                        z-index: -1;
-                        .nav-link{
-                            transition: all 0.4s ease;
-                            color: #fff;
+                }
+                .sub-artist-detail{
+                    .tab-pane{
+                        h4{
+                            font-size: 1.625rem;
+                            text-align: center;
+                            margin-bottom: 4rem;
                         }
-                        .nav-link,.nav-link.active{
-                            font-weight: 400;
-                            
+                        .artist-info{
+                            .frame-wrap{
+                                display: none;
+                            }
+                            .sub-artist-main-swiper{
+                                display: block;
+                            }
+                            .sub-artist-info-1{
+                                position: relative;
+                                width: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                text-align: center;
+                                padding: 2rem 0 0;
+                            }
+                            .sub-artist-info-3{
+                                padding: 0 1rem;
+                            }
                         }
                     }
-
-    
                 }
             }
         }
@@ -397,28 +226,171 @@
 }
 
 @media (max-width: 768px) {
+    .dN-768{
+        display: none;
+    }
     #sub-artist{
-        .container-1280{
-            #myTabContent{
-                .tab-pane{
-                    .artist-content{
-                        .sub-artist-info-3{
-                            .info-detail{
-                                .sub-artist-disco-m-swiper{
-                                    .swiper-wrapper{
-                                        .swiper-slide{
-                                            .img-wrap{
-                                                .sub-disco{
-                                                    width: 260px;
-                                                    height: 260px;
-                                                }
-                                            }
-                                        }
-                                    }
+        .artist-banner{
+            background: url('/img/subArtist/artist-banner-768.jpg') no-repeat center / cover;
+            .banner-text{
+                .title{
+                    @include f-36-700-52;
+                    padding-bottom: .625rem;
+                }
+                .sub-title{
+                    @include f-18-400-26;
+                    padding-bottom: .625rem;
+                }
+                .detail{
+                    @include f-16-400-24;
+                }
+            }
+        }
+        .artist-wrap{
+            .artist-content{
+                .artist-name{
+                    margin: 2.5rem 0;
+                    gap: 1.25rem;
+                    .nav-item{
+                        .nav-link{
+                            padding: 0;
+                            @include f-18-400-26;
+                            &.active{
+                                @include f-20-700-36;
+                            }
+                        }
+                        .nav-line{
+                            display: none;
+                        }
+                    }
+                }
+                .sub-artist-detail{
+                    .tab-pane{
+                        h4{
+                            @include f-24-700-36;
+                            margin-bottom: 2.5rem;
+                        }
+                        .artist-info{
+                            .sub-artist-main-swiper{
+                                .swiper-pagination{
+                                    margin-top: 2.5rem;
+                                }
+                            }
+                            .sub-artist-info-1{
+                                position: relative;
+                                width: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                text-align: center;
+                                padding: 2.5rem 0 0;
+                                p{
+                                    padding: 0 0 2.5rem;
                                 }
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+    #sub-schedule{
+        padding: 0 0 2.5rem;
+        .container-1280{
+            padding: 0;
+            .schedule-title{
+                background-color: #fff;
+                gap: 1.25rem;
+                height: 324px;
+                h2{
+                    color: #000;
+                    @include f-36-700-52;
+                }
+                p{
+                    color: #000;
+                    @include f-18-400-26;
+                    .d-768{
+                        display: block;
+                    }
+                }
+            }
+            .schedule-content{
+                padding: 0 1.25rem;
+                .schedule-name{
+                    margin: 2.5rem 0;
+                    gap: 1.25rem;
+                    .nav-item{
+                        h3{
+                            .nav-link{
+                                padding: 0;
+                            }
+                        }
+                        .nav-line{
+                            display: none;
+                        }
+                    }
+                }
+                .sub-schedule-detail{
+                    .tab-pane{
+                        gap: 0;
+                        .artist-schedule-name{
+                            padding: .125rem .625rem;
+                            margin-bottom: 1.375rem;
+                            img{
+                                width: 48px;
+                            }
+                        }
+                        .sub-calendar-container{
+                            margin-bottom: 2.5rem;
+                        }
+                        .sub-calendar-m-container{
+                            display: block;
+                        }
+                        .fc{
+                            .fc-toolbar.fc-header-toolbar{
+                                margin: 1.125rem 1.25rem;
+                            }
+                            .fc-button-group{
+                                width: 78px;
+                                height: 32px
+                            }
+                            .fc-button .fc-icon{
+                                font-size: 1.3rem;
+                            }
+                            thead{
+                                display: none;
+                            }
+                            .fc-daygrid-day-number,
+                            .fc-col-header-cell-cushion{
+                                @include f-18-700-26;
+                            }
+                            .fc-daygrid-day.fc-day-today .fc-daygrid-day-top > a,
+                            .fc-daygrid-day-top > a.eventText{
+                                padding: 16px;
+                            }
+                            .fc-daygrid-body-unbalanced .fc-daygrid-day-events{
+                                display: none;
+                            }
+                        }
+                        .fc-today-button.fc-button.fc-button-primary{
+                            width: 54px;
+                            height: 34px;
+                            padding: 0;
+                            @include f-18-700-26;
+                        }
+                        .fc-today-button.fc-button.fc-button-primary{
+                            @include f-18-700-26;
+                        }
+                        .fc-direction-ltr .fc-button-group > .fc-button:not(:first-child),
+                        .fc-direction-ltr .fc-button-group > .fc-button:not(:last-child){
+                            padding: 0;
+                            line-height: 10px;
+                        }
+                        .fc-toolbar-title{
+                            @include f-18-700-26;
+                        }
+                    }
+
                 }
             }
         }
@@ -426,21 +398,52 @@
 }
 
 @media (max-width: 580px) {
-
-}
-
-@media (max-width: 500px) {
     #sub-artist{
-        .container-1280{
-            #myTabContent{
-                .tab-pane{
-                    .artist-content{
-                        .sub-artist-info-4{
-                            .info-detail{
-                                h4{
-                                    &::after{
-                                        width: 58px;
-                                    }
+        .artist-banner{
+            background: url('/img/subArtist/artist-banner-580.jpg') no-repeat center / cover;
+            .banner-text{
+                padding: 5rem 0;
+                .title{
+                    @include f-20-700-28;
+                    padding-bottom: .625rem;
+                }
+                .sub-title{
+                    display: none;
+                }
+                .detail{
+                    @include f-12-400-18;
+                }
+            }
+        }
+        .artist-wrap{
+            .artist-content{
+                .artist-name{
+                    margin: 2.5rem 0 1.25rem;
+                    .nav-item{
+                        .nav-link{
+                            @include f-16-400-24;
+                            &.active{
+                                @include f-18-700-26;
+                            }
+                        } 
+                    }
+                }
+                .sub-artist-detail{
+                    .tab-pane{
+                        h4{
+                            @include f-18-700-26;
+                            margin-bottom: 1.25rem;
+                        }
+                        .artist-info{
+                            .sub-artist-main-swiper{
+                                .swiper-pagination{
+                                    // margin-top: 1.25rem;
+                                }
+                            }
+                            .sub-artist-info-1{
+                                // padding: 1.25rem 0 0;
+                                p{
+                                    // padding: 0 0 1.25rem;
                                 }
                             }
                         }
@@ -451,18 +454,26 @@
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
     #sub-artist{
-        .container-1280{
-            #myTabContent{
-                .tab-pane{
-                    .artist-content{
-                        .sub-artist-info-4{
-                            .info-detail{
-                                h4{
-                                    &::after{
-                                        width: 51px;
-                                    }
+        .artist-banner{
+            .banner-text{
+                .title{
+                    font-size: 20px;
+                }
+                .detail{
+                    font-size: 12px;
+                }
+            }
+        }
+        .artist-wrap{
+            .artist-content{
+                .sub-artist-detail{
+                    .tab-pane{
+                        .artist-info{
+                            .sub-artist-info-1{
+                                .btn-wrap{
+                                    flex-direction: column;
                                 }
                             }
                         }
@@ -474,40 +485,13 @@
 }
 
 @media (max-width: 480px) {
-    #sub-artist{
-        .nav-sticky{
-            width: 100px;
-            background-color: #fff;
-            left: 0;
-            padding-left: 20px;
-            z-index: 1;
-            #sub-artist-list{
-                display: block;
-                .toggle-nav{
-                    &::after{
-                        transform: rotate(-225deg);
-                        margin: 0.0625rem 0 0.3rem 0.5rem ;
-                    }
-                    &.active::after {
-                        transform: rotate(-45deg);
-                        margin: 0.4rem 0 0 0.5rem ;
-                    }
-
-                }
-                .item-wrap{
-                    display: block;
-                    margin-top: .625rem;
-
-                    &.show{
-                        .nav-item{
-                            margin-bottom: 0.625rem;
-                        }
-                    }
-                }
-            }
-        }
+    .dB-480{
+        display: block;
     }
 }
 
 @media (max-width: 320px) {
+    #sub-artist{
+
+    }
 }
