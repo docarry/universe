@@ -27,10 +27,10 @@ html, body{
     gap: 100px;
 }
 
-.disN{
+.introN{
     display: none;
 }
-.introN{
+.artistN{
     display: none;
 }
 .footerN{
@@ -44,3 +44,43 @@ html, body{
     display: none;
 }
 // ************************************************************************************************
+
+
+
+// ************************************************************************************************
+.schedule-DisN{
+    background-color: transparent !important;
+    color: transparent !important;
+    border-color: transparent !important;
+}
+.releaseColor{
+    color: transparent;
+}
+
+
+
+// SHIM start *****************************************************************
+
+// .shim_dNn: n에서 살릴 태그
+.shim_dN1320,
+.shim_dN874,
+.shim_dN784,
+.shim_dN350{
+    display: none;
+}
+
+// .shim_gn: npx 갭
+.shim_g10{
+    gap: 10px;
+}
+.shim_g40{
+    gap: 40px;
+}
+.shim_g60{
+    gap: 60px;
+}
+.shim_g100{
+    gap: 100px;
+}
+
+// SHIM end *****************************************************************

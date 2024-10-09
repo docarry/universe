@@ -1,10 +1,22 @@
 // 믹스인
 @import './_var.scss';
-@mixin SubGoodsMainBanner ($x, $y, $size) {
-    background-image: url(/img/subGoods/subGoodsMainBanner.jpg);
-    background-repeat: no-repeat;
-    background-position: $x $y;
-    background-size: $size;
+@mixin subGoodsTopBannerTitle {
+    width: 100%;
+    max-width: 1280px;
+    gap: 2.5rem;
+    color: #fff;
+    .textBox01{
+        gap: 0.625rem;
+        .bannerText01{
+            @include f-50-700-72;
+        }
+        .bannerText02{
+            @include f-24-700-36;
+        }
+    }
+    .textBox02{
+        @include f-16-500-24;
+    }
 }
 @mixin goods ($width: 60%) {
     width: $width;
@@ -21,62 +33,31 @@
     background: url('/img/subGoods/#{$name}.jpg') no-repeat center / cover;
 }
 
-// 공통
-// .dNn: n에서 살릴 태그
-.dN1320,
-.dN874,
-.dN784,
-.dN350{
-    display: none;
-}
-
-
-// 스타일
+// PC 스타일
 #subGoods{
     background-color: #fff;
-    gap: 100px;
     a{
         color: #fff;
     }
-    // 메인 배너 디자인
-    #mainBanner{
+    // 상단 배너 디자인
+    #subGoodsTopBanner{
         position: relative;
         width: 100%;
         max-width: 1920px;
         height: 430px;
-        @include SubGoodsMainBanner (-160px, -610px, 130%);
+        filter: grayscale(100%);
+        background: url(/img/subGoods/subGoodsTopBanner.jpg) no-repeat center/cover;
         &::before{
             content: '';
             display: block;
             height: 100%;
-            background: rgba(0, 0, 0, .4);
+            background: rgba(0, 0, 0, .6);
         }
         .textBox-PC{
             position: absolute;
-            left: calc(50% - 640px);
-            bottom: calc(50% - 115px);
-            width: 100%;
-            max-width: 1280px;
-            gap: 2.5rem;
-            color: #fff;
-            .textBox01{
-                gap: 0.625rem;
-                .bannerText01{
-                    font-size: 3.125rem;
-                    font-weight: 700;
-                    line-height: 4.5rem;
-                }
-                .bannerText02{
-                    font-size: 1.5rem;
-                    font-weight: 700;
-                    line-height: 2.25rem;
-                }
-            }
-            .textBox02{
-                font-size: 1rem;
-                font-weight: 700;
-                line-height: 1.5rem;
-            }
+            left: calc((100% - 1280px) / 2);
+            bottom: calc((100% - 230px) / 2);
+            @include subGoodsTopBannerTitle;
         }
         .textBox-MT{
             position: absolute;
@@ -99,6 +80,12 @@
         width: 100%;
         max-width: 1280px;
         color: #000;
+        h3{
+            @include f-32-700-46;
+        }
+        p{
+            @include f-16-500-24;
+        }
     }
     #bestBox{
         width: 100%;
@@ -106,7 +93,6 @@
         gap: 60px;
         .swiper.mySwiper{
             width: 100%;
-            gap: 20px;
             .swiper-wrapper{
                 .swiper-slide{
                     width: calc((100% - 20px) / 2);
@@ -126,6 +112,7 @@
                             padding: 20px 40px;
                             border-radius: 20px;
                             transition: all 0.4s ease-in-out;
+                            @include f-24-500-36;
                         }
                         &:hover .bestInfo{
                             transform: translateY(0); /* hover 시 위로 올라와 a 태그의 bottom에 맞도록 */
@@ -186,7 +173,7 @@
             .moreBtn{
                 gap: 4px;
                 position: absolute;
-                top: 40px;
+                top: 49px;
                 right: 20px;
             }
             ul{
@@ -209,27 +196,27 @@
                 }
             }
         }
-        .nam{
+        .byeon{
             ul{
                 li{
                     a{
                         .goods01{
                             img{
-                                @include goods (64%);                                
+                            @include goods (36%);
                             }
                         }
                     }
                     a{
                         .goods02{
                             img{
-                                @include goods (56%);
+                                @include goods (54%);
                             }
                         }
                     }
                     a{
                         .goods03{
                             img{
-                            @include goods (80%);
+                                @include goods (80%);
                             }
                         }
                     }
@@ -263,33 +250,6 @@
                 }
             }
         }
-        .byun{
-            ul{
-                li{
-                    a{
-                        .goods01{
-                            img{
-                            @include goods (36%);
-                            }
-                        }
-                    }
-                    a{
-                        .goods02{
-                            img{
-                                @include goods (54%);
-                            }
-                        }
-                    }
-                    a{
-                        .goods03{
-                            img{
-                                @include goods (80%);
-                            }
-                        }
-                    }
-                }
-            }
-        }
         .yoon{
             ul{
                 li{
@@ -311,6 +271,33 @@
                         .goods03{
                             img{
                                 @include goods (50%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .nam{
+            ul{
+                li{
+                    a{
+                        .goods01{
+                            img{
+                                @include goods (64%);                                
+                            }
+                        }
+                    }
+                    a{
+                        .goods02{
+                            img{
+                                @include goods (56%);
+                            }
+                        }
+                    }
+                    a{
+                        .goods03{
+                            img{
+                            @include goods (80%);
                             }
                         }
                     }
