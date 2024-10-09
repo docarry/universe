@@ -137,3 +137,49 @@ var customOverlay = new kakao.maps.CustomOverlay({
     yAnchor: 1 
 });
 // kakao api---------------------------------------
+<<<<<<< HEAD
+=======
+
+
+// sub-info 회사 컨택---------------------------------------
+document.addEventListener("DOMContentLoaded", function() {
+    const infoContactElements = document.querySelectorAll('.info-contact h3, .info-email, .info-number');
+    
+    function checkVisibility() {
+        infoContactElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            // 요소가 뷰포트에 들어왔는지 확인
+            if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                element.classList.add('visible'); // 클래스 추가
+            }
+        });
+    }
+    
+    // 스크롤 시 체크
+    document.addEventListener("scroll", checkVisibility);
+    // 초기 로드 시 체크
+    checkVisibility();
+});
+// sub-info---------------------------------------
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const banner = document.querySelector('.banner');
+
+    function checkVisibility() {
+        const rect = banner.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+        if (isVisible) {
+            banner.classList.add('visible');
+        } else {
+            banner.classList.remove('visible');
+        }
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility(); // 초기 체크
+});
+
+
+>>>>>>> origin/develop
