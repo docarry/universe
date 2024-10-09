@@ -1,1395 +1,511 @@
 <?php include_once("../layout/header-b.html"); ?>
 
 <main id="sub-artist">
-
-    <article class="container-1280">
-        <div class="tab-content" id="myTabContent">
-
-            <!-- 변우석 -->
-            <div class="tab-pane fade show active" id="sub-artist-byeon" role="tabpanel" aria-labelledby="sub-artist-byeon-tab">
-                <h2>BYEON WOO SEOCK</h2>
-                <div class="artist-content">
-
-                    <!-- 웹 슬라이드 -->
-                    <div class="frame-wrap">
-                        <div class="frame large sub-artist-frame1">
-                            <img src="/img/subArtist/artist-main-img-byeon-1.jpg" alt="Image 1" class="sub-artist-img1">
-                        </div>
-                        <div class="frame small sub-artist-frame2" onclick="changeImage(event,'sub-artist-frame2')">
-                            <img src="/img/subArtist/artist-main-img-byeon-2.jpg" alt="Image 2" class="sub-artist-img2">
-                        </div>
-                        <div class="frame small sub-artist-frame3" onclick="changeImage(event,'sub-artist-frame3')">
-                            <img src="/img/subArtist/artist-main-img-byeon-3.jpg" alt="Image 3" class="sub-artist-img3">
-                        </div>
-                    </div>
-
-                    <!-- 모바일 슬라이드 -->
-                    <div class="swiper mySwiper sub-artist-main-swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-byeon-1.jpg" alt="변우석 첫번째 프로필 사진"></div>
-                            <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-byeon-2.jpg" alt="변우석 두번째 프로필 사진"></div>
-                            <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-byeon-3.jpg" alt="변우석 세번째 프로필 사진"></div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-    
-                    <!-- 아티스트 소개 -->
-                    <div class="sub-artist-info-1">
-                        <p>
-                            변우석은 2016년 데뷔 이후 독보적인 스타일로 모델계를 점령,<br>
-                            드라마 <디어 마이 프렌즈>를 시작으로 배우로서 활동 영역을 넓혀갔다.<br>
-                            <br>
-                            매력적인 목소리와 비주얼을 바탕으로 드라마 <청춘기록>, <힘쎈여자 강남순>, <br>
-                            <선재 업고 튀어>, 영화 <20세기 소녀>, <소울메이트> 등에서 개성있는 연기를 펼치며<br>
-                            꾸준히 배우로서 커리어를 다져가고 있다.
-                        </p>
-                        <a href="/sub/goods.html" class="goods-btn">GOODS 보러가기</a>
-                    </div>
-
-                    <!-- 필모그라피 -->
-                    <div class="sub-artist-info-2 sub-artist-info">
-                        <h3>Filmography</h3>
-                        <div class="info-detail">
-                            <ul class="nav nav-tabs info-2-title" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <h4><a class="nav-link active" data-bs-toggle="tab" href="#sub-byeon-drama" role="tab" aria-controls="drama" aria-selected="true">드라마</a></h4>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <h4><a class="nav-link" data-bs-toggle="tab" href="#sub-byeon-movie" role="tab" aria-controls="movie" aria-selected="false">영화</a></h4>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <h4><a class="nav-link" data-bs-toggle="tab" href="#sub-byeon-broadcast" role="tab" aria-controls="broadcast" aria-selected="false">방송활동</a></h4>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <h4><a class="nav-link" data-bs-toggle="tab" href="#sub-byeon-musicvideo" role="tab" aria-controls="musicvideo" aria-selected="false">뮤직비디오</a></h4>
-                                </li>
-                            </ul>
-
-                            <div class="tab-content info-2-detail">
-                                <div class="tab-pane fade show active" id="sub-byeon-drama" role="tabpanel" aria-labelledby="drama-tab">
-                                    <ul class="actors-history">
-                                        <li><span class="year">2024</span><span class="role"><span class="role-title">선재업고 튀어</span>류선재 역</span></li>
-                                        <li><span class="year">2023</span><span class="role"><span class="role-title">힘쎈여자 강남순</span>류시오 역</span></li>
-                                        <li><span class="year">2021</span><span class="role"><span class="role-title">꽃 피면 달 생각하고</span>이표 역</span></li>
-                                        <li><span class="year">2020</span><span class="role"><span class="role-title">청춘기록</span>원해효 역</span></li>
-                                        <li class="hidden"><span class="year">2019</span><span class="role"><span class="role-title">조선혼담공작소 꽃파당</span>도준 역</span></li>
-                                        <li class="hidden"><span class="year">2018</span><span class="role"><span class="role-title">모두의 연애</span>변우석 역</span></li>
-                                        <li class="hidden"><span class="year">2017</span><span class="role"><span class="role-title">드라마 스테이지 - 직립 보행의/ 역사</span>정종민 역</span></li>
-                                        <li class="hidden"><span class="year">2016</span><span class="role"><span class="role-title">디어 마이 프렌즈</span>손종식 역</span></li>
-                                    </ul>
-                                    <button class="btn-more"><span>MORE</span><img src="/img/icon/btn-more-gray-plus.svg" alt="더보기"></button>
-                                </div>
-                                <div class="tab-pane fade" id="sub-byeon-movie" role="tabpanel" aria-labelledby="movie-tab">
-                                    <ul class="actors-history">
-                                        <li><span class="year">2023</span><span class="role"><span class="role-title">소울메이트</span>함진우 역</span></li>
-                                        <li><span class="year">2022</span><span class="role"><span class="role-title">20세기 소녀</span>푼운호 역</span></li>
-                                        <li><span class="year">2019</span><span class="role"><span class="role-title">백두산</span>경호팀 1 역</span></li>
-                                        <li><span class="year">2017</span><span class="role"><span class="role-title">청년경찰</span>클럽 연예인 역</span></li>
-                                    </ul>
-                                </div>
-                                <div class="tab-pane fade" id="sub-byeon-broadcast" role="tabpanel" aria-labelledby="broadcast-tab">
-                                    <ul class="actors-history">
-                                        <li><span class="year">2024</span><span class="role"><span class="role-title">유퀴즈 온 더 블럭</span></span></li>
-                                        <li><span class="year">2022</span><span class="role"><span class="role-title">런닝맨</span></span></li>
-                                        <li><span class="year">2017</span><span class="role"><span class="role-title">어느 날 갑자기 백만 원</span>진행</span></li>
-                                        <li><span class="year">2016</span><span class="role"><span class="role-title">옥수동 수제자</span> </span></li>
-                                    </ul>
-                                </div>
-                                <div class="tab-pane fade" id="sub-byeon-musicvideo" role="tabpanel" aria-labelledby="musicvideo-tab">
-                                    <ul class="actors-history">
-                                        <li><span class="year">2019</span><span class="role"><span class="role-title">이소라</span>‘신청곡’</span></li>
-                                        <li><span class="year">2018</span><span class="role"><span class="role-title">HANCLEF</span>‘Maiden Flight’</span></li>
-                                        <li><span class="year">2017</span><span class="role"><span class="role-title">박정현</span>‘달아요’</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 앨범 -->
-                    <div class="sub-artist-info-3 sub-artist-info">
-                        <h3>Discography</h3>
-                        <div class="info-detail">
-                            <div class="swiper mySwiper sub-artist-disco-swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-byeon-1 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 1</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-byeon-2 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 4</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-byeon-3 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-byeon-4 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 1</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-byeon-5 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 4</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-byeon-6 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-button-next"><img src="/img/icon/btnSet_right.svg" alt="이전 앨범 보기"></div>
-                            <div class="swiper-button-prev"><img src="/img/icon/btnSet_left.svg" alt="다음 앨범 보기"></div>
-                            <!-- 모바일 슬라이드 -->
-                            <div class="swiper mySwiper sub-artist-disco-m-swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-byeon-1 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 1</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-byeon-2 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 4</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-byeon-3 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-byeon-4 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 1</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-byeon-5 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 4</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-byeon-6 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 수상내역 -->
-                    <div class="sub-artist-info-4 sub-artist-info">
-                        <h3>Awards &<br>
-                            Achievements</h3>
-                        <div class="info-detail">
-                            <h4>수상내역</h4>
-                            <ul class="actors-history">
-                                <li><span class="year">2024</span><span class="role"><span class="role-title">올해의 브랜드 대상</span>[남자배우(핫트렌드)]</span></li>
-                                <li><span class="year">2023</span><span class="role"><span class="role-title">KBS 연기대상</span>[남자 신인상]</span></li>
-                                <li><span class="year">2021</span><span class="role"><span class="role-title">2021 아시아모델페스티벌</span>[K Model Awards 패션모델상]</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 남우현 -->
-            <div class="tab-pane fade" id="sub-artist-nam" role="tabpanel" aria-labelledby="sub-artist-nam-tab">
-                <h2>NAM WOO HYUN</h2>
-                <div class="artist-content">
-                    
-                    <!-- 웹 슬라이드 -->
-                    <div class="frame-wrap">
-                        <div class="frame large sub-artist-frame1">
-                            <img src="/img/subArtist/artist-main-img-nam-1.jpg" alt="Image 1" class="sub-artist-img1">
-                        </div>
-                        <div class="frame small sub-artist-frame2" onclick="changeImage(event,'sub-artist-frame2')">
-                            <img src="/img/subArtist/artist-main-img-nam-2.jpg" alt="Image 2" class="sub-artist-img2">
-                        </div>
-                        <div class="frame small sub-artist-frame3" onclick="changeImage(event,'sub-artist-frame3')">
-                            <img src="/img/subArtist/artist-main-img-nam-3.jpg" alt="Image 3" class="sub-artist-img3">
-                        </div>
-                    </div>
-
-                    <!-- 모바일 슬라이드 -->
-                    <div class="swiper mySwiper sub-artist-main-swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-nam-1.jpg" alt="남우현 첫번째 프로필 사진"></div>
-                            <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-nam-2.jpg" alt="남우현 두번째 프로필 사진"></div>
-                            <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-nam-3.jpg" alt="남우현 세번째 프로필 사진"></div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-    
-                    <!-- 아티스트 소개 -->
-                    <div class="sub-artist-info-1">
-                        <p>
-                            남우현 아티스트 소개<br>
-                        </p>
-                        <a href="/sub/goods.html" class="goods-btn">GOODS 보러가기</a>
-                    </div>
-
-                    <!-- 필모그라피 -->
-                    <div class="sub-artist-info-2 sub-artist-info">
-                        <h3>Filmography</h3>
-                        <div class="info-detail">
-                            <ul class="nav nav-tabs info-2-title" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <h4><a class="nav-link active" data-bs-toggle="tab" href="#sub-nam-drama" role="tab" aria-controls="drama" aria-selected="true">드라마</a></h4>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <h4><a class="nav-link" data-bs-toggle="tab" href="#sub-nam-movie" role="tab" aria-controls="movie" aria-selected="false">영화</a></h4>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <h4><a class="nav-link" data-bs-toggle="tab" href="#sub-nam-broadcast" role="tab" aria-controls="broadcast" aria-selected="false">방송활동</a></h4>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <h4><a class="nav-link" data-bs-toggle="tab" href="#sub-nam-musicvideo" role="tab" aria-controls="musicvideo" aria-selected="false">뮤직비디오</a></h4>
-                                </li>
-                            </ul>
-
-                            <div class="tab-content info-2-detail">
-                                <div class="tab-pane fade show active" id="sub-nam-drama" role="tabpanel" aria-labelledby="drama-tab">
-                                    <ul class="actors-history">
-                                        <li><span class="year">2019</span><span class="role"><span class="role-title">악마가 너의 이름을 부를 때</span>2019 아이돌 페스티벌 MC 역</span></li>
-                                        <li><span class="year">2014</span><span class="role"><span class="role-title">하이스쿨 러브온</span>신우현 역</span></li>
-                                        <li><span class="year">2012</span><span class="role"><span class="role-title">천 번째 남자</span>남우현 역</span></li>
-                                    </ul>
-                                </div>
-                                <div class="tab-pane fade" id="sub-nam-movie" role="tabpanel" aria-labelledby="movie-tab">
-                                    <ul class="actors-history">
-                                        <li><span class="year">2024</span><span class="role"><span class="role-title">더 가디언</span>박도준 역</span></li>
-                                    </ul>
-                                </div>
-                                <div class="tab-pane fade" id="sub-nam-broadcast" role="tabpanel" aria-labelledby="broadcast-tab">
-                                    <ul class="actors-history">
-                                        <li><span class="year">2023</span><span class="role"><span class="role-title">불후의 명곡</span>12월 23일 명사 특집 ‘이경규’ 편 2부</span></li>
-                                        <li><span class="year">2022</span><span class="role"><span class="role-title">뭉쳐야 산다 2</span></span></li>
-                                        <li><span class="year">2021</span><span class="role"><span class="role-title">불후의 명곡</span>전설을 노래하다 바이브 특집</span></li>
-                                        <li><span class="year">2019</span><span class="role"><span class="role-title">비디오 스타</span><악마를 보았다! 아이를 데빌즈> 편</span></li>
-                                        <li class="hidden"><span class="year">2018</span><span class="role"><span class="role-title">히든싱어5</span>왕중왕전</span></li>
-                                        <li class="hidden"><span class="year">2017</span><span class="role"><span class="role-title">불후의 명곡 2</span>300회 특집 3탄</span></li>
-                                        <li class="hidden"><span class="year">2016</span><span class="role"><span class="role-title">유희열의 스케치북</span></span></li>
-                                        <li class="hidden"><span class="year">2014</span><span class="role"><span class="role-title">위기탈출 넘버원</span>with 키</span></li>
-                                        <li class="hidden"><span class="year">2012</span><span class="role"><span class="role-title">불후의 명곡 2</span>트로트 특집 with 김성규</span></li>
-                                        <li class="hidden"><span class="year">2011</span><span class="role"><span class="role-title">불후의 명곡 2</span>작곡가 특집 故 김현식 특집</span></li>
-                                        <li class="hidden"><span class="year">2010</span><span class="role"><span class="role-title">놀라운 대회 스타킹</span>고정 패널</span></li>
-                                    </ul>
-                                    <button class="btn-more"><span>MORE</span><img src="/img/icon/btn-more-gray-plus.svg" alt="더보기"></button>
-                                </div>
-                                <div class="tab-pane fade" id="sub-nam-musicvideo" role="tabpanel" aria-labelledby="musicvideo-tab">
-                                    <ul class="actors-history">
-                                        <li><span class="year">2019</span><span class="role"><span class="role-title">지선</span>‘바람아 불어라’</span></li>
-                                        <li><span class="year">2018</span><span class="role"><span class="role-title">구피디</span>‘귀가 멀어’</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 앨범 -->
-                    <div class="sub-artist-info-3 sub-artist-info">
-                        <h3>Discography</h3>
-                        <div class="info-detail">
-                            <div class="swiper mySwiper sub-artist-disco-swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-nam-1 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">너의 남자 (Boyfriend)</span>
-                                                <span class="disco-sub">3rd Digital Single</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-nam-2 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">WHITREE</span>
-                                                <span class="disco-sub">The 1st Album</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-nam-3 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">별똥별 OST Part 1</span>
-                                                <span class="disco-sub">별똥별 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-nam-4 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">With</span>
-                                                <span class="disco-sub">4th Mini Album</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-nam-5 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">가을이 오면</span>
-                                                <span class="disco-sub">2nd Digital Single</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-nam-6 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">A New Journey</span>
-                                                <span class="disco-sub">3rd Mini Album</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-nam-7 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">지금 이 노래</span>
-                                                <span class="disco-sub">1st Digital Single</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-nam-8 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">Second Write..</span>
-                                                <span class="disco-sub">2nd Mini Album</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-nam-9 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">Write..</span>
-                                                <span class="disco-sub">1st Mini Album</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-button-next"><img src="/img/icon/btnSet_right.svg" alt="이전 앨범 보기"></div>
-                            <div class="swiper-button-prev"><img src="/img/icon/btnSet_left.svg" alt="다음 앨범 보기"></div>
-                            <!-- 모바일 슬라이드 -->
-                            <div class="swiper mySwiper sub-artist-disco-m-swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-nam-1 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">너의 남자 (Boyfriend)</span>
-                                                <span class="disco-sub">3rd Digital Single</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-nam-2 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">WHITREE</span>
-                                                <span class="disco-sub">The 1st Album</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-nam-3 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">별똥별 OST Part 1</span>
-                                                <span class="disco-sub">별똥별 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-nam-4 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">With</span>
-                                                <span class="disco-sub">4th Mini Album</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-nam-5 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">가을이 오면</span>
-                                                <span class="disco-sub">2nd Digital Single</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-nam-6 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">A New Journey</span>
-                                                <span class="disco-sub">3rd Mini Album</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-nam-7 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">지금 이 노래</span>
-                                                <span class="disco-sub">1st Digital Single</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-nam-8 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">Second Write..</span>
-                                                <span class="disco-sub">2nd Mini Album</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-nam-9 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">Write..</span>
-                                                <span class="disco-sub">1st Mini Album</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 수상내역 -->
-                    <div class="sub-artist-info-4 sub-artist-info">
-                        <h3>Awards &<br>
-                            Achievements</h3>
-                        <div class="info-detail">
-                            <h4>수상내역</h4>
-                            <ul class="actors-history">
-                                <li><span class="year">2019</span><span class="role"><span class="role-title">2019 소리바다 베스트 케이뮤직 어워즈</span>[아트테이너 상]</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 이지은 -->
-            <div class="tab-pane fade" id="sub-artist-lee" role="tabpanel" aria-labelledby="sub-artist-lee-tab">
-                <h2>LEE JI EUN</h2>
-                <div class="artist-content">
-                    
-                    <!-- 웹 슬라이드 -->
-                    <div class="frame-wrap">
-                        <div class="frame large sub-artist-frame1">
-                            <img src="/img/subArtist/artist-main-img-lee-1.jpg" alt="Image 1" class="sub-artist-img1">
-                        </div>
-                        <div class="frame small sub-artist-frame2" onclick="changeImage(event,'sub-artist-frame2')">
-                            <img src="/img/subArtist/artist-main-img-lee-2.jpg" alt="Image 2" class="sub-artist-img2">
-                        </div>
-                        <div class="frame small sub-artist-frame3" onclick="changeImage(event,'sub-artist-frame3')">
-                            <img src="/img/subArtist/artist-main-img-lee-3.jpg" alt="Image 3" class="sub-artist-img3">
-                        </div>
-                    </div>
-
-                    <!-- 모바일 슬라이드 -->
-                    <div class="swiper mySwiper sub-artist-main-swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-lee-1.jpg" alt="이지은 첫번째 프로필 사진"></div>
-                            <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-lee-2.jpg" alt="이지은 두번째 프로필 사진"></div>
-                            <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-lee-3.jpg" alt="이지은 세번째 프로필 사진"></div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-    
-                    <!-- 아티스트 소개 -->
-                    <div class="sub-artist-info-1">
-                        <p>
-                            이지은 아티스트 소개<br>
-                        </p>
-                        <a href="/sub/goods.html" class="goods-btn">GOODS 보러가기</a>
-                    </div>
-
-                    <!-- 필모그라피 -->
-                    <div class="sub-artist-info-2 sub-artist-info">
-                        <h3>Filmography</h3>
-                        <div class="info-detail">
-                            <ul class="nav nav-tabs info-2-title" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <h4><a class="nav-link active" data-bs-toggle="tab" href="#sub-lee-drama" role="tab" aria-controls="drama" aria-selected="true">드라마</a></h4>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <h4><a class="nav-link" data-bs-toggle="tab" href="#sub-lee-movie" role="tab" aria-controls="movie" aria-selected="false">영화</a></h4>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <h4><a class="nav-link" data-bs-toggle="tab" href="#sub-lee-broadcast" role="tab" aria-controls="broadcast" aria-selected="false">방송활동</a></h4>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <h4><a class="nav-link" data-bs-toggle="tab" href="#sub-lee-musicvideo" role="tab" aria-controls="musicvideo" aria-selected="false">뮤직비디오</a></h4>
-                                </li>
-                            </ul>
-
-                            <div class="tab-content info-2-detail">
-                                <div class="tab-pane fade show active" id="sub-lee-drama" role="tabpanel" aria-labelledby="drama-tab">
-                                    <ul class="actors-history">
-                                        <li><span class="year">2025</span><span class="role"><span class="role-title">폭삭 속았수다</span>애순 역</span></li>
-                                        <li><span class="year">2019</span><span class="role"><span class="role-title">호텔 델루나</span>장만월 역</span></li>
-                                        <li><span class="year">2018</span><span class="role"><span class="role-title">나의 아저씨</span>이지안 역</span></li>
-                                        <li><span class="year">2016</span><span class="role"><span class="role-title">달의 연인 - 보보경심 려</span>해수 • 고하진 역</span></li>
-                                        <li class="hidden"><span class="year">2015</span><span class="role"><span class="role-title">프로듀사</span>신디 역</span></li>
-                                        <li class="hidden"><span class="year">2013</span><span class="role"><span class="role-title">최고다 이순신</span>인순신 역</span></li>
-                                        <li class="hidden"><span class="year">2011</span><span class="role"><span class="role-title">드림하이</span>김필숙 역</span></li>
-                                    </ul>
-                                    <button class="btn-more"><span>MORE</span><img src="/img/icon/btn-more-gray-plus.svg" alt="더보기"></button>
-                                </div>
-                                <div class="tab-pane fade" id="sub-lee-movie" role="tabpanel" aria-labelledby="movie-tab">
-                                    <ul class="actors-history">
-                                        <li><span class="year">2024</span><span class="role"><span class="role-title">아이유 콘서트 : 더 골든 아워</span>아이유 역</span></li>
-                                        <li><span class="year">2023</span><span class="role"><span class="role-title">드림</span>이소민 역</span></li>
-                                        <li><span class="year">2022</span><span class="role"><span class="role-title">브로커</span>소영 역</span></li>
-                                        <li><span class="year">2021</span><span class="role"><span class="role-title">아무도 없는 곳</span>미영 역</span></li>
-                                        <li class="hidden"><span class="year">2019</span><span class="role"><span class="role-title">페르소나</span>IU / 은 /  한나 /지은 역</span></li>
-                                        <li class="hidden"><span class="year">2017</span><span class="role"><span class="role-title">리얼</span>시상식 도우미 역</span></li>
-                                        <li class="hidden"><span class="year">2012</span><span class="role"><span class="role-title">새미의 어드벤쳐 2</span>엘라 역</span></li>
-                                        <li class="hidden"><span class="year">2011</span><span class="role"><span class="role-title">초미받지 못한 손님</span>ID 3단고음녀 역</span></li>
-                                    </ul>
-                                    <button class="btn-more"><span>MORE</span><img src="/img/icon/btn-more-gray-plus.svg" alt="더보기"></button>
-                                </div>
-                                <div class="tab-pane fade" id="sub-lee-broadcast" role="tabpanel" aria-labelledby="broadcast-tab">
-                                    <ul class="actors-history">
-                                        <li><span class="year">2024</span><span class="role"><span class="role-title">신인가수 조정석</span></span></li>
-                                        <li><span class="year">2023</span><span class="role"><span class="role-title">홍진경의 영화로운 덕후생활</span></span></li>
-                                        <li><span class="year">2022</span><span class="role"><span class="role-title">출발! 비디오여행</span></span></li>
-                                        <li><span class="year">2020</span><span class="role"><span class="role-title">바퀴 달린 집</span></span></li>
-                                        <li class="hidden"><span class="year">2019</span><span class="role"><span class="role-title">연예가 중계</span></span></li>
-                                        <li class="hidden"><span class="year">2018</span><span class="role"><span class="role-title">아는 형님</span></span></li>
-                                        <li class="hidden"><span class="year">2017</span><span class="role"><span class="role-title">효리네 민박</span></span></li>
-                                        <li class="hidden"><span class="year">2016</span><span class="role"><span class="role-title">꽃놀이패</span>with 키</span></li>
-                                        <li class="hidden"><span class="year">2015</span><span class="role"><span class="role-title">무한도전</span></span></li>
-                                        <li class="hidden"><span class="year">2014</span><span class="role"><span class="role-title">연예가 중계</span></span></li>
-                                        <li class="hidden"><span class="year">2013</span><span class="role"><span class="role-title">주간 아이돌</span></span></li>
-                                        <li class="hidden"><span class="year">2012</span><span class="role"><span class="role-title">런닝맨</span></span></li>
-                                        <li class="hidden"><span class="year">2011</span><span class="role"><span class="role-title">세바퀴</span></span></li>
-                                        <li class="hidden"><span class="year">2010</span><span class="role"><span class="role-title">영웅호걸</span></span></li>
-                                        <li class="hidden"><span class="year">2009</span><span class="role"><span class="role-title">1대 100</span></span></li>
-                                    </ul>
-                                    <button class="btn-more"><span>MORE</span><img src="/img/icon/btn-more-gray-plus.svg" alt="더보기"></button>
-                                </div>
-                                <div class="tab-pane fade" id="sub-lee-musicvideo" role="tabpanel" aria-labelledby="musicvideo-tab">
-                                    <ul class="actors-history">
-                                        <li><span class="year">2011</span><span class="role"><span class="role-title">지선</span>‘바람아 불어라’</span></li>
-                                        <li><span class="year">2023</span><span class="role"><span class="role-title">구피디</span>‘귀가 멀어’</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 앨범 -->
-                    <div class="sub-artist-info-3 sub-artist-info">
-                        <h3>Discography</h3>
-                        <div class="info-detail">
-                            <div class="swiper mySwiper sub-artist-disco-swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-lee-1 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">The Winning</span>
-                                                <span class="disco-sub">6st Mini Album</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-lee-2 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">strawberry moon</span>
-                                                <span class="disco-sub">Digital Single</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-lee-3 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">LILAC</span>
-                                                <span class="disco-sub">5th Album</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-lee-4 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">에잇</span>
-                                                <span class="disco-sub">Digital Single</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-lee-5 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">Love poem</span>
-                                                <span class="disco-sub">5th Mini Album</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-lee-6 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">삐삐</span>
-                                                <span class="disco-sub">Digital Single</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-lee-7 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">Palette</span>
-                                                <span class="disco-sub">4th Album</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-lee-8 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">CHAT-SHIRE</span>
-                                                <span class="disco-sub">4th Mini Album</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-lee-9 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">Modern Times</span>
-                                                <span class="disco-sub">3rd Album</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-lee-10 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">Last Fantasy</span>
-                                                <span class="disco-sub">2nd Album</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-button-next"><img src="/img/icon/btnSet_right.svg" alt="이전 앨범 보기"></div>
-                            <div class="swiper-button-prev"><img src="/img/icon/btnSet_left.svg" alt="다음 앨범 보기"></div>  
-                            <!-- 모바일 슬라이드 -->
-                            <div class="swiper mySwiper sub-artist-disco-m-swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-lee-1 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">The Winning</span>
-                                                <span class="disco-sub">6st Mini Album</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-lee-2 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">strawberry moon</span>
-                                                <span class="disco-sub">Digital Single</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-lee-3 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">LILAC</span>
-                                                <span class="disco-sub">5th Album</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-lee-4 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">에잇</span>
-                                                <span class="disco-sub">Digital Single</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-lee-5 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">Love poem</span>
-                                                <span class="disco-sub">5th Mini Album</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-lee-6 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">삐삐</span>
-                                                <span class="disco-sub">Digital Single</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-lee-7 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">Palette</span>
-                                                <span class="disco-sub">4th Album</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-lee-8 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">CHAT-SHIRE</span>
-                                                <span class="disco-sub">4th Mini Album</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-lee-9 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">Modern Times</span>
-                                                <span class="disco-sub">3rd Album</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-lee-10 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">Last Fantasy</span>
-                                                <span class="disco-sub">2nd Album</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>  
-                        </div>
-                    </div>
-
-                    <!-- 수상내역 -->
-                    <div class="sub-artist-info-4 sub-artist-info">
-                        <h3>Awards &<br>
-                            Achievements</h3>
-                        <div class="info-detail">
-                            <h4>수상내역</h4>
-                            <ul class="actors-history">
-                                <li><span class="year">2024</span><span class="role"><span class="role-title">한국을 빛낸 자랑스러운 한국인 대상</span>[국위선양 공로 대상]</span></li>
-                                <li><span class="year">2023</span><span class="role"><span class="role-title">2023 올해의 브랜드 대상</span>[여자배우(영화) 부문]</span></li>
-                                <li><span class="year">2022</span><span class="role"><span class="role-title">제 36회 골든디스크어워즈</span>[디지털 음원 대상]</span></li>
-                                <li><span class="year">2021</span><span class="role"><span class="role-title">2021 KBS 가요대상</span>[대상]</span></li>
-                                <li class="hidden"><span class="year">2020</span><span class="role"><span class="role-title">제 22회 엠넷 아시안 뮤직 어워드</span>[베스트 보컬 퍼포먼스 솔로]</span></li>
-                                <li class="hidden"><span class="year">2019</span><span class="role"><span class="role-title">제 18회 대한민국 퍼스트브랜드 대상</span>[여자배우 부문]</span></li>
-                                <li class="hidden"><span class="year">2018</span><span class="role"><span class="role-title">제 18회 자랑스런한국인대상</span>[기부 부문 대상]</span></li>
-                                <li class="hidden"><span class="year">2017</span><span class="role"><span class="role-title">제 9회 멜론 뮤직 어워드</span>[올해의 앨범]</span></li>
-                                <li class="hidden"><span class="year">2016</span><span class="role"><span class="role-title">2016 SBS 연기대상</span>[베스트 커플상]</span></li>
-                                <li class="hidden"><span class="year">2015</span><span class="role"><span class="role-title">제 14회 대한민국 국회대상</span>[올해의 대중음악상]</span></li>
-                                <li class="hidden"><span class="year">2015</span><span class="role"><span class="role-title">제 14회 대한민국 국회대상</span>[올해의 대중음악상]</span></li>
-                                <li class="hidden"><span class="year">2014</span><span class="role"><span class="role-title">제 6회 멜론 뮤직 어워드</span>[올해의 아티스트]</span></li>
-                                <li class="hidden"><span class="year">2013</span><span class="role"><span class="role-title">2013 KBS 연기대상</span>[여자 신인상]</span></li>
-                                <li class="hidden"><span class="year">2012</span><span class="role"><span class="role-title">제 9회 한국대중음악상</span>[올해의 노래]</span></li>
-                                <li class="hidden"><span class="year">2011</span><span class="role"><span class="role-title">제 3회 멜론 뮤직 어워드</span>[올해의 베스트송]</span></li>
-                                <li class="hidden"><span class="year">2010</span><span class="role"><span class="role-title">제 54회 싸이월드 디지털 뮤직 어워드</span>[Song Of The Month(12월)]</span></li>
-                                <li class="hidden"><span class="year">2008</span><span class="role"><span class="role-title">문화체육관광부</span>[11월의 우수 신인음반 EP]</span></li>
-                            </ul>
-                            <button class="btn-more"><span>MORE</span><img src="/img/icon/btn-more-gray-plus.svg" alt="더보기"></button>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-
-            <!-- 박서준 -->
-            <div class="tab-pane fade" id="sub-artist-park" role="tabpanel" aria-labelledby="sub-artist-park-tab">
-                <h2>PARK SEO JOON</h2>
-                <div class="artist-content">
-
-                    <!-- 웹 슬라이드 -->
-                    <div class="frame-wrap">
-                        <div class="frame large sub-artist-frame1">
-                            <img src="/img/subArtist/artist-main-img-park-1.jpg" alt="Image 1" class="sub-artist-img1">
-                        </div>
-                        <div class="frame small sub-artist-frame2" onclick="changeImage(event,'sub-artist-frame2')">
-                            <img src="/img/subArtist/artist-main-img-park-2.jpg" alt="Image 2" class="sub-artist-img2">
-                        </div>
-                        <div class="frame small sub-artist-frame3" onclick="changeImage(event,'sub-artist-frame3')">
-                            <img src="/img/subArtist/artist-main-img-park-3.jpg" alt="Image 3" class="sub-artist-img3">
-                        </div>
-                    </div>
-
-                    <!-- 모바일 슬라이드 -->
-                    <div class="swiper mySwiper sub-artist-main-swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-park-1.jpg" alt="박서준 첫번째 프로필 사진"></div>
-                            <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-park-2.jpg" alt="박서준 두번째 프로필 사진"></div>
-                            <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-park-3.jpg" alt="박서준 세번째 프로필 사진"></div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-    
-                    <!-- 아티스트 소개 -->
-                    <div class="sub-artist-info-1">
-                        <p>
-                            박서준 아티스트 소개<br>
-                        </p>
-                        <a href="/sub/goods.html" class="goods-btn">GOODS 보러가기</a>
-                    </div>
-
-                    <!-- 필모그라피 -->
-                    <div class="sub-artist-info-2 sub-artist-info">
-                        <h3>Filmography</h3>
-                        <div class="info-detail">
-
-                            <ul class="nav nav-tabs info-2-title" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <h4><a class="nav-link active" data-bs-toggle="tab" href="#sub-park-drama" role="tab" aria-controls="drama" aria-selected="true">드라마</a></h4>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <h4><a class="nav-link" data-bs-toggle="tab" href="#sub-park-movie" role="tab" aria-controls="movie" aria-selected="false">영화</a></h4>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <h4><a class="nav-link" data-bs-toggle="tab" href="#sub-park-broadcast" role="tab" aria-controls="broadcast" aria-selected="false">방송활동</a></h4>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <h4><a class="nav-link" data-bs-toggle="tab" href="#sub-park-musicvideo" role="tab" aria-controls="musicvideo" aria-selected="false">뮤직비디오</a></h4>
-                                </li>
-                            </ul>
-
-                            <div class="tab-content info-2-detail">
-                                <div class="tab-pane fade show active" id="sub-park-drama" role="tabpanel" aria-labelledby="drama-tab">
-                                    <ul class="actors-history">
-                                        <li><span class="year">2024</span><span class="role"><span class="role-title">경성크리처 시즌 2</span>장호재 역</span></li>
-                                        <li><span class="year">2023</span><span class="role"><span class="role-title">경성크리처 시즌 1</span>장태상 역</span></li>
-                                        <li><span class="year">2020</span><span class="role"><span class="role-title">이태원 클라쓰</span>박새로이 역</span></li>
-                                        <li><span class="year">2018</span><span class="role"><span class="role-title">김비서가 왜 그럴까</span>이영준 역</span></li>
-                                        <li class="hidden"><span class="year">2017</span><span class="role"><span class="role-title">쌈, 마이웨이</span>고동만 역</span></li>
-                                        <li class="hidden"><span class="year">2016</span><span class="role"><span class="role-title">화랑</span>무명 / 김선우 역</span></li>
-                                        <li class="hidden"><span class="year">2015</span><span class="role"><span class="role-title">그녀는 예뻤다</span>지성준 역</span></li>
-                                        <li class="hidden"><span class="year">2014</span><span class="role"><span class="role-title">마녀의 연애</span>윤동하 역</span></li>
-                                        <li class="hidden"><span class="year">2013</span><span class="role"><span class="role-title">금 나와라, 뚝딱!</span>박현태 역</span></li>
-                                        <li class="hidden"><span class="year">2012</span><span class="role"><span class="role-title">드림하이 2</span>이시우 역</span></li>
-                                    </ul>
-                                    <button class="btn-more"><span>MORE</span><img src="/img/icon/btn-more-gray-plus.svg" alt="더보기"></button>
-                                </div>
-                                <div class="tab-pane fade" id="sub-park-movie" role="tabpanel" aria-labelledby="movie-tab">
-                                    <ul class="actors-history">
-                                        <li><span class="year">2023</span><span class="role"><span class="role-title">콘크리트 유토피아</span>김민성 역</span></li>
-                                        <li><span class="year">2019</span><span class="role"><span class="role-title">사자</span>용후 역</span></li>
-                                        <li><span class="year">2018</span><span class="role"><span class="role-title">지금 만나러 갑니다</span>어른 지호 역</span></li>
-                                        <li><span class="year">2017</span><span class="role"><span class="role-title">청년경찰</span>박기준 역</span></li>
-                                        <li class="hidden"><span class="year">2015</span><span class="role"><span class="role-title">뷰티 인사이드</span>김우진 역</span></li>
-                                        <li class="hidden"><span class="year">2011 </span><span class="role"><span class="role-title">퍼펙트 게임</span>칠구 역</span></li>
-                                    </ul>
-                                    <button class="btn-more"><span>MORE</span><img src="/img/icon/btn-more-gray-plus.svg" alt="더보기"></button>
-                                </div>
-                                <div class="tab-pane fade" id="sub-park-broadcast" role="tabpanel" aria-labelledby="broadcast-tab">
-                                    <ul class="actors-history">
-                                        <li><span class="year">2024</span><span class="role"><span class="role-title">서진이네2</span></span></li>
-                                        <li><span class="year">2023</span><span class="role"><span class="role-title">유 퀴즈 온 더 블럭</span></span></li>
-                                        <li><span class="year">2022</span><span class="role"><span class="role-title">청춘MT</span></span></li>
-                                        <li><span class="year">2021</span><span class="role"><span class="role-title">윤스테이</span></span></li>
-                                        <li class="hidden"><span class="year">2020</span><span class="role"><span class="role-title">여름방학</span></span></li>
-                                        <li class="hidden"><span class="year">2019</span><span class="role"><span class="role-title">삼시세끼</span>산촌 편</span></li>
-                                        <li class="hidden"><span class="year">2018</span><span class="role"><span class="ro le-title">윤식당2</span></span></li>
-                                        <li class="hidden"><span class="year">2017</span><span class="role"><span class="role-title">런닝맨</span></span></li>
-                                        <li class="hidden"><span class="year">2016</span><span class="role"><span class="role-title">1박 2일</span></span></li>
-                                        <li class="hidden"><span class="year">2015</span><span class="role"><span class="role-title">런닝맨</span></span></li>
-                                        <li class="hidden"><span class="year">2014</span><span class="role"><span class="role-title">SBS 연기대상</span></span></li>
-                                        <li class="hidden"><span class="year">2013</span><span class="role"><span class="role-title">뮤직뱅크</span></span></li>
-                                        <li class="hidden"><span class="year">2006</span><span class="role"><span class="role-title">현장기록 형사</span></span></li>
-                                    </ul>
-                                    <button class="btn-more"><span>MORE</span><img src="/img/icon/btn-more-gray-plus.svg" alt="더보기"></button>
-                                </div>
-                                <div class="tab-pane fade" id="sub-park-musicvideo" role="tabpanel" aria-labelledby="musicvideo-tab">
-                                    <ul class="actors-history">
-                                        <li><span class="year">2024</span><span class="role"><span class="role-title">전소미</span>‘Ice Cream’</span></li>
-                                        <li><span class="year">2021</span><span class="role"><span class="role-title">픽보이</span>‘교포머리’</span></li>
-                                        <li><span class="year">2017</span><span class="role"><span class="role-title">김지수</span>‘Dream All Day’</span></li>
-                                        <li><span class="year">2014</span><span class="role"><span class="role-title">더원</span>‘하나둘셋넷’</span></li>
-                                        <li class="hidden"><span class="year">2011</span><span class="role"><span class="role-title">방용국</span>‘I Remember’</span></li>
-                                    </ul>
-                                    <button class="btn-more"><span>MORE</span><img src="/img/icon/btn-more-gray-plus.svg" alt="더보기"></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 앨범 -->
-                    <div class="sub-artist-info-3 sub-artist-info">
-                        <h3>Discography</h3>
-                        <div class="info-detail">
-                            <div class="swiper mySwiper sub-artist-disco-swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-park-1 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 1</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-park-2 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 1</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-park-3 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 1</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-park-4 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 1</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-button-next"><img src="/img/icon/btnSet_right.svg" alt="이전 앨범 보기"></div>
-                            <div class="swiper-button-prev"><img src="/img/icon/btnSet_left.svg" alt="다음 앨범 보기"></div>
-                            <!-- 모바일 슬라이드 -->
-                            <div class="swiper mySwiper sub-artist-disco-m-swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-park-1 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 1</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-park-2 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 1</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-park-3 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 1</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-park-4 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 1</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-park-5 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 1</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-park-6 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 1</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
-                        </div>
-                    </div>
-
-                    <!-- 수상내역 -->
-                    <div class="sub-artist-info-4 sub-artist-info">
-                        <h3>Awards &<br>
-                            Achievements</h3>
-                        <div class="info-detail">
-                            <h4>수상내역</h4>
-                            <ul class="actors-history">
-                                <li><span class="year">2020</span><span class="role"><span class="role-title">2020 브랜드 고객충성도 대상</span>[남자배우 트렌드아이콘 부문]</span></li>
-                                <li><span class="year">2019</span><span class="role"><span class="role-title">제 13회 아시아 필름 어워즈(AFA)</span>[라이징 스타상]</span></li>
-                                <li><span class="year">2018</span><span class="role"><span class="role-title">제 9회 올해의 영화상</span>[신인남우상]</span></li>
-                                <li><span class="year">2017</span><span class="role"><span class="role-title">KBS 연기대상</span>[미니시리즈부문 남자 우수연기상]</span></li>
-                                <li class="hidden"><span class="year">2015</span><span class="role"><span class="role-title">MBC 연기대상</span>[베스트 커플상(with 지성)]</span></li>
-                                <li class="hidden"><span class="year">2014</span><span class="role"><span class="role-title">SBS 연기대상</span>[뉴스타상]</span></li>
-                                <li class="hidden"><span class="year">2013</span><span class="role"><span class="role-title">제 6회 코리아 드라마 어워즈</span>[남자 신인상]</span></li>
-                            </ul>
-                            <button class="btn-more"><span>MORE</span><img src="/img/icon/btn-more-gray-plus.svg" alt="더보기"></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 윤계상 -->
-            <div class="tab-pane fade" id="sub-artist-yoon" role="tabpanel" aria-labelledby="sub-artist-yoon-tab">
-                <h2>YOON KYE SANG</h2>
-                <div class="artist-content">
-                    
-                    <!-- 웹 슬라이드 -->
-                    <div class="frame-wrap">
-                        <div class="frame large sub-artist-frame1">
-                            <img src="/img/subArtist/artist-main-img-yoon-1.jpg" alt="Image 1" class="sub-artist-img1">
-                        </div>
-                        <div class="frame small sub-artist-frame2" onclick="changeImage(event,'sub-artist-frame2')">
-                            <img src="/img/subArtist/artist-main-img-yoon-2.jpg" alt="Image 2" class="sub-artist-img2">
-                        </div>
-                        <div class="frame small sub-artist-frame3" onclick="changeImage(event,'sub-artist-frame3')">
-                            <img src="/img/subArtist/artist-main-img-yoon-3.jpg" alt="Image 3" class="sub-artist-img3">
-                        </div>
-                    </div>
-
-                    <!-- 모바일 슬라이드 -->
-                    <div class="swiper mySwiper sub-artist-main-swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-yoon-1.jpg" alt="윤계상 첫번째 프로필 사진"></div>
-                            <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-yoon-2.jpg" alt="윤계상 두번째 프로필 사진"></div>
-                            <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-yoon-3.jpg" alt="윤계상 세번째 프로필 사진"></div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-    
-                    <!-- 아티스트 소개 -->
-                    <div class="sub-artist-info-1">
-                        <p>
-                            윤계상 아티스트 소개<br>
-                        </p>
-                        <a href="/sub/goods.html" class="goods-btn">GOODS 보러가기</a>
-                    </div>
-
-                    <!-- 필모그라피 -->
-                    <div class="sub-artist-info-2 sub-artist-info">
-                        <h3>Filmography</h3>
-                        <div class="info-detail">
-
-                            <ul class="nav nav-tabs info-2-title" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <h4><a class="nav-link active" data-bs-toggle="tab" href="#sub-yoon-drama" role="tab" aria-controls="drama" aria-selected="true">드라마</a></h4>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <h4><a class="nav-link" data-bs-toggle="tab" href="#sub-yoon-movie" role="tab" aria-controls="movie" aria-selected="false">영화</a></h4>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <h4><a class="nav-link" data-bs-toggle="tab" href="#sub-yoon-broadcast" role="tab" aria-controls="broadcast" aria-selected="false">방송활동</a></h4>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <h4><a class="nav-link" data-bs-toggle="tab" href="#sub-yoon-musicvideo" role="tab" aria-controls="musicvideo" aria-selected="false">뮤직비디오</a></h4>
-                                </li>
-                            </ul>
-
-                            <div class="tab-content info-2-detail">
-                                <div class="tab-pane fade show active" id="sub-yoon-drama" role="tabpanel" aria-labelledby="drama-tab">
-                                    <ul class="actors-history">
-                                        <li><span class="year">2025</span><span class="role"><span class="role-title">트라이: 우리는 기적이 된다</span>주가람 역</span></li>
-                                        <li><span class="year">2024</span><span class="role"><span class="role-title">아무도 없는 숲속에서</span>구상준 역</span></li>
-                                        <li><span class="year">2023</span><span class="role"><span class="role-title">유괴의 날</span>김명준 역</span></li>
-                                        <li><span class="year">2012</span><span class="role"><span class="role-title">키스 식스 센스</span>차민후 역</span></li>
-                                        <li class="hidden"><span class="year">2021</span><span class="role"><span class="role-title">크라임 퍼즐</span>한승민 역</span></li>
-                                        <li class="hidden"><span class="year">2019~2020</span><span class="role"><span class="role-title">초콜릿</span>이강 역</span></li>
-                                        <li class="hidden"><span class="year">2016</span><span class="role"><span class="role-title">굿 와이프</span>서중원 역</span></li>
-                                        <li class="hidden"><span class="year">2015</span><span class="role"><span class="role-title">라스트</span>장태호 역</span></li>
-                                        <li class="hidden"><span class="year">2014</span><span class="role"><span class="role-title">태양은 가득히</span>정세로 / 이은수 역</span></li>
-                                        <li class="hidden"><span class="year">2013</span><span class="role"><span class="role-title">감자별 2013QR3</span>외과 과장 역</span></li>
-                                        <li class="hidden"><span class="year">2011</span><span class="role"><span class="role-title">하이킥! 짧은 다리의 역습</span>윤계상 역</span></li>
-                                        <li class="hidden"><span class="year">2010</span><span class="role"><span class="role-title">로드 넘버 원</span>신태호 역</span></li>
-                                        <li class="hidden"><span class="year">2009</span><span class="role"><span class="role-title">트리플</span>장현태 역</span></li>
-                                        <li class="hidden"><span class="year">2008</span><span class="role"><span class="role-title">누구세요?</span>차승효 역</span></li>
-                                        <li class="hidden"><span class="year">2007</span><span class="role"><span class="role-title">사랑에 미치다</span>김채준 역</span></li>
-                                        <li class="hidden"><span class="year">2004</span><span class="role"><span class="role-title">형수님은 열아홉</span>강승재 역</span></li>
-                                        <li class="hidden"><span class="year">2001</span><span class="role"><span class="role-title">뉴 논스톱</span>윤계상 역</span></li>
-                                    </ul>
-                                    <button class="btn-more"><span>MORE</span><img src="/img/icon/btn-more-gray-plus.svg" alt="더보기"></button>
-                                </div>
-                                <div class="tab-pane fade" id="sub-yoon-movie" role="tabpanel" aria-labelledby="movie-tab">
-                                    <ul class="actors-history">
-                                        <li><span class="year">2024</span><span class="role"><span class="role-title">지오디 마스터피스 더 무비</span>윤계상 역</span></li>
-                                        <li><span class="year">2023</span><span class="role"><span class="role-title">싱글 인 서울</span>선우 역</span></li>
-                                        <li><span class="year">2021</span><span class="role"><span class="role-title">유체이탈자</span>강이안 역</span></li>
-                                        <li><span class="year">2020</span><span class="role"><span class="role-title">테이블</span>-</span></li>
-                                        <li class="hidden"><span class="year">2019</span><span class="role"><span class="role-title">말모이</span>류정환 역</span></li>
-                                        <li class="hidden"><span class="year">2018</span><span class="role"><span class="role-title">골든 슬럼버</span>신무열 역</span></li>
-                                        <li class="hidden"><span class="year">2017</span><span class="role"><span class="role-title">범죄도시</span>장첸 역</span></li>
-                                        <li class="hidden"><span class="year">2016</span><span class="role"><span class="role-title">죽여주는 여자</span>도훈 역</span></li>
-                                        <li class="hidden"><span class="year">2015</span><span class="role"><span class="role-title">극적인 하룻밤</span>유정훈 역</span></li>
-                                        <li class="hidden"><span class="year">2014</span><span class="role"><span class="role-title">레드카펫</span>박정우 역</span></li>
-                                        <li class="hidden"><span class="year">2013</span><span class="role"><span class="role-title">사랑의 가위바위보</span>운철 역</span></li>
-                                        <li class="hidden"><span class="year">2011</span><span class="role"><span class="role-title">풍산개</span>풍산 역</span></li>
-                                        <li class="hidden"><span class="year">2010</span><span class="role"><span class="role-title">조금만 더 가까이</span>현오 역</span></li>
-                                        <li class="hidden"><span class="year">2009</span><span class="role"><span class="role-title">집행자</span>재경 역</span></li>
-                                        <li class="hidden"><span class="year">2008</span><span class="role"><span class="role-title">6년째 연애중</span>김재영 역</span></li>
-                                        <li class="hidden"><span class="year">2004</span><span class="role"><span class="role-title">발레교습소</span>강민재 역</span></li>
-                                    </ul>
-                                    <button class="btn-more"><span>MORE</span><img src="/img/icon/btn-more-gray-plus.svg" alt="더보기"></button>
-                                </div>
-                                <div class="tab-pane fade" id="sub-yoon-broadcast" role="tabpanel" aria-labelledby="broadcast-tab">
-                                    <ul class="actors-history">
-                                        <li><span class="year">2000~2001</span><span class="role"><span class="role-title">god의 육아일기</span></span></li>
-                                    </ul>
-                                </div>
-                                <div class="tab-pane fade" id="sub-yoon-musicvideo" role="tabpanel" aria-labelledby="musicvideo-tab">
-                                    <ul class="actors-history">
-                                        <li><span class="year">2021</span><span class="role"><span class="role-title">코드 쿤스트, 이찬혁, 콜드, 소금</span>‘피열(Cheers)’</span></li>
-                                        <li><span class="year">2010</span><span class="role"><span class="role-title">슈프림팀, 영준</span>‘그땐 그땐 그땐’</span></li>
-                                        <li><span class="year">2007</span><span class="role"><span class="role-title">M.C The Max</span>‘가슴아 그만해’</span></li>
-                                        <li><span class="year">2001</span><span class="role"><span class="role-title">차태현</span>‘I Love You’</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 앨범 -->
-                    <div class="sub-artist-info-3 sub-artist-info">
-                        <h3>Discography</h3>
-                        <div class="info-detail">
-                            <div class="swiper mySwiper sub-artist-disco-swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-yoon-1 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 1</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-yoon-2 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 1</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-yoon-3 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 1</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-yoon-4 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 1</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-button-next"><img src="/img/icon/btnSet_right.svg" alt="이전 앨범 보기"></div>
-                            <div class="swiper-button-prev"><img src="/img/icon/btnSet_left.svg" alt="다음 앨범 보기"></div>    
-                            <!-- 모바일 슬라이드 -->
-                            <div class="swiper mySwiper sub-artist-disco-m-swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-yoon-1 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 1</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-yoon-2 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 1</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-yoon-3 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 1</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-yoon-4 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 1</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-yoon-5 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 1</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img-wrap">
-                                            <a href="#none" class="sub-disco-yoon-6 sub-disco"></a>
-                                            <span class="text">
-                                                <span class="disco-title">선재 업고 튀어 OST Part 1</span>
-                                                <span class="disco-sub">선재 업고 튀어 OST</span>    
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
-                        </div>
-                    </div>
-
-                    <!-- 수상내역 -->
-                    <div class="sub-artist-info-4 sub-artist-info">
-                        <h3>Awards &<br>
-                            Achievements</h3>
-                        <div class="info-detail">
-                            <h4>수상내역</h4>
-                            <ul class="actors-history">
-                                <li><span class="year">2022</span><span class="role"><span class="role-title">제 42회 황금촬영상영화제</span>[심사위원 특별상]</span></li>
-                                <li><span class="year">2018</span><span class="role"><span class="role-title">제 9회 올해의 영화상</span>[올해의 발견상]</span></li>
-                                <li><span class="year">2017</span><span class="role"><span class="role-title">한국영화배우협회 스타의 밤 시상식</span>[한국영화 인기스타상]</span></li>
-                                <li><span class="year">2011</span><span class="role"><span class="role-title">MBC 방송연예대상</span>[코미디/시트콤부문 남자 우수상]</span></li>
-                                <li class="hidden"><span class="year">2007</span><span class="role"><span class="role-title">앙드레김 베스트스타 어워드</span>[남자부문 베스트스타상]</span></li>
-                                <li class="hidden"><span class="year">2005</span><span class="role"><span class="role-title">제 41회 백상예술대상</span>[영화부문 남자 신인연기상]</span></li>
-                            </ul>
-                            <button class="btn-more"><span>MORE</span><img src="/img/icon/btn-more-gray-plus.svg" alt="더보기"></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="artist-banner">
+        <div class="banner-text container-1280">
+            <h2 class="title">ARTIST</h2>
+            <p class="sub-title">다양한 매력, 무한한 가능성</p>
+            <p class="detail">
+            <span class="dN-768">당신의 마음을 사로잡을 매력적인 아티스트들이 한 자리에 모여 각자의 특별한 이야기를 펼치고 있습니다.<br>
+            음악, 연기, 춤, 그리고 예술의 경계를 허물어, 관객과의 깊은 교감을 통해 진정한 감동을 선사합니다.<br></span>
+            유니버스 엔터테인먼트 아티스트들은 <br class="dB-480">자신들만의 매력적인 이야기를 풀어내며, <br class="dB-990">그들의 여정은 누구나 공감할 수 있는 <br class="dB-480">희망과 영감을 제공합니다.<br>
+            </p>
         </div>
-    </article>
-
-    <div class="nav-sticky">
-        <div class="nav nav-tabs" id="sub-artist-list" role="tablist">
-            <h3 class="toggle-nav">ARTISTS</h3>
-            <ul class="item-wrap">
+    </section>
+    <section class="artist-wrap container-1280">
+        <article class="artist-content">
+            <ul class="artist-name nav nav-tabs d-flex justify-content-center align-items-center" id="sub-artist-Tab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="sub-byeon-tab" data-bs-toggle="tab" href="#sub-artist-byeon" role="tab" aria-controls="sub-byeon" aria-selected="true">변우석</a>
+                    <h3><a class="nav-link active" id="sub-artist-byeon-tab" data-bs-toggle="tab" href="#sub-artist-byeon" role="tab" aria-controls="byeon" aria-selected="true">변우석</a></h3>
+                    <span class="nav-line"></span>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="sub-nam-tab" data-bs-toggle="tab" href="#sub-artist-nam" role="tab" aria-controls="sub-nam" aria-selected="false">남우현</a>
+                    <h3><a class="nav-link" id="sub-artist-lee-tab" data-bs-toggle="tab" href="#sub-artist-lee" role="tab" aria-controls="lee" aria-selected="false">이지은</a></h3>
+                    <span class="nav-line"></span>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="sub-lee-tab" data-bs-toggle="tab" href="#sub-artist-lee" role="tab" aria-controls="sub-lee" aria-selected="false">이지은</a>
+                    <h3><a class="nav-link" id="sub-artist-yoon-tab" data-bs-toggle="tab" href="#sub-artist-yoon" role="tab" aria-controls="yoon" aria-selected="false">윤계상</a></h3>
+                    <span class="nav-line"></span>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="sub-park-tab" data-bs-toggle="tab" href="#sub-artist-park" role="tab" aria-controls="sub-park" aria-selected="false">박서준</a>
+                    <h3><a class="nav-link" id="sub-artist-nam-tab" data-bs-toggle="tab" href="#sub-artist-nam" role="tab" aria-controls="nam" aria-selected="false">남우현</a></h3>
+                    <span class="nav-line"></span>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="sub-yoon-tab" data-bs-toggle="tab" href="#sub-artist-yoon" role="tab" aria-controls="sub-yoon" aria-selected="false">윤계상</a>
+                    <h3><a class="nav-link" id="sub-artist-park-tab" data-bs-toggle="tab" href="#sub-artist-park" role="tab" aria-controls="park" aria-selected="false">박서준</a></h3>
                 </li>
             </ul>
-        </div>
-    </div>
 
+            <div class="tab-content sub-artist-detail">
+                <!-- 변우석 탭 -->
+                <div class="tab-pane fade show active" id="sub-artist-byeon" role="tabpanel" aria-labelledby="byeon-tab">
+                    <h4>BYEON WOO SEOCK</h4>
+                    <div class="byeon-info artist-info">
+        
+                        <!-- 웹 슬라이드 -->
+                        <div class="frame-wrap">
+                            <div class="frame large sub-artist-frame1">
+                                <img src="/img/subArtist/artist-main-img-byeon-1.jpg" alt="Image 1" class="sub-artist-img1">
+                            </div>
+                            <div class="frame small sub-artist-frame2" onclick="changeImage(event,'sub-artist-frame2')">
+                                <img src="/img/subArtist/artist-main-img-byeon-2.jpg" alt="Image 2" class="sub-artist-img2">
+                            </div>
+                            <div class="frame small sub-artist-frame3" onclick="changeImage(event,'sub-artist-frame3')">
+                                <img src="/img/subArtist/artist-main-img-byeon-3.jpg" alt="Image 3" class="sub-artist-img3">
+                            </div>
+                        </div>
+        
+                        <!-- 모바일 슬라이드 -->
+                        <div class="swiper mySwiper sub-artist-main-swiper sub-artist-main-swiper-1">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-byeon-1.jpg" alt="변우석 첫번째 프로필 사진"></div>
+                                <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-byeon-2.jpg" alt="변우석 두번째 프로필 사진"></div>
+                                <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-byeon-3.jpg" alt="변우석 세번째 프로필 사진"></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+        
+                        <!-- 아티스트 소개 -->
+                        <div class="sub-artist-info-1">
+                            <p>
+                                변우석은 자신만의 스타일로 인물에 생명을 불어넣으며,<br>
+                                내면을 완벽하게 이끌어내는 <br class="dB-480">입체적인 연기 스타일을 자랑한다.<br>
+                                <br>
+                                매력적인 목소리와 비주얼을 바탕으로 <br>
+                                '청춘기록', '힘쎈여자 강남순', '선재 업고 튀어' 등<br> 
+                                개성있는 연기를 펼치며 <br class="dB-480">꾸준히 배우로서 커리어를 다져가고 있다.
+                            </p>
+                            <div class="btn-wrap"><a href="/sub/schedule.html" class="schedule-btn">SCHEDULE 보러가기</a><a href="/sub/goods.html" class="goods-btn">GOODS 보러가기</a></div>
+                        </div>
+
+                        <!-- 대표작 슬라이드 -->
+
+
+                        <!-- 필모그래피 -->
+                        <div class="sub-artist-info-3">
+                            <h5>Filmography</h5>
+                            <div class="filmo-wrap">
+                                <div class="filmo-1 filmo">
+                                    <h6>작품 활동</h6>
+                                    <ul>
+                                        <li><strong>2024</strong><span class="detail"><span class="title">선재 업고 튀어</span><span class="sub">류선재 역</span></span></li>
+                                        <li><strong>2023</strong><span class="detail"><span class="title">힘쎈여자 강남순</span><span class="sub">류시오 역</span></span></li>
+                                        <li><strong>2023</strong><span class="detail"><span class="title">소울메이트</span><span class="sub">함진우 역</span></span></li>
+                                        <li><strong>2021</strong><span class="detail"><span class="title">꽃 피면 달 생각하고</span><span class="sub">이표 역</span></span></li>
+                                        <li class="hidden"><strong>2020</strong><span class="detail"><span class="title">청춘기록</span><span class="sub">원해효 역</span></span></li>
+                                        <li class="hidden"><strong>2019</strong><span class="detail"><span class="title">조선혼담공작소 꽃파당</span><span class="sub">도준 역</span></span></li>
+                                        <li class="hidden"><strong>2018</strong><span class="detail"><span class="title">모두의 연애</span><span class="sub">변우석 역</span></span></li>
+                                    </ul>
+                                </div>
+
+                                <div class="filmo-2 filmo">
+                                    <h6>앨범 활동</h6>
+                                    <ul>
+                                        <li><strong>2024</strong><span class="detail"><span class="title">선재 업고 튀어 OST</span><span class="sub">Part 1</span></span></li>
+                                        <li><strong>2024</strong><span class="detail"><span class="title">선재 업고 튀어 OST</span><span class="sub">Part 4</span></span></li>
+                                    </ul>
+                                </div>
+ 
+                                <div class="filmo-3 filmo">
+                                    <h6>수상 내역</h6>
+                                    <ul>
+                                        <li><strong>2024</strong><span class="detail"><span class="title">올해의 브랜드 대상</span><span class="sub">[남자배우(핫트렌드)]</span></span></li>
+                                        <li><strong>2023</strong><span class="detail"><span class="title">KBS 연기대상</span><span class="sub">[남자 신인상]</span></span></li>
+                                        <li><strong>2021</strong><span class="detail"><span class="title">2021 아시아모델페스티벌</span><span class="sub">[K Model Awards 패션모델상]</span></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            
+                <!-- 이지은 탭 -->
+                <div class="tab-pane fade" id="sub-artist-lee" role="tabpanel" aria-labelledby="sub-artist-lee-tab">
+                    <h4>LEE JI EUN</h4>
+                    <div class="lee-info artist-info">
+                        
+                        <!-- 웹 슬라이드 -->
+                        <div class="frame-wrap">
+                            <div class="frame large sub-artist-frame1">
+                                <img src="/img/subArtist/artist-main-img-lee-1.jpg" alt="Image 1" class="sub-artist-img1">
+                            </div>
+                            <div class="frame small sub-artist-frame2" onclick="changeImage(event,'sub-artist-frame2')">
+                                <img src="/img/subArtist/artist-main-img-lee-2.jpg" alt="Image 2" class="sub-artist-img2">
+                            </div>
+                            <div class="frame small sub-artist-frame3" onclick="changeImage(event,'sub-artist-frame3')">
+                                <img src="/img/subArtist/artist-main-img-lee-3.jpg" alt="Image 3" class="sub-artist-img3">
+                            </div>
+                        </div>
+            
+                        <!-- 모바일 슬라이드 -->
+                        <div class="swiper mySwiper sub-artist-main-swiper sub-artist-main-swiper-2">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-lee-1.jpg" alt="이지은 첫번째 프로필 사진"></div>
+                                <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-lee-2.jpg" alt="이지은 두번째 프로필 사진"></div>
+                                <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-lee-3.jpg" alt="이지은 세번째 프로필 사진"></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+            
+                        <!-- 아티스트 소개 -->
+                        <div class="sub-artist-info-1">
+                            <p>
+                                이지은은 매력적인 비주얼, 러블리하면서도 신비한 에너지로<br>
+                                국내는 물론 해외에서도 많은 사랑을 받고 있다.<br>
+                                <br>
+                                '호텔 델루나', '달의 연인-보보경심 려', '드림하이', <br>
+                                '드림', '브로커' 등 매 작품마다 뛰어난 캐릭터 소화력과<br> 
+                                안정적인 연기력을 선보이며 <br class="dB-480">배우로서 탄탄한 필모그래피를 쌓고있다.
+                            </p>
+                            <div class="btn-wrap"><a href="/sub/schedule.html" class="schedule-btn">SCHEDULE 보러가기</a><a href="/sub/goods.html" class="goods-btn">GOODS 보러가기</a></div>
+                        </div>
+
+                        <!-- 필모그래피 -->
+                        <div class="sub-artist-info-3">
+                            <h5>Filmography</h5>
+                            <div class="filmo-wrap">
+                                <div class="filmo-1 filmo">
+                                    <h6>작품 활동</h6>
+                                    <ul>
+                                        <li><strong>2022</strong><span class="detail"><span class="title">브로커</span><span class="sub">소영 역</span></span></li>
+                                        <li><strong>2021</strong><span class="detail"><span class="title">아무도 없는 곳</span><span class="sub">미영 역</span></span></li>
+                                        <li><strong>2019</strong><span class="detail"><span class="title">호텔 델루나</span><span class="sub">장만월 역</span></span></li>
+                                        <li><strong>2019</strong><span class="detail"><span class="title">페르소나</span><span class="sub">IU / 은 / 한나 / 지은 역</span></span></li>
+                                        <li class="hidden"><strong>2018</strong><span class="detail"><span class="title">나의 아저씨</span><span class="sub">이지안 역</span></span></li>
+                                        <li class="hidden"><strong>2016</strong><span class="detail"><span class="title">달의 연인-보보경심 려</span><span class="sub">해수 • 고하진 역</span></span></li>
+                                        <li class="hidden"><strong>2015</strong><span class="detail"><span class="title">프로듀사</span><span class="sub">신디 역</span></span></li>
+                                        <li class="hidden"><strong>2013</strong><span class="detail"><span class="title">최고다 이순신</span><span class="sub">이순신 역</span></span></li>
+                                    </ul>
+                                </div>
+
+                                <div class="filmo-2 filmo">
+                                    <h6>앨범 활동</h6>
+                                    <ul>
+                                        <li><strong>2024</strong><span class="detail"><span class="title">The Winning</span><span class="sub">6th Mini Album</span></span></li>
+                                        <li><strong>2021</strong><span class="detail"><span class="title">strawberry moon</span><span class="sub">Digital Single</span></span></li>
+                                        <li><strong>2021</strong><span class="detail"><span class="title">LILAC</span><span class="sub">5th Album</span></span></li>
+                                        <li><strong>2020</strong><span class="detail"><span class="title">에잇</span><span class="sub">Digital Single</span></span></li>
+                                        <li class="hidden"><strong>2019</strong><span class="detail"><span class="title">Love poem</span><span class="sub">5th Mini Album</span></span></li>
+                                        <li class="hidden"><strong>2018</strong><span class="detail"><span class="title">삐삐</span><span class="sub">Digital Single</span></span></li>
+                                        <li class="hidden"><strong>2017</strong><span class="detail"><span class="title">Palette</span><span class="sub">4th Album</span></span></li>
+                                        <li class="hidden"><strong>2016</strong><span class="detail"><span class="title">CHAT-SHIRE</span><span class="sub">4th Mini Album</span></span></li>
+                                    </ul>
+                                </div>
+    
+                                <div class="filmo-3 filmo">
+                                    <h6>수상 내역</h6>
+                                    <ul>
+                                        <li><strong>2024</strong><span class="detail"><span class="title">한국을 빛낸 자랑스러운 한국인 대상</span><span class="sub">[국위선양 공로 대상]</span></span></li>
+                                        <li><strong>2023</strong><span class="detail"><span class="title">2023 올해의 브랜드 대상</span><span class="sub">[여자배우(영화) 부문]</span></span></li>
+                                        <li><strong>2022</strong><span class="detail"><span class="title">제42회 황금촬영상영화제</span><span class="sub">[신인여우상]</span></span></li>
+                                        <li><strong>2022</strong><span class="detail"><span class="title">제43회 청룡영화상</span><span class="sub">[청정원 인기스타상]</span></span></li>
+                                        <li class="hidden"><strong>2022</strong><span class="detail"><span class="title">제31회 부일영화상</span><span class="sub">[올해의 스타상]</span></span></li>
+                                        <li class="hidden"><strong>2022</strong><span class="detail"><span class="title">제36회 골든디스크어워즈</span><span class="sub">[디지털 음원 대상]</span></span></li>
+                                        <li class="hidden"><strong>2021</strong><span class="detail"><span class="title">2021 KBS 가요대상</span><span class="sub">[대상]</span></span></li>
+                                        <li class="hidden"><strong>2020</strong><span class="detail"><span class="title">제22회 엠넷 아시안 뮤직 어워드</span><span class="sub">[여자 가수상]</span></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            
+                <!-- 윤계상 탭 -->
+                <div class="tab-pane fade" id="sub-artist-yoon" role="tabpanel" aria-labelledby="sub-artist-yoon-tab">
+                    <h4>YOON KYE SANG</h4>
+                    <div class="yoon-info artist-info">
+                        
+                        <!-- 웹 슬라이드 -->
+                        <div class="frame-wrap">
+                            <div class="frame large sub-artist-frame1">
+                                <img src="/img/subArtist/artist-main-img-yoon-1.jpg" alt="Image 1" class="sub-artist-img1">
+                            </div>
+                            <div class="frame small sub-artist-frame2" onclick="changeImage(event,'sub-artist-frame2')">
+                                <img src="/img/subArtist/artist-main-img-yoon-2.jpg" alt="Image 2" class="sub-artist-img2">
+                            </div>
+                            <div class="frame small sub-artist-frame3" onclick="changeImage(event,'sub-artist-frame3')">
+                                <img src="/img/subArtist/artist-main-img-yoon-3.jpg" alt="Image 3" class="sub-artist-img3">
+                            </div>
+                        </div>
+            
+                        <!-- 모바일 슬라이드 -->
+                        <div class="swiper mySwiper sub-artist-main-swiper sub-artist-main-swiper-3">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-yoon-1.jpg" alt="윤계상 첫번째 프로필 사진"></div>
+                                <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-yoon-2.jpg" alt="윤계상 두번째 프로필 사진"></div>
+                                <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-yoon-3.jpg" alt="윤계상 세번째 프로필 사진"></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+
+                        <!-- 아티스트 소개 -->
+                        <div class="sub-artist-info-1">
+                            <p>
+                                윤계상은 섬세한 감정 표현과 깊이 있는 심리 묘사를 통해,<br>
+                                다양한 장르에서 자신만의 독특한 매력을 발산하고 있다.<br>
+                                <br>
+                                '유체이탈자', '범죄도시', '아무도 없는 숲속에서', <br>
+                                '굿 와이프', '하이킥! 짧은 다리의 역습' 등에서 <br>
+                                관객을 몰입시키며 다채로운 연기 스펙트럼을 보여주고 있다.<br> 
+                            </p>
+                            <div class="btn-wrap"><a href="/sub/schedule.html" class="schedule-btn">SCHEDULE 보러가기</a><a href="/sub/goods.html" class="goods-btn">GOODS 보러가기</a></div>
+                        </div> 
+
+                        <!-- 필모그래피 -->
+                        <div class="sub-artist-info-3">
+                            <h5>Filmography</h5>
+                            <div class="filmo-wrap">
+                                <div class="filmo-1 filmo">
+                                    <h6>작품 활동</h6>
+                                    <ul>
+                                        <li><strong>2024</strong><span class="detail"><span class="title">아무도 없는 숲속에서</span><span class="sub">구상준 역</span></span></li>
+                                        <li><strong>2023</strong><span class="detail"><span class="title">유괴의 날</span><span class="sub">김명준 역</span></span></li>
+                                        <li><strong>2022</strong><span class="detail"><span class="title">키스 식스 센스</span><span class="sub">차민후 역</span></span></li>
+                                        <li><strong>2011</strong><span class="detail"><span class="title">유체이탈자</span><span class="sub">강이안 역</span></span></li>
+                                        <li class="hidden"><strong>2019</strong><span class="detail"><span class="title">말모이</span><span class="sub">류정환 역</span></span></li>
+                                        <li class="hidden"><strong>2018</strong><span class="detail"><span class="title">골든 슬럼버</span><span class="sub">신무열 역</span></span></li>
+                                        <li class="hidden"><strong>2017</strong><span class="detail"><span class="title">범죄도시</span><span class="sub">장첸 역</span></span></li>
+                                        <li class="hidden"><strong>2016</strong><span class="detail"><span class="title">굿 와이프</span><span class="sub">서중원 역</span></span></li>
+                                    </ul>
+                                </div>
+
+                                <div class="filmo-2 filmo">
+                                    <h6>앨범 활동</h6>
+                                    <ul>
+                                        <li><strong>2019</strong><span class="detail"><span class="title">THEN & NOW</span><span class="sub">20주년 기념 Album</span></span></li>
+                                        <li><strong>2018</strong><span class="detail"><span class="title">눈이 내린다</span><span class="sub">Digital Single</span></span></li>
+                                        <li><strong>2015</strong><span class="detail"><span class="title">god Single Album</span><span class="sub">Digital Single</span></span></li>
+                                        <li><strong>2014</strong><span class="detail"><span class="title">Chapter 8</span><span class="sub">8th Album</span></span></li>
+                                        <li class="hidden"><strong>2014</strong><span class="detail"><span class="title">미운오리새끼</span><span class="sub">Digital Single</span></span></li>
+                                        <li class="hidden"><strong>2005</strong><span class="detail"><span class="title">하늘속으로</span><span class="sub">7th Album</span></span></li>
+                                        <li class="hidden"><strong>2004</strong><span class="detail"><span class="title">보통날</span><span class="sub">6th Album</span></span></li>
+                                        <li class="hidden"><strong>2002</strong><span class="detail"><span class="title">Chapter 5 Letter</span><span class="sub">5th Album</span></span></li>
+                                    </ul>
+                                </div>
+    
+                                <div class="filmo-3 filmo">
+                                    <h6>수상 내역</h6>
+                                    <ul>
+                                        <li><strong>2022</strong><span class="detail"><span class="title">제42회 황금촬영상영화제</span><span class="sub">[심사위원 특별상]</span></span></li>
+                                        <li><strong>2018</strong><span class="detail"><span class="title">제9회 올해의 영화상</span><span class="sub">[올해의 발견상]</span></span></li>
+                                        <li><strong>2017</strong><span class="detail"><span class="title">한국영화배우협회 스타의 밤 시상식</span><span class="sub">[한국영화 인기스타상]</span></span></li>
+                                        <li><strong>2011</strong><span class="detail"><span class="title">MBC 방송연예대상</span><span class="sub">[코미디/시트콤부문 남자 우수상]</span></span></li>
+                                        <li class="hidden"><strong>2007</strong><span class="detail"><span class="title">앙드레김 베스트스타 어워드</span><span class="sub">[남자부문 베스트스타상]</span></span></li>
+                                        <li class="hidden"><strong>2005</strong><span class="detail"><span class="title">제41회 백상예술대상</span><span class="sub">[영화부문 남자 신인연기상]</span></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            
+                <!-- 남우현 탭 -->
+                <div class="tab-pane fade" id="sub-artist-nam" role="tabpanel" aria-labelledby="sub-artist-nam-tab">
+                    <h4>NAM WOO HYUN</h4>
+                    <div class="nam-info artist-info">
+                        
+                        <!-- 웹 슬라이드 -->
+                        <div class="frame-wrap">
+                            <div class="frame large sub-artist-frame1">
+                                <img src="/img/subArtist/artist-main-img-nam-1.jpg" alt="Image 1" class="sub-artist-img1">
+                            </div>
+                            <div class="frame small sub-artist-frame2" onclick="changeImage(event,'sub-artist-frame2')">
+                                <img src="/img/subArtist/artist-main-img-nam-2.jpg" alt="Image 2" class="sub-artist-img2">
+                            </div>
+                            <div class="frame small sub-artist-frame3" onclick="changeImage(event,'sub-artist-frame3')">
+                                <img src="/img/subArtist/artist-main-img-nam-3.jpg" alt="Image 3" class="sub-artist-img3">
+                            </div>
+                        </div>
+            
+                        <!-- 모바일 슬라이드 -->
+                        <div class="swiper mySwiper sub-artist-main-swiper sub-artist-main-swiper-4">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-nam-1.jpg" alt="남우현 첫번째 프로필 사진"></div>
+                                <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-nam-2.jpg" alt="남우현 두번째 프로필 사진"></div>
+                                <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-nam-3.jpg" alt="남우현 세번째 프로필 사진"></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        
+                        <!-- 아티스트 소개 -->
+                        <div class="sub-artist-info-1">
+                            <p>
+                                남우현은 뛰어난 보컬 실력과 다채로운 매력으로<br>
+                                많은 사랑을 받으며 최근 연기에서도 두각을 드러내고 있다.<br>
+                                <br>
+                                한국과 일본을 오가며 뮤지컬 배우로 활발히 활동 중이며<br>
+                                '광화문 연가', '그날들', '메피스토', '잭 더 리퍼' 등<br>
+                                다양한 역할에 도전하며 점차 스펙트럼을 넓혀가고 있습니다.
+                            </p>
+                            <div class="btn-wrap"><a href="/sub/schedule.html" class="schedule-btn">SCHEDULE 보러가기</a><a href="/sub/goods.html" class="goods-btn">GOODS 보러가기</a></div>
+                        </div> 
+
+                        <!-- 필모그래피 -->
+                        <div class="sub-artist-info-3">
+                            <h5>Filmography</h5>
+                            <div class="filmo-wrap">
+                                <div class="filmo-1 filmo">
+                                    <h6>작품 활동</h6>
+                                    <ul>
+                                        <li><strong>2024</strong><span class="detail"><span class="title">블러디 러브</span><span class="sub">디미트루 역</span></span></li>
+                                        <li><strong>2022</strong><span class="detail"><span class="title">모래시계</span><span class="sub">우석 역</span></span></li>
+                                        <li><strong>2021</strong><span class="detail"><span class="title">잭 더 리퍼</span><span class="sub">다니엘 역</span></span></li>
+                                        <li><strong>2019</strong><span class="detail"><span class="title">메피스토</span><span class="sub">메피스토 역</span></span></li>
+                                        <li class="hidden"><strong>2019</strong><span class="detail"><span class="title">그날들</span><span class="sub">무영 역</span></span></li>
+                                        <li class="hidden"><strong>2018</strong><span class="detail"><span class="title">바넘:위대한 쇼맨</span><span class="sub">아모스 스커더 역</span></span></li>
+                                        <li class="hidden"><strong>2012</strong><span class="detail"><span class="title">광화문 연가</span><span class="sub">지용 역</span></span></li>
+                                    </ul>
+                                </div>
+
+                                <div class="filmo-2 filmo">
+                                    <h6>앨범 활동</h6>
+                                    <ul>
+                                        <li><strong>2024</strong><span class="detail"><span class="title">너의 남자</span><span class="sub">3rd Digital Single</span></span></li>
+                                        <li><strong>2023</strong><span class="detail"><span class="title">WHITREE</span><span class="sub">The 1st Album</span></span></li>
+                                        <li><strong>2021</strong><span class="detail"><span class="title">With</span><span class="sub">4th Mini Album</span></span></li>
+                                        <li><strong>2019</strong><span class="detail"><span class="title">가을이 오면</span><span class="sub">2nd Digital Single</span></span></li>
+                                        <li class="hidden"><strong>2019</strong><span class="detail"><span class="title">A New Journey</span><span class="sub">3rd Mini Album</span></span></li>
+                                        <li class="hidden"><strong>2018</strong><span class="detail"><span class="title">지금 이 노래</span><span class="sub">1st Digital Single</span></span></li>
+                                        <li class="hidden"><strong>2018</strong><span class="detail"><span class="title">Second Write..</span><span class="sub">2nd Mini Album</span></span></li>
+                                        <li class="hidden"><strong>2016</strong><span class="detail"><span class="title">Write..</span><span class="sub">1st Mini Album</span></span></li>
+                                    </ul>
+                                </div>
+    
+                                <div class="filmo-3 filmo">
+                                    <h6>수상 내역</h6>
+                                    <ul>
+                                        <li><strong>2019</strong><span class="detail"><span class="title">2019 소리바다 케이뮤직 어워즈</span><span class="sub">[아트테이너 상]</span></span></li>
+                                        <li><strong>2019</strong><span class="detail"><span class="title">2019 텐아시아 K팝 글로벌 톱텐어워즈</span><span class="sub">[인기상]</span></span></li>
+                                        <li><strong>2017</strong><span class="detail"><span class="title">제31회 골든디스크 시상식</span><span class="sub">[음반 부문 본상]</span></span></li>
+                                        <li><strong>2017</strong><span class="detail"><span class="title">제6회 가온차트 뮤직 어워즈</span><span class="sub">[올해의 핫퍼포먼스 상]</span></span></li>
+                                        <li class="hidden"><strong>2015</strong><span class="detail"><span class="title">제42회 하이원 서울가요대상</span><span class="sub">[본상]</span></span></li>
+                                        <li class="hidden"><strong>2015</strong><span class="detail"><span class="title">제21회 대한민국 연예예술상</span><span class="sub">[남자그룹상]</span></span></li>
+                                        <li class="hidden"><strong>2014</strong><span class="detail"><span class="title">제9회 Asia Model Festival Awards</span><span class="sub">[인기가수상]</span></span></li>
+                                        <li class="hidden"><strong>2013</strong><span class="detail"><span class="title">제13회 대한민국 국회대상</span><span class="sub">[올해의 대중음악상]</span></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            
+                <!-- 박서준 탭 -->
+                <div class="tab-pane fade" id="sub-artist-park" role="tabpanel" aria-labelledby="sub-artist-park-tab">
+                    <h4>PARK SEO JOON</h4>
+                    <div class="park-info artist-info">
+            
+                        <!-- 웹 슬라이드 -->
+                        <div class="frame-wrap">
+                            <div class="frame large sub-artist-frame1">
+                                <img src="/img/subArtist/artist-main-img-park-1.jpg" alt="Image 1" class="sub-artist-img1">
+                            </div>
+                            <div class="frame small sub-artist-frame2" onclick="changeImage(event,'sub-artist-frame2')">
+                                <img src="/img/subArtist/artist-main-img-park-2.jpg" alt="Image 2" class="sub-artist-img2">
+                            </div>
+                            <div class="frame small sub-artist-frame3" onclick="changeImage(event,'sub-artist-frame3')">
+                                <img src="/img/subArtist/artist-main-img-park-3.jpg" alt="Image 3" class="sub-artist-img3">
+                            </div>
+                        </div>
+            
+                        <!-- 모바일 슬라이드 -->
+                        <div class="swiper mySwiper sub-artist-main-swiper sub-artist-main-swiper-5">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-park-1.jpg" alt="박서준 첫번째 프로필 사진"></div>
+                                <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-park-2.jpg" alt="박서준 두번째 프로필 사진"></div>
+                                <div class="swiper-slide"><img src="/img/subArtist/artist-main-img-park-3.jpg" alt="박서준 세번째 프로필 사진"></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+
+                        <!-- 아티스트 소개 -->
+                        <div class="sub-artist-info-1">
+                            <p>
+                                박서준은 다채로운 매력을 갖고 뛰어난 연기력과<br>
+                                자연스러운 카리스마로 큰 사랑을 받고 있다.<br>
+                                <br>
+                                '김비서가 왜 그럴까', '이태원 클라쓰', '여우각시별', <br>
+                                '사냥의 시간', '지금, 만나러 갑니다' 등에서 <br>
+                                기억에 남는 캐릭터들을 소화하며, 독보적인 입지를 다졌다.<br> 
+                            </p>
+                            <div class="btn-wrap"><a href="/sub/schedule.html" class="schedule-btn">SCHEDULE 보러가기</a><a href="/sub/goods.html" class="goods-btn">GOODS 보러가기</a></div>
+                        </div> 
+
+                        <!-- 필모그래피 -->
+                        <div class="sub-artist-info-3">
+                            <h5>Filmography</h5>
+                            <div class="filmo-wrap">
+                                <div class="filmo-1 filmo">
+                                    <h6>작품 활동</h6>
+                                    <ul>
+                                        <li><strong>2024</strong><span class="detail"><span class="title">경성크리처 시즌2</span><span class="sub">장호재 역</span></span></li>
+                                        <li><strong>2023</strong><span class="detail"><span class="title">콘크리트 유토피아</span><span class="sub">김민성 역</span></span></li>
+                                        <li><strong>2020</strong><span class="detail"><span class="title">이태원 클라쓰</span><span class="sub">박새로이 역</span></span></li>
+                                        <li><strong>2019</strong><span class="detail"><span class="title">사자</span><span class="sub">용후 역</span></span></li>
+                                        <li class="hidden"><strong>2018</strong><span class="detail"><span class="title">김비서가 왜 그럴까</span><span class="sub">이영준 역</span></span></li>
+                                        <li class="hidden"><strong>2018</strong><span class="detail"><span class="title">지금 만나러 갑니다</span><span class="sub">어른 지호 역</span></span></li>
+                                        <li class="hidden"><strong>2017</strong><span class="detail"><span class="title">쌈, 마이웨이</span><span class="sub">고동만 역</span></span></li>
+                                        <li class="hidden"><strong>2017</strong><span class="detail"><span class="title">청년경찰</span><span class="sub">박기준 역</span></span></li>
+                                    </ul>
+                                </div>
+
+                                <div class="filmo-2 filmo">
+                                    <h6>앨범 활동</h6>
+                                    <ul>
+                                        <li><strong>2017</strong><span class="detail"><span class="title">화랑 OST</span><span class="sub">Part 9</span></span></li>
+                                        <li><strong>2015</strong><span class="detail"><span class="title">그녀는 예뻤다 OST</span><span class="sub">Part 6</span></span></li>
+                                        <li><strong>2015</strong><span class="detail"><span class="title">킬미힐미 OST</span><span class="sub">Part 5</span></span></li>
+                                        <li><strong>2014</strong><span class="detail"><span class="title">마녀의 연애 OST</span><span class="sub">Part 3</span></span></li>
+                                        <li><strong>2012</strong><span class="detail"><span class="title">드림하이2 OST</span></span></li>
+                                    </ul>
+                                </div>
+    
+                                <div class="filmo-3 filmo">
+                                    <h6>수상 내역</h6>
+                                    <ul>
+                                        <li><strong>2020</strong><span class="detail"><span class="title">2020 브랜드 고객충성도 대상</span><span class="sub">[남자배우 트렌드아이콘 부문]</span></span></li>
+                                        <li><strong>2019</strong><span class="detail"><span class="title">제13회 아시아 필름 어워즈(AFA)</span><span class="sub">[라이징 스타상]</span></span></li>
+                                        <li><strong>2018</strong><span class="detail"><span class="title">제9회 올해의 영화상</span><span class="sub">[신인남우상]</span></span></li>
+                                        <li><strong>2017</strong><span class="detail"><span class="title">KBS 연기대상</span><span class="sub">[미니시리즈부문 남자 우수연기상]</span></span></li>
+                                        <li class="hidden"><strong>2015</strong><span class="detail"><span class="title">MBC 연기대상</span><span class="sub">[베스트 커플상]</span></span></li>
+                                        <li class="hidden"><strong>2014</strong><span class="detail"><span class="title">SBS 연기대상</span><span class="sub">[뉴스타상]</span></span></li>
+                                        <li class="hidden"><strong>2013</strong><span class="detail"><span class="title">제6회 코리아 드라마 어워즈</span><span class="sub">[남자 신인상]</span></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
 </main>
 
 
