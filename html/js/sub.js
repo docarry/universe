@@ -137,7 +137,7 @@ var customOverlay = new kakao.maps.CustomOverlay({
 // kakao api---------------------------------------
 
 
-// sub-info---------------------------------------
+// sub-info 회사 컨택---------------------------------------
 document.addEventListener("DOMContentLoaded", function() {
     const infoContactElements = document.querySelectorAll('.info-contact h3, .info-email, .info-number');
     
@@ -157,4 +157,24 @@ document.addEventListener("DOMContentLoaded", function() {
     checkVisibility();
 });
 // sub-info---------------------------------------
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const banner = document.querySelector('.banner');
+
+    function checkVisibility() {
+        const rect = banner.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+        if (isVisible) {
+            banner.classList.add('visible');
+        } else {
+            banner.classList.remove('visible');
+        }
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility(); // 초기 체크
+});
+
 

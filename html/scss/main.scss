@@ -9,7 +9,7 @@
     z-index: 2;
 
 
-    // 메인 배너
+    // 메인 배너 슬라이드
     #mainBanner{
         #main-banner{
             width: 100%;
@@ -70,22 +70,16 @@
         padding: 160px 0;
         .title{
             h2{
-                font-size: 4.125rem;
-                font-weight: 700;
-                span{
-                    font-size: 3.125rem;
-                    font-weight: 700;
-                }
+                @include f-50-700-72;
             }
             p{
-                font-size: 1.5rem;
-                font-weight: 500;
+                @include f-24-500-36;
             }
         }
     }
 
 
-    // 아티스트
+    // 아티스트 슬라이드
     #artist{
         padding: 100px 0;
         color: #FFF;
@@ -105,7 +99,7 @@
             #artist-slide{
                 width: 100%;
                 .swiper-wrapper{
-                    height: 992px;
+                    height: 100vh;
                     padding: 60px 0 72px;
                     .swiper-slide {
                         opacity: 0;
@@ -184,9 +178,7 @@
                     align-items: center;
                     .nav-link{
                         color: #FFF;
-                        font-size: 1.5rem;
-                        font-weight: 400;
-                        line-height: 36px;
+                        @include f-24-400-36;
                         padding: 0 76px;
                         border: 0;
                         &.active{
@@ -231,6 +223,51 @@
                             width: 94px;
                         }
                     }
+                    .artist-schedule-m01{
+                        display: none;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 6px 10px;
+                        background-color: #fff;
+                        border-radius: 10px 10px 0px 0px;
+                        @include f-18-400-26;
+                        color: #000;
+                        margin-bottom: 20px;
+                        .artistImg{
+                            width: 50px;
+                        }
+                        .text{
+                            color: #900404;
+                        }
+                        .scheduleMoreBtnMin{
+                            color: #000;
+                            gap: 4px;
+                            @include f-16-700-24;
+                        }
+                    }
+                    .artist-schedule-m02{
+                        display: none;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 6px 10px;
+                        background-color: #fff;
+                        border-radius: 10px 10px 0px 0px;
+                        @include f-18-400-26;
+                        color: #000;
+                        margin: 26px 0 20px;
+                        .artistImg{
+                            width: 50px;
+                            opacity: 0;
+                        }
+                        .text{
+                            color: #900404;
+                        }
+                        .scheduleMoreBtnMin{
+                            color: #000;
+                            gap: 4px;
+                            @include f-16-700-24;
+                        }
+                    }
                     #calendar02,
                     #calendar04,
                     #calendar06,
@@ -262,7 +299,7 @@
                             .scheduleText{
                                 margin: 20px 0 10px;
                                 .dateTextDday{
-                                    width: 50px;
+                                    width: 60px;
                                     height: 26px;
                                     border-radius: 30px;
                                     background-color: #DFDFDF;
@@ -298,6 +335,7 @@
                         height: 150px;
                         line-height: 150px;
                         text-align: center;
+                        cursor: pointer;
                     }
                     .calendar-container .fc-daygrid-day-number {
                         font-size: 24px;
@@ -319,9 +357,7 @@
                     }
                     .calendar-container .fc-col-header-cell-cushion {
                         display: block;
-                        font-size: 24px;
-                        font-weight: 700;
-                        line-height: 50px;
+                        @include f-24-700-50;
                     }
                     .calendar-container .fc-daygrid-body table tbody tr[role="row"]:not(:nth-child(1)),
                     .calendar-container .fc-toolbar.fc-header-toolbar,
@@ -353,7 +389,7 @@
 
 
 
-    // 릴리즈
+    // 릴리즈 슬라이드
     #release{
         color: #fff;
         background: url('../img/bg/bg02.jpg') rgba(0, 0, 0, 0.7) no-repeat 0 40% / cover;
@@ -439,13 +475,13 @@
             }
         }
         .releaseMoreBtn{
-            width: 95px;
-            line-height: 36px;
-            color: #767676;
+            width: 220px;
+            line-height: 48px;
+            color: #EDEDED;
             font-size: 1rem;
-            font-weight: 700;
+            font-weight: 400;
             border-radius: 30px;
-            border: 1px solid #767676;
+            border: 1px solid #EDEDED;
             margin-top: 60px;
         }
     }
@@ -518,11 +554,11 @@
                         text-align: center;
                         @include f-24-700-36;
                         opacity: 0;
-                        transition: opacity 0.1s ease;
+                        transition: opacity 0.6s ease;
                     }
                     .goodsBtn{
                         opacity: 0;
-                        transition: opacity 0.1s ease;
+                        transition: opacity 0.6s ease;
                         gap: 8px;
                         span{
                             color: #fff;
@@ -571,20 +607,20 @@
             }
         }
         .goodsMoreBtn{
-            width: 95px;
-            line-height: 36px;
-            color: #767676;
+            width: 220px;
+            line-height: 48px;
+            color: #EDEDED;
             font-size: 1rem;
-            font-weight: 700;
+            font-weight: 400;
             border-radius: 30px;
-            border: 1px solid #767676;
+            border: 1px solid #EDEDED;
             margin-top: 60px;
         }
     }
 
 
 
-    // 하단 메인 인포
+    // 메인 하단 인포
     #mainInfo{
         background: url('/img/bg/bg03.jpg') no-repeat center / cover;
         position: relative;
@@ -594,7 +630,9 @@
             margin: 0 auto;
             padding: 100px 0;
             .notice{
-                .noticeTitle{
+                padding: 24px 0 20px;
+                .mainInfoTitle{
+                    padding: 0 40px;
                     li{
                         @include f-16-700-24;
                         color: #000;
@@ -606,15 +644,18 @@
                 }
                 .mainInfoLine{
                     display: block;
-                    width: 100%;
+                    width: 330px;
                     height: 1px;
                     background-color: #000;
-                    margin: 22px 0 20px;
+                    margin: 22px auto 20px;
                 }
                 .noticeContent{
+                    gap: 30px;
                     > li{
-                        .noticeText{
+                        .mainInfoText{
                             @include f-16-400-24;
+                            padding: 0 40px;
+                            color: #000;
                             li{
                                 a{
                                     width: 230px;
@@ -633,20 +674,168 @@
             > li{
                 width: 30%;
                 background-color: #fff;
-                padding: 0 35px;
             }
             .multimedia{
+                padding: 24px 0 20px;
+                .mainInfoTitle{
+                    padding: 0 40px;
+                    color: #000;
+                    li{
+                        @include f-16-700-24;
+                        color: #000;
+                        .mainInfoMoreBtn{
+                            color: #000;
+                            gap: 4px;
+                        }
+                    }
+                }
+                .mainInfoLine{
+                    display: block;
+                    width: 330px;
+                    height: 1px;
+                    background-color: #000;
+                    margin: 22px auto 20px;
+                }
+                .mediaInfo{
+                    padding: 20px 35px 10px;
+                    > li{
+                        font-size: .875rem;
+                        font-weight: 400;
+                        color: #000
+                    }
+                    .mediaTitle{
+                        @include f-16-700-24;
+                    }
+                    .mediaPlay{
+                        margin-top: 10px;
+                        gap: 6px;
+                    }
+                    .shareBtn{
+                        color: #000;
+                    }
+                }
+                .hashtagText{
+                    color: #000;
+                    font-size: .875rem;
+                    font-weight: 400;
+                    padding: 0px 35px;
+                    gap: 4px;
+                }
             }
             .vive{
-
+                padding: 24px 0 20px;
+                .mainInfoTitle{
+                    padding: 0 40px;
+                    color: #000;
+                    li{
+                        @include f-16-700-24;
+                        color: #000;
+                        .mainInfoMoreBtn{
+                            color: #000;
+                            gap: 4px;
+                        }
+                    }
+                }
+                .mainInfoLine{
+                    display: block;
+                    width: 330px;
+                    height: 1px;
+                    background-color: #000;
+                    margin: 22px auto 20px;
+                }
+                .vive-wrap{
+                    padding: 0 40px;
+                    .viveBox01{
+                        gap: 18px;
+                        .img01{
+                            width: 170px;
+                            height: 170px;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    }
+                    .viveTextBox{
+                        color: #000;
+                        .viveText01{
+                            @include f-24-700-36;
+                        }
+                        .viveText02{
+                            @include f-16-700-24;
+                        }
+                        .viveText03{
+                            @include f-14-400-20;
+                        }
+                    }
+                    .vivePlayBtn{
+                        display: block;
+                        width: 62px;
+                        height: 28px;
+                        background-color: #000;
+                        border-radius: 5px;
+                        gap: 5px;
+                        margin-top: 10px;
+                    }
+                    .vivePlayText{
+                        color: #fff;
+                        @include f-14-400-20;
+                    }
+                    .viveBox02{
+                        margin-top: 24px;
+                        .viveText02{
+                            @include f-16-700-24;
+                        }
+                        .viveImg{
+                            margin-top: 10px;
+                            width: 226px;
+                            height: 116px;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
             }                 
-        }   
+        }
+    }
+
+    // 메인 하단 인포 팝업
+    #shareModal{
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 999;
+        .sharePopup{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 330px;
+            height: 114px;
+            background-color: #fff;
+            padding: 26px 30px 14px 20px;
+            border-radius: 10px;
+            z-index: 9999;
+            p{
+                color: #000;
+                @include f-14-400-20;
+            }
+            .shareCloseBtn{
+                color: #000;
+                @include f-16-400-24;
+                margin-top: 30px;
+                margin-left: 88%;
+            }
+        }
     }
 }
 
 
-
-
+// 서브 페이지 오디션
 #audition{
     background-color: #fff;
     height: 100vh;
