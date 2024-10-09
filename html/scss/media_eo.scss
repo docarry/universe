@@ -2,14 +2,21 @@
 // 필수(768,580,320)
 
 @media (min-width: 1440px) {
-    #sub-info .info-page .banner .banner-container .banner-text {
-        padding: 0;
-    }
     #sub-info .info-page .info-container .info-CI {
         padding: 0;
     }
     #sub-info .info-page .info-container .all-color {
         margin: 100px 0;
+    }
+    #sub-info .info-page .info-detail .info-story-container {
+        padding: 6.25rem 0;
+    }
+}
+
+@media (max-width: 1440px) {
+    #sub-info .info-page .banner .banner-container .banner-text{
+        width: 90%;
+        margin: 0 auto;
     }
 }
 
@@ -19,9 +26,11 @@
         .banner .banner-container .banner-text{
             .main-title {
                 font-size: 2.625rem;
+                margin-bottom: 0;
             }
             .sub-title{
-                font-size: 1.3rem;
+                font-size: 1.25rem;
+                padding-bottom: 1rem;
             }
             .sub-content{
                 font-size: .875rem;
@@ -30,6 +39,24 @@
         .info-container .info-CI .logo-grid {
             height: 758px;
         }
+        .info-detail .info-story-container{
+            .info-brandstory{
+                .brandstory-title{
+                    font-size: 1.25rem;
+                }
+                .brandstory-de {
+                    font-size: 2rem;
+                    margin-bottom: 0;
+                }
+                .brandstory-sub-de{
+                    font-size: 1.25rem;
+                    line-height: 32px;
+                } 
+            } 
+            .detail-text span {
+                font-size: 0.875rem;
+            }
+        } 
     } 
 }
 
@@ -64,9 +91,27 @@
             }
         }
         .info-detail{
-            height: 440px;
-            .detail-text {
-                font-size: 1.3rem;
+            height: 530px;
+            .info-story-container{
+                .info-brandstory{
+                    .brandstory-de {
+                        font-size: 1.75rem;
+                    }
+                    .brandstory-sub-de {
+                        .info-b-disN{
+                            display: block;
+                        }
+                    }
+                }
+                .detail-text{
+                    
+                    .detail-text01{
+                        display: none;
+                    }
+                    .detail-text02{
+                        display: block;
+                    }
+                }
             }
         } 
         .info-container{
@@ -107,31 +152,36 @@
 @media (max-width: 768px) {
     #sub-info .info-page{
         .banner {
-            height: 344px;
+            height: 370px;
             .banner-container{
                 .banner-text{
-                    text-align: center;
-                    // animation: slideIn 2s ease forwards;
                     .main-title{
                         @include f-36-700-52;
-                        margin-bottom: 20px;
                         animation: slideIn 2s ease forwards;
+                        padding-bottom: .625rem;
                     }
                     .sub-title{
-                        @include f-18-400-26;
-                        margin-bottom: 0;
+                        display: none;
+                    }
+                    .tablet-sub-title{
+                        display: block;
                         animation: slideIn 2s ease forwards;
                         animation-delay: 0.3s; // 서브 타이틀이 메인 타이틀 뒤에 슬라이드
                         opacity: 0; // 초기 상태로 설정
-                        .info-b-disN{
-                            display: block;
-                        }
+                        @include f-18-400-26;
+                        padding-bottom: .625rem;
                     }
                     .sub-content{
                         display: none;
+                    }
+                    .tablet-sub-content{
+                        display: block;
                         animation: slideIn 2s ease forwards;
-                        animation-delay: 0.3s; // 서브 타이틀이 메인 타이틀 뒤에 슬라이드
+                        animation-delay: 1.3s; // 서브 타이틀이 메인 타이틀 뒤에 슬라이드
                         opacity: 0; // 초기 상태로 설정
+                        font-size: 1rem;
+                        line-height: 24px;
+                        font-weight: 400;
                     }
                 }
             }
@@ -172,10 +222,28 @@
             }
         }
         .info-detail{
-            height: 224px;
+            height: 400px;
             margin-top: 40px;
-            .detail-text {
-                @include f-16-700-24;
+            .info-story-container{
+                gap: 40px;
+                padding: 0 20px;
+                .info-brandstory{
+                    .brandstory-de {
+                        line-height: 40px;
+                        font-size: 1.5rem;
+                    }
+                    .brandstory-sub-de {
+                        display: none;
+                    }
+                    .brandstory-de{
+                        .info-b-disN{
+                            display: block;
+                        }
+                    }
+                }
+                .detail-text span {
+                    line-height: 22px;
+                }
             }
         } 
         .info-container{
@@ -224,22 +292,68 @@
 @media (max-width: 580px) {
     #sub-info .info-page{
         .banner{
-            height: 244px;
+            height: 250px;
             .banner-container .banner-text{
                 .main-title {
-                    @include f-24-700-36;
-                    br{
-                        display: block;
-                    }
+                    @include f-20-700-28;
+                    padding-bottom: .625rem;
+                }
+                .tablet-sub-title{
+                    display: none;
+                }
+                .tablet-sub-content{
+                    display: none;
+                }
+                .mobile-sub-content{
+                    display: block;
+                    @include  f-12-400-18;
+                    line-height: 20px;
+                    animation: slideIn 2s ease forwards;
+                    animation-delay: 0.3s; // 서브 타이틀이 메인 타이틀 뒤에 슬라이드
+                    opacity: 0; // 초기 상태로 설정
                 }
             } 
         }
-        .info-container .info-CI .logo-grid {
-            height: 392px;
-            .sub-logo-content ul {
-                margin-top: 32px;
+        .info-container{
+            .all-color ul{
+                .main-color, .point-color{
+                    h3 {
+                        @include f-18-700-26;
+                    }
+                }
+            } 
+            .info-CI{
+                h3{
+                    @include f-18-700-26;
+                }
+                .logo-grid {
+                    height: 392px;
+                    .sub-logo-content ul {
+                        margin-top: 32px;
+                    }
+                }
+            } 
+            .info-location .info-contact h3 {
+                font-size: 1.25rem;
+                font-weight: 700;
+                line-height: 36px;
             }
         }
+    }
+}
+
+@media (max-width: 500px){
+    #sub-info .info-page .banner{
+        height: 210px;
+        .banner-container .banner-text{
+            padding: 6.25rem 0;
+            .main-title {
+                font-size: 20px;
+            }
+            .mobile-sub-content {
+                font-size: 12px;
+            }
+        } 
     }
 }
 
@@ -287,19 +401,16 @@
                 } 
             }
         } 
+        .info-detail .detail-text {
+            font-weight: 400;
+            font-size: .875rem;
+            line-height: 20px;
+        }
     }
 }
 
 @media (max-width: 400px) {
-    #sub-info .info-page{
-        .banner .banner-container .banner-text{
-            .main-title {
-                line-height: 26px;
-            }
-            .sub-title {
-                line-height: 20px;
-            }
-        }   
+    #sub-info .info-page{  
         .info-container{
             .info-location{
                 .info-contact {
@@ -322,24 +433,15 @@
                 height: 290px;
             }
         } 
+        .info-detail {
+            height: 200px;
+        }
     }
 }
 
+
 @media (max-width: 320px) {
     #sub-info .info-page{
-        .banner{
-            height: 200px;
-            .banner-container .banner-text{
-                .main-title {
-                    line-height: 26px;
-                    margin-bottom: 12px;
-                }
-                .sub-title{
-                    line-height: 20px;
-                    font-size: 1rem;
-                }
-            }
-        } 
         .info-container{
             .all-color{
                 margin: 30px 20px;
@@ -403,7 +505,6 @@
             }
             .info-location {
                 margin: 30px 0;
-                height: 300px;
                 .loc-box {
                     height: 300px;
                     .loc-text-box{
@@ -427,8 +528,8 @@
             height: 180px;
             margin-top: 30px;
             .detail-text {
-                font-size: 0.875rem;
-                line-height: 18px;
+                font-size: 0.8rem;
+                line-height: 16px;
             }
         }
     } 
