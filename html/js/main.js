@@ -540,6 +540,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
->>>>>>> origin/han
-=======
->>>>>>> origin/han
