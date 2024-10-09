@@ -84,12 +84,9 @@ function changeImage(event, clickedFrameClass) {
 
 // 대표작 슬라이드
 
-<<<<<<< HEAD
-=======
 // sub-artist---------------------------------------
 
 
->>>>>>> origin/develop
 
 // sub-goods---------------------------------------
 var goodsSwiper = new Swiper("#subGoods #bestBox .swiper.mySwiper", {
