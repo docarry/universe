@@ -1,15 +1,40 @@
 @import './_var.scss';
 
+@keyframes scaleImage {
+    0% {
+        transform: scale(1.2); // 초기 크기
+    }
+    100% {
+        transform: scale(1); // 최종 크기
+    }
+}
+
 #sub-info{
     .info-page{
 		.banner {
 			width: 100%;
+            height: 430px;
 			max-width: 1920px;
-			height: 506px;
 			background: url("../img/info/info-banner-img1.jpg") no-repeat center/cover;
 			position: relative;
 			display: flex;
 			align-items: center;
+            overflow: hidden; // 침범하는 영역 숨기기
+            .banner-bg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: inherit; // 부모의 배경 속성을 상속
+                transform: scale(1.3); // 초기 크기
+                animation: scaleImage 3s ease forwards; // 애니메이션 적용
+                z-index: 0; // 배경 이미지가 가장 뒤에 위치
+            }
+        
+            &.visible .banner-bg {
+                animation: scaleImage 3s ease forwards; // 클래스가 추가될 때 애니메이션 재시작
+            }
 			&::after {
 				content: "";
 				position: absolute;
@@ -28,17 +53,25 @@
 					color: #fff;
 					position: relative;
 					z-index: 2;
-                    padding: 0 50px;
 					.main-title {
 						@include f-50-700-72;
 						margin-bottom: 10px;
+                        animation: slideIn 2s forwards; /* 애니메이션 적용 */
+                        opacity: 0; // 초기 상태로 설정
 					}
 					.sub-title {
 						@include f-24-700-36;
-						margin-bottom: 40px;
+						padding-bottom: 2.5rem;
+                        animation: slideIn 3s forwards; /* 애니메이션 적용 */
+                        animation-delay: 0.3s; // 서브 타이틀이 메인 타이틀 뒤에 슬라이드
+                        opacity: 0; // 초기 상태로 설정
 					}
 					.sub-content {
 						@include f-16-700-24;
+                        font-weight: 400;
+                        animation: slideIn 3s forwards; /* 애니메이션 적용 */
+                        animation-delay: 1.3s; // 서브 타이틀이 메인 타이틀 뒤에 슬라이드
+                        opacity: 0; // 초기 상태로 설정
 					}
 				}
 			}
@@ -55,6 +88,7 @@
                         h3{
                             @include f-24-700-36;
                             margin-bottom: 20px;
+                            // animation: blink 2s infinite ease-in; 
                         }
                         .color-chart-bg{
                             max-width: 1280px;
@@ -99,6 +133,7 @@
                         h3{
                             @include f-24-700-36;
                             margin-bottom: 20px;
+                            // animation: blink 2s infinite ease-in; 
                         }
                         .color-chart-bg{
                             max-width: 1280px;
@@ -197,8 +232,7 @@
 			}
         }
         .info-detail{
-            width: 100vw;
-            height: 540px;
+            width: 100%;
             position: relative;
             background: url("../img/info/info-intro-img.jpg") no-repeat center / cover;
             display: flex;
@@ -216,12 +250,52 @@
                 mix-blend-mode: multiply; /* 믹스 블렌드 모드 적용 */
                 pointer-events: none; /* 클릭 이벤트 방지 */
             }
-            .detail-text {
-                @include f-28-700-42;
-                position: relative;
-                color: #fff;
-                z-index: 1;
-                text-align: center;
+            .info-story-container{
+                max-width: 1280px;
+                width: 100%;
+                padding: 6.25rem 50px;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                gap: 100px;
+                .info-brandstory {
+                    position: relative;
+                    color: #fff;
+                    z-index: 1;
+                    .brandstory-title{
+                        display: block;
+                        font-size: 1.625rem;
+                        margin-bottom: 20px;
+                        font-weight: 700;
+                    }
+                    .brandstory-de{
+                        display: block;
+                        font-size: 2.5rem;
+                        font-weight: 700;
+                        line-height: 50px;
+                        margin-bottom: 8px;
+                    }
+                    .brandstory-sub-de{
+                        display: block;
+                        font-weight: 700;
+                        font-size: 1.5rem;
+                        line-height: 40px;
+                    }
+                }
+                .detail-text {
+                    @include f-24-400-36;
+                    position: relative;
+                    color: #fff;
+                    z-index: 1;
+                    text-align: right;
+                    font-weight: 700;
+                    span{
+                        display: block;
+                        font-size: 1rem;
+                        line-height: 26px;
+                        font-weight: 400;
+                    }
+                }
             }
         }
         .info-container{
@@ -326,7 +400,7 @@
 // 키프레임
 @keyframes slideIn {
     0% {
-        transform: translateX(-20%);
+        transform: translateX(-5%);
         opacity: 0;
     }
     100% {
@@ -337,11 +411,20 @@
 
 @keyframes slide-up {
     0% {
-        transform: translateY(30px); /* 아래에서 시작 */
+        transform: translateY(10px); /* 아래에서 시작 */
         opacity: 0; /* 처음에는 투명 */
     }
     100% {
         transform: translateY(0); /* 원래 위치로 이동 */
         opacity: 1; /* 완전히 보이게 */
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 0; /* 시작과 끝은 보이지 않음 */
+    }
+    50% {
+        opacity: 1; /* 중간에 보임 */
     }
 }
