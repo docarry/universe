@@ -1,3 +1,6 @@
+// AOS 애니메이트 플러그인
+AOS.init();
+
 
 
 $(function(){
@@ -149,15 +152,20 @@ $(function(){
     // 메인 배너 슬라이드 반응형 이미지 바꾸기
     $(window).on('resize', function() {
         if (window.innerWidth <= 580) {
-            $('#main-banner .img01').attr('src', '/img/mainbanner/m-main011.jpg');
-            $('#main-banner .img02').attr('src', '/img/mainbanner/m-main011.jpg');
-            $('#main-banner .img03').attr('src', '/img/mainbanner/m-main011.jpg');
-            $('#main-banner .img04').attr('src', '/img/mainbanner/m-main011.jpg');
-        } else if (window.innerWidth > 580 && window.innerWidth <= 991) {
-            $('#main-banner .img01').attr('src', '/img/mainbanner/m-main01.jpg');
-            $('#main-banner .img02').attr('src', '/img/mainbanner/m-main01.jpg');
-            $('#main-banner .img03').attr('src', '/img/mainbanner/m-main01.jpg');
-            $('#main-banner .img04').attr('src', '/img/mainbanner/m-main01.jpg');
+            $('#main-banner .img01').attr('src', '/img/mainbanner/m-main51.jpg');
+            $('#main-banner .img02').attr('src', '/img/mainbanner/m-main52.jpg');
+            $('#main-banner .img03').attr('src', '/img/mainbanner/m-main53.jpg');
+            $('#main-banner .img04').attr('src', '/img/mainbanner/m-main54.jpg');
+        } else if (window.innerWidth > 580 && window.innerWidth <= 767) {
+            $('#main-banner .img01').attr('src', '/img/mainbanner/m-main71.jpg');
+            $('#main-banner .img02').attr('src', '/img/mainbanner/m-main72.jpg');
+            $('#main-banner .img03').attr('src', '/img/mainbanner/m-main73.jpg');
+            $('#main-banner .img04').attr('src', '/img/mainbanner/m-main74.jpg');
+        } else if (window.innerWidth > 767 && window.innerWidth <= 991) {
+            $('#main-banner .img01').attr('src', '/img/mainbanner/m-main91.jpg');
+            $('#main-banner .img02').attr('src', '/img/mainbanner/m-main92.jpg');
+            $('#main-banner .img03').attr('src', '/img/mainbanner/m-main93.jpg');
+            $('#main-banner .img04').attr('src', '/img/mainbanner/m-main94.jpg');
         } else if (window.innerWidth > 991) {
             $('#main-banner .img01').attr('src', '/img/mainbanner/main01.jpg');
             $('#main-banner .img02').attr('src', '/img/mainbanner/main02.jpg');
@@ -167,6 +175,18 @@ $(function(){
     });
     // 초기 로딩 시 이미지 변경
     $(window).trigger('resize');
+
+
+    // 공유 버튼 모달
+    $('.shareBtn').click(function() {
+        $('#shareModal').fadeIn(); // 모달을 부드럽게 표시
+    });
+
+    // 닫기 버튼 클릭 시 모달 숨기기
+    $('.shareCloseBtn').click(function() {
+        $('#shareModal').fadeOut(); // 모달을 부드럽게 숨김
+    });
+    
 
 
 });

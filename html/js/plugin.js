@@ -1,3 +1,7 @@
+// AOS 애니메이트 플러그인
+AOS.init();
+
+
 // 메인 배너 슬라이드
 var mainSwiper = new Swiper("#main-banner.mySwiper", {
     slidesPerView: 1,
@@ -82,10 +86,30 @@ document.addEventListener('DOMContentLoaded', function() {
                         eventLink.classList.add('eventText'); // 클래스 추가
                     }
 
-                    // 이벤트가 오늘 날짜와 겹칠 경우, 이벤트 border가 우선시되도록 처리
+                    // // 이벤트가 오늘 날짜와 겹칠 경우, 이벤트 border가 우선시되도록 처리
+                    // if (eventDate.toDateString() === new Date().toDateString()) {
+                    //     eventLink.style.border = 'solid 2px #f86666'; // 이벤트 border를 우선시
+                    // }
                     if (eventDate.toDateString() === new Date().toDateString()) {
-                        eventLink.style.border = 'solid 2px #f86666'; // 이벤트 border를 우선시
-                    }
+                        const mediaQuery = window.matchMedia("(min-width: 768px)");
+                        
+                        // 화면 크기에 따라 border 두께를 설정하는 함수
+                        const setBorderThickness = () => {
+                            if (mediaQuery.matches) {
+                                // 화면 너비가 768px 이상인 경우
+                                eventLink.style.border = 'solid 2px #f86666';
+                            } else {
+                                // 화면 너비가 0~767px인 경우
+                                eventLink.style.border = 'solid 1px #f86666';
+                            }
+                        };
+                    
+                        // 처음 로드 시 실행
+                        setBorderThickness();
+                    
+                        // 화면 크기가 변경될 때 실행
+                        mediaQuery.addEventListener('change', setBorderThickness);
+                    }                    
                 }
             },
             views: {

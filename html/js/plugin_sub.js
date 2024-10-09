@@ -1,7 +1,11 @@
+// AOS 애니메이트 플러그인
+AOS.init();
 
-// sub-artist----- 
+
+// sub-artist---------------------------------------
 // 메인 슬라이드
-var subArtistMainswiper = new Swiper(".sub-artist-main-swiper", {
+// 공통 Swiper 옵션 정의
+const subArtistMainswiperOptions = {
     slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
@@ -9,10 +13,51 @@ var subArtistMainswiper = new Swiper(".sub-artist-main-swiper", {
         enabled: true,
     },
     pagination: {
-        el: ".sub-artist-main-swiper .swiper-pagination",
         clickable: true,
     },
+};
+
+// 각 슬라이드에 대해 Swiper 인스턴스 생성
+const subArtistMainswiper1 = new Swiper(".sub-artist-main-swiper-1", {
+    ...subArtistMainswiperOptions,
+    pagination: {
+        ...subArtistMainswiperOptions.pagination,
+        el: ".sub-artist-main-swiper-1 .swiper-pagination",
+    },
 });
+
+const subArtistMainswiper2 = new Swiper(".sub-artist-main-swiper-2", {
+    ...subArtistMainswiperOptions,
+    pagination: {
+        ...subArtistMainswiperOptions.pagination,
+        el: ".sub-artist-main-swiper-2 .swiper-pagination",
+    },
+});
+
+const subArtistMainswiper3 = new Swiper(".sub-artist-main-swiper-3", {
+    ...subArtistMainswiperOptions,
+    pagination: {
+        ...subArtistMainswiperOptions.pagination,
+        el: ".sub-artist-main-swiper-3 .swiper-pagination",
+    },
+});
+
+const subArtistMainswiper4 = new Swiper(".sub-artist-main-swiper-4", {
+    ...subArtistMainswiperOptions,
+    pagination: {
+        ...subArtistMainswiperOptions.pagination,
+        el: ".sub-artist-main-swiper-4 .swiper-pagination",
+    },
+});
+
+const subArtistMainswiper5 = new Swiper(".sub-artist-main-swiper-5", {
+    ...subArtistMainswiperOptions,
+    pagination: {
+        ...subArtistMainswiperOptions.pagination,
+        el: ".sub-artist-main-swiper-5 .swiper-pagination",
+    },
+});
+
 function changeImage(event, clickedFrameClass) {
     // 클릭한 프레임의 부모 요소를 찾음
     const frameWrap = event.currentTarget.closest('.frame-wrap');
@@ -37,44 +82,9 @@ function changeImage(event, clickedFrameClass) {
     }
 }
 
-// 앨범 슬라이드
-var subArtistDiscoswiper = new Swiper(".sub-artist-disco-swiper", {
-    loop: true,
-    // effect: 'creative',
-    grabCursor: true,
-    centeredSlides: false,
-    slidesPerView: 'auto',
-    spaceBetween: 0,
-    slidesPerGroup : 1,
-    keyboard: {
-        enabled: true,
-    },
-    navigation: {
-        nextEl: ".sub-artist-info-3 .swiper-button-next",
-        prevEl: ".sub-artist-info-3 .swiper-button-prev",
-    },
-    autoHeight: true,
-});
-var subArtistDiscoMswiper = new Swiper(".sub-artist-disco-m-swiper", {
-    slidesPerView: 2,
-    spaceBetween: 28,
-    loop: true,
-    keyboard: {
-        enabled: true,
-    },
-    breakpoints: {
-        320: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-        },
-        580: {
-            slidesPerView: 2,
-            spaceBetween: 28,
-        },
-    },
-});
+// 대표작 슬라이드
 
-// sub-artist-----
+// sub-artist---------------------------------------
 
 
 
@@ -98,7 +108,7 @@ var goodsSwiper = new Swiper("#subGoods #bestBox .swiper.mySwiper", {
 });
 // sub-goods---------------------------------------
 
-// sub-schedule-----
+// sub-schedule---------------------------------------
 document.addEventListener('DOMContentLoaded', function () {
     const calendars = {}; // 각 탭에 대한 캘린더 인스턴스를 저장할 객체
 
@@ -110,16 +120,68 @@ document.addEventListener('DOMContentLoaded', function () {
         return `${year}년 ${month}월 ${day}일`;
     }
 
+    // 다가오는 스케줄을 업데이트하는 함수
+    function updateUpcomingSchedule(events, tabName) {
+        const currentDate = new Date(); // 현재 날짜
+
+        // 다가오는 이벤트만 필터링
+        const upcomingEvents = events.filter(event => {
+            return new Date(event.start) > currentDate;
+        });
+
+        // 해당 탭의 다가오는 스케줄 영역을 찾기
+        const scheduleContainer = document.querySelector(`#sub-schedule-${tabName} .sub-schedule-m-detail`);
+
+        if (!scheduleContainer) return;
+
+        // 기존 내용 초기화
+        scheduleContainer.innerHTML = '';
+
+        if (upcomingEvents.length === 0) {
+            scheduleContainer.innerHTML = '<p>최근 60일내 스케쥴만 나타납니다.</p>';
+        } else {
+            upcomingEvents.forEach(event => {
+                const eventDate = new Date(event.start);
+                const formattedDate = formatDate(eventDate);
+
+                // 시간 포맷 함수 (00:00 형식으로 출력)
+                function formatTime(date) {
+                    const hours = date.getHours().toString().padStart(2, '0');
+                    const minutes = date.getMinutes().toString().padStart(2, '0');
+                    return `${hours}:${minutes}`;
+                }
+
+                const eventHtml = `
+                    <div class="event-item">
+                        <p class="event-time">${formatTime(new Date(event.start))}</p> 
+                        <div class="event-detail">
+                            <p class="event-title"><strong>${event.title}</strong></p>
+                            <p class="event-date">${formattedDate}</p>
+                        </div>
+                    </div>
+                `;
+
+                function formatDate(date) {
+                    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+                    const day = date.getDate().toString().padStart(2, '0');
+                    const dayOfWeek = ["일", "월", "화", "수", "목", "금", "토"][date.getDay()]; // 요일 이름
+                    
+                    return `${month}월 ${day}일 (${dayOfWeek})`;
+                }
+                scheduleContainer.insertAdjacentHTML('beforeend', eventHtml);
+            });
+        }
+    }
+
     // 캘린더 렌더링 함수
-    function renderCalendar(elementId, events) {
-        return new FullCalendar.Calendar(document.getElementById(elementId), {
-            timeZone: 'UTC',
+    function renderCalendar(elementId, events, tabName) {
+        const calendar = new FullCalendar.Calendar(document.getElementById(elementId), {
             headerToolbar: {
-                left: 'prev,next today',
+                left: 'today',
                 center: 'title',
-                right: ''
+                right: 'prev,next'
             },
-            contentHeight: 950,  // 예: 500px로 고정 (한 달 크기 정도로 맞춰서 표시)
+            contentHeight: 820,
             locale: 'ko',
             initialView: 'dayGridMonth',
             titleFormat: {
@@ -129,14 +191,26 @@ document.addEventListener('DOMContentLoaded', function () {
             buttonText: {
                 today: '오늘'
             },
+            datesSet: function () {
+                document.querySelectorAll('.fc-daygrid-day-number').forEach(function (dayElem) {
+                    let date = new Date(dayElem.closest('.fc-day').getAttribute('data-date'));
+                    let day = date.getDate().toString().padStart(2, '0');
+                    dayElem.textContent = day;
+                });
+            },
             eventDidMount: function (event) {
                 let dayGridDay = event.el.closest('.fc-daygrid-day');
                 let dayNumberElem = dayGridDay.querySelector('.fc-daygrid-day-number');
 
+                // 이미 날짜가 설정된 경우 처리하지 않음
+                if (dayNumberElem && dayNumberElem.textContent !== "") {
+                    return; // 날짜가 이미 설정되었으므로 종료
+                }
+
                 if (dayNumberElem) {
                     let eventDate = new Date(event.event.start);
                     let day = eventDate.getDate().toString().padStart(2, '0');
-                    dayNumberElem.textContent = day;
+                    dayNumberElem.textContent = day; // '일'을 제외하고 숫자만 설정
 
                     let eventLink = dayGridDay.querySelector('.fc-daygrid-day-top a');
                     if (eventLink) {
@@ -149,30 +223,41 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             },
             dayCellDidMount: function (info) {
-                let dayNumberElem = info.el.querySelector('.fc-daygrid-day-number');
-                if (dayNumberElem) {
-                    let date = new Date(info.date);
-                    let day = date.getDate().toString().padStart(2, '0');
-                    dayNumberElem.textContent = day;
+                const dayNumElem = info.el.querySelector('.fc-daygrid-day-number'); // 변수 이름 변경
+                if (dayNumElem) {
+                    const dateAttr = info.date; // info.date를 사용
+                    const date = new Date(dateAttr);
+                    
+                    if (!isNaN(date.getTime())) { 
+                        const day = date.getDate().toString().padStart(2, '0');
 
-                    if (date.getDay() === 0 || date.getDay() === 6) {
-                        dayNumberElem.style.color = '#f86666'; // 일요일과 토요일 빨간색
+                        // 날짜가 비어있을 때만 설정
+                        if (dayNumElem.textContent === "") {
+                            dayNumElem.textContent = day; // '일'을 제외하고 숫자만 설정
+                        }
+                    } else {
+                        console.warn('Invalid date:', dateAttr); 
                     }
-
+            
+                    // 주말 처리
+                    if (date.getDay() === 0 || date.getDay() === 6) {
+                        dayNumElem.style.color = '#f86666'; // 일요일과 토요일 빨간색
+                    }
+            
+                    // 오늘 날짜 처리
                     if (date.toDateString() === new Date().toDateString()) {
-                        let todayLink = info.el.querySelector('.fc-daygrid-day-top a');
+                        const todayLink = info.el.querySelector('.fc-daygrid-day-top a');
                         if (todayLink) {
                             todayLink.style.border = 'solid 2px #333';
                         }
                     }
                 }
             },
+
+            events: events,
             datesSet: function () {
-                document.querySelectorAll('.fc-daygrid-day-number').forEach(function (dayElem) {
-                    let date = new Date(dayElem.closest('.fc-day').getAttribute('data-date'));
-                    let day = date.getDate().toString().padStart(2, '0');
-                    dayElem.textContent = day;
-                });
+                // 다가오는 이벤트만 필터링하여 탭에 표시
+                updateUpcomingSchedule(events, tabName);
             },
             eventClick: function (info) {
                 var event = info.event;
@@ -187,51 +272,42 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                     <span class="event-divider"></span>
                     <h5>${event.title}</h5>
-                `; // 날짜와 닫기 버튼을 묶고, 타이틀과 선 추가
+                `;
 
                 var popup = document.querySelector('.event-popup');
                 popup.innerHTML = popupContent;
 
                 // 팝업 위치 계산
-                var eventEl = info.el.getBoundingClientRect(); // 날짜의 위치와 크기 가져오기
-                var popupWidth = popup.offsetWidth; // 팝업의 너비
-                var popupHeight = popup.offsetHeight; // 팝업의 높이
+                var eventEl = info.el.getBoundingClientRect();
+                var popupWidth = popup.offsetWidth;
+                var popupHeight = popup.offsetHeight;
+                var fcDayCenterX = eventEl.left + eventEl.width / 2;
+                var fcDayCenterY = eventEl.top + eventEl.height / 2;
+                var dayOfWeek = eventDate.getDay();
 
-                // fc-day의 중앙 위치 계산 (정확한 중앙 계산)
-                var fcDayCenterX = eventEl.left + eventEl.width / 2;  // 날짜의 중앙 X 좌표
-                var fcDayCenterY = eventEl.top + eventEl.height / 2;  // 날짜의 중앙 Y 좌표
-
-                // 날짜의 요일을 추출 (0: 일요일, 1: 월요일, 2: 화요일, ...)
-                var dayOfWeek = eventDate.getDay(); 
-
-                // 일요일(0), 월요일(1), 화요일(2) 일 경우: 팝업의 left 하단이 날짜 중앙에 맞춰짐
+                var popupLeft, popupTop;
                 if (dayOfWeek === 0 || dayOfWeek === 1 || dayOfWeek === 2) {
-                    // 팝업의 왼쪽이 날짜 중앙에 맞춰짐
-                    var popupLeft = fcDayCenterX;  // 팝업 왼쪽 위치 (날짜의 중앙을 팝업의 왼쪽에 맞춤)
-                    var popupTop = fcDayCenterY - popupHeight;  // 팝업 상단 위치 (오른쪽 하단을 중앙에 맞추기 위해 -popupHeight)
+                    popupLeft = fcDayCenterX;
+                    popupTop = fcDayCenterY - popupHeight;
                 } else {
-                    // 그 외의 요일(수요일부터 토요일까지): 팝업의 오른쪽 하단이 날짜 중앙에 맞춰짐
-                    var popupLeft = fcDayCenterX - popupWidth;  // 팝업 왼쪽 위치 (오른쪽 하단을 중앙에 맞추기 위해 -popupWidth)
-                    var popupTop = fcDayCenterY - popupHeight;  // 팝업 상단 위치 (오른쪽 하단을 중앙에 맞추기 위해 -popupHeight)
+                    popupLeft = fcDayCenterX - popupWidth;
+                    popupTop = fcDayCenterY - popupHeight;
                 }
 
-                // 추가적으로 팝업이 위로 올라가게 하려면 오프셋을 더합니다.
-                var offsetTop = -90; // 팝업이 위로 20px 올라가게 하여 조정
+                var offsetTop = -60;
 
-                // 위치 적용 (팝업의 오른쪽 하단이 날짜 중앙에 맞도록)
                 popup.style.left = `${popupLeft + window.scrollX}px`;
-                popup.style.top = `${popupTop + window.scrollY + offsetTop}px`; // 오프셋 추가
+                popup.style.top = `${popupTop + window.scrollY + offsetTop}px`;
 
-                // 팝업 표시
                 popup.classList.add('show');
 
-                // 닫기 버튼 이벤트
                 document.querySelector('.popup-close-btn').addEventListener('click', function () {
                     popup.classList.remove('show');
                 });
-            },
-            events: events
+            }
         });
+
+        return calendar;
     }
 
     // 탭이 활성화될 때마다 해당 탭에 캘린더 렌더링
@@ -241,67 +317,40 @@ document.addEventListener('DOMContentLoaded', function () {
         // 각 탭에 대한 캘린더 렌더링
         if (targetTab === '#sub-schedule-byeon' && !calendars['byeon']) {
             calendars['byeon'] = renderCalendar('sub-calendar-byeon', [
-                { 
-                    title: '공연)2024 이슬라이브 페스티벌', 
-                    start: '2024-11-05T19:00:00+09:00', 
-                },
-                { 
-                    title: '공연)2024 수원 월드컵 경기장', 
-                    start: '2024-11-09T13:00:00+09:00', 
-                },
-                { 
-                    title: '공연)2024 HEREH WORLD TOUR CONCERT ENCORE : THE WINNING', 
-                    start: '2024-11-23T18:00:00+09:00', 
-                }
-            ]);
+                { title: '공연)2024 이슬라이브 페스티벌', start: '2024-11-05T19:00:00+09:00' },
+                { title: '공연)2024 수원 월드컵 경기장', start: '2024-11-09T13:00:00+09:00' },
+                { title: '공연)2024 HEREH WORLD TOUR CONCERT ENCORE : THE WINNING', start: '2024-11-23T18:00:00+09:00' }
+            ], 'byeon');
             calendars['byeon'].render();
         }
 
         if (targetTab === '#sub-schedule-lee' && !calendars['lee']) {
             calendars['lee'] = renderCalendar('sub-calendar-lee', [
-                { 
-                    title: '공연)2024 콘서트 <Love, Poen>', 
-                    start: '2024-11-08T19:00:00+09:00', 
-                },
-                { 
-                    title: '앨범)<꽃갈피 둘>발매 7주년', 
-                    start: '2024-11-12T00:00:00+09:00', 
-                },
-            ]);
+                { title: '공연)2024 콘서트 &lt;Love, Poen&gt;', start: '2024-11-08T19:00:00+09:00' },
+                { title: '앨범)<꽃갈피 둘>발매 7주년', start: '2024-11-12T00:00:00+09:00' }
+            ], 'lee');
             calendars['lee'].render();
         }
 
         if (targetTab === '#sub-schedule-yoon' && !calendars['yoon']) {
             calendars['yoon'] = renderCalendar('sub-calendar-yoon', [
-                { 
-                    title: '공연)2024 god Concert Chapter', 
-                    start: '2024-11-09T18:00:00+09:00', 
-                },
-            ]);
+                { title: '공연)2024 god Concert Chapter', start: '2024-11-09T18:00:00+09:00' }
+            ], 'yoon');
             calendars['yoon'].render();
         }
 
         if (targetTab === '#sub-schedule-nam' && !calendars['nam']) {
             calendars['nam'] = renderCalendar('sub-calendar-nam', [
-                { 
-                    title: '공연)2024 NAM WOO HYUN CONCERT', 
-                    start: '2024-11-16T18:00:00+09:00', 
-                },
-            ]);
+                { title: '공연)2024 NAM WOO HYUN CONCERT', start: '2024-11-16T18:00:00+09:00' }
+            ], 'nam');
             calendars['nam'].render();
         }
 
         if (targetTab === '#sub-schedule-park' && !calendars['park']) {
             calendars['park'] = renderCalendar('sub-calendar-park', [
-                { 
-                    title: '공연)2024 박서준 팬미팅 올림픽공원', 
-                    start: '2024-11-08T18:00:00+09:00', 
-                },
-                { 
-                    title: '공연)2024 박서준 COMMA 언택트 팬미팅', 
-                    start: '2024-11-23T13:00:00+09:00', 
-                },
-            ]);
+                { title: '공연)2024 박서준 팬미팅 올림픽공원', start: '2024-11-08T18:00:00+09:00' },
+                { title: '공연)2024 박서준 COMMA 언택트 팬미팅', start: '2024-11-23T13:00:00+09:00' }
+            ], 'park');
             calendars['park'].render();
         }
     });
@@ -309,19 +358,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // 첫 번째 탭에 대한 캘린더 렌더링 (페이지 로드 시)
     if (!calendars['byeon']) {
         calendars['byeon'] = renderCalendar('sub-calendar-byeon', [
-            { 
-                title: '공연)2024 이슬라이브 페스티벌', 
-                start: '2024-11-05T19:00:00+09:00', 
-            },
-            { 
-                title: '공연)2024 수원 월드컵 경기장', 
-                start: '2024-11-09T13:00:00+09:00', 
-            },
-            { 
-                title: '공연)2024 HEREH WORLD TOUR CONCERT ENCORE : THE WINNING', 
-                start: '2024-11-23T18:00:00+09:00', 
-            }
-        ]);
+            { title: '공연)2024 이슬라이브 페스티벌', start: '2024-11-05T19:00:00+09:00' },
+            { title: '공연)2024 수원 월드컵 경기장', start: '2024-11-09T13:00:00+09:00' },
+            { title: '공연)2024 HEREH WORLD TOUR CONCERT ENCORE : THE WINNING', start: '2024-11-23T18:00:00+09:00' }
+        ], 'byeon');
         calendars['byeon'].render();
     }
 
@@ -333,4 +373,4 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-// sub-schedule-----
+// sub-schedule---------------------------------------

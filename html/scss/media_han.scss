@@ -1,8 +1,37 @@
 @import './_var.scss';
 
 
+@media (max-width: 1700px) {
+    #main{
+
+        // 메인 슬라이드 배너
+        #mainBanner{
+            #main-banner{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        .main04{
+                            left: 30%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 1631px) {
+
+    // 푸터
+    #footer-1280{
+        display: none !important;
+    }
+}
+
 
 @media (max-width: 1630px) {
+
+    // 푸터
     #footer{
         display: none !important;
     }
@@ -11,6 +40,8 @@
 
 @media (max-width: 1599px) {
     #main{
+
+        // 메인 슬라이드 배너
         #mainBanner{
             #main-banner{
                 .swiper-wrapper{
@@ -20,6 +51,13 @@
                             font-size: 4rem;
                             line-height: 1.5;
                         }
+                        .main02{
+                            right: 70px;
+                        }
+                        .main04{
+                            top: 320px;
+                            left: 32%;
+                        }
                     }
                 }
                 .swiper-pagination{
@@ -27,19 +65,84 @@
                 }
             }
         }
+
+        // 아티스트 슬라이드
+        #artist{
+            .artistBox{
+                #artist-slide{
+                    .swiper-wrapper{
+                        padding: 0;
+                        .swiper-slide {
+                            &.swiper-slide-active {
+                                transform: scale(1.6) !important;
+                                background-size: 100% !important;
+                            }
+                            &.swiper-slide-prev {
+                                transform: scale(1.8) translate(-10%, 0) !important;
+                            }
+                            &.swiper-slide-next {
+                                transform: scale(1.8) translate(10%, 0) !important;
+                            }
+                        }
+                    }
+                    .swiper-pagination-bullet {
+                        width: 4px;
+                        height: 4px;
+                        opacity: 1;
+                        background-color: #fff;
+                    }
+                    .swiper-pagination-bullet-active {
+                        width: 12px;
+                        height: 12px;
+                        border: 2px solid #FFF;
+                        background-color: transparent;
+                    }
+                }
+            }
+            
+        }
     }
 }
 
 
-@media (min-width: 1631px) {
-    #footer-1280{
-        display: none !important;
+@media (max-width: 1500px) {
+    #main{
+
+        // 아티스트 슬라이드
+        #artist{
+            .artistBox{
+                #artist-slide{
+                    .swiper-wrapper{
+                        height: 90vh;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1350px) {
+    #main{
+
+        // 아티스트 슬라이드
+        #artist{
+            .artistBox{
+                #artist-slide{
+                    .swiper-wrapper{
+                        height: 85vh;
+                    }
+                }
+            }
+        }
     }
 }
 
 
 @media (max-width: 1280px) {
     #main{
+
+        // 메인 슬라이드 배너
         #mainBanner{
             #main-banner{
                 .swiper-wrapper{
@@ -48,6 +151,69 @@
                             top: 230px;
                             font-size: 3.6rem;
                             line-height: 1.5;
+                        }
+                        .main02{
+                            right: 20px;
+                        }
+                        .main04{
+                            left: 22%;
+                            top: 300px;
+                        }
+                    }
+                }
+            }
+        }
+
+        // 아티스트 슬라이드
+        #artist{
+            .artistBox{
+                #artist-slide{
+                    .swiper-wrapper{
+                        height: 80vh;
+                    }
+                }
+            }
+        }
+
+        // 스케줄 달력
+        #schedule{
+            .schedule-artist{
+                .schedule-name{
+                    .nav-item{
+                        .nav-link{
+                            padding: 0 50px;
+                        }
+                    }
+                }
+                #scheduleTabContent{
+                    width: 90%;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1150px) {
+    #main{
+
+        // 아티스트 슬라이드
+        #artist{
+            .artistBox{
+                #artist-slide{
+                    .swiper-wrapper{
+                        height: 75vh;
+                        .swiper-slide {
+                            &.swiper-slide-active {
+                                transform: scale(1.6) !important;
+                                background-size: 100% !important;
+                            }
+                            &.swiper-slide-prev {
+                                transform: scale(1.8) translate(-15%, 0) !important;
+                            }
+                            &.swiper-slide-next {
+                                transform: scale(1.8) translate(15%, 0) !important;
+                            }
                         }
                     }
                 }
@@ -58,6 +224,8 @@
 
 
 @media (max-width: 1080px) {
+
+    // PC 헤더 투명
     #header{
         .header-bg{
             padding: 0rem 5rem;
@@ -67,6 +235,7 @@
         }
     }
     
+    // PC 헤더 블랙
     #header-b{
         .header-b-bg{
             padding: 0rem 5rem;
@@ -77,6 +246,8 @@
     }
 
     #main{
+
+        // 메인 슬라이드 배너
         #mainBanner{
             #main-banner{
                 .swiper-wrapper{
@@ -88,13 +259,15 @@
                             left: 50px;
                         }
                         .main02{
-                            right: 50px;
+                            right: 20px;
+                            top: 270px;
                         }
                         .main03{
                             left: 60px;
                         }
                         .main04{
-                            right: 40px;
+                            top: 270px;
+                            left: 22%;
                         }
                     }
                 }
@@ -103,15 +276,43 @@
                 }
             }
         }
+
+        // 아티스트 슬라이드
+        #artist{
+            .artistBox{
+                #artist-slide{
+                    .swiper-wrapper{
+                        height: 70vh;
+                    }
+                }
+            }
+        }
+
+        // 스케줄 달력
+        #schedule{
+            .schedule-artist{
+                #scheduleTabContent{
+                    .tab-pane{
+                        .calendar-container .fc-daygrid-day.fc-day-today .fc-daygrid-day-top > a {
+                            padding: 20px;
+                        }
+                        .calendar-container .fc-daygrid-day-top > a.eventText {
+                            padding: 20px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
 
 @media (max-width: 991px) {
-    .disN{
+    .introN{
         display: block;
     }
 
+    // PC 헤더 투명
     #header{
         .header-bg{
             padding: 0rem 1rem;
@@ -128,6 +329,8 @@
             margin-right: 1rem;
         }
     }
+
+    // PC 헤더 블랙
     #header-b{
         .header-b-bg{
             padding: 0rem 1rem;
@@ -144,30 +347,35 @@
             margin-right: 1rem;
         }
     }
+
     #main{
+
+        // 메인 슬라이드 배너
         #mainBanner{
             #main-banner{
                 .swiper-wrapper{
                     .swiper-slide{
                         p{
                             color: #000;
-                            text-transform: uppercase;
-                            font-size: 2.5rem;
-                            font-weight: 700;
-                            line-height: 52px;
+                            @include f-40-700-52;
                         }
                         .main01{
-                            top: calc(100% - 174px);
-                            left: calc(100% - 588px);
+                            top: 70%;
+                            left: 40%;
                         }
                         .main02{
-                            right: 50px;
+                            top: calc(100% - 35%);
+                            left: calc(100% - 96%);
                         }
                         .main03{
-                            left: 60px;
+                            color: #fff;
+                            top: calc(100% - 28%);
+                            left: calc(100% - 58%);
                         }
                         .main04{
-                            right: 40px;
+                            color: #fff;
+                            top: 72%;
+                            left: 5%;
                         }
                     }
                 }
@@ -184,21 +392,91 @@
                 }
             }
         }
+
+        // 유니버스 소개
         #introduction{
             padding: 140px 0;
+        }
+
+        // 아티스트 슬라이드
+        #artist{
+            .artistBox{
+                #artist-slide{
+                    .swiper-wrapper{
+                        height: 65vh;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 850px) {
+    #main{
+
+        // 메인 슬라이드 배너
+        #mainBanner{
+            #main-banner{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        .main01{
+                            top: calc(100% - 32%);
+                            left: calc(100% - 60%);
+                        }
+                        .main02{
+                            right: 50px;
+                        }
+                        .main03{
+                            top: calc(100% - 33%);
+                            left: calc(100% - 62%);
+                        }
+                    }
+                }
+            }
+        }
+
+        // 아티스트 슬라이드
+        #artist{
+            .artistBox{
+                #artist-slide{
+                    .swiper-wrapper{
+                        height: 60vh;
+                        .swiper-slide {
+                            &.swiper-slide-prev {
+                                transform: scale(1.8) translate(-20%, 0) !important;
+                            }
+                            &.swiper-slide-next {
+                                transform: scale(1.8) translate(20%, 0) !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // 스케줄 달력
+        #schedule{
+            .schedule-artist{
+                .schedule-name{
+                    .nav-item{
+                        .nav-link{
+                            padding: 0 20px;
+                        }
+                    }
+                }
+            }
         }
     }
 }
 
 
 @media (max-width: 767px) {
-.disN{
-    display: none;
-}
-.introN{
+.artistN{
     display: block;
 }
 
+    // PC 헤더 투명
     #header{
         .header-bg{
             padding: 0rem 1rem;
@@ -209,6 +487,8 @@
             }
         }
     }
+
+    // PC 헤더 블랙
     #header-b{
         .header-b-bg{
             padding: 0rem 1rem;
@@ -222,6 +502,8 @@
 
     #main{
         transform: translateY(0);
+
+        // 메인 슬라이드 배너
         #mainBanner{
             #main-banner{
                 .swiper-wrapper{
@@ -230,25 +512,26 @@
                             font-size: 2.25rem;
                         }
                         .main01{
-                            top: calc(100% - 144px);
-                            left: calc(100% - 506px);
+                            top: 68%;
+                            left: 37%;
                         }
                         .main02{
-                            right: 50px; 
+                            top: calc(100% - 26%);
+                            left: calc(100% - 72%);
                         }
                         .main03{
-                            left: 60px;
-                        }
-                        .main04{
-                            right: 40px;
+                            top: calc(100% - 32%);
+                            left: calc(100% - 70%);
                         }
                     }
                 }
                 .swiper-pagination{
-                    bottom: 18px;
+                    bottom: 20px;
                 }
             }
         }
+
+        // 유니버스 소개
         #introduction{
             background-color: #333333;
             padding: 140px 0;
@@ -256,13 +539,155 @@
                 gap: 30px !important;
                 h2{
                     @include f-36-700-52;
-                    text-transform: uppercase;
-                    span{
-                        @include f-36-700-52;
-                    }
                 }
                 p{
                     @include f-24-400-36;
+                }
+            }
+        }
+
+        // 아티스트 슬라이드
+        #artist{
+            .title{
+                gap: 30px !important;
+                h2{
+                    @include f-36-700-52;
+                }
+            }
+            .artistBox{
+                #artist-slide{
+                    .swiper-wrapper{
+                        height: 52vh;
+                        .swiper-slide {
+                            &.swiper-slide-active {
+                                transform: scale(1.8) !important;
+                            }
+                            &.swiper-slide-prev {
+                                transform: scale(1.5) translate(-20%, 0) !important;
+                            }
+                            &.swiper-slide-next {
+                                transform: scale(1.5) translate(20%, 0) !important;
+                            }
+                        }
+                    }
+                    .swiper-pagination-bullets.swiper-pagination-horizontal{
+                        gap: 12px !important;
+                    }
+                    .swiper-pagination-bullet {
+                        width: 4px;
+                        height: 4px;
+                        opacity: 1;
+                        background-color: #fff;
+                    }
+                    .swiper-pagination-bullet-active {
+                        width: 8px;
+                        height: 8px;
+                        border: 2px solid #FFF;
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+
+        // 스케줄 달력
+        #schedule{
+            .title{
+                gap: 30px !important;
+                h2{
+                    @include f-36-700-52;
+                }
+            }
+            .schedule-artist{
+                .schedule-name{
+                    margin: 50px 0;
+                }
+                #scheduleTabContent{
+                    .tab-pane{
+                        .artist-schedule{
+                            display: none;
+                        }
+                        .artist-schedule-m01{
+                            display: flex;
+                        }
+                        .artist-schedule-m02{
+                            display: flex;
+                        }
+                        .week01,
+                        .week02,
+                        .week03,
+                        .week04,
+                        .week05,
+                        .week06,
+                        .week07,
+                        .week08,
+                        .week09,
+                        .week10{
+                            display: none;
+                        }
+                        #calendar01,
+                        #calendar02,
+                        #calendar03,
+                        #calendar04,
+                        #calendar05,
+                        #calendar06,
+                        #calendar07,
+                        #calendar08,
+                        #calendar09,
+                        #calendar10{
+                            border-radius: 0 0 10px 10px;
+                        }
+                        .calendar-container .fc-col-header-cell-cushion {
+                            @include f-18-400-26;
+                        }
+                        .calendar-container .fc-daygrid-day-number {
+                            @include f-18-700-20;
+                        }                    
+                        .calendar-container .fc-daygrid-day.fc-day-today .fc-daygrid-day-top > a {
+                            border: solid 1px #f86666;
+                            padding: 10px;
+                        }
+                        .calendar-container .fc-daygrid-day-top > a.eventText {
+                            border: solid 1px #f86666;
+                            padding: 10px;
+                        }
+                        .calendar-container .fc-daygrid-day-top {
+                            height: 90px;
+                            line-height: 90px;
+                        }
+                        .fc-view-harness {
+                            height: 90px !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        // 릴리즈 슬라이드
+        #release{
+            .title{
+                gap: 30px !important;
+                h2{
+                    @include f-36-700-52;
+                }
+            }
+        }
+
+        // 굿즈
+        #goods{
+            .title{
+                gap: 30px !important;
+                h2{
+                    @include f-36-700-52;
+                }
+            }
+        }
+
+        // 메인 하단 인포
+        #mainInfo{
+            .title{
+                gap: 30px !important;
+                h2{
+                    @include f-36-700-52;
                 }
             }
         }
@@ -272,6 +697,33 @@
 
 @media (max-width: 680px) {
     #main{
+
+        // 메인 슬라이드 배너
+        #mainBanner{
+            #main-banner{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        .main01{
+                            top: calc(100% - 32%);
+                            left: 26%;
+                        }
+                        .main02{
+                            top: calc(100% - 32%);
+                            left: calc(100% - 90%);
+                        }
+                        .main03{
+                            top: calc(100% - 32%);
+                            left: calc(100% - 80%);
+                        }
+                        .main04{
+                            top: 64%;
+                        }
+                    }
+                }
+            }
+        }
+        
+        // 유니버스 소개
         #introduction{
             .title{
                 h2{
@@ -285,19 +737,24 @@
                 }
             }
         }
+
+        // 아티스트 슬라이드
+        #artist{
+            .artistBox{
+                #artist-slide{
+                    .swiper-wrapper{
+                        height: 50vh;
+                    }
+                }
+            }
+        }
     }
 }
 
 
 @media (max-width: 580px) {
-    .introN{
-        display: none;
 
-    }
-    .disN{
-        display: block;
-    }
-
+    // M 헤더
     #m-header{
         .m-header-bg{
             .hdcontainer{
@@ -307,7 +764,10 @@
             }
         }
     }
+
     #main{
+
+        // 메인 슬라이드 배너
         #mainBanner{
             #main-banner{
                 .swiper-wrapper{
@@ -317,36 +777,56 @@
                             line-height: 36px;
                         }
                         .main01{
-                            top: calc(100% - 138px);
-                            left: calc(100% - 348px);
+                            top: calc(100% - 24%);
+                            left: calc(100% - 60%);
                         }
                         .main02{
-                            right: 50px; 
+                            top: 72%;
+                            left: 5%
                         }
                         .main03{
-                            left: 60px;
+                            top: calc(100% - 30%);
+                            left: calc(100% - 60%);
                         }
                         .main04{
-                            right: 40px;
+                            top: 72%;
                         }
                     }
                 }
-                .swiper-pagination{
-                    bottom: 20px;
-                }
             }
         }
+
+        // 유니버스 소개
         #introduction{
             padding: 70px 0;
             .title{
                 h2{
                     @include f-24-700-36;
-                    span{
-                        @include f-24-700-36;
-                    }
                 }
                 p{
                     @include f-18-400-26;
+                }
+            }
+        }
+
+        // 아티스트 슬라이드
+        #artist{
+            .artistBox{
+                #artist-slide{
+                    .swiper-wrapper{
+                        height: 35vh;
+                        .swiper-slide {
+                            &.swiper-slide-active {
+                                transform: scale(1.5) !important;
+                            }
+                            &.swiper-slide-prev {
+                                transform: scale(1) translate(-20%, 0) !important;
+                            }
+                            &.swiper-slide-next {
+                                transform: scale(1) translate(20%, 0) !important;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -355,14 +835,17 @@
 
 
 @media (max-width: 500px) {
+    // 전체 폰트 사이즈 조절
     html, body{
         font-size: 14px;
     }
 
+    // 푸터
     .footerN{
         display: block;
     }
 
+    // M 헤더
     #m-header{
         .m-header-bg{
             padding: 14px 10px;
@@ -390,6 +873,7 @@
         }
     }
 
+    // M 푸터
     #m-footer{
         .m-footerBox{
             width: 320px;
@@ -403,15 +887,43 @@
             }
         }
     }
+
+    #main{
+
+        // 메인 슬라이드 배너
+        #mainBanner{
+            #main-banner{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        p{
+                            font-size: 1.5rem;
+                            line-height: 36px;
+                        }
+                        .main01{
+                            top: 70%;
+                            left: 32%;
+                        }
+                        .main03{
+                            top: calc(100% - 30%);
+                            left: calc(100% - 70%);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 
 @media (max-width: 400px) {
+    // 전체 폰트 사이즈 조절
     html, body{
         font-size: 12px;
     }
 
     #main{
+
+        // 메인 슬라이드 배너
         #mainBanner{
             #main-banner{
                 .swiper-wrapper{
@@ -420,17 +932,12 @@
                             line-height: 26px;
                         }
                         .main01{
-                            top: calc(100% - 100px);
-                            left: calc(100% - 290px);
+                            top: calc(100% - 30%);
+                            left: calc(100% - 68%);
                         }
                         .main02{
-                            right: 50px; 
-                        }
-                        .main03{
-                            left: 60px;
-                        }
-                        .main04{
-                            right: 40px;
+                            top: 72%;
+                            left: 5%;
                         }
                     }
                 }
@@ -441,6 +948,8 @@
 
 
 @media (max-width: 350px) {
+
+    // M 헤더 검색창
     #m-search{
         .searchBox{
             #m-searchText{
@@ -448,7 +957,10 @@
             }
         }
     }
+
     #main{
+
+        // 유니버스 소개
         #introduction{
             .title{
                 p{
@@ -457,4 +969,26 @@
             }
         }
     }
+}
+
+
+@media (max-width: 320px) {
+    #main{
+
+        // 아티스트 슬라이드
+        #artist{
+            .artistBox{
+                #artist-slide{
+                    .swiper-wrapper{
+                        .swiper-slide {
+                            &.swiper-slide-next {
+                                transform: scale(1) translate(75%, 0) !important;
+                                background-position-x: -60px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }  
 }

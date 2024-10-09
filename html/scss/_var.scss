@@ -1,6 +1,6 @@
 
 
-// 섹션 타이틀 스타일
+// 메인 섹션 타이틀 스타일
 @mixin titleH2{
     text-align: center;
     font-size: 3.125rem;
@@ -9,7 +9,7 @@
     text-transform: uppercase;
 }
 
-// 섹션 서브타이틀 스타일
+// 메인 섹션 서브타이틀 스타일
 @mixin subTitleP{
     text-align: center;
     font-size: 1rem;
@@ -17,7 +17,7 @@
     line-height: 24px;
 }
 
-// 더보기 버튼
+// 메인 더보기 버튼
 @mixin moreBtn{
     width: 95px;
     line-height: 36px;
@@ -60,9 +60,29 @@
     line-height: 52px;
     font-weight: 400;
 }
+@mixin f-32-700-46{
+    font-size: 2rem;
+    line-height: 46px;
+    font-weight: 700;
+}
+@mixin f-32-500-46{
+    font-size: 2rem;
+    line-height: 46px;
+    font-weight: 500;
+}
+@mixin f-32-400-46{
+    font-size: 2rem;
+    line-height: 46px;
+    font-weight: 400;
+}
 @mixin f-28-700-42{
     font-size: 1.75rem;
     line-height: 42px;
+    font-weight: 700;
+}
+@mixin f-24-700-50{
+    font-size: 1.5rem;
+    line-height: 50px;
     font-weight: 700;
 }
 @mixin f-24-700-36{
@@ -80,9 +100,24 @@
     line-height: 36px;
     font-weight: 400;
 }
+@mixin f-20-700-36{
+    font-size: 1.25rem;
+    line-height: 36px;
+    font-weight: 700;
+}
+@mixin f-20-700-28{
+    font-size: 1.25rem;
+    line-height: 28px;
+    font-weight: 700;
+}
 @mixin f-18-700-26{
     font-size: 1.125rem;
     line-height: 26px;
+    font-weight: 700;
+}
+@mixin f-18-700-20{
+    font-size: 1.125rem;
+    line-height: 20px;
     font-weight: 700;
 }
 @mixin f-18-400-26{
@@ -120,13 +155,18 @@
     line-height: 20px;
     font-weight: 500;
 }
+@mixin f-14-400-22{
+    font-size: .875rem;
+    line-height: 22px;
+    font-weight: 400;
+}
 @mixin f-14-400-20{
     font-size: .875rem;
     line-height: 20px;
     font-weight: 400;
 }
-@mixin t-14-400-22{
-    font-size: .875rem;
-    line-height: 22px;
+@mixin f-12-400-18{
+    font-size: 0.75rem;
+    line-height: 18px;
     font-weight: 400;
 }
