@@ -29,7 +29,7 @@
                         Sharing shining moments</p>
                 </div>
             </div>
-            <div class="swiper-pagination d-flex justify-content-center align-items-center gap-40"></div>
+            <div class="swiper-pagination d-flex justify-content-center align-items-center"></div>
         </div>
     </section>
 
@@ -38,9 +38,9 @@
     <section id="introduction">
         <div class="title d-flex flex-column justify-content-center align-items-center gap-80">
             <h2>In Universe</h2>
-            <p>유니버스 엔터테인먼트는 당신의 꿈을 실현할 수 있는 가장 <br class="introN">이상적인 파트너입니다.<br>
+            <p>유니버스 엔터테인먼트는 당신의 꿈을 <br class="introN500">실현할 수 있는 가장 <br class="introN">이상적인 파트너입니다.<br>
                 우리는 차별화된 접근과 탁월한 관리로,<br>
-                창의성과 열정을 지닌 인재들이 글로벌 무대에서 빛날 수 <br class="introN">있도록 지원합니다.</p>
+                창의성과 열정을 지닌 인재들이 글로벌 무대에서 <br class="introN500">빛날 수 <br class="introN">있도록 지원합니다.</p>
         </div>
     </section>
 
@@ -66,13 +66,13 @@
     </section>
 
 
-    <!-- 스케쥴 달력 -->
+    <!-- 스케줄 달력 캘린더 -->
     <section id="schedule">
         <div class="title d-flex flex-column justify-content-center align-items-center gap-10">
             <h2>schedule</h2>
-            <p>배우들이 준비한 다채로운 일정과 이벤트를 한눈에 확인해 보세요.</p>
+            <p>배우들이 준비한 <br class="scheduleN">다채로운 일정과 이벤트를 한눈에 확인해 보세요.</p>
         </div>
-        <div class="schedule-artist mt-5">
+        <div class="schedule-artist">
             <ul class="schedule-name nav nav-tabs d-flex justify-content-center align-items-center" id="scheduleTab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <a class="nav-link active" id="byeon-tab" data-bs-toggle="tab" href="#byeon" role="tab" aria-controls="byeon" aria-selected="true">변우석</a>
@@ -95,16 +95,15 @@
                 </li>
             </ul>
             <div id="scheduleTabContent" class="tab-content">
+
+                <!-- 변우석 -->
                 <div class="tab-pane fade show active" id="byeon" role="tabpanel" aria-labelledby="byeon-tab">
                     <div class="artist-schedule">
                         <span>변우석</span>
                         <img src="/img/schedule/img01.jpg" alt="변우석 이미지입니다">
                     </div>
-                    <div class="artist-schedule-m01">
-                        <img src="/img/schedule/img01.jpg" alt="변우석 이미지입니다" class="artistImg">
-                        <span>이번주 스케줄 <span class="text">2건</span></span>
-                        <a href="/sub/schedule.html" class="scheduleMoreBtnMin text-center d-flex justify-content-center align-items-center">MORE <img src="/img/icon/btn-more-plus-black.svg" alt="버튼의 +아이콘입니다"></a>
-                    </div>
+                    
+                    <!-- PC 이번주 스케줄 -->
                     <div class="week01">
                         <h4>week's schedule</h4>
                         <ul class="weekDate">
@@ -119,8 +118,18 @@
                             </li>
                         </ul>
                     </div>
+                    
+                    <!-- M 이번주 스케줄 -->
+                    <div class="artist-schedule-m01">
+                        <img src="/img/schedule/img01.jpg" alt="변우석 이미지입니다" class="artistImg">
+                        <span>이번주 스케줄 <span class="text">2건</span></span>
+                        <a href="/sub/schedule.html" class="scheduleMoreBtnMin text-center d-flex justify-content-center align-items-center">MORE <img src="/img/icon/btn-more-plus-black.svg" alt="버튼의 +아이콘입니다"></a>
+                    </div>
+
+                    <!-- 변우석 캘린더 1번 -->
                     <div id="calendar01" class="calendar-container"></div>
                 
+                    <!-- PC 다음주 스케줄 -->
                     <div class="week02">
                         <h4>NEXT week's schedule</h4>
                         <ul class="weekDate">
@@ -135,18 +144,27 @@
                             </li>
                         </ul>
                     </div>
+
+                    <!-- M 이번주 스케줄 -->
                     <div class="artist-schedule-m02">
                         <img src="/img/schedule/img01.jpg" alt="변우석 이미지입니다" class="artistImg">
-                        <span>다음주 스케줄 <span class="text">2건</span></span>
+                        <span>다음주 스케줄 <span class="text">1건</span></span>
                         <a href="/sub/schedule.html" class="scheduleMoreBtnMin text-center d-flex justify-content-center align-items-center">MORE <img src="/img/icon/btn-more-plus-black.svg" alt="버튼의 +아이콘입니다"></a>
                     </div>
+
+                    <!-- 변우석 캘린더 2번 -->
                     <div id="calendar02" class="calendar-container"></div>
                 </div>
+
+
+                <!-- 아이유(이지은) -->
                 <div class="tab-pane fade" id="lee" role="tabpanel" aria-labelledby="lee-tab">
                     <div class="artist-schedule">
                         <span>이지은</span>
                         <img src="/img/schedule/img05.jpg" alt="이지은(아이유) 이미지입니다">
                     </div>
+
+                    <!-- PC 이번주 스케줄 -->
                     <div class="week03">
                         <h4>week's schedule</h4>
                         <ul class="weekDate">
@@ -161,8 +179,18 @@
                             </li>
                         </ul> 
                     </div>
+
+                    <!-- M 이번주 스케줄 -->
+                    <div class="artist-schedule-m01">
+                        <img src="/img/schedule/img05.jpg" alt="이지은(아이유) 이미지입니다" class="artistImg">
+                        <span>이번주 스케줄 <span class="text">1건</span></span>
+                        <a href="/sub/schedule.html" class="scheduleMoreBtnMin text-center d-flex justify-content-center align-items-center">MORE <img src="/img/icon/btn-more-plus-black.svg" alt="버튼의 +아이콘입니다"></a>
+                    </div>
+
+                    <!-- 아이유(이지은) 캘린더 3번 -->
                     <div id="calendar03" class="calendar-container"></div>
                 
+                    <!-- PC 다음주 스케줄 -->
                     <div class="week04">
                         <h4>NEXT week's schedule</h4>
                         <ul class="weekDate">
@@ -177,13 +205,27 @@
                             </li>
                         </ul>
                     </div>
+
+                    <!-- M 다음주 스케줄 -->
+                    <div class="artist-schedule-m02">
+                        <img src="/img/schedule/img05.jpg" alt="이지은(아이유) 이미지입니다" class="artistImg">
+                        <span>다음주 스케줄 <span class="text">1건</span></span>
+                        <a href="/sub/schedule.html" class="scheduleMoreBtnMin text-center d-flex justify-content-center align-items-center">MORE <img src="/img/icon/btn-more-plus-black.svg" alt="버튼의 +아이콘입니다"></a>
+                    </div>
+
+                    <!-- 아이유(이지은) 캘린더 4번 -->
                     <div id="calendar04" class="calendar-container"></div>
                 </div>
+
+
+                <!-- 윤계상 -->
                 <div class="tab-pane fade" id="yoon" role="tabpanel" aria-labelledby="yoon-tab">
                     <div class="artist-schedule">
                         <span>윤계상</span>
                         <img src="/img/schedule/img04.jpg" alt="윤계상 이미지입니다">
                     </div>
+
+                    <!-- PC 이번주 스케줄 -->
                     <div class="week05">
                         <h4>week's schedule</h4>
                         <ul class="weekDate">
@@ -198,8 +240,18 @@
                             </li>
                         </ul>
                     </div>
+
+                    <!-- M 이번주 스케줄 -->
+                    <div class="artist-schedule-m01">
+                        <img src="/img/schedule/img04.jpg" alt="윤계상 이미지입니다" class="artistImg">
+                        <span>이번주 스케줄 <span class="text">1건</span></span>
+                        <a href="/sub/schedule.html" class="scheduleMoreBtnMin text-center d-flex justify-content-center align-items-center">MORE <img src="/img/icon/btn-more-plus-black.svg" alt="버튼의 +아이콘입니다"></a>
+                    </div>
+                    
+                    <!-- 윤계상 캘린더 5번 -->
                     <div id="calendar05" class="calendar-container"></div>
-                
+
+                    <!-- PC 다음주 스케줄 -->
                     <div class="week06">
                         <h4>NEXT week's schedule</h4>
                         <ul class="weekDate">
@@ -214,13 +266,27 @@
                             </li>
                         </ul>
                     </div>
+
+                    <!-- M 다음주 스케줄 -->
+                    <div class="artist-schedule-m02">
+                        <img src="/img/schedule/img04.jpg" alt="윤계상 이미지입니다" class="artistImg">
+                        <span>다음주 스케줄 <span class="text">0건</span></span>
+                        <a href="/sub/schedule.html" class="scheduleMoreBtnMin text-center d-flex justify-content-center align-items-center">MORE <img src="/img/icon/btn-more-plus-black.svg" alt="버튼의 +아이콘입니다"></a>
+                    </div>
+
+                    <!-- 윤계상 캘린더 6번 -->
                     <div id="calendar06" class="calendar-container"></div>
                 </div>
+                
+
+                <!-- 남우현 -->
                 <div class="tab-pane fade" id="nam" role="tabpanel" aria-labelledby="nam-tab">
                     <div class="artist-schedule">
                         <span>남우현</span>
                         <img src="/img/schedule/img03.jpg" alt="남우현 이미지입니다">
                     </div>
+
+                    <!-- PC 이번주 스케줄 -->
                     <div class="week07">
                         <h4>week's schedule</h4>
                         <ul class="weekDate">
@@ -235,8 +301,19 @@
                             </li>
                         </ul>
                     </div>
+
+                    <!-- M 이번주 스케줄 -->
+                    <div class="artist-schedule-m01">
+                        <img src="/img/schedule/img03.jpg" alt="남우현 이미지입니다" class="artistImg">
+                        <span>이번주 스케줄 <span class="text">0건</span></span>
+                        <a href="/sub/schedule.html" class="scheduleMoreBtnMin text-center d-flex justify-content-center align-items-center">MORE <img src="/img/icon/btn-more-plus-black.svg" alt="버튼의 +아이콘입니다"></a>
+                    </div>
+                    
+                    <!-- 남우현 캘린더 7번 -->
                     <div id="calendar07" class="calendar-container"></div>
-                
+
+
+                    <!-- PC 다음주 스케줄 -->
                     <div class="week08">
                         <h4>NEXT week's schedule</h4>
                         <ul class="weekDate">
@@ -251,13 +328,26 @@
                             </li>
                         </ul>
                     </div>
+
+                    <!-- M 다음주 스케줄 -->
+                    <div class="artist-schedule-m02">
+                        <img src="/img/schedule/img03.jpg" alt="남우현 이미지입니다" class="artistImg">
+                        <span>다음주 스케줄 <span class="text">1건</span></span>
+                        <a href="/sub/schedule.html" class="scheduleMoreBtnMin text-center d-flex justify-content-center align-items-center">MORE <img src="/img/icon/btn-more-plus-black.svg" alt="버튼의 +아이콘입니다"></a>
+                    </div>
+                    
+                    <!-- 남우현 캘린더 8번 -->
                     <div id="calendar08" class="calendar-container"></div>
                 </div>
+
+                <!-- 박서준 -->
                 <div class="tab-pane fade" id="park" role="tabpanel" aria-labelledby="park-tab">
                     <div class="artist-schedule">
                         <span>박서준</span>
                         <img src="/img/schedule/img02.jpg" alt="박서준 이미지입니다">
                     </div>
+
+                    <!-- PC 이번주 스케줄 -->
                     <div class="week09">
                         <h4>week's schedule</h4>
                         <ul class="weekDate">
@@ -272,8 +362,18 @@
                             </li>
                         </ul>
                     </div>
+
+                    <!-- M 이번주 스케줄 -->
+                    <div class="artist-schedule-m01">
+                        <img src="/img/schedule/img02.jpg" alt="박서준 이미지입니다" class="artistImg">
+                        <span>이번주 스케줄 <span class="text">1건</span></span>
+                        <a href="/sub/schedule.html" class="scheduleMoreBtnMin text-center d-flex justify-content-center align-items-center">MORE <img src="/img/icon/btn-more-plus-black.svg" alt="버튼의 +아이콘입니다"></a>
+                    </div>
+                    
+                    <!-- 박서준 캘린더 9번 -->
                     <div id="calendar09" class="calendar-container"></div>
                 
+                    <!-- PC 다음주 스케줄 -->
                     <div class="week10">
                         <h4>NEXT week's schedule</h4>
                         <ul class="weekDate">
@@ -288,6 +388,15 @@
                             </li>
                         </ul>
                     </div>
+
+                    <!-- M 다음주 스케줄 -->
+                    <div class="artist-schedule-m02">
+                        <img src="/img/schedule/img02.jpg" alt="박서준 이미지입니다" class="artistImg">
+                        <span>다음주 스케줄 <span class="text">0건</span></span>
+                        <a href="/sub/schedule.html" class="scheduleMoreBtnMin text-center d-flex justify-content-center align-items-center">MORE <img src="/img/icon/btn-more-plus-black.svg" alt="버튼의 +아이콘입니다"></a>
+                    </div>
+
+                    <!-- 박서준 캘린더 10번 -->
                     <div id="calendar10" class="calendar-container"></div>
                 </div>
             </div>
@@ -295,8 +404,8 @@
     </section>
 
 
-    <!-- 릴리즈 슬라이드 -->
-    <!-- <section id="release" class="d-flex flex-column justify-content-center align-items-center">
+    <!-- PC 릴리즈 슬라이드 -->
+    <section id="release" class="d-flex flex-column justify-content-center align-items-center">
             <div class="title d-flex flex-column justify-content-center align-items-center gap-10">
                 <h2>release</h2>
                 <p>배우들이 직접 참여한 OST와 음반에도 귀 기울여 보세요.</p>
@@ -345,11 +454,48 @@
                 <div class="swiper-pagination d-flex justify-content-center align-items-center gap-40"></div>
             </div>
             <a href="/sub/artist.html" class="releaseMoreBtn text-center"><span>더보기</span></a>
-    </section> -->
-
+    </section>
+    <!-- M 릴리즈 슬라이드 -->
+    <section id="m-release">
+        <div class="title d-flex flex-column justify-content-center align-items-center gap-10">
+            <h2>release</h2>
+            <p>배우들이 직접 참여한 OST와 음반에도 귀 기울여 보세요.</p>
+        </div>
+        <div id="m-release-slide" class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide text-center">
+                    <h3>ECLIPSE<br>선재 업고 튀어 OST</h3>
+                    <p>선재 업고 튀어 OST Part 1</p>
+                    <img src="/img/release/img03.png" alt="변우석 앨범 이미지 입니다">
+                </div>
+                <div class="swiper-slide text-center">
+                    <h3>IU<br>6th Mini Album</h3>
+                    <p>The Winning</p>
+                    <img src="/img/release/img04.png" alt="아이유(이지은) 앨범 이미지 입니다">
+                </div>
+                <div class="swiper-slide text-center">
+                    <h3><span class="releaseColor">GOD</span><br>GOD</h3>
+                    <p>THEN & NOW</p>
+                    <img src="/img/release/img01.png" alt="윤계상 앨범 이미지 입니다">
+                </div>
+                <div class="swiper-slide text-center">
+                    <h3>Nam Woo Hyun<br>The 1st Album</h3>
+                    <p>WHITREE</p>
+                    <img src="/img/release/img05.png" alt="남우현 앨범 이미지 입니다">
+                </div>        
+                <div class="swiper-slide text-center">
+                    <h3>Park Seo Jun<br>마녀의 연애 OST</h3>
+                    <p>마녀의 연애 OST Part 3</p>
+                    <img src="/img/release/img02.png" alt="박서준 앨범 이미지 입니다">
+                </div>
+            </div>
+            <div class="swiper-pagination d-flex justify-content-center align-items-center"></div>
+            <a href="/sub/artist.html" class="releaseMoreBtn text-center"><span>더보기</span></a>
+        </div>
+    </section>
 
     <!-- 굿즈 -->
-    <!-- < section id="goods" class="d-flex flex-column justify-content-center align-items-center">
+    <section id="goods" class="d-flex flex-column justify-content-center align-items-center">
         <div class="title d-flex flex-column justify-content-center align-items-center gap-10">
             <h2>GOODS</h2> 
             <p>팬 여러분을 위한 소중한 공간입니다. <br class="disN">세심하게 디자인된 다양한 상품들로, <br class="disN">여러분의 일상에 색다른 즐거움을!</p>
@@ -393,11 +539,10 @@
             </li>
         </ul>
         <a href="/sub/goods.html" class="goodsMoreBtn text-center"><span>더보기</span></a>
-    </> -->
 
 
     <!-- 메인 하단 인포 -->
-    <!-- <section id="mainInfo"> 
+    <section id="mainInfo"> 
         <ul class="mainInfoList d-flex justify-content-between gap-40">
 
             <li class="notice">
@@ -466,7 +611,7 @@
                 </ul>
                 <span class="mainInfoLine"></span>
                 <div class="mediaLink d-flex justify-content-center align-items-center">
-                    <iframe src='https://tv.naver.com/embed/61212672?autoPlay=true' loading="lazy" frameborder='no' scrolling='no' marginwidth='0' marginheight='0' WIDTH='330' HEIGHT='184' allow='autoplay' allowfullscreen>
+                    <iframe src='https://tv.naver.com/embed/61212672?autoPlay=true' loading="lazy" frameborder='no' scrolling='no' marginwidth='0' marginheight='0' WIDTH='330' HEIGHT='184' allowfullscreen>
                     </iframe>
                 </div>
                 <ul class="mediaInfo d-flex justify-content-between">
@@ -539,7 +684,7 @@
         </div>
 
 
-    </section> -->
+    </section>
 
 
 </main>

@@ -83,6 +83,54 @@ function changeImage(event, clickedFrameClass) {
 }
 
 // 대표작 슬라이드
+var subArtistbestswiper = new Swiper(".sub-artist-best-swiper", {
+    slidesPerView: 5,
+    spaceBetween: 28,
+    centeredSlides: true,
+    initialSlide: 3,
+    loop: true,
+    keyboard: {
+        enabled: true,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    breakpoints: {
+        991: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+        },
+        1281: {
+            slidesPerView: 5,
+            spaceBetween: 28,
+        }
+    }
+});
+
+var subArtistbestMswiper = new Swiper(".sub-artist-best-m-swiper", {
+    slidesPerView: 2,
+    spaceBetween: 28,
+    initialSlide: 3,
+    loop: true,
+    keyboard: {
+        enabled: true,
+    },
+    breakpoints: {
+        320: { // 320 ~ 
+            slidesPerView: 1,
+            spaceBetween: 10,
+        },
+        581: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+        },
+        990: {
+            slidesPerView: 3,
+            spaceBetween: 25,
+        },
+    },
+});
 
 // sub-artist---------------------------------------
 
