@@ -17,17 +17,27 @@
     #sub-schedule{
         .container-1280{
             padding: 0 1rem;
-            .schedule-content{
-                
-            }
         }
     }
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1320px) {
     .container-1280{
         width: 100%;
     }
+    #sub-artist{
+        .artist-wrap{
+            padding: 0 1rem;
+        }
+    }
+}
+
+
+
+@media (max-width: 1280px) {
+    // .container-1280{
+    //     width: 100%;
+    // }
     #sub-artist{
         .artist-banner{
             .banner-text{
@@ -45,7 +55,7 @@
             }
         }
         .artist-wrap{
-            padding: 0 1rem;
+            padding: 0 2rem;
             width: 100%;
             .artist-content{
                 .artist-name{
@@ -58,8 +68,46 @@
                 .sub-artist-detail{
                     .tab-pane{
                         .artist-info{
-                            .sub-artist-info-1{
-
+                            .sub-artist-info-2{
+                                .info-detail{
+                                    // .sub-artist-best-swiper{
+                                    //     display: none;
+                                    // }
+                                    // .sub-artist-best-m-swiper{
+                                    //     display: block;
+                                    //     max-width: 960px;
+                                    //     .swiper-wrapper{
+                                    //         .swiper-slide{
+                                    //             .img-wrap{
+                                    //                 .sub-best{
+                                    //                     width: 300px;
+                                    //                     height: 430px;
+                                    //                 }
+                                    //             }
+                                    //         }
+                                    //     }
+                                    // }
+                                }
+                            }
+                            .sub-artist-info-3{
+                                .filmo-wrap{
+                                    .filmo{
+                                        .hidden{
+                                            display: none;
+                                        }
+                                        ul{
+                                            margin-top: 1.5rem;
+                                            gap: 1.5rem;
+                                            li{
+                                                .detail{
+                                                    align-items: flex-start;
+                                                    flex-direction: column;
+                                                    gap: 0;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -97,7 +145,6 @@
 @media (max-width: 1080px){
     #sub-artist{
         .artist-wrap{
-            padding: 0 1rem;
             .artist-content{
                 .artist-name{
                     margin: 4rem 0;
@@ -114,32 +161,10 @@
                                 padding-left: 1.5rem;
                             }
                             .sub-artist-info-3{
-                                .filmo-wrap{
-                                    flex-wrap: wrap;
-                                    .filmo{
-                                        .hidden{
-                                            display: none;
-                                        }
-                                    }
-                                    .filmo-1,
-                                    .filmo-2{
-                                        width: 48%;
-                                    }
-                                    .filmo-3{
-                                        width: 100%;
-                                        h6{
-                                            margin-top: 2.5rem;
-                                        }
-                                        ul{
-                                            li{
-                                                .detail{
-                                                    flex-direction: row;
-                                                    gap: .625rem;
-                                                }
-                                            }
-                                        }
-                                    }
+                                .filmo{
+                                    padding: 30px 10px;
                                 }
+                                
                             }
                         }
                     }
@@ -171,6 +196,31 @@
         }
     }
 }
+
+@media (max-width: 1024px) {
+    #sub-artist{
+        .artist-wrap{
+            .artist-content{
+                .sub-artist-detail{
+                    .tab-pane{
+                        .artist-info{
+                            .sub-artist-info-3{
+                                .filmo-wrap{
+                                    .filmo{
+                                        h6{
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 990px) {
     .dB-990{
         display: block;
@@ -198,6 +248,10 @@
                             margin-bottom: 4rem;
                         }
                         .artist-info{
+                            h5{
+                                text-align: center;
+                                margin-bottom: 4rem;
+                            }
                             .frame-wrap{
                                 display: none;
                             }
@@ -213,8 +267,48 @@
                                 text-align: center;
                                 padding: 2rem 0 0;
                             }
+                            .sub-artist-info-2{
+                                margin-top: 4rem;
+                                .info-detail{
+                                    .sub-artist-best-swiper{
+                                        display: none;
+                                    }
+                                    .sub-artist-best-m-swiper{
+                                        display: block;
+                                        max-width: 960px;
+                                        .swiper-wrapper{
+                                            .swiper-slide{
+                                                .img-wrap{
+                                                    .sub-best{
+                                                        width: 300px;
+                                                        height: 430px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                             .sub-artist-info-3{
-                                padding: 0 1rem;
+                                margin-top: 4rem;
+                                .filmo-wrap{
+                                    .filmo{
+                                        h6{
+                                            margin: 0 auto;
+                                        }
+                                        ul{
+                                            align-items: center;
+                                            li{
+                                                // width: 82%;
+                                                .detail{
+                                                    .sub{
+                                                        display: none;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -224,6 +318,42 @@
     }
 
 }
+
+@media (max-width: 880px) {
+    #sub-artist{
+        .artist-wrap{
+            .artist-content{
+                .sub-artist-detail{
+                    .tab-pane{
+                        .artist-info{
+                            .sub-artist-info-3{
+                                .filmo-wrap{
+                                    gap: 2.5rem;
+                                    flex-direction: column;
+                                    .filmo{
+                                        width: 70%;
+                                        margin: 0 auto;
+                                        h6{
+                                            @include f-20-700-36;
+                                        }
+                                        ul{
+                                            margin-top: 1.25rem;
+                                            gap: 1.25rem;
+                                            li{
+                                                // width: 40%;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 @media (max-width: 768px) {
     .dN-768{
@@ -271,6 +401,10 @@
                             margin-bottom: 2.5rem;
                         }
                         .artist-info{
+                            h5{
+                                @include f-24-700-36;
+                                margin-bottom: 2.5rem;
+                            }
                             .sub-artist-main-swiper{
                                 .swiper-pagination{
                                     margin-top: 2.5rem;
@@ -286,6 +420,22 @@
                                 padding: 2.5rem 0 0;
                                 p{
                                     padding: 0 0 2.5rem;
+                                }
+                            }
+                            .sub-artist-info-2{
+                                .info-detail{
+                                    .sub-artist-best-m-swiper{
+                                        .swiper-wrapper{
+                                            .swiper-slide{
+                                                .img-wrap{
+                                                    .sub-best{
+                                                        width: 260px;
+                                                        height: 370px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -435,15 +585,39 @@
                             margin-bottom: 1.25rem;
                         }
                         .artist-info{
-                            .sub-artist-main-swiper{
-                                .swiper-pagination{
-                                    // margin-top: 1.25rem;
+                            h5{
+                                
+                                margin-bottom: 1.25rem;
+                            }
+                            .sub-artist-info-2{
+                                .info-detail{
+                                    .sub-artist-best-m-swiper{
+                                        .swiper-wrapper{
+                                            .swiper-slide{
+                                                .img-wrap{
+                                                    .sub-best{
+                                                        width: 300px;
+                                                        height: 420px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
-                            .sub-artist-info-1{
-                                // padding: 1.25rem 0 0;
-                                p{
-                                    // padding: 0 0 1.25rem;
+                            .sub-artist-info-3{
+                                .filmo-wrap{
+                                    .filmo{
+                                        h6{
+                                            font-size: 16px;
+                                            padding-bottom: 0;
+                                        }
+                                        ul{
+                                            li{
+                                                font-size: 14px;
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -476,6 +650,19 @@
                                     flex-direction: column;
                                 }
                             }
+                            .sub-artist-info-3{
+                                .filmo-wrap{
+                                    .filmo-3{
+                                        ul{
+                                            li{
+                                                .detail{
+                                                    flex-direction: column;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -487,6 +674,35 @@
 @media (max-width: 480px) {
     .dB-480{
         display: block;
+    }
+    #sub-artist{
+        .artist-wrap{
+            .artist-content{
+                .sub-artist-detail{
+                    .tab-pane{
+                        .artist-info{
+                            .sub-artist-info-3{
+                                .filmo-wrap{
+                                    .filmo{
+                                        h6{
+                                            padding-bottom: 4px;
+                                        }
+                                        ul{
+                                            li{
+                                                gap: 0.5rem;
+                                                .detail{
+                                                    gap: 0.2rem;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
