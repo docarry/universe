@@ -1,14 +1,5 @@
 @import './_var.scss';
 
-@keyframes scaleImage {
-    0% {
-        transform: scale(1.2); // 초기 크기
-    }
-    100% {
-        transform: scale(1); // 최종 크기
-    }
-}
-
 #sub-info{
     .info-page{
 		.banner {
@@ -56,22 +47,14 @@
 					.main-title {
 						@include f-50-700-72;
 						margin-bottom: 10px;
-                        animation: slideIn 2s forwards; /* 애니메이션 적용 */
-                        opacity: 0; // 초기 상태로 설정
 					}
 					.sub-title {
 						@include f-24-700-36;
 						padding-bottom: 2.5rem;
-                        animation: slideIn 3s forwards; /* 애니메이션 적용 */
-                        animation-delay: 0.3s; // 서브 타이틀이 메인 타이틀 뒤에 슬라이드
-                        opacity: 0; // 초기 상태로 설정
 					}
 					.sub-content {
 						@include f-16-700-24;
                         font-weight: 400;
-                        animation: slideIn 3s forwards; /* 애니메이션 적용 */
-                        animation-delay: 1.3s; // 서브 타이틀이 메인 타이틀 뒤에 슬라이드
-                        opacity: 0; // 초기 상태로 설정
 					}
 				}
 			}
@@ -206,24 +189,24 @@
 							justify-content: space-between;
                             align-items: start;
 							text-align: center;
+                            li{
+                                height: 250px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                            }
 							.symbol-logo {
 								width: 20%;
 								img {
 									display: block;
 									width: 100%;
 								}
-								h4 {
-									margin-top: 20px;
-								}
 							}
 							.vertical-logo {
-								width: 34%;
+								width: 30%;
 								img {
 									display: block;
                                     width: 100%;
-								}
-								h4 {
-									margin-top: 20px;
 								}
 							}
 						}
@@ -250,15 +233,15 @@
                 mix-blend-mode: multiply; /* 믹스 블렌드 모드 적용 */
                 pointer-events: none; /* 클릭 이벤트 방지 */
             }
-            .info-story-container{
+            .info-story-container, .info-story-container02{
                 max-width: 1280px;
                 width: 100%;
                 padding: 6.25rem 50px;
                 margin: 0 auto;
                 display: flex;
                 flex-direction: column;
-                gap: 100px;
-                .info-brandstory {
+                gap: 30px;
+                .info-brandstory{
                     position: relative;
                     color: #fff;
                     z-index: 1;
@@ -287,15 +270,17 @@
                     position: relative;
                     color: #fff;
                     z-index: 1;
-                    text-align: right;
                     font-weight: 700;
-                    span{
-                        display: block;
+                    .detail-text01, .detail-text02{
+                        display: inline-block;
                         font-size: 1rem;
                         line-height: 26px;
                         font-weight: 400;
                     }
                 }
+            }
+            .info-story-container02{
+                display: none;
             }
         }
         .info-container{
@@ -362,28 +347,83 @@
                     margin: 100px 0;
                     h3{
                         @include f-24-700-36;
-                        opacity: 0; /* 초기 투명도 0 */
-                        animation: slide-up 3s forwards; /* 애니메이션 적용 */
-                        animation-play-state: paused; /* 애니메이션 일시정지 */
                     }
                     .info-email{
                         @include f-16-700-24;
                         margin: 10px 0;
-                        opacity: 0; /* 초기 투명도 0 */
-                        animation: slide-up 3s forwards; /* 애니메이션 적용 */
-                        animation-play-state: paused; /* 애니메이션 일시정지 */
                     }
                     .info-number{
                         @include f-16-700-24;
-                        opacity: 0; /* 초기 투명도 0 */
-                        animation: slide-up 3s forwards; /* 애니메이션 적용 */
-                        animation-play-state: paused; /* 애니메이션 일시정지 */
                     }
-                    h3.visible,
-                    .info-email.visible,
-                    .info-number.visible {
-                        opacity: 1; /* 애니메이션이 적용될 때 투명도 1 */
-                        animation-play-state: running; /* 애니메이션 재생 */
+                }
+            }
+            .info-location02{
+                display: none;
+                justify-content: space-between;
+                margin-top: 100px;
+                flex-wrap: wrap;
+                .loc-box{
+                    width: calc(50% - 30px);
+                    position: relative;
+                    background: url("../img/info/info-loc-img.jpg") no-repeat center / cover;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: rgba(0, 0, 0, 0.50);
+                        mix-blend-mode: multiply; /* 믹스 블렌드 모드 적용 */
+                        pointer-events: none; /* 클릭 이벤트 방지 */
+                        z-index: 1;
+                    }
+                    .loc-text-box{
+                        width: 100%;
+                        color: #fff;
+                        text-align: center;
+                        position: relative;
+                        z-index: 2;
+                        h4{
+                            @include f-50-700-72;
+                        }
+                        .loc-ko{
+                            @include f-16-700-24;
+                            margin: 40px 0 10px
+                        }
+                        .loc-eg{
+                            @include f-16-700-24;
+                        }
+                    }
+                }
+                #map-box{
+                    width: calc(50% - 30px);
+                    height: 560px;
+                    background-color: #fff;
+                }
+                .info-contact{
+                    color: #fff;
+                    width: 100%;
+                    text-align: center;
+                    padding: 100px 0;
+                    border-top: 1px solid #FFF;
+                    border-bottom: 1px solid #FFF;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    margin: 100px 0;
+                    h3{
+                        @include f-24-700-36;
+                    }
+                    .info-email{
+                        @include f-16-700-24;
+                        margin: 10px 0;
+                    }
+                    .info-number{
+                        @include f-16-700-24;
                     }
                 }
             }
@@ -398,33 +438,13 @@
 .customoverlay:after {content:'';position:absolute;margin-left:-12px;left:50%;bottom:-12px;width:22px;height:12px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
 
 // 키프레임
-@keyframes slideIn {
+
+// 배너 이미지 축소 애니메이션
+@keyframes scaleImage {
     0% {
-        transform: translateX(-5%);
-        opacity: 0;
+        transform: scale(1.2); // 초기 크기
     }
     100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slide-up {
-    0% {
-        transform: translateY(10px); /* 아래에서 시작 */
-        opacity: 0; /* 처음에는 투명 */
-    }
-    100% {
-        transform: translateY(0); /* 원래 위치로 이동 */
-        opacity: 1; /* 완전히 보이게 */
-    }
-}
-
-@keyframes blink {
-    0%, 100% {
-        opacity: 0; /* 시작과 끝은 보이지 않음 */
-    }
-    50% {
-        opacity: 1; /* 중간에 보임 */
+        transform: scale(1); // 최종 크기
     }
 }
