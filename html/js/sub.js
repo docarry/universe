@@ -70,30 +70,33 @@ document.addEventListener('DOMContentLoaded', function() {
 // sub-artist -----
 
 
+
+// SUB_Goods START --------------------------------------
+const hearts = document.querySelectorAll('.likeBtn img'); // 모든 하트 요소를 선택
+
+// 각 하트에 클릭 이벤트 리스너 추가
+hearts.forEach(heart => {
+    heart.addEventListener('click', (event) => {
+        const currentHeart = event.target; // 클릭한 하트 요소
+        const parent = currentHeart.parentElement; // 부모 요소 선택
+        
+        // 현재 하트의 src 속성을 확인하고 변경
+        if (currentHeart.src.includes('heartIcon.svg')) {
+            currentHeart.src = '/img/subGoods/icon/fullHeartIcon.svg'; // 채워진 하트 이미지로 변경
+            parent.classList.remove('shim_dNHover'); // 부모 요소 클래스 제거
+        } else {
+            currentHeart.src = '/img/subGoods/icon/heartIcon.svg'; // 빈 하트 이미지로 변경
+            parent.classList.add('shim_dNHover'); // 부모 요소 클래스 추가
+        }
+    });
+});
+// SUB_Goods END --------------------------------------
+
+
+
 // kakao api---------------------------------------
-    // var container = document.getElementById('map-box');
-    // var options = {
-    //     center: new kakao.maps.LatLng(37.499557, 127.031397),
-    //     level: 3
-    // };
-
-    // var map = new kakao.maps.Map(container, options);
-
-    // // 마커가 표시될 위치입니다 
-    // var markerPosition  = new kakao.maps.LatLng(37.499557, 127.031397); 
-
-    // // 마커를 생성합니다
-    // var marker = new kakao.maps.Marker({
-    //     position: markerPosition
-    // });
-
-    // // 마커가 지도 위에 표시되도록 설정합니다
-    // marker.setMap(map);
-
-
-
     var mapContainer = document.getElementById('map-box'), // 지도를 표시할 div 
-  mapOption = { 
+mapOption = { 
         center: new kakao.maps.LatLng(37.499557, 127.031397), // 지도의 중심좌표
         level: 4 // 지도의 확대 레벨
     };
@@ -137,28 +140,53 @@ var customOverlay = new kakao.maps.CustomOverlay({
 // kakao api---------------------------------------
 
 
-// sub-info 회사 컨택---------------------------------------
-document.addEventListener("DOMContentLoaded", function() {
-    const infoContactElements = document.querySelectorAll('.info-contact h3, .info-email, .info-number');
-    
-    function checkVisibility() {
-        infoContactElements.forEach(element => {
-            const rect = element.getBoundingClientRect();
-            // 요소가 뷰포트에 들어왔는지 확인
-            if (rect.top < window.innerHeight && rect.bottom >= 0) {
-                element.classList.add('visible'); // 클래스 추가
-            }
-        });
-    }
-    
-    // 스크롤 시 체크
-    document.addEventListener("scroll", checkVisibility);
-    // 초기 로드 시 체크
-    checkVisibility();
+// kakao api-990 ---------------------------------------
+var mapContainer = document.getElementById('map-box2'), // 지도를 표시할 div 
+mapOption = { 
+        center: new kakao.maps.LatLng(37.499557, 127.031397), // 지도의 중심좌표
+        level: 4 // 지도의 확대 레벨
+    };
+
+var map = new kakao.maps.Map(mapContainer, mapOption);
+
+var imageSrc = 'https://i.ibb.co/2vHfqFB/2216335-location-map-map-pin-marker-pin-icon.png', // 마커이미지의 주소입니다    
+    imageSize = new kakao.maps.Size(68, 74), // 마커이미지의 크기입니다
+    imageOption = {offset: new kakao.maps.Point(36, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+
+// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+    markerPosition = new kakao.maps.LatLng(37.499557, 127.031397); // 마커가 표시될 위치입니다
+
+// 마커를 생성합니다
+var marker = new kakao.maps.Marker({
+    position: markerPosition,
+    image: markerImage // 마커이미지 설정 
 });
-// sub-info---------------------------------------
+
+// 마커가 지도 위에 표시되도록 설정합니다
+marker.setMap(map);  
+
+// 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+var content = '<div class="customoverlay">' +
+    '  <a href="https://map.kakao.com/link/map/11394059" target="_blank">' +
+    '    <span class="title">유니버스 엔터테인먼트</span>' +
+    '  </a>' +
+    '</div>';
+
+// 커스텀 오버레이가 표시될 위치입니다 
+var position = new kakao.maps.LatLng(37.499557, 127.031397);  
+
+// 커스텀 오버레이를 생성합니다
+var customOverlay = new kakao.maps.CustomOverlay({
+    map: map,
+    position: position,
+    content: content,
+    yAnchor: 1 
+});
+// kakao api---------------------------------------
 
 
+// 배너 이미지 축소 애니메이션-----------------------
 document.addEventListener("DOMContentLoaded", function() {
     const banner = document.querySelector('.banner');
 
@@ -176,5 +204,4 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('scroll', checkVisibility);
     checkVisibility(); // 초기 체크
 });
-
-
+// 배너 이미지 축소 애니메이션-----------------------

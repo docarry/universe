@@ -118,6 +118,31 @@
                 }
             }
         }
+
+        // 릴리즈 슬라이드
+        #release{
+            #release-slide{
+                width: 70%;
+                padding: 0;
+                height: 650px;
+                .swiper-wrapper{
+                    .swiper-slide{
+                        &.swiper-slide-active{
+                            transform: scale(1.2) !important;
+                            .releaseInfo{
+                                transform: scale(1.4) translate(0, 42%);
+                            }
+                        }
+                        &.swiper-slide-prev {
+                            transform: scale(.7) translate(15%, 5%) !important;
+                        }
+                        &.swiper-slide-next {
+                            transform: scale(.7) translate(-15%, 5%) !important;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -133,6 +158,13 @@
                         height: 85vh;
                     }
                 }
+            }
+        }
+
+        // 릴리즈 슬라이드
+        #release{
+            #release-slide{
+                width: 80%;
             }
         }
     }
@@ -186,8 +218,15 @@
                     }
                 }
                 #scheduleTabContent{
-                    width: 90%;
+                    width: calc(100% - 40px);
                 }
+            }
+        }
+
+        // 릴리즈 슬라이드
+        #release{
+            #release-slide{
+                width: 85%;
             }
         }
     }
@@ -404,8 +443,27 @@
                 #artist-slide{
                     .swiper-wrapper{
                         height: 65vh;
+                        
                     }
                 }
+            }
+        }
+
+        // PC 릴리즈 슬라이드
+        #release{
+            display: none !important;
+            .title{
+                gap: 30px !important;
+                h2{
+                    @include f-36-700-52;
+                }
+            }
+        }
+        // M 릴리즈 슬라이드
+        #m-release{
+            display: block;
+            .title{
+                gap: 30px !important;
             }
         }
     }
@@ -600,6 +658,17 @@
             .schedule-artist{
                 .schedule-name{
                     margin: 50px 0;
+                    .nav-item{
+                        .nav-link{
+                            @include f-24-400-36;
+                            &.active{
+                                @include f-24-700-36;
+                            }
+                        }
+                        .nav-line{
+                            height: 14px;
+                        }
+                    }
                 }
                 #scheduleTabContent{
                     .tab-pane{
@@ -637,22 +706,21 @@
                             border-radius: 0 0 10px 10px;
                         }
                         .calendar-container .fc-col-header-cell-cushion {
-                            @include f-18-400-26;
+                            @include f-18-400-20;
                         }
                         .calendar-container .fc-daygrid-day-number {
                             @include f-18-700-20;
                         }                    
                         .calendar-container .fc-daygrid-day.fc-day-today .fc-daygrid-day-top > a {
-                            border: solid 1px #f86666;
-                            padding: 10px;
+                            border: solid 1px #333;
+                            padding: 4px;
                         }
                         .calendar-container .fc-daygrid-day-top > a.eventText {
                             border: solid 1px #f86666;
-                            padding: 10px;
+                            padding: 4px;
                         }
                         .calendar-container .fc-daygrid-day-top {
-                            height: 90px;
-                            line-height: 90px;
+                            line-height: 70px;
                         }
                         .fc-view-harness {
                             height: 90px !important;
@@ -662,7 +730,7 @@
             }
         }
 
-        // 릴리즈 슬라이드
+        // PC 릴리즈 슬라이드
         #release{
             .title{
                 gap: 30px !important;
@@ -803,14 +871,18 @@
                 h2{
                     @include f-24-700-36;
                 }
-                p{
-                    @include f-18-400-26;
-                }
             }
         }
 
         // 아티스트 슬라이드
         #artist{
+            padding: 40px 0;
+            .title{
+                gap: 20px !important;
+                h2{
+                    @include f-24-700-36;
+                }
+            }
             .artistBox{
                 #artist-slide{
                     .swiper-wrapper{
@@ -830,6 +902,74 @@
                 }
             }
         }
+
+        // 스케줄 달력
+        #schedule{
+            padding: 20px 0;
+            .title{
+                gap: 20px !important;
+                h2{
+                    @include f-24-700-36;
+                }
+            }
+            .schedule-artist{
+                .schedule-name{
+                    margin: 50px 0 20px;
+                    .nav-item{
+                        .nav-link{
+                            @include f-18-400-26;
+                            &.active{
+                                @include f-18-700-26;
+                            }
+                        }
+                    }
+                }
+                #scheduleTabContent{
+                    .calendar-container .fc-col-header-cell-cushion {
+                        @include f-16-400-20;
+                    }
+                    .calendar-container .fc-daygrid-day-number {
+                        @include f-18-700-20;
+                    }                    
+                    .calendar-container .fc-daygrid-day.fc-day-today .fc-daygrid-day-top > a {
+                        border: solid 1px #333;
+                        padding: 4px;
+                    }
+                    .calendar-container .fc-daygrid-day-top > a.eventText {
+                        border: solid 1px #f86666;
+                        padding: 4px;
+                    }
+                    .calendar-container .fc-daygrid-day-top {
+                        line-height: 70px;
+                    }
+                    .fc-view-harness {
+                        height: 90px !important;
+                    }
+                }
+            }
+        }
+
+        // 릴리즈 슬라이드
+        #release{
+            padding: 40px 0;
+            .title{
+                gap: 20px !important;
+                h2{
+                    @include f-24-700-36;
+                }
+            }
+        }
+
+        // 굿즈
+        #goods{
+            padding: 20px 0;
+            .title{
+                gap: 20px !important;
+                h2{
+                    @include f-24-700-36;
+                }
+            }
+        }
     }
 }
 
@@ -838,6 +978,13 @@
     // 전체 폰트 사이즈 조절
     html, body{
         font-size: 14px;
+    }
+
+    .introN500{
+        display: block;
+    }
+    .introN{
+        display: none;
     }
 
     // 푸터
@@ -911,7 +1058,22 @@
                 }
             }
         }
+
+        // 스케줄 달력
+        #schedule{
+            .schedule-artist{
+                .schedule-name{
+                    margin: 30px 0 20px;
+                    .nav-item{
+                        .nav-link{
+                            padding: 0 12px;
+                        }
+                    }
+                }
+            }
+        }
     }
+
 }
 
 
@@ -948,6 +1110,10 @@
 
 
 @media (max-width: 350px) {
+
+    .scheduleN{
+        display: block;
+    }
 
     // M 헤더 검색창
     #m-search{

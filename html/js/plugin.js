@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// 릴리즈 슬라이드
+// PC 릴리즈 슬라이드
 var releaseSwiper = new Swiper("#release-slide", {
     initialSlide: 2,
     slidesPerView: 3,
@@ -348,6 +348,25 @@ var releaseSwiper = new Swiper("#release-slide", {
     },
     pagination: {
     el: "#release-slide .swiper-pagination",
+    clickable: true,
+    },
+    loop: true,
+    keyboard: {
+        enabled: true,
+    },
+});
+
+// M 릴리즈 슬라이드
+var mReleaseSwiper = new Swiper("#m-release-slide", {
+    effect: "cube",
+    grabCursor: true,
+    cubeEffect: {
+    shadow: false,
+    slideShadows: false,
+    },
+    pagination: {
+    el: "#m-release-slide .swiper-pagination",
+    clickable: true,
     },
     loop: true,
     keyboard: {

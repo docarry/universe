@@ -1,4 +1,31 @@
-
+// 페이지네이션 스타일 - 기본(화이트)
+@mixin swiPagBul-fff{
+    width: 30px;
+    height: 1px;
+    background-color: #fff;
+    margin: 0;
+    border-radius: 0;
+}
+// 페이지네이션 스타일 - 기본(블랙)
+@mixin swiPagBul-000{
+    width: 30px;
+    height: 1px;
+    background-color: #000;
+    margin: 0;
+    border-radius: 0;
+}
+// 페이지네이션 스타일 - 액티브(화이트)
+@mixin swiPagBulAct-fff{
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+}
+// 페이지네이션 스타일 - 액티브(블랙)
+@mixin swiPagBulAct-000{
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+}
 
 // 메인 섹션 타이틀 스타일
 @mixin titleH2{
@@ -125,6 +152,11 @@
     line-height: 26px;
     font-weight: 400;
 }
+@mixin f-18-400-20{
+    font-size: 1.125rem;
+    line-height: 20px;
+    font-weight: 400;
+}
 @mixin f-16-900-24{
     font-size: 1rem;
     line-height: 24px;
@@ -143,6 +175,11 @@
 @mixin f-16-400-24{
     font-size: 1rem;
     line-height: 24px;
+    font-weight: 400;
+}
+@mixin f-16-400-20{
+    font-size: 1rem;
+    line-height: 20px;
     font-weight: 400;
 }
 @mixin f-14-700-20{
