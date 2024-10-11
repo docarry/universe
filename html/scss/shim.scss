@@ -19,23 +19,26 @@
     }
 }
 @mixin goods ($width: 60%) {
-    width: $width;
-    height: auto;
-    transition: all 0.4s ease-in-out;
-    &:hover{
+    img{
+        width: $width;
+        height: auto;
+        transition: all 0.4s ease-in-out;
+    }
+    &:hover img{
         width: calc($width + 10%);
     }   
 }
-@mixin best ($name) {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: url('/img/subGoods/#{$name}.jpg') no-repeat center / cover;
+
+.shim_dNHover{
+    display: none;
+}
+.shim_g4{
+    gap: 4px;
 }
 
 // PC 스타일
 #subGoods{
-    background-color: #fff;
+    padding-bottom: 100px;
     a{
         color: #fff;
     }
@@ -45,13 +48,12 @@
         width: 100%;
         max-width: 1920px;
         height: 430px;
-        filter: grayscale(100%);
         background: url(/img/subGoods/subGoodsTopBanner.jpg) no-repeat center/cover;
         &::before{
             content: '';
             display: block;
             height: 100%;
-            background: rgba(0, 0, 0, .6);
+            background: rgba(0, 0, 0, .4);
         }
         .textBox-PC{
             position: absolute;
@@ -79,7 +81,7 @@
     .contentTitle{
         width: 100%;
         max-width: 1280px;
-        color: #000;
+        color: #fff;
         h3{
             @include f-32-700-46;
         }
@@ -96,11 +98,37 @@
             .swiper-wrapper{
                 .swiper-slide{
                     width: calc((100% - 20px) / 2);
-                    height: 732px;
+                    height: 630px;
                     border-radius: 20px;
                     overflow: hidden;
                     a{
+                        width: 100%;
+                        height: 100%;
                         position: relative;
+                        .goodsHoverBtn{
+                            position: absolute;
+                            top: 20px;
+                            right: 20px;
+                            .shopBtn,
+                            .likeBtn{
+                                cursor: pointer;
+                                z-index: 3;
+                                > img{
+                                    width: 28px;
+                                    object-fit: cover;
+                                }
+                            }
+                        }
+                        &:hover .goodsHoverBtn{
+                            display: flex;
+                        }
+                        > img{
+                            width: 100%;
+                            transition: all 0.4s ease-in-out;
+                        }
+                        &:hover > img{
+                            transform: scale(1.1);
+                        }
                         .bestInfo{
                             width: 100%;
                             position: absolute;
@@ -110,31 +138,13 @@
                             overflow: hidden;
                             background-color: #333;
                             padding: 20px 40px;
-                            border-radius: 20px;
+                            border-radius: 18px 18px 0 0;
                             transition: all 0.4s ease-in-out;
-                            @include f-24-500-36;
+                            @include f-24-400-36;
                         }
                         &:hover .bestInfo{
                             transform: translateY(0); /* hover 시 위로 올라와 a 태그의 bottom에 맞도록 */
                         }
-                    }
-                    .bestSlide01{
-                        @include best (bestS1-1);
-                    }
-                    .bestSlide02{
-                        @include best (bestS1-2);
-                    }
-                    .bestSlide03{
-                        @include best (bestS2-1);
-                    }
-                    .bestSlide04{
-                        @include best (bestS2-2);
-                    }
-                    .bestSlide05{
-                        @include best (bestS3-1);
-                    }
-                    .bestSlide06{
-                        @include best (bestS3-2);
                     }
                 }
             }
@@ -169,6 +179,7 @@
             position: relative;
             h3{
                 color: #fff;
+                @include f-24-700-36;
             }
             .moreBtn{
                 gap: 4px;
@@ -180,7 +191,27 @@
                 li{
                     width: calc((100% - 40px) / 3);
                     a{
+                        position: relative;
                         gap: 20px;
+                        .goodsHoverBtn{
+                            position: absolute;
+                            top: 20px;
+                            right: 20px;
+                            .shopBtn,
+                            .likeBtn{
+                                cursor: pointer;
+                                transition: all 0.4s ease-in-out;
+                                z-index: 3;
+                                > img{
+                                    width: 28px;
+                                    object-fit: cover;
+                                }
+                            }
+                        }
+                        &:hover .shopBtn,
+                        &:hover .likeBtn{
+                            display: flex;
+                        }
                         .goodsContainer{
                             position: relative;
                             width: 100%;
@@ -190,7 +221,12 @@
                             background-color: #ededed;
                         }
                         span:last-child{
-                            gap: 10px;
+                            .itemName{
+                                @include f-16-400-24;
+                            }
+                            .itemPrice{
+                                @include f-16-500-24;
+                            }
                         }
                     }
                 }
@@ -201,23 +237,17 @@
                 li{
                     a{
                         .goods01{
-                            img{
                             @include goods (36%);
-                            }
                         }
                     }
                     a{
                         .goods02{
-                            img{
-                                @include goods (54%);
-                            }
+                            @include goods (54%);
                         }
                     }
                     a{
                         .goods03{
-                            img{
-                                @include goods (80%);
-                            }
+                            @include goods (80%);
                         }
                     }
                 }
@@ -228,23 +258,17 @@
                 li{
                     a{
                         .goods01{
-                            img{
-                                @include goods (70%);
-                            }
+                            @include goods (70%);
                         }
                     }
                     a{
                         .goods02{
-                            img{
-                                @include goods (76%);
-                            }
+                            @include goods (76%);
                         }
                     }
                     a{
                         .goods03{
-                            img{
-                                @include goods (74%);
-                            }
+                            @include goods (74%);
                         }
                     }
                 }
@@ -255,23 +279,17 @@
                 li{
                     a{
                         .goods01{
-                            img{
-                                @include goods (80%);
-                            }
+                            @include goods (80%);
                         }
                     }
                     a{
                         .goods02{
-                            img{
-                                @include goods (66%);
-                            }
+                            @include goods (66%);
                         }
                     }
                     a{
                         .goods03{
-                            img{
-                                @include goods (50%);
-                            }
+                            @include goods (50%);
                         }
                     }
                 }
@@ -282,23 +300,17 @@
                 li{
                     a{
                         .goods01{
-                            img{
-                                @include goods (64%);                                
-                            }
+                            @include goods (64%);
                         }
                     }
                     a{
                         .goods02{
-                            img{
-                                @include goods (56%);
-                            }
+                            @include goods (56%);
                         }
                     }
                     a{
                         .goods03{
-                            img{
                             @include goods (80%);
-                            }
                         }
                     }
                 }
@@ -309,23 +321,17 @@
                 li{
                     a{
                         .goods01{
-                            img{
                             @include goods (74%);
-                            }
                         }
                     }
                     a{
                         .goods02{
-                            img{
-                                @include goods (64%);
-                            }
+                            @include goods (64%);
                         }
                     }
                     a{
                         .goods03{
-                            img{
-                                @include goods (78%);
-                            }
+                            @include goods (78%);
                         }
                     }
                 }
