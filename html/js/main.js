@@ -4,6 +4,15 @@ AOS.init();
 
 $(function(){
 
+        // M 헤더 고정
+        $(window).on('scroll', function(){
+        if($(window).scrollTop() > 0){
+            $('#m-header').addClass('fix');
+        }else{
+            $('#m-header').removeClass('fix');
+        }
+        });
+
         // 탑버튼 고정
         $(window).on('scroll', function(){
             if($(window).scrollTop() > 0){
@@ -185,11 +194,8 @@ $(function(){
     $('.shareCloseBtn').click(function() {
         $('#shareModal').fadeOut(); // 모달을 부드럽게 숨김
     });
-    
-
 
 });
-
 
 
 // 메인 인덱스 굿즈 효과

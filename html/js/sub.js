@@ -72,24 +72,51 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // SUB_Goods START --------------------------------------
-const hearts = document.querySelectorAll('.likeBtn img'); // 모든 하트 요소를 선택
+        // 페이지 로드 후 이벤트 리스너를 설정하는 코드
+        window.onload = function() {
+            // 모든 장바구니 요소와 하트 요소를 선택
+            const shoppingBags = document.querySelectorAll('.shopBtn img'); // 장바구니 아이콘 선택
+            const hearts = document.querySelectorAll('.likeBtn img'); // 하트 아이콘 선택
 
-// 각 하트에 클릭 이벤트 리스너 추가
-hearts.forEach(heart => {
-    heart.addEventListener('click', (event) => {
-        const currentHeart = event.target; // 클릭한 하트 요소
-        const parent = currentHeart.parentElement; // 부모 요소 선택
-        
-        // 현재 하트의 src 속성을 확인하고 변경
-        if (currentHeart.src.includes('heartIcon.svg')) {
-            currentHeart.src = '/img/subGoods/icon/fullHeartIcon.svg'; // 채워진 하트 이미지로 변경
-            parent.classList.remove('shim_dNHover'); // 부모 요소 클래스 제거
-        } else {
-            currentHeart.src = '/img/subGoods/icon/heartIcon.svg'; // 빈 하트 이미지로 변경
-            parent.classList.add('shim_dNHover'); // 부모 요소 클래스 추가
+            // 각 하트에 클릭 이벤트 리스너 추가
+            hearts.forEach(heart => {
+                heart.addEventListener('click', (event) => {
+                    const currentHeart = event.target; // 클릭한 하트 요소
+                    const parent = currentHeart.parentElement; // 부모 요소 선택
+
+                    // 현재 하트의 src 속성을 확인하고 변경
+                    if (currentHeart.src.includes('heartIcon.svg')) {
+                        currentHeart.src = '/img/subGoods/icon/fullHeartIcon.svg'; // 채워진 하트 이미지로 변경
+                        parent.classList.remove('shim_dNHover'); // 부모 요소 클래스 제거
+                        alert("찜하기에 추가되었습니다!"); // 알럿 메시지 출력
+                    } else {
+                        currentHeart.src = '/img/subGoods/icon/heartIcon.svg'; // 빈 하트 이미지로 변경
+                        parent.classList.add('shim_dNHover'); // 부모 요소 클래스 추가
+                    }
+                });
+            });
+
+            // 각 장바구니에 클릭 이벤트 리스너 추가
+            shoppingBags.forEach(shoppingBag => {
+                shoppingBag.addEventListener('click', (event) => {
+                    const currentShoppingBag = event.target; // 클릭한 장바구니 요소
+                    const parent = currentShoppingBag.parentElement; // 부모 요소 선택
+
+                    // 현재 장바구니의 src 속성을 확인하고 변경
+                    if (currentShoppingBag.src.includes('bagIcon.svg')) {
+                        const confirmAddToCart = confirm("장바구니에 추가하시겠습니까?");
+                        if (confirmAddToCart) {
+                            currentShoppingBag.src = '/img/subGoods/icon/fullBagIcon.svg'; // 채워진 장바구니 이미지로 변경
+                            parent.classList.remove('shim_dNHover'); // 부모 요소 클래스 제거
+                            alert("장바구니에 추가되었습니다!"); // 장바구니 추가 메시지 출력
+                        }
+                    } else {
+                        currentShoppingBag.src = '/img/subGoods/icon/bagIcon.svg'; // 빈 장바구니 이미지로 변경
+                        parent.classList.add('shim_dNHover'); // 부모 요소 클래스 추가
+                    }
+                });
+            });
         }
-    });
-});
 // SUB_Goods END --------------------------------------
 
 

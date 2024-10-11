@@ -56,7 +56,7 @@
         top: 80px;
         margin-right: 8.75rem;
         background-color: rgba(255, 255, 255, 0.60);
-        transition: all .6s ease-in-out;
+        transition: all .2s ease-in-out;
         transform: translateY(-300px);
         z-index: 99999999;
         &.searchOn{
@@ -143,7 +143,7 @@
         top: 80px;
         margin-right: 8.75rem;
         background-color: rgba(0, 0, 0, 0.70);
-        transition: all .6s ease-in-out;
+        transition: all .2s ease-in-out;
         transform: translateY(-300px);
         z-index: 99999999;
         &.searchOn{
@@ -175,6 +175,13 @@
 // M 헤더
 #m-header{
     position: relative;
+    &.fix{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 50;
+    }
 
     .m-header-bg{
         background-color: #000;
@@ -211,7 +218,7 @@
                 background-color: rgba(0, 0, 0, 0.70);
                 padding: 0 10px;
                 transform: translateX(-500px);
-                transition: all .6s ease-in-out;
+                transition: all .2s ease-in-out;
                 .depth01{
                     li{
                         padding: 10px 20px 10px 32px;
@@ -261,7 +268,7 @@
         right: 0;
         top: 100%;
         background-color: rgba(0, 0, 0, 0.70);
-        transition: all .6s ease-in-out;
+        transition: all .2s ease-in-out;
         transform: translateY(-200px);
         z-index: 99999999;
         &.searchOn{
@@ -432,10 +439,11 @@
 }
 
 
+// 탑버튼
 #topBtn{
     position: fixed;
-    left: 86%;
-    bottom: 6%;
+    left: 95vw;
+    bottom: 10vh;
     width: 100%;
     z-index: 9999999;
     display: none;

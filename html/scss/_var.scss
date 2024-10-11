@@ -26,6 +26,38 @@
     height: 3px;
     background-color: #000;
 }
+// 슬라이드 이전 버튼 - 블랙
+@mixin swiperPrevBtn-000{
+    width: 40px;
+    height: 40px;
+    border-top: solid 1px #000;
+    border-right: solid 1px #000;
+    transform: rotate(-135deg);
+}
+// 슬라이드 다음 버튼 - 블랙
+@mixin swiperNextBtn-000{
+    width: 40px;
+    height: 40px;
+    border-top: solid 1px #000;
+    border-right: solid 1px #000;
+    transform: rotate(45deg);
+}
+// 슬라이드 이전 버튼 - 화이트
+@mixin swiperPrevBtn-fff{
+    width: 40px;
+    height: 40px;
+    border-top: solid 1px #fff;
+    border-right: solid 1px #fff;
+    transform: rotate(-135deg);
+}
+// 슬라이드 다음 버튼 - 화이트
+@mixin swiperNextBtn-fff{
+    width: 40px;
+    height: 40px;
+    border-top: solid 1px #fff;
+    border-right: solid 1px #fff;
+    transform: rotate(45deg);
+}
 
 // 메인 섹션 타이틀 스타일
 @mixin titleH2{

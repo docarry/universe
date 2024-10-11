@@ -52,6 +52,20 @@
             .swiper-pagination-bullet-active {
                 @include swiPagBulAct-fff;
             }
+            .swiper-button-prev{
+                @include swiperPrevBtn-fff;
+                left: 2%;
+                &::after{
+                    content: '';
+                }
+            }
+            .swiper-button-next{
+                @include swiperNextBtn-fff;
+                right: 2%;
+                &::after{
+                    content: '';
+                }
+            }
         }
     }
 
@@ -67,7 +81,8 @@
                 @include f-50-700-72;
             }
             p{
-                @include f-24-500-36;
+                font-size: 1.25rem;
+                font-weight: 500;
             }
         }
     }
@@ -133,16 +148,24 @@
                     bottom: 0;
                 }
                 .swiper-pagination-bullet {
-                    width: 4px;
-                    height: 4px;
-                    opacity: 1;
-                    background-color: #fff;
+                    @include swiPagBul-fff;
                 }
                 .swiper-pagination-bullet-active {
-                    width: 12px;
-                    height: 12px;
-                    border: 2px solid #FFF;
-                    background-color: transparent;
+                    @include swiPagBulAct-fff;
+                }
+                .swiper-button-prev{
+                    @include swiperPrevBtn-fff;
+                    left: 2%;
+                    &::after{
+                        content: '';
+                    }
+                }
+                .swiper-button-next{
+                    @include swiperNextBtn-fff;
+                    right: 2%;
+                    &::after{
+                        content: '';
+                    }
                 }
             }
         }
@@ -423,10 +446,13 @@
                             p{
                                 transform: scale(0.45) translate(0, -250%);
                             }
-                            img{
-                                width: 100px !important;
-                                height: 100px !important;
-                                transform: scale(1.8) translate(0, -36%) !important;
+                            a{
+                                display: block;
+                                img{
+                                    width: 100px !important;
+                                    height: 100px !important;
+                                    transform: scale(1.8) translate(0, -36%) !important;
+                                }
                             }
                         }
                     }
@@ -462,21 +488,27 @@
                 }
             }
             .swiper-pagination-bullets.swiper-pagination-horizontal{
-                gap: 12px;
-                bottom: 0;
                 margin-bottom: 40px;
             }
             .swiper-pagination-bullet {
-                width: 2px;
-                height: 2px;
-                opacity: 1;
-                background-color: #fff;
+                @include swiPagBul-fff;
             }
             .swiper-pagination-bullet-active {
-                width: 6px;
-                height: 6px;
-                border: 2px solid #FFF;
-                background-color: transparent;
+                @include swiPagBulAct-fff;
+            }
+            .swiper-button-prev{
+                @include swiperPrevBtn-fff;
+                left: 2%;
+                &::after{
+                    content: '';
+                }
+            }
+            .swiper-button-next{
+                @include swiperNextBtn-fff;
+                right: 2%;
+                &::after{
+                    content: '';
+                }
             }
         }
         .releaseMoreBtn{
@@ -530,22 +562,19 @@
                         @include f-18-400-26;
                         margin-bottom: 30px;
                     }
-                    img{
-                        width: 100%;
+                    a{
+                        display: block;
+                        img{
+                            width: 100%;
+                        }
                     }
                 }
             }
             .swiper-pagination-bullet {
-                width: 4px;
-                height: 4px;
-                opacity: 1;
-                background-color: #fff;
+                @include swiPagBul-fff;
             }
             .swiper-pagination-bullet-active {
-                width: 12px;
-                height: 12px;
-                border: 2px solid #FFF;
-                background-color: transparent;
+                @include swiPagBulAct-fff;
             }
         }
         .releaseMoreBtn{
@@ -867,6 +896,7 @@
                         margin-top: 24px;
                         .viveText02{
                             @include f-16-700-24;
+                            color: #000;
                         }
                         .viveImg{
                             margin-top: 10px;
