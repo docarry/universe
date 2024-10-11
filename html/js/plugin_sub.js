@@ -14,6 +14,7 @@ const subArtistMainswiperOptions = {
     },
     pagination: {
         clickable: true,
+        draggable: true,
     },
 };
 
@@ -83,12 +84,13 @@ function changeImage(event, clickedFrameClass) {
 }
 
 // 대표작 슬라이드
-var subArtistbestswiper = new Swiper(".sub-artist-best-swiper", {
+const subArtistBestswiperOptions = {
     slidesPerView: 5,
-    spaceBetween: 28,
+    spaceBetween: 20,
     centeredSlides: true,
     initialSlide: 3,
     loop: true,
+    grabCursor: true,
     keyboard: {
         enabled: true,
     },
@@ -96,42 +98,116 @@ var subArtistbestswiper = new Swiper(".sub-artist-best-swiper", {
         el: '.swiper-pagination',
         clickable: true,
     },
-    breakpoints: {
-        991: {
-            slidesPerView: 3,
-            spaceBetween: 20,
-        },
-        1281: {
-            slidesPerView: 5,
-            spaceBetween: 28,
-        }
-    }
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+};
+
+// 각 슬라이드에 대해 Swiper 인스턴스 생성
+const subArtistBestswiper1 = new Swiper(".sub-artist-best-swiper-1", {
+    ...subArtistBestswiperOptions,
+    pagination: {
+        ...subArtistBestswiperOptions.pagination,
+        el: ".sub-artist-best-swiper-1 .swiper-pagination",
+        draggable: true,
+    },
+});
+const subArtistBestswiper2 = new Swiper(".sub-artist-best-swiper-2", {
+    ...subArtistBestswiperOptions,
+    pagination: {
+        ...subArtistBestswiperOptions.pagination,
+        el: ".sub-artist-best-swiper-2 .swiper-pagination",
+        draggable: true,
+    },
+});
+const subArtistBestswiper3 = new Swiper(".sub-artist-best-swiper-3", {
+    ...subArtistBestswiperOptions,
+    pagination: {
+        ...subArtistBestswiperOptions.pagination,
+        el: ".sub-artist-best-swiper-3 .swiper-pagination",
+        draggable: true,
+    },
+});
+const subArtistBestswiper4 = new Swiper(".sub-artist-best-swiper-4", {
+    ...subArtistBestswiperOptions,
+    pagination: {
+        ...subArtistBestswiperOptions.pagination,
+        el: ".sub-artist-best-swiper-4 .swiper-pagination",
+        draggable: true,
+    },
+});
+const subArtistBestswiper5 = new Swiper(".sub-artist-best-swiper-5", {
+    ...subArtistBestswiperOptions,
+    pagination: {
+        ...subArtistBestswiperOptions.pagination,
+        el: ".sub-artist-best-swiper-5 .swiper-pagination",
+        
+    },
 });
 
-var subArtistbestMswiper = new Swiper(".sub-artist-best-m-swiper", {
-    slidesPerView: 2,
-    spaceBetween: 28,
+const subArtistBestMswiperOptions = {
+    slidesPerView: 5,
+    spaceBetween: 20,
+    centeredSlides: true,
     initialSlide: 3,
     loop: true,
     keyboard: {
         enabled: true,
     },
     breakpoints: {
-        320: { // 320 ~ 
+        320: {
             slidesPerView: 1,
             spaceBetween: 10,
         },
         581: {
             slidesPerView: 2,
             spaceBetween: 10,
+            centeredSlides: false,
         },
-        990: {
+        769: {
             slidesPerView: 3,
-            spaceBetween: 25,
+            spaceBetween: 15,
         },
     },
-});
+};
 
+// 각 슬라이드에 대해 Swiper 인스턴스 생성
+const subArtistBestMswiper1 = new Swiper(".sub-artist-best-m-swiper-1", {
+    ...subArtistBestMswiperOptions,
+    pagination: {
+        ...subArtistBestMswiperOptions.pagination,
+        el: ".sub-artist-best-m-swiper-1 .swiper-pagination",
+    },
+});
+const subArtistBestMswiper2 = new Swiper(".sub-artist-best-m-swiper-2", {
+    ...subArtistBestMswiperOptions,
+    pagination: {
+        ...subArtistBestMswiperOptions.pagination,
+        el: ".sub-artist-best-m-swiper-2 .swiper-pagination",
+    },
+});
+const subArtistBestMswiper3 = new Swiper(".sub-artist-best-m-swiper-3", {
+    ...subArtistBestMswiperOptions,
+    pagination: {
+        ...subArtistBestMswiperOptions.pagination,
+        el: ".sub-artist-best-m-swiper-3 .swiper-pagination",
+    },
+});
+const subArtistBestMswiper4 = new Swiper(".sub-artist-best-m-swiper-4", {
+    ...subArtistBestMswiperOptions,
+    pagination: {
+        ...subArtistBestMswiperOptions.pagination,
+        el: ".sub-artist-best-m-swiper-4 .swiper-pagination",
+    },
+});
+const subArtistBestMswiper5 = new Swiper(".sub-artist-best-m-swiper-5", {
+    ...subArtistBestMswiperOptions,
+    pagination: {
+        ...subArtistBestMswiperOptions.pagination,
+        el: ".sub-artist-best-m-swiper-5 .swiper-pagination",
+    },
+});
 // sub-artist---------------------------------------
 
 

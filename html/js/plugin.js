@@ -9,10 +9,10 @@ var mainSwiper = new Swiper("#main-banner.mySwiper", {
     effect: "fade",
     speed:800,
     loop: true,
-    // autoplay: {
-    //     delay: 3000,
-    //     disableOnInteraction: false,
-    // },
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
     navigation: {
     nextEl: "#main-banner .swiper-button-next",
     prevEl: "#main-banner .swiper-button-prev",
@@ -50,6 +50,10 @@ var artistSwiper = new Swiper("#artist-slide", {
     loop: true,
     keyboard: {
         enabled: true,
+    },
+    navigation: {
+        nextEl: "#artist-slide .swiper-button-next",
+        prevEl: "#artist-slide .swiper-button-prev",
     },
 });
 
