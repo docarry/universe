@@ -35,9 +35,6 @@
 
 
 @media (max-width: 1280px) {
-    // .container-1280{
-    //     width: 100%;
-    // }
     #sub-artist{
         .artist-banner{
             .banner-text{
@@ -70,28 +67,23 @@
                         .artist-info{
                             .sub-artist-info-2{
                                 .info-detail{
-                                    // .sub-artist-best-swiper{
-                                    //     display: none;
-                                    // }
-                                    // .sub-artist-best-m-swiper{
-                                    //     display: block;
-                                    //     max-width: 960px;
-                                    //     .swiper-wrapper{
-                                    //         .swiper-slide{
-                                    //             .img-wrap{
-                                    //                 .sub-best{
-                                    //                     width: 300px;
-                                    //                     height: 430px;
-                                    //                 }
-                                    //             }
-                                    //         }
-                                    //     }
-                                    // }
+                                    .sub-artist-best-swiper{
+                                        .swiper-wrapper{
+                                            .swiper-slide{
+                                                .img-wrap{
+                                                    .sub-best{
+                                                        height: 320px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                             .sub-artist-info-3{
                                 .filmo-wrap{
                                     .filmo{
+                                        padding: 2.5rem;
                                         .hidden{
                                             display: none;
                                         }
@@ -141,7 +133,30 @@
         }
     }
 }
-
+@media (max-width: 1200px){
+    #sub-artist{
+        .artist-wrap{
+            .artist-content{
+                .sub-artist-detail{
+                    .tab-pane{
+                        .artist-info{
+                            .sub-artist-info-3{
+                                .filmo-wrap{
+                                    .filmo{
+                                        padding: 1.5rem;
+                                        ul{
+                                            gap: 1.2rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 @media (max-width: 1080px){
     #sub-artist{
         .artist-wrap{
@@ -161,8 +176,10 @@
                                 padding-left: 1.5rem;
                             }
                             .sub-artist-info-3{
-                                .filmo{
-                                    padding: 30px 10px;
+                                .filmo-wrap{
+                                    .filmo{
+                                        width: 32%;
+                                    }
                                 }
                                 
                             }
@@ -204,11 +221,43 @@
                 .sub-artist-detail{
                     .tab-pane{
                         .artist-info{
+                            .sub-artist-info-2{
+                                .info-detail{
+                                    .sub-artist-best-swiper{
+                                        .swiper-wrapper{
+                                            .swiper-slide{
+                                                .img-wrap{
+                                                    .text{
+                                                        .best-title{
+                                                            font-size: 1rem;
+                                                        }
+                                                        .best-sub{
+                                                            font-size: .875rem;
+                                                        }
+                                                    }
+                                                    .sub-best{
+                                                        height: 250px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .swiper-button-prev,
+                                        .swiper-button-next{
+                                            top: 34%;
+                                        }
+                                    }
+                                }
+                            }
                             .sub-artist-info-3{
                                 .filmo-wrap{
                                     .filmo{
                                         h6{
                                             width: 100%;
+                                        }
+                                        ul{
+                                            li{
+                                                gap: 0.8rem;
+                                            }
                                         }
                                     }
                                 }
@@ -243,7 +292,7 @@
                 .sub-artist-detail{
                     .tab-pane{
                         h4{
-                            font-size: 1.625rem;
+                            font-size: 2rem;
                             text-align: center;
                             margin-bottom: 4rem;
                         }
@@ -257,6 +306,11 @@
                             }
                             .sub-artist-main-swiper{
                                 display: block;
+                            }
+                            .sub-artist-info-1,
+                            .sub-artist-info-2,
+                            .sub-artist-info-3{
+                                padding: 0 2rem;
                             }
                             .sub-artist-info-1{
                                 position: relative;
@@ -280,8 +334,8 @@
                                             .swiper-slide{
                                                 .img-wrap{
                                                     .sub-best{
-                                                        width: 300px;
-                                                        height: 430px;
+                                                        width: 220px;
+                                                        height: 320px;
                                                     }
                                                 }
                                             }
@@ -297,9 +351,8 @@
                                             margin: 0 auto;
                                         }
                                         ul{
-                                            align-items: center;
+                                            margin-top: 1rem;
                                             li{
-                                                // width: 82%;
                                                 .detail{
                                                     .sub{
                                                         display: none;
@@ -339,9 +392,6 @@
                                         ul{
                                             margin-top: 1.25rem;
                                             gap: 1.25rem;
-                                            li{
-                                                // width: 40%;
-                                            }
                                         }
                                     }
                                 }
@@ -361,7 +411,6 @@
     }
     #sub-artist{
         .artist-banner{
-            background: url('/img/subArtist/artist-banner-768.jpg') no-repeat center / cover;
             .banner-text{
                 .title{
                     @include f-36-700-52;
@@ -550,7 +599,6 @@
 @media (max-width: 580px) {
     #sub-artist{
         .artist-banner{
-            background: url('/img/subArtist/artist-banner-580.jpg') no-repeat center / cover;
             .banner-text{
                 padding: 5rem 0;
                 .title{
@@ -581,7 +629,6 @@
                 .sub-artist-detail{
                     .tab-pane{
                         h4{
-                            @include f-18-700-26;
                             margin-bottom: 1.25rem;
                         }
                         .artist-info{
@@ -589,34 +636,10 @@
                                 
                                 margin-bottom: 1.25rem;
                             }
-                            .sub-artist-info-2{
-                                .info-detail{
-                                    .sub-artist-best-m-swiper{
-                                        .swiper-wrapper{
-                                            .swiper-slide{
-                                                .img-wrap{
-                                                    .sub-best{
-                                                        width: 300px;
-                                                        height: 420px;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
                             .sub-artist-info-3{
                                 .filmo-wrap{
                                     .filmo{
-                                        h6{
-                                            font-size: 16px;
-                                            padding-bottom: 0;
-                                        }
-                                        ul{
-                                            li{
-                                                font-size: 14px;
-                                            }
-                                        }
+                                        padding: 2.5rem;
                                     }
                                 }
                             }
@@ -684,6 +707,7 @@
                             .sub-artist-info-3{
                                 .filmo-wrap{
                                     .filmo{
+                                        width: 100%;
                                         h6{
                                             padding-bottom: 4px;
                                         }
