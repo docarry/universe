@@ -1,5 +1,44 @@
 // AOS 애니메이트 플러그인
 AOS.init();
+document.addEventListener("DOMContentLoaded", (event) => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const waveText = document.querySelector('#main #introduction .title h2');
+    waveText.innerHTML = waveText.textContent.split('').map(char => `<span>${char}</span>`).join('');
+
+    const textSpans = document.querySelectorAll('#main #introduction .title h2 span');
+
+    // GSAP + ScrollTrigger를 사용한 애니메이션 설정
+    gsap.to(textSpans, {
+        scrollTrigger: {
+            trigger: waveText, // 트리거로 사용할 요소
+            start: "top 80%", // 트리거 시작 위치 (화면 상단에서 80%)
+            end: "bottom 20%", // 트리거 종료 위치
+            toggleActions: "play none none reset", // 스크롤 시 애니메이션 제어
+        },
+        duration: 1,
+        opacity: 1, // 글자가 보이게 설정
+        ease: "power1.inOut", // 애니메이션 가속 곡선
+        stagger: {
+            amount: 1, // 애니메이션 전체 시간
+            from: "start", // 시작 위치
+            onStart: function() {
+                const startColor = 0; // 시작 색상 값
+                const endColor = 360; // 종료 색상 값
+                // 각 글자에 대한 색상 설정
+                textSpans.forEach((span, i) => {
+                    // 색상 값과 지연 시간 조정
+                    const hue = (startColor + ((i % 10) * 30) + (i * 2)) % endColor; // HSL 색상 조정
+                    gsap.to(span, {
+                        color: '#fff',
+                        duration: 1, // 각 글자 색상 애니메이션 시간
+                        delay: (i * 0.1) + Math.abs(Math.sin(i * 0.5)) * 0.1, // 각 글자에 대해 시간차를 줘서 상하 물결 효과
+                    });
+                });
+            },
+        },
+    });
+});
 
 
 $(function(){
@@ -160,25 +199,25 @@ $(function(){
     // 메인 배너 슬라이드 반응형 이미지 바꾸기
     $(window).on('resize', function() {
         if (window.innerWidth <= 580) {
-            $('#main-banner .img01').attr('src', '/img/mainbanner/m-main51.jpg');
-            $('#main-banner .img02').attr('src', '/img/mainbanner/m-main52.jpg');
-            $('#main-banner .img03').attr('src', '/img/mainbanner/m-main53.jpg');
-            $('#main-banner .img04').attr('src', '/img/mainbanner/m-main54.jpg');
+            $('#main-banner .img01').attr('src', '/img/main/m-main51.jpg');
+            $('#main-banner .img02').attr('src', '/img/main/m-main52.jpg');
+            $('#main-banner .img03').attr('src', '/img/main/m-main53.jpg');
+            $('#main-banner .img04').attr('src', '/img/main/m-main54.jpg');
         } else if (window.innerWidth > 580 && window.innerWidth <= 767) {
-            $('#main-banner .img01').attr('src', '/img/mainbanner/m-main71.jpg');
-            $('#main-banner .img02').attr('src', '/img/mainbanner/m-main72.jpg');
-            $('#main-banner .img03').attr('src', '/img/mainbanner/m-main73.jpg');
-            $('#main-banner .img04').attr('src', '/img/mainbanner/m-main74.jpg');
+            $('#main-banner .img01').attr('src', '/img/main/m-main71.jpg');
+            $('#main-banner .img02').attr('src', '/img/main/m-main72.jpg');
+            $('#main-banner .img03').attr('src', '/img/main/m-main73.jpg');
+            $('#main-banner .img04').attr('src', '/img/main/m-main74.jpg');
         } else if (window.innerWidth > 767 && window.innerWidth <= 991) {
-            $('#main-banner .img01').attr('src', '/img/mainbanner/m-main91.jpg');
-            $('#main-banner .img02').attr('src', '/img/mainbanner/m-main92.jpg');
-            $('#main-banner .img03').attr('src', '/img/mainbanner/m-main93.jpg');
-            $('#main-banner .img04').attr('src', '/img/mainbanner/m-main94.jpg');
+            $('#main-banner .img01').attr('src', '/img/main/m-main91.jpg');
+            $('#main-banner .img02').attr('src', '/img/main/m-main92.jpg');
+            $('#main-banner .img03').attr('src', '/img/main/m-main93.jpg');
+            $('#main-banner .img04').attr('src', '/img/main/m-main94.jpg');
         } else if (window.innerWidth > 991) {
-            $('#main-banner .img01').attr('src', '/img/mainbanner/main01.jpg');
-            $('#main-banner .img02').attr('src', '/img/mainbanner/main02.jpg');
-            $('#main-banner .img03').attr('src', '/img/mainbanner/main03.jpg');
-            $('#main-banner .img04').attr('src', '/img/mainbanner/main04.jpg');
+            $('#main-banner .img01').attr('src', '/img/main/main01.jpg');
+            $('#main-banner .img02').attr('src', '/img/main/main02.jpg');
+            $('#main-banner .img03').attr('src', '/img/main/main03.jpg');
+            $('#main-banner .img04').attr('src', '/img/main/main04.jpg');
         }
     });
     // 초기 로딩 시 이미지 변경
