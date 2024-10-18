@@ -1,12 +1,19 @@
 <?php include_once("../layout/header-b.html"); ?>
 
 <main id="sub-schedule">
-    <article class="container-1280">
-            <div class="schedule-title d-flex flex-column justify-content-center align-items-center gap-10">
-                <h2>schedule</h2>
-                <p>배우들이 준비한 다채로운 일정과 이벤트를 한눈에 확인해 보세요.</p>
-            </div>
-            <div class="schedule-content">
+    <section class="schedule-banner">
+        <div class="banner-text container-1280">
+            <h2 class="title" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">SCHEDULE</h2>
+            <p class="sub-title" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" data-aos-delay="300">배우들이 준비한 다채로운 일정과 이벤트를 한눈에 확인해 보세요.</p>
+            <p class="detail" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" data-aos-delay="1000">
+            <span class="dN-768">스케줄을 통해 </span>좋아하는 연예인과의 특별한 시간을 놓치지 마세요.<br> 
+            <span class="dN-768">가장 가까운 공연, 팬미팅, 이벤트 일정을 확인하고 </span>여러분의 소중한 순간을 함께 만들어 보세요!
+            </p>
+        </div>
+    </section>
+
+    <section class="schedule-wrap container-1280">
+            <article class="schedule-content">
                 
                 <ul class="schedule-name nav nav-tabs d-flex justify-content-center align-items-center" id="sub-schedule-Tab" role="tablist">
                     <li class="nav-item" role="presentation">
@@ -39,8 +46,13 @@
                         </div>
                     
                         <div id="sub-calendar-byeon" class="sub-calendar-container"></div>
-                        
+                        <div class="sub-calendar-m-container">
+                            <p>다가오는 스케줄</p>
 
+                            <div class="sub-schedule-m-detail sub-schedule-m-byeon">
+
+                            </div>
+                        </div>
                     </div>
                 
                     <!-- 이지은 탭 -->
@@ -50,7 +62,13 @@
                             <img src="/img/schedule/img05.jpg" alt="이지은 이미지입니다">
                         </div>
                         <div id="sub-calendar-lee" class="sub-calendar-container"></div>
-                        
+                        <div class="sub-calendar-m-container">
+                            <p class="name">다가오는 스케줄</p>
+
+                            <div class="sub-schedule-m-detail sub-schedule-m-lee">
+
+                            </div>
+                        </div>
                     </div>
                 
                     <!-- 윤계상 탭 -->
@@ -60,7 +78,13 @@
                             <img src="/img/schedule/img04.jpg" alt="윤계상 이미지입니다">
                         </div>
                         <div id="sub-calendar-yoon" class="sub-calendar-container"></div>
-                        
+                        <div class="sub-calendar-m-container">
+                            <p>다가오는 스케줄</p>
+
+                            <div class="sub-schedule-m-detail sub-schedule-m-yoon">
+
+                            </div>
+                        </div>
                     </div>
                 
                     <!-- 남우현 탭 -->
@@ -70,7 +94,13 @@
                             <img src="/img/schedule/img03.jpg" alt="남우현 이미지입니다">
                         </div>
                         <div id="sub-calendar-nam" class="sub-calendar-container"></div>
-                        
+                        <div class="sub-calendar-m-container">
+                            <p>다가오는 스케줄</p>
+
+                            <div class="sub-schedule-m-detail sub-schedule-m-nam">
+
+                            </div>
+                        </div>
                     </div>
                 
                     <!-- 박서준 탭 -->
@@ -80,17 +110,23 @@
                             <img src="/img/schedule/img02.jpg" alt="박서준 이미지입니다">
                         </div>
                         <div id="sub-calendar-park" class="sub-calendar-container"></div>
-                        
+                        <div class="sub-calendar-m-container">
+                            <p>다가오는 스케줄</p>
+
+                            <div class="sub-schedule-m-detail sub-schedule-m-park">
+
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- 팝업창 -->
                 <div class="event-popup"></div>
-            </div>
+            </article>
     
         
 
-    </article>
+    </section>
 </main>
 
 <?php include_once("../layout/footer.html"); ?>
