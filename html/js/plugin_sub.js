@@ -2,6 +2,7 @@
 AOS.init();
 
 
+
 // sub-artist---------------------------------------
 // 메인 슬라이드
 // 공통 Swiper 옵션 정의
@@ -15,7 +16,7 @@ const subArtistMainswiperOptions = {
     pagination: {
         clickable: true,
         draggable: true,
-    },
+    }, 
 };
 
 // 각 슬라이드에 대해 Swiper 인스턴스 생성
@@ -217,10 +218,19 @@ var goodsSwiper = new Swiper("#subGoods #bestBox .swiper.mySwiper", {
     slidesPerView: 1,
     slidesPerGroup: 1,
     spaceBetween: 20,
-    loop: true,
+    // autoplay: {
+    //     delay: 4000, // 슬라이드 딜레이 (1000밀리초 === 1초)
+    //     disableOnInteraction: false, // 사용자가 상호작용해도 자동 슬라이드 유지
+    //     pauseOnMouseEnter: true, // 마우스 호버 시 자동 슬라이드 중지
+    // },
+    // loop: true,
+    pagination: {
+        el: "#subGoods #bestBox .swiper-pagination",
+        clickable: true,
+        },
     navigation: {
-        nextEl: "#subGoods #bestBox .nextBtn",
-        prevEl: "#subGoods #bestBox .prevBtn",
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
     breakpoints: {
         580: {
@@ -239,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 날짜를 yyyy년 mm월 dd일 형식으로 포맷하는 함수
     function formatDate(date) {
         const year = date.getFullYear();
-        const month = (date.getMonth() + 1).toString().padStart(2, '0'); // 월은 0부터 시작하므로 +1
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
         const day = date.getDate().toString().padStart(2, '0');
         return `${year}년 ${month}월 ${day}일`;
     }
@@ -285,13 +295,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                 `;
 
-                function formatDate(date) {
-                    const month = (date.getMonth() + 1).toString().padStart(2, '0');
-                    const day = date.getDate().toString().padStart(2, '0');
-                    const dayOfWeek = ["일", "월", "화", "수", "목", "금", "토"][date.getDay()]; // 요일 이름
-                    
-                    return `${month}월 ${day}일 (${dayOfWeek})`;
-                }
                 scheduleContainer.insertAdjacentHTML('beforeend', eventHtml);
             });
         }
@@ -315,120 +318,140 @@ document.addEventListener('DOMContentLoaded', function () {
             buttonText: {
                 today: '오늘'
             },
+            events: events,
             datesSet: function () {
-                document.querySelectorAll('.fc-daygrid-day-number').forEach(function (dayElem) {
-                    let date = new Date(dayElem.closest('.fc-day').getAttribute('data-date'));
-                    let day = date.getDate().toString().padStart(2, '0');
-                    dayElem.textContent = day;
-                });
+                updateUpcomingSchedule(events, tabName);
             },
-            eventDidMount: function (event) {
+            eventDidMount: function(event) {
                 let dayGridDay = event.el.closest('.fc-daygrid-day');
                 let dayNumberElem = dayGridDay.querySelector('.fc-daygrid-day-number');
 
-                // 이미 날짜가 설정된 경우 처리하지 않음
-                if (dayNumberElem && dayNumberElem.textContent !== "") {
-                    return; // 날짜가 이미 설정되었으므로 종료
-                }
-
                 if (dayNumberElem) {
+                    // 이벤트 날짜를 두 자리 형식으로 패딩 처리
                     let eventDate = new Date(event.event.start);
-                    let day = eventDate.getDate().toString().padStart(2, '0');
-                    dayNumberElem.textContent = day; // '일'을 제외하고 숫자만 설정
+                    let day = eventDate.getDate().toString().padStart(2, '0'); // 01, 02 형식으로 변환
+                    dayNumberElem.textContent = day;
 
+                    // 스타일 적용 (border 빨간색)
                     let eventLink = dayGridDay.querySelector('.fc-daygrid-day-top a');
                     if (eventLink) {
-                        eventLink.classList.add('eventText');
+                        eventLink.classList.add('eventText'); // 클래스 추가
                     }
-
                     if (eventDate.toDateString() === new Date().toDateString()) {
-                        eventLink.style.border = 'solid 2px #f86666';
-                    }
+                        const mediaQuery = window.matchMedia("(min-width: 768px)");
+                        
+                        // 화면 크기에 따라 border 두께를 설정하는 함수
+                        const setBorderThickness = () => {
+                            if (mediaQuery.matches) {
+                                // 화면 너비가 768px 이상인 경우
+                                eventLink.style.border = 'solid 2px #f86666';
+                            } else {
+                                // 화면 너비가 0~767px인 경우
+                                eventLink.style.border = 'solid 1px #f86666';
+                            }
+                        };
+                    
+                        // 처음 로드 시 실행
+                        setBorderThickness();
+                    
+                        // 화면 크기가 변경될 때 실행
+                        mediaQuery.addEventListener('change', setBorderThickness);
+                    }                    
                 }
+            },
+            datesSet: function() {
+                const popup = document.querySelector('.event-popup');
+                popup.classList.remove('show'); // 팝업 숨기기
             },
             dayCellDidMount: function (info) {
-                const dayNumElem = info.el.querySelector('.fc-daygrid-day-number'); // 변수 이름 변경
-                if (dayNumElem) {
-                    const dateAttr = info.date; // info.date를 사용
-                    const date = new Date(dateAttr);
-                    
-                    if (!isNaN(date.getTime())) { 
-                        const day = date.getDate().toString().padStart(2, '0');
-
-                        // 날짜가 비어있을 때만 설정
-                        if (dayNumElem.textContent === "") {
-                            dayNumElem.textContent = day; // '일'을 제외하고 숫자만 설정
-                        }
-                    } else {
-                        console.warn('Invalid date:', dateAttr); 
-                    }
+                const date = info.date;
+                const dayNumElem = info.el.querySelector('.fc-daygrid-day-number');
             
-                    // 주말 처리
-                    if (date.getDay() === 0 || date.getDay() === 6) {
-                        dayNumElem.style.color = '#f86666'; // 일요일과 토요일 빨간색
-                    }
-            
-                    // 오늘 날짜 처리
-                    if (date.toDateString() === new Date().toDateString()) {
-                        const todayLink = info.el.querySelector('.fc-daygrid-day-top a');
-                        if (todayLink) {
-                            todayLink.style.border = 'solid 2px #333';
-                        }
-                    }
-                }
-            },
-
-            events: events,
-            datesSet: function () {
-                // 다가오는 이벤트만 필터링하여 탭에 표시
-                updateUpcomingSchedule(events, tabName);
-            },
-            eventClick: function (info) {
-                var event = info.event;
-                var eventDate = new Date(event.start); // 이벤트 날짜
-                var formattedDate = formatDate(eventDate); // 날짜 포맷
-
-                // 팝업 내용 구성
-                var popupContent = `
-                    <div class="popup-header">
-                        <strong>${formattedDate}</strong>
-                        <button class="popup-close-btn"><img src="/img/icon/close-black.svg"></button>
-                    </div>
-                    <span class="event-divider"></span>
-                    <h5>${event.title}</h5>
-                `;
-
-                var popup = document.querySelector('.event-popup');
-                popup.innerHTML = popupContent;
-
-                // 팝업 위치 계산
-                var eventEl = info.el.getBoundingClientRect();
-                var popupWidth = popup.offsetWidth;
-                var popupHeight = popup.offsetHeight;
-                var fcDayCenterX = eventEl.left + eventEl.width / 2;
-                var fcDayCenterY = eventEl.top + eventEl.height / 2;
-                var dayOfWeek = eventDate.getDay();
-
-                var popupLeft, popupTop;
-                if (dayOfWeek === 0 || dayOfWeek === 1 || dayOfWeek === 2) {
-                    popupLeft = fcDayCenterX;
-                    popupTop = fcDayCenterY - popupHeight;
+                // 주말 처리
+                if (date.getDay() === 0 || date.getDay() === 6) {
+                    dayNumElem.style.color = '#f86666'; // 일요일과 토요일 빨간색
                 } else {
-                    popupLeft = fcDayCenterX - popupWidth;
-                    popupTop = fcDayCenterY - popupHeight;
+                    dayNumElem.style.color = ''; // 평일 색상 초기화
                 }
-
-                var offsetTop = -60;
-
-                popup.style.left = `${popupLeft + window.scrollX}px`;
-                popup.style.top = `${popupTop + window.scrollY + offsetTop}px`;
-
-                popup.classList.add('show');
-
-                document.querySelector('.popup-close-btn').addEventListener('click', function () {
-                    popup.classList.remove('show');
+            
+                // 날짜를 '일' 없이 두 자리로 설정
+                const day = date.getDate(); // '일'을 제외하고 숫자만 가져옴
+                dayNumElem.textContent = day; // 이전 날짜를 덮어쓰기
+            
+                // 이벤트가 있는 경우 팝업 설정
+                const eventsOnDate = events.filter(event => {
+                    return new Date(event.start).toDateString() === date.toDateString();
                 });
+            
+                if (eventsOnDate.length > 0) {
+                    const closePopup = () => {
+                        const popup = document.querySelector('.event-popup');
+                        popup.classList.remove('show');
+                    };
+
+                    info.el.addEventListener('mouseenter', function () {
+                        const popup = document.querySelector('.event-popup');
+                        popup.innerHTML = ''; // 이전 팝업 내용 초기화
+            
+                        eventsOnDate.forEach(event => {
+                            const eventDate = new Date(event.start);
+                            const formattedDate = formatDate(eventDate);
+                            
+            
+                            // 요일을 계산
+                            const dayOfWeek = eventDate.getDay();
+            
+                            // 팝업 내용 설정
+                            const popupContent = `
+                                <div class="popup-header">
+                                    <strong>${formattedDate}</strong>
+                                    <button class="popup-close-btn"><img src="/img/icon/close-black.svg"></button>
+                                </div>
+                                <span class="event-divider"></span>
+                                <h5>${event.title}</h5>
+                            `;
+                            popup.innerHTML += popupContent;
+            
+                            // 팝업 위치 계산 및 표시
+                            const popupWidth = popup.offsetWidth;
+                            const popupHeight = popup.offsetHeight;
+                            const rect = info.el.getBoundingClientRect();
+            
+                            const fcDayCenterX = rect.left + rect.width / 2;
+                            const fcDayCenterY = rect.top + rect.height / 2;
+            
+                            let popupLeft, popupTop;
+                            const offset = -10;
+            
+                            if (dayOfWeek === 0 || dayOfWeek === 1 || dayOfWeek === 2) {
+                                popupLeft = fcDayCenterX;
+                                popupTop = rect.top - popupHeight / 2 + offset;
+                            } else {
+                                popupLeft = fcDayCenterX - popupWidth;
+                                popupTop = rect.top - popupHeight / 2 + offset;
+                            }
+            
+                            popup.style.left = `${popupLeft + window.scrollX}px`;
+                            popup.style.top = `${popupTop + window.scrollY}px`;
+                            popup.classList.add('show');
+            
+                            // 닫기 버튼 클릭 이벤트
+                            popup.querySelector('.popup-close-btn').addEventListener('click', function () {
+                                popup.classList.remove('show');
+                            });
+                        });
+                            // 아티스트 탭 버튼 클릭 시 팝업 닫기
+                        const tabButtons = document.querySelectorAll('.nav-link'); // 아티스트 탭 버튼의 클래스 이름을 확인하세요
+                        tabButtons.forEach(button => {
+                            button.addEventListener('click', closePopup);
+                        });
+                    });
+                }
             }
+            
+            
+            
+
         });
 
         return calendar;
@@ -436,44 +459,62 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 탭이 활성화될 때마다 해당 탭에 캘린더 렌더링
     $('#sub-schedule-Tab a').on('shown.bs.tab', function (e) {
-        const targetTab = $(e.target).attr('href'); // 활성화된 탭
+        const targetTab = $(e.target).attr('href');
 
         // 각 탭에 대한 캘린더 렌더링
         if (targetTab === '#sub-schedule-byeon' && !calendars['byeon']) {
             calendars['byeon'] = renderCalendar('sub-calendar-byeon', [
-                { title: '공연)2024 이슬라이브 페스티벌', start: '2024-11-05T19:00:00+09:00' },
-                { title: '공연)2024 수원 월드컵 경기장', start: '2024-11-09T13:00:00+09:00' },
-                { title: '공연)2024 HEREH WORLD TOUR CONCERT ENCORE : THE WINNING', start: '2024-11-23T18:00:00+09:00' }
+                { title: '공연)2024 이슬라이브 페스티벌', 
+                start: new Date(new Date().setDate(new Date().getDate() + 1)).toISOString().split('T')[0] + 'T19:00:00+09:00'
+                },
+                { title: '공연)2024 수원 월드컵 경기장', 
+                    start: new Date(new Date().setDate(new Date().getDate() + 5)).toISOString().split('T')[0] + 'T13:00:00+09:00' 
+                },
+                { title: '공연)2024 HEREH WORLD TOUR CONCERT ENCORE : THE WINNING', 
+                    start: new Date(new Date().setDate(new Date().getDate() + 12)).toISOString().split('T')[0] + 'T18:00:00+09:00' 
+                }
             ], 'byeon');
             calendars['byeon'].render();
         }
 
         if (targetTab === '#sub-schedule-lee' && !calendars['lee']) {
             calendars['lee'] = renderCalendar('sub-calendar-lee', [
-                { title: '공연)2024 콘서트 &lt;Love, Poen&gt;', start: '2024-11-08T19:00:00+09:00' },
-                { title: '앨범)<꽃갈피 둘>발매 7주년', start: '2024-11-12T00:00:00+09:00' }
+                { title: '공연)2024 콘서트 &lt;Love, Poen&gt;', 
+                    start: new Date(new Date().setDate(new Date().getDate() + 4)).toISOString().split('T')[0] + 'T19:00:00+09:00' 
+                },
+                { title: '앨범)<꽃갈피 둘>발매 7주년', 
+                    start: new Date(new Date().setDate(new Date().getDate() + 8)).toISOString().split('T')[0] + 'T00:00:00+09:00' 
+                }
             ], 'lee');
             calendars['lee'].render();
         }
 
         if (targetTab === '#sub-schedule-yoon' && !calendars['yoon']) {
             calendars['yoon'] = renderCalendar('sub-calendar-yoon', [
-                { title: '공연)2024 god Concert Chapter', start: '2024-11-09T18:00:00+09:00' }
+                { title: '공연)2024 god Concert Chapter', 
+                    start: new Date(new Date().setDate(new Date().getDate() + 12)).toISOString().split('T')[0] + 'T18:00:00+09:00' 
+                }
             ], 'yoon');
             calendars['yoon'].render();
         }
 
         if (targetTab === '#sub-schedule-nam' && !calendars['nam']) {
             calendars['nam'] = renderCalendar('sub-calendar-nam', [
-                { title: '공연)2024 NAM WOO HYUN CONCERT', start: '2024-11-16T18:00:00+09:00' }
+                { title: '공연)2024 NAM WOO HYUN CONCERT', 
+                    start: new Date(new Date().setDate(new Date().getDate() + 5)).toISOString().split('T')[0] + 'T18:00:00+09:00' 
+                }
             ], 'nam');
             calendars['nam'].render();
         }
 
         if (targetTab === '#sub-schedule-park' && !calendars['park']) {
             calendars['park'] = renderCalendar('sub-calendar-park', [
-                { title: '공연)2024 박서준 팬미팅 올림픽공원', start: '2024-11-08T18:00:00+09:00' },
-                { title: '공연)2024 박서준 COMMA 언택트 팬미팅', start: '2024-11-23T13:00:00+09:00' }
+                { title: '공연)2024 박서준 팬미팅 올림픽공원', 
+                    start: new Date(new Date().setDate(new Date().getDate() + 5)).toISOString().split('T')[0] + 'T18:00:00+09:00' 
+                },
+                { title: '공연)2024 박서준 COMMA 언택트 팬미팅', 
+                    start: new Date(new Date().setDate(new Date().getDate() + 19)).toISOString().split('T')[0] + 'T13:00:00+09:00' 
+                }
             ], 'park');
             calendars['park'].render();
         }
@@ -482,19 +523,22 @@ document.addEventListener('DOMContentLoaded', function () {
     // 첫 번째 탭에 대한 캘린더 렌더링 (페이지 로드 시)
     if (!calendars['byeon']) {
         calendars['byeon'] = renderCalendar('sub-calendar-byeon', [
-            { title: '공연)2024 이슬라이브 페스티벌', start: '2024-11-05T19:00:00+09:00' },
-            { title: '공연)2024 수원 월드컵 경기장', start: '2024-11-09T13:00:00+09:00' },
-            { title: '공연)2024 HEREH WORLD TOUR CONCERT ENCORE : THE WINNING', start: '2024-11-23T18:00:00+09:00' }
+                { title: '공연)2024 이슬라이브 페스티벌', 
+                start: new Date(new Date().setDate(new Date().getDate() + 1)).toISOString().split('T')[0] + 'T19:00:00+09:00'
+                },
+                { title: '공연)2024 수원 월드컵 경기장', 
+                    start: new Date(new Date().setDate(new Date().getDate() + 5)).toISOString().split('T')[0] + 'T13:00:00+09:00' 
+                },
+                { title: '공연)2024 HEREH WORLD TOUR CONCERT ENCORE : THE WINNING', 
+                    start: new Date(new Date().setDate(new Date().getDate() + 12)).toISOString().split('T')[0] + 'T18:00:00+09:00' 
+                }
         ], 'byeon');
         calendars['byeon'].render();
     }
-
-    // 팝업 밖을 클릭하면 팝업을 닫는 이벤트
-    document.addEventListener('click', function(event) {
-        var popup = document.querySelector('.event-popup');
-        if (!popup.contains(event.target) && !event.target.closest('.fc-event')) {
-            popup.classList.remove('show');
-        }
-    });
 });
+
+
+
+
+
 // sub-schedule---------------------------------------

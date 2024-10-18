@@ -78,7 +78,18 @@
         padding: 160px 0;
         .title{
             h2{
-                @include f-50-700-72;
+                // @include f-50-700-72;
+                font-size: 50px;
+                font-weight: 700;
+                line-height: 72px;
+                color: #333;
+                transition: all 0.5s ease;
+                // text-transform: uppercase;
+                span{
+                    display: inline-block;
+                    color: #333;
+                    opacity: 0;
+                }
             }
             p{
                 font-size: 1.25rem;
@@ -92,7 +103,7 @@
     #artist{
         padding: 100px 0;
         color: #FFF;
-        background: url("../img/bg/bg01.jpg") no-repeat 80% 0 / cover;
+        background: url("/img/main/bg01.jpg") no-repeat 80% 0 / cover;
         .title{
             h2{
                 @include titleH2;
@@ -130,19 +141,19 @@
                     }
                 }
                 .artist01{
-                    background: url('/img/artist/img01.png') no-repeat center / cover;
+                    background: url('/img/main/artist01.png') no-repeat center / cover;
                 }
                 .artist02{
-                    background: url('/img/artist/img02.png') no-repeat center / cover;
+                    background: url('/img/main/artist02.png') no-repeat center / cover;
                 }
                 .artist03{
-                    background: url('/img/artist/img03.png') no-repeat center / cover;
+                    background: url('/img/main/artist03.png') no-repeat center / cover;
                 }
                 .artist04{
-                    background: url('/img/artist/img04.png') no-repeat center / cover;
+                    background: url('/img/main/artist04.png') no-repeat center / cover;
                 }
                 .artist05{
-                    background: url('/img/artist/img05.png') no-repeat center / cover;
+                    background: url('/img/main/artist05.png') no-repeat center / cover;
                 }
                 .swiper-pagination-bullets.swiper-pagination-horizontal{
                     bottom: 0;
@@ -415,7 +426,7 @@
     // PC 릴리즈 슬라이드
     #release{
         color: #fff;
-        background: url('../img/bg/bg02.jpg') rgba(0, 0, 0, 0.7) no-repeat 0 40% / cover;
+        background: url('/img/main/bg02.jpg') rgba(0, 0, 0, 0.7) no-repeat 0 40% / cover;
         background-blend-mode: overlay;
         padding: 100px 0;
         .title{
@@ -437,7 +448,7 @@
                         opacity: 1;
                         transform: scale(1.5) !important;
                         .releaseInfo{
-                            background: url('/img/release/bg.png') no-repeat center / contain;
+                            background: url('/img/main/release-bg01.png') no-repeat center / contain;
                             transform: scale(1.5) translate(0, 42%);
                             h3{
                                 color: #fff !important;
@@ -734,7 +745,7 @@
 
     // 메인 하단 인포
     #mainInfo{
-        background: url('/img/bg/bg03.jpg') no-repeat center / cover;
+        background: url('/img/main/bg03.jpg') no-repeat center / cover;
         position: relative;
         transform: translateY(80px);
         .mainInfoList{
@@ -950,6 +961,386 @@
 
 // 서브 페이지 오디션
 #audition{
-    background-color: #fff;
+    background-color: #000;
     height: 100vh;
+    .audition-banner{
+        width: 100%;
+        max-width: 1920px;
+        position: relative;
+        background: url('/img/subAudition/bg.jpg') no-repeat center / cover;
+        height: 430px;
+        &::before { 
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(106, 106, 106, 0.4);
+            z-index: 1;
+        }
+        .banner-text{
+            color: #fff; 
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            z-index: 2;
+            padding: 6.25rem 0;
+            .title{
+                @include f-50-72-700;
+                padding-bottom: 0.625rem;
+            } 
+            .sub-title{
+                @include f-24-36-700;
+                padding-bottom: 2.5rem; 
+            }
+            .detail{
+                @include f-16-24-400;
+            }
+        }
+    }
+}
+
+// 서브 페이지 마이페이지
+#mypage{
+    background-color: #000;
+    height: 100vh;
+    .mypage-banner{
+        width: 100%;
+        max-width: 1920px;
+        position: relative;
+        background: url('/img/subMypage/bg.jpg') no-repeat center / cover;
+        height: 430px;
+        &::before { 
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(106, 106, 106, 0.5);
+            z-index: 1;
+        }
+        .banner-text{
+            color: #fff; 
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            z-index: 2;
+            padding: 6.25rem 0;
+            text-transform: uppercase;
+            .title{
+                @include f-50-72-700;
+                padding-bottom: 0.625rem;
+            } 
+            .sub-title{
+                @include f-24-36-700;
+                padding-bottom: 2.5rem; 
+            }
+            .detail{
+                @include f-16-24-400;
+            }
+        }
+    }
+}
+
+// 서브 페이지 로그인
+#login{
+    background-color: #000;
+    height: 100vh;
+    .login-banner{
+        width: 100%;
+        max-width: 1920px;
+        position: relative;
+        background: url('/img/subLogin/bg.jpg') no-repeat center 0 / cover;
+        height: 430px;
+        &::before { 
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(106, 106, 106, 0.4);
+            z-index: 1;
+        }
+        .banner-text{
+            color: #fff; 
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            z-index: 2;
+            padding: 6.25rem 0;
+            text-transform: uppercase;
+            .title{
+                @include f-50-72-700;
+                padding-bottom: 0.625rem;
+            } 
+            .sub-title{
+                @include f-24-36-700;
+                padding-bottom: 2.5rem; 
+            }
+            .detail{
+                @include f-16-24-400;
+            }
+        }
+    }
+}
+
+// 서브 페이지 회원가입
+#join{
+    background-color: #000;
+    height: 100vh;
+    .join-banner{
+        width: 100%;
+        max-width: 1920px;
+        position: relative;
+        background: url('/img/subJoin/bg.jpg') no-repeat center 0 / cover;
+        height: 430px;
+        &::before { 
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(106, 106, 106, 0.4);
+            z-index: 1;
+        }
+        .banner-text{
+            color: #fff; 
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            z-index: 2;
+            padding: 6.25rem 0;
+            text-transform: uppercase;
+            .title{
+                @include f-50-72-700;
+                padding-bottom: 0.625rem;
+            } 
+            .sub-title{
+                @include f-24-36-700;
+                padding-bottom: 2.5rem; 
+            }
+            .detail{
+                @include f-16-24-400;
+            }
+        }
+    }
+}
+
+// 서브 페이지 문의하기
+#contact{
+    background-color: #000;
+    height: 100vh;
+    .contact-banner{
+        width: 100%;
+        max-width: 1920px;
+        position: relative;
+        background: url('/img/subContact/bg.jpg') no-repeat center / cover;
+        height: 430px;
+        &::before { 
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(106, 106, 106, 0.4);
+            z-index: 1;
+        }
+        .banner-text{
+            color: #fff; 
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            z-index: 2;
+            padding: 6.25rem 0;
+            text-transform: uppercase;
+            .title{
+                @include f-50-72-700;
+                padding-bottom: 0.625rem;
+            } 
+            .sub-title{
+                @include f-24-36-700;
+                padding-bottom: 2.5rem; 
+            }
+            .detail{
+                @include f-16-24-400;
+            }
+        }
+    }
+}
+
+// 서브 페이지 멤버십
+#membership{
+    background-color: #000;
+    height: 100vh;
+    .membership-banner{
+        width: 100%;
+        max-width: 1920px;
+        position: relative;
+        background: url('/img/subMembership/bg.jpg') no-repeat center / cover;
+        height: 430px;
+        &::before { 
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(106, 106, 106, 0.4);
+            z-index: 1;
+        }
+        .banner-text{
+            color: #fff; 
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            z-index: 2;
+            padding: 6.25rem 0;
+            text-transform: uppercase;
+            .title{
+                @include f-50-72-700;
+                padding-bottom: 0.625rem;
+            } 
+            .sub-title{
+                @include f-24-36-700;
+                padding-bottom: 2.5rem; 
+            }
+            .detail{
+                @include f-16-24-400;
+            }
+        }
+    }
+}
+
+// 서브 페이지 제품상세
+#product{
+    background-color: #000;
+    height: 100vh;
+    .product-banner{
+        width: 100%;
+        max-width: 1920px;
+        position: relative;
+        background: url('/img/subProduct/bg.jpg') no-repeat center / cover;
+        height: 430px;
+        &::before { 
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(106, 106, 106, 0.4);
+            z-index: 1;
+        }
+        .banner-text{
+            color: #fff; 
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            z-index: 2;
+            padding: 6.25rem 0;
+            text-transform: uppercase;
+            .title{
+                @include f-50-72-700;
+                padding-bottom: 0.625rem;
+            } 
+            .sub-title{
+                @include f-24-36-700;
+                padding-bottom: 2.5rem; 
+            }
+            .detail{
+                @include f-16-24-400;
+            }
+        }
+    }
+}
+
+// 서브 페이지 리뷰
+#review{
+    background-color: #000;
+    height: 100vh;
+    .review-banner{
+        width: 100%;
+        max-width: 1920px;
+        position: relative;
+        background: url('/img/subReview/bg.jpg') no-repeat center / cover;
+        height: 430px;
+        &::before { 
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(106, 106, 106, 0.4);
+            z-index: 1;
+        }
+        .banner-text{
+            color: #fff; 
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            z-index: 2;
+            padding: 6.25rem 0;
+            text-transform: uppercase;
+            .title{
+                @include f-50-72-700;
+                padding-bottom: 0.625rem;
+            } 
+            .sub-title{
+                @include f-24-36-700;
+                padding-bottom: 2.5rem; 
+            }
+            .detail{
+                @include f-16-24-400;
+            }
+        }
+    }
+}
+
+// 서브 페이지 장바구니
+#cart{
+    background-color: #000;
+    height: 100vh;
+    .cart-banner{
+        width: 100%;
+        max-width: 1920px;
+        position: relative;
+        background: url('/img/subCart/bg.jpg') no-repeat center / cover;
+        height: 430px;
+        &::before { 
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(106, 106, 106, 0.4);
+            z-index: 1;
+        }
+        .banner-text{
+            color: #fff; 
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            z-index: 2;
+            padding: 6.25rem 0;
+            text-transform: uppercase;
+            .title{
+                @include f-50-72-700;
+                padding-bottom: 0.625rem;
+            } 
+            .sub-title{
+                @include f-24-36-700;
+                padding-bottom: 2.5rem; 
+            }
+            .detail{
+                @include f-16-24-400;
+            }
+        }
+    }
 }

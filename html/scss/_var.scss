@@ -88,7 +88,135 @@
     display: inline-block;
 }
 
-// 폰트
+// 폰트 수정후 (241018 최신)
+@mixin f-60-88-700{
+    font-size: 3.75rem;
+    line-height: 5.5rem;
+    font-weight: 700;
+}
+@mixin f-50-72-700{
+    font-size: 3.125rem;
+    line-height: 4.5rem;
+    font-weight: 700;
+}
+@mixin f-50-60-700{
+    font-size: 3.125rem;
+    line-height: 3.75rem;
+    font-weight: 700;
+}
+@mixin f-42-52-700{
+    font-size: 2.625rem;
+    line-height: 3.25rem;
+    font-weight: 700;
+}
+@mixin f-40-50-700{
+    font-size: 2.5rem;
+    line-height: 3.125rem;
+    font-weight: 700;
+}
+@mixin f-36-52-700{
+    font-size: 2.25rem;
+    line-height: 3.25rem;
+    font-weight: 700;
+}
+@mixin f-34-50-500{
+    font-size: 2.125rem;
+    line-height: 3.125rem;
+    font-weight: 500;
+}
+@mixin f-32-46-700{
+    font-size: 2rem;
+    line-height: 2.875rem;
+    font-weight: 700;
+}
+@mixin f-30-44-700{
+    font-size: 1.875rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+}
+@mixin f-28-42-700{
+    font-size: 1.75rem;
+    line-height: 2.625rem;
+    font-weight: 700;
+}
+@mixin f-26-38-400{
+    font-size: 1.625rem;
+    line-height: 2.375rem;
+    font-weight: 400;
+}
+@mixin f-24-36-700{
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+}
+@mixin f-24-36-400{
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    font-weight: 400;
+}
+@mixin f-22-30-700{
+    font-size: 1.375rem;
+    line-height: 1.875rem;
+    font-weight: 700;
+}
+@mixin f-22-30-500{
+    font-size: 1.375rem;
+    line-height: 1.875rem;
+    font-weight: 500;
+}
+@mixin f-20-30-700{
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+    font-weight: 700;
+}
+@mixin f-20-30-500{
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+    font-weight: 500;
+}
+@mixin f-20-30-400{
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+    font-weight: 400;
+}
+@mixin f-18-26-700{
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+    font-weight: 700;
+}
+@mixin f-18-26-400{
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+    font-weight: 400;
+}
+@mixin f-16-24-700{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+}
+@mixin f-16-24-500{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+}
+@mixin f-16-24-400{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+}
+@mixin f-14-20-700{
+    font-size: .875rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+}
+@mixin f-14-20-400{
+    font-size: .875rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+}
+
+
+// 폰트 수정전
 @mixin f-80-500-140{
     font-size: 5rem;
     line-height: 140px;
@@ -122,6 +250,11 @@
 @mixin f-32-700-46{
     font-size: 2rem;
     line-height: 46px;
+    font-weight: 700;
+}
+@mixin f-32-700-36{
+    font-size: 2rem;
+    line-height: 36px;
     font-weight: 700;
 }
 @mixin f-32-500-46{
@@ -169,6 +302,16 @@
     line-height: 28px;
     font-weight: 700;
 }
+@mixin f-20-500-24{
+    font-size: 1.25rem;
+    line-height: 24px;
+    font-weight: 500;
+}
+@mixin f-20-400-24{
+    font-size: 1.25rem;
+    line-height: 24px;
+    font-weight: 400;
+}
 @mixin f-18-700-26{
     font-size: 1.125rem;
     line-height: 26px;
@@ -182,6 +325,11 @@
 @mixin f-18-400-26{
     font-size: 1.125rem;
     line-height: 26px;
+    font-weight: 400;
+}
+@mixin f-18-400-24{
+    font-size: 1.125rem;
+    line-height: 24px;
     font-weight: 400;
 }
 @mixin f-18-400-20{
@@ -203,6 +351,11 @@
     font-size: 1rem;
     line-height: 24px;
     font-weight: 500;
+}
+@mixin f-16-400-26{
+    font-size: 1rem;
+    line-height: 26px;
+    font-weight: 400;
 }
 @mixin f-16-400-24{
     font-size: 1rem;
