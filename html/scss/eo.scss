@@ -59,15 +59,15 @@
 					position: relative;
 					z-index: 2;
 					.main-title {
-						@include f-50-700-72;
+						@include f-50-72-700;
 						margin-bottom: 10px;
 					}
 					.sub-title {
-						@include f-24-700-36;
+						@include f-24-36-400;
 						padding-bottom: 2.5rem;
 					}
 					.sub-content {
-						@include f-16-700-24;
+						@include f-16-24-700;
                         font-weight: 400;
 					}
 				}
@@ -452,6 +452,7 @@
 
 // 주문내역
 
+
 #sub-order{
     background-color: #fff;
     .order-page{
@@ -497,15 +498,15 @@
 					position: relative;
 					z-index: 2;
 					.main-title {
-						@include f-50-700-72;
+						@include f-50-72-700;
 						margin-bottom: 10px;
 					}
 					.sub-title {
-						@include f-24-700-36;
+						@include f-24-36-400;
 						padding-bottom: 2.5rem;
 					}
 					.sub-content {
-						@include f-16-700-24;
+						@include f-16-24-700;
                         font-weight: 400;
 					}
 				}
@@ -529,6 +530,7 @@
                         display: inline-block;
                         display: flex;
                         align-items: center;
+                        gap: 8px;
                         img{
                             display: inline-block;
                         }
@@ -580,6 +582,7 @@
                             border-bottom: 1px solid var(--line-gray, #EDEDED);
                             .product-info-left{
                                 display: flex;
+                                align-items: center;
                                 gap: 20px;
                                 width: 84%;
                                 img{
@@ -609,6 +612,21 @@
                                         .product-option-menu, .product-option{
                                             color: #A4A4A4;
                                         }
+                                        .moblie-product-num{
+                                            display: none;
+                                            color: #a4a4a4;
+                                            margin-left: 10px;
+                                            &::before{
+                                                content: "";
+                                                display: inline-block;
+                                                width: 12px;
+                                                height: 10px;
+                                                border-left: solid 1px #a4a4a4;
+                                            }
+                                        }
+                                        .moblie-product-price{
+                                            display: none;
+                                        }
                                     }
                                 }
                             }
@@ -634,6 +652,7 @@
                     display: flex;
                     gap: 10px;
                     margin-top: 10px;
+                    align-items: center;
                     img{
                         display: block;
                         width: 24px;

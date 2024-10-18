@@ -759,6 +759,9 @@
                 .order-product-info{
                     .product-info-right {
                         width: 24%;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 8px;
                     }
                     .product-info-left {
                         width: 76%;
@@ -769,7 +772,7 @@
     }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 580px) { 
     #sub-order .order-page{
         .banner {
             height: 250px;
@@ -790,25 +793,90 @@
                 }
             }
         }
-        #sub-order .order-page .product-type .order-container .order-info-content{
-            .first-order, .second-order, .third-order{
-                .order-product-info .product-info-right {
-                    flex-direction: column;
-                }
+        .product-type .order-container{
+            padding: 40px 2rem;
+            .type-title {
+                padding-bottom: 20px;
             }
+            .order-info-content{
+                .second-order{
+                    padding: 40px 0;
+                }
+                .first-order, .second-order, .third-order{
+                    .order-product-info{
+                        flex-wrap: wrap;
+                        .product-info-left{
+                            width: 100%;
+                            img{
+                                display: block;
+                                width: 110px;
+                                height: 110px;
+                            
+                            }
+                            .product-detail{
+                                .moblie-product-price{
+                                    @include f-16-700-24;
+                                }
+                                .product-detail-bottom{
+                                    .moblie-product-num {
+                                        display: inline-block;
+                                    }
+                                    .moblie-product-price{
+                                        display: block;
+                                        margin-top: 10px;
+                                        @include f-16-700-24;
+                                    }
+                                }
+                            } 
+                        }
+                        .product-info-right {
+                            display: none;
+                        }
+                    } 
+                }
+            } 
         } 
     }   
 }
 
+
+
 @media (max-width: 500px) {
-    #sub-order .order-page .banner .banner-container .banner-text{
-        .main-title {
-            font-size: 20px;
+    #sub-order .order-page{
+        .banner .banner-container .banner-text{
+            .main-title {
+                font-size: 20px;
+            }
+            .sub-content{
+                font-size: 12px;
+            }
         }
-        .sub-content{
-            font-size: 12px;
-        }
-    } 
+        .product-type .order-container{
+            .type-title .title-right img {
+                width: 20px;
+                height: 20px;
+            }
+            .order-info-content{
+                .order-info {
+                    padding: 10px 0;
+                    img {
+                        width: 14px;
+                        height: 14px;
+                    }
+                    .order-info-left {
+                        gap: 0;
+                    }
+                }
+                .order-product-info {
+                    padding: 20px 0;
+                }
+            } 
+            .order-notice img {
+                width: 20px;
+                height: 20px;
+            }
+        } 
+    }
 }
 
 @media (max-width: 480px) {
@@ -824,4 +892,59 @@
             }
         }
     }
+}
+
+
+@media (max-width: 400px) {
+    #sub-order .order-page{
+        .product-type .order-container{
+            .order-info-content{
+                .first-order, .second-order, .third-order{
+                    .order-info{
+                        .order-info-left {
+                            line-height: 20px;
+                        }
+                    }
+                    .order-product-info .product-info-left{
+                        gap: 14px;
+                        img{
+                            width: 88px;
+                            height: 88px;
+                        }
+                        .product-detail{
+                            gap: 4px;
+                            .pay-status.pay-finish {
+                                font-size: 0.875rem;
+                            }
+                            .product-detail-bottom{
+                                line-height: 16px;
+                                font-size: 0.875rem;
+                                .moblie-product-num {
+                                    margin-left: 7px;
+                                    &::before{
+                                        height: 7px;
+                                        width: 10px;
+                                    }
+                                }
+                                .moblie-product-price{
+                                    margin-top: 4px;
+                                }
+                            }
+                        }
+                    } 
+                }
+            }
+            .order-notice{
+                margin-top: 6px;
+                gap: 6px;
+                img{
+                    width: 16px;
+                    height: 16px;
+                }
+                span {
+                    font-size: 0.875rem;
+                }
+            } 
+        } 
+    } 
 }
