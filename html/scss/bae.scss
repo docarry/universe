@@ -8,7 +8,12 @@
     width: 1280px;
     margin: 0 auto;
 }
-
+.sub-page-title{
+    margin-top: 80px;
+    text-align: center;
+    @include f-32-700-46;
+    display: none;
+}
 #sub-artist{
     background-color: #fff;
     padding-bottom: 6.25rem;
@@ -35,15 +40,15 @@
             z-index: 2;
             padding: 6.25rem 0;
             .title{
-                @include f-50-700-72;
+                @include f-50-72-700;
                 padding-bottom: 0.625rem;
             } 
             .sub-title{
-                @include f-24-700-36;
+                @include f-24-36-700;
                 padding-bottom: 2.5rem; 
             }
             .detail{
-                @include f-16-400-24;
+                @include f-16-24-400;
             }
         }
     }
@@ -66,18 +71,22 @@
         .artist-content{
             width: 100%;
             .artist-name{
-                margin: 6.25rem 0;
+                margin: 5rem 0;
                 .nav-item{
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     .nav-link{
                         color: #000;
-                        @include f-24-400-36;
+                        font-size: 24px;
+                        line-height: 36px;
+                        font-weight: 400;
                         padding: 0 4.75rem;
                         &.active{
                             background-color: transparent;
-                            @include f-24-700-36;
+                            font-size: 24px;
+                            line-height: 36px;
+                            font-weight: 700;
                         }
                     }
                     .nav-line{
@@ -89,7 +98,9 @@
             }
             .sub-artist-detail{
                 h4,h5{
-                    @include f-32-700-46;
+                    font-size: 30px;
+                    font-weight: 700;
+                    line-height: 44px;
                     margin-bottom: 3.75rem;
                 }
                 .tab-pane{
@@ -162,6 +173,9 @@
                             padding-left: 2.1875rem;
                             p{
                                 padding: .625rem 0 2.5rem;
+                                font-size: 16px;
+                                font-weight: 400;
+                                line-height: 24px;
                             }
                             .btn-wrap{
                                 display: flex;
@@ -169,14 +183,16 @@
                                 .schedule-btn,
                                 .goods-btn{
                                     display: block;
-                                    width: 170px;
+                                    width: 220px;
                                     background-color: #fff;
                                     border: solid 1px #767676;
                                     box-sizing: border-box;
-                                    border-radius: 30px;
+                                    border-radius: 40px;
                                     color: #767676;
-                                    @include f-14-700-20;
-                                    padding: 0.5rem 1rem;
+                                    font-size: 16px;
+                                    font-weight: 500;
+                                    line-height: 24px;
+                                    padding: 12px 8px;
                                     text-align: center;
                                     &:hover{
                                         background-color: #000;
@@ -203,6 +219,9 @@
                                             text-align: center;
                                             align-items: center;
                                             transition: transform 0.3s ease;
+                                            span{
+                                                display: block;
+                                            }
                                             .sub-best-byeon-1{
                                                 background: url('/img/subArtist/artist-best-img-byeon-1.jpg') no-repeat center / cover;
                                             }
@@ -224,8 +243,93 @@
                                             .sub-best-byeon-7{
                                                 background: url('/img/subArtist/artist-best-img-byeon-7.jpg') no-repeat center / cover;
                                             }
-                                            span{
-                                                display: block;
+
+                                            .sub-best-lee-1{
+                                                background: url('/img/subArtist/artist-best-img-lee-1.jpg') no-repeat center / cover;
+                                            }
+                                            .sub-best-lee-2{
+                                                background: url('/img/subArtist/artist-best-img-lee-2.jpg') no-repeat center / cover;
+                                            }
+                                            .sub-best-lee-3{
+                                                background: url('/img/subArtist/artist-best-img-lee-3.jpg') no-repeat center / cover;
+                                            }
+                                            .sub-best-lee-4{
+                                                background: url('/img/subArtist/artist-best-img-lee-4.jpg') no-repeat center / cover;
+                                            }
+                                            .sub-best-lee-5{
+                                                background: url('/img/subArtist/artist-best-img-lee-5.jpg') no-repeat center / cover;
+                                            }
+                                            .sub-best-lee-6{
+                                                background: url('/img/subArtist/artist-best-img-lee-6.jpg') no-repeat center / cover;
+                                            }
+                                            .sub-best-lee-7{
+                                                background: url('/img/subArtist/artist-best-img-lee-7.jpg') no-repeat center / cover;
+                                            }
+
+                                            .sub-best-yoon-1{
+                                                background: url('/img/subArtist/artist-best-img-yoon-1.jpg') no-repeat center / cover;
+                                            }
+                                            .sub-best-yoon-2{
+                                                background: url('/img/subArtist/artist-best-img-yoon-2.jpg') no-repeat center / cover;
+                                            }
+                                            .sub-best-yoon-3{
+                                                background: url('/img/subArtist/artist-best-img-yoon-3.jpg') no-repeat center / cover;
+                                            }
+                                            .sub-best-yoon-4{
+                                                background: url('/img/subArtist/artist-best-img-yoon-4.jpg') no-repeat center / cover;
+                                            }
+                                            .sub-best-yoon-5{
+                                                background: url('/img/subArtist/artist-best-img-yoon-5.jpg') no-repeat center / cover;
+                                            }
+                                            .sub-best-yoon-6{
+                                                background: url('/img/subArtist/artist-best-img-yoon-6.jpg') no-repeat center / cover;
+                                            }
+                                            .sub-best-yoon-7{
+                                                background: url('/img/subArtist/artist-best-img-yoon-7.jpg') no-repeat center / cover;
+                                            }
+
+                                            .sub-best-nam-1{
+                                                background: url('/img/subArtist/artist-best-img-nam-1.jpg') no-repeat center / cover;
+                                            }
+                                            .sub-best-nam-2{
+                                                background: url('/img/subArtist/artist-best-img-nam-2.jpg') no-repeat center / cover;
+                                            }
+                                            .sub-best-nam-3{
+                                                background: url('/img/subArtist/artist-best-img-nam-3.jpg') no-repeat center / cover;
+                                            }
+                                            .sub-best-nam-4{
+                                                background: url('/img/subArtist/artist-best-img-nam-4.jpg') no-repeat center / cover;
+                                            }
+                                            .sub-best-nam-5{
+                                                background: url('/img/subArtist/artist-best-img-nam-5.jpg') no-repeat center / cover;
+                                            }
+                                            .sub-best-nam-6{
+                                                background: url('/img/subArtist/artist-best-img-nam-6.jpg') no-repeat center / cover;
+                                            }
+                                            .sub-best-nam-7{
+                                                background: url('/img/subArtist/artist-best-img-nam-7.jpg') no-repeat center / cover;
+                                            }
+
+                                            .sub-best-park-1{
+                                                background: url('/img/subArtist/artist-best-img-park-1.jpg') no-repeat center / cover;
+                                            }
+                                            .sub-best-park-2{
+                                                background: url('/img/subArtist/artist-best-img-park-2.jpg') no-repeat center / cover;
+                                            }
+                                            .sub-best-park-3{
+                                                background: url('/img/subArtist/artist-best-img-park-3.jpg') no-repeat center / cover;
+                                            }
+                                            .sub-best-park-4{
+                                                background: url('/img/subArtist/artist-best-img-park-4.jpg') no-repeat center / cover;
+                                            }
+                                            .sub-best-park-5{
+                                                background: url('/img/subArtist/artist-best-img-park-5.jpg') no-repeat center / cover;
+                                            }
+                                            .sub-best-park-6{
+                                                background: url('/img/subArtist/artist-best-img-park-6.jpg') no-repeat center / cover;
+                                            }
+                                            .sub-best-park-7{
+                                                background: url('/img/subArtist/artist-best-img-park-7.jpg') no-repeat center / cover;
                                             }
                                         }
                                     }
@@ -253,22 +357,21 @@
                                                 .sub-best{
                                                     width: 100%;
                                                     height: 350px;
-                                                    img{
-                                                        width: 100%;
-                                                        height: 100%;
-                                                        object-fit: cover;
-                                                    }
                                                 }
                                                 .text{
                                                     .best-title{
                                                         margin-top: 1.25rem;
-                                                        @include f-18-700-26;
+                                                        font-size: 20px;
+                                                        font-weight: 700;
+                                                        line-height: 30px;
                                                         color: #000;
                                                     }
                                                     .best-sub{
                                                         margin-top: .625rem;
-                                                        @include f-16-400-24;
-                                                        color: #767676;
+                                                        font-size: 20px;
+                                                        font-weight: 400;
+                                                        line-height: 30px;
+                                                        color: #000;
                                                     }
                                                 }
                                             }
@@ -281,12 +384,29 @@
                                         position: relative;
                                         margin-top: 3rem;
                                         bottom: 0;
+
                                     }
                                     .swiper-pagination-bullet {
                                         @include swiPagBul-000;
                                     }
                                     .swiper-pagination-bullet-active {
                                         @include swiPagBulAct-000;
+                                    }
+                                    .swiper-button-prev{
+                                        @include swiperPrevBtn-000;
+                                        top: 40%;
+                                        left: 37%;
+                                        &::after{
+                                            content: '';
+                                        }
+                                    }
+                                    .swiper-button-next{
+                                        @include swiperNextBtn-000;
+                                        top: 40%;
+                                        left: 60%;
+                                        &::after{
+                                            content: '';
+                                        }
                                     }
                                 }
                                 .sub-artist-best-m-swiper{
@@ -308,13 +428,17 @@
                                                 .text{
                                                     .best-title{
                                                         margin-top: 1.25rem;
-                                                        @include f-16-700-24;
+                                                        font-size: 24px;
+                                                        font-weight: 700;
+                                                        line-height: 36px;
                                                         color: #000;
                                                     }
                                                     .best-sub{
                                                         margin-top: .625rem;
-                                                        @include f-14-700-20;
-                                                        color: #767676;
+                                                        font-size: 20px;
+                                                        font-weight: 400;
+                                                        line-height: 30px;
+                                                        color: #000;
                                                     }
                                                 }
                                             }
@@ -335,10 +459,12 @@
                                     background-color: #f0f0f0;
                                     border-radius: 20px;
                                     box-sizing: border-box;
-                                    padding: 50px;
+                                    padding: 3.125rem;
                                     h6{
                                         width: 130px;
-                                        @include f-24-700-36;
+                                        font-size: 24px;
+                                        font-weight: 700;
+                                        line-height: 36px;
                                         text-align: center;
                                         padding-bottom: 8px;
                                         border-bottom: 1px solid #000;
@@ -349,14 +475,18 @@
                                         flex-direction: column;
                                         gap: 2.5rem;
                                         li{
-                                            @include f-16-400-24;
+                                            font-size: 16px;
+                                            font-weight: 400;
+                                            line-height: 24px;
                                             display: flex;
                                             gap: 1.25rem;
                                             .detail{
                                                 display: flex;
                                                 gap: .625rem;
                                                 .sub{
-                                                    @include f-14-400-22;
+                                                    font-size: 14px;
+                                                    font-weight: 400;
+                                                    line-height: 20px;
                                                 }
                                             }
                                         }
@@ -392,22 +522,53 @@
 }
 
 #sub-schedule{
-    padding: 6.25rem 0;
-    .container-1280{
-        .schedule-title{
-            color: #fff;
-            text-transform: uppercase;
-            text-align: center;
-            h2{
-                @include f-50-700-72;
-            }
-            p{
-                @include f-24-500-36;
-                .d-768{
-                    display: none;
-                }
-            }    
+    .schedule-banner{
+        width: 100%;
+        max-width: 1920px;
+        position: relative;
+        background: url('/img/subSchedule/schedule-banner.jpg') no-repeat center / cover;
+        
+        &::before { 
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(49, 115, 137, 0.2);
+            z-index: 1;
         }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4); /* 배경에 투명도 */
+            z-index: 0; /* 딤드 아래로 설정 */
+        }
+        .banner-text{
+            color: #fff; 
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            z-index: 2;
+            padding: 6.25rem 0;
+            .title{
+                @include f-50-72-700;
+                padding-bottom: 0.625rem;
+            } 
+            .sub-title{
+                @include f-24-36-700;
+                padding-bottom: 2.5rem; 
+            }
+            .detail{
+                @include f-16-24-400;
+            }
+        }
+    }
+    .schedule-wrap{
         .schedule-content{
             .schedule-name{
                 margin: 6.25rem 0 2.5rem;
@@ -460,6 +621,9 @@
                     }
                     .fc-daygrid-event {
                         cursor: pointer;
+                        &:hover{
+                            background-color: transparent;
+                        }
                     }
                     .fc-direction-ltr .fc-daygrid-event .fc-event-time,
                     .fc-daygrid-event-dot{
