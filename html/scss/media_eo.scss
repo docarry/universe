@@ -218,7 +218,7 @@
             .banner-container{
                 .banner-text{
                     .main-title{
-                        @include f-36-700-52;
+                        @include f-50-60-700;
                         padding-bottom: .625rem;
                     }
                     .sub-title{
@@ -234,7 +234,7 @@
                     }
                     .tablet-sub-content{
                         display: block;
-                        @include f-16-400-24;
+                        @include f-24-36-400;
                     }
                 }
             }
@@ -742,15 +742,14 @@
             height: 370px;
             .banner-container .banner-text{
                 .main-title {
-                    @include f-36-700-52;
+                    @include f-50-60-700;
                     padding-bottom: .625rem;
                 }
                 .sub-title {
-                    @include f-18-400-26;
-                    padding-bottom: .625rem;
+                    display: none;
                 }
                 .sub-content {
-                    @include f-16-400-24;
+                    @include f-24-36-400;
                 }
             }
         } 
