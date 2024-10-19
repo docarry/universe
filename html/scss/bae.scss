@@ -11,7 +11,7 @@
 .sub-page-title{
     margin-top: 80px;
     text-align: center;
-    @include f-32-700-46;
+    @include f-32-46-700;
     display: none;
 }
 #sub-artist{
@@ -52,22 +52,9 @@
             }
         }
     }
-    .btn-more{
-        @include f-16-700-24;
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        background: transparent;
-        color: #a4a4a4;
-        cursor: pointer;
-        border: 0;
-        gap: 0.25rem;
-        margin-top: 5rem;
-    }
     .artist-wrap{
         display: flex;
         align-items: center;
-        
         .artist-content{
             width: 100%;
             .artist-name{
@@ -78,15 +65,11 @@
                     align-items: center;
                     .nav-link{
                         color: #000;
-                        font-size: 24px;
-                        line-height: 36px;
-                        font-weight: 400;
+                        @include f-24-36-400;
                         padding: 0 4.75rem;
                         &.active{
                             background-color: transparent;
-                            font-size: 24px;
-                            line-height: 36px;
-                            font-weight: 700;
+                            @include f-24-36-700;
                         }
                     }
                     .nav-line{
@@ -98,9 +81,7 @@
             }
             .sub-artist-detail{
                 h4,h5{
-                    font-size: 30px;
-                    font-weight: 700;
-                    line-height: 44px;
+                    @include f-30-44-700;
                     margin-bottom: 3.75rem;
                 }
                 .tab-pane{
@@ -173,9 +154,7 @@
                             padding-left: 2.1875rem;
                             p{
                                 padding: .625rem 0 2.5rem;
-                                font-size: 16px;
-                                font-weight: 400;
-                                line-height: 24px;
+                                @include f-16-24-400;
                             }
                             .btn-wrap{
                                 display: flex;
@@ -189,9 +168,7 @@
                                     box-sizing: border-box;
                                     border-radius: 40px;
                                     color: #767676;
-                                    font-size: 16px;
-                                    font-weight: 500;
-                                    line-height: 24px;
+                                    @include f-16-24-500;
                                     padding: 12px 8px;
                                     text-align: center;
                                     &:hover{
@@ -361,16 +338,12 @@
                                                 .text{
                                                     .best-title{
                                                         margin-top: 1.25rem;
-                                                        font-size: 20px;
-                                                        font-weight: 700;
-                                                        line-height: 30px;
+                                                        @include f-20-30-700;
                                                         color: #000;
                                                     }
                                                     .best-sub{
                                                         margin-top: .625rem;
-                                                        font-size: 20px;
-                                                        font-weight: 400;
-                                                        line-height: 30px;
+                                                        @include f-20-30-400;
                                                         color: #000;
                                                     }
                                                 }
@@ -428,16 +401,12 @@
                                                 .text{
                                                     .best-title{
                                                         margin-top: 1.25rem;
-                                                        font-size: 24px;
-                                                        font-weight: 700;
-                                                        line-height: 36px;
+                                                        @include f-24-36-700;
                                                         color: #000;
                                                     }
                                                     .best-sub{
                                                         margin-top: .625rem;
-                                                        font-size: 20px;
-                                                        font-weight: 400;
-                                                        line-height: 30px;
+                                                        @include f-20-30-400;
                                                         color: #000;
                                                     }
                                                 }
@@ -462,9 +431,7 @@
                                     padding: 3.125rem;
                                     h6{
                                         width: 130px;
-                                        font-size: 24px;
-                                        font-weight: 700;
-                                        line-height: 36px;
+                                        @include f-24-700-36;
                                         text-align: center;
                                         padding-bottom: 8px;
                                         border-bottom: 1px solid #000;
@@ -475,18 +442,14 @@
                                         flex-direction: column;
                                         gap: 2.5rem;
                                         li{
-                                            font-size: 16px;
-                                            font-weight: 400;
-                                            line-height: 24px;
+                                            @include f-16-24-400;
                                             display: flex;
                                             gap: 1.25rem;
                                             .detail{
                                                 display: flex;
                                                 gap: .625rem;
                                                 .sub{
-                                                    font-size: 14px;
-                                                    font-weight: 400;
-                                                    line-height: 20px;
+                                                    @include f-14-20-400;
                                                 }
                                             }
                                         }
