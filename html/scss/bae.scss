@@ -532,20 +532,21 @@
         }
     }
     .schedule-wrap{
+        margin: 80px auto;
         .schedule-content{
             .schedule-name{
-                margin: 6.25rem 0 2.5rem;
+                margin-bottom: 40px;
                 .nav-item{
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     .nav-link{
                         color: #FFF;
-                        @include f-24-400-36;
+                        @include f-24-36-400;
                         padding: 0 4.75rem;
                         &.active{
                             background-color: transparent;
-                            @include f-24-700-36;
+                            @include f-24-36-700;
                         }
                     }
                     .nav-line{
@@ -571,7 +572,7 @@
                         border-radius: 20px 20px 0px 0px;
                         h4{
                         color: #000;
-                        @include f-24-700-36; 
+                        @include f-30-44-700;
                         }
                         img {
                             width: 110px;
@@ -620,20 +621,23 @@
                         background-color: transparent;
                     }
                     .fc-event-title-container{
-                        @include f-16-700-24;
+                        @include f-16-24-700;
                         color: #000;
                     }
                     .fc-today-button.fc-button.fc-button-primary{
-                        width: 99px;
-                        height: 72px;
+                        width: 100px;
+                        height: 44px;
                         background-color: #dedede;
                         border: 0;
                         color: #000;
                         border-radius: 10px;
-                        @include f-24-700-36;
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        line-height: 1.25rem;
+
                     }
                     .fc .fc-button .fc-icon{
-                        font-size: 2.5rem;
+                        font-size: 1.8rem;
                     }
                     .fc-direction-ltr .fc-button-group > .fc-button:not(:first-child){
                         border-radius: 0 10px 10px 0;
@@ -646,14 +650,14 @@
                         border: 0;
                     }
                     .fc .fc-toolbar.fc-header-toolbar{
-                        margin: 6.25rem 2.5rem 8.75rem;
+                        padding: 80px 72px;
                     }
                     .fc .fc-button-group{
-                        width: 170px;
-                        height: 72px
+                        width: 100px;
+                        height: 44px
                     }
                     .fc-toolbar-title{
-                        @include f-50-700-72;
+                        @include f-30-44-700;
                     }
                     .fc-theme-standard td, .fc-theme-standard th, .fc-scrollgrid-liquid{
                         border: 0 !important;
@@ -669,7 +673,7 @@
                     }
                     .sub-calendar-container .fc-daygrid-day-number,
                     .sub-calendar-container .fc-col-header-cell-cushion {
-                        @include f-24-700-36;
+                        @include f-24-36-700;
                         text-align: center;
                         color: #000;
                     }
