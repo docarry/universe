@@ -553,7 +553,7 @@
                                 display: flex;
                                 flex-direction: column;
                                 gap: 10px;
-                                @include f-16-400-24;
+                                @include f-20-30-400;
                                 .order-info-top{
                                     color: #000;
                                     .order-date{
@@ -598,14 +598,14 @@
                                     color: #000;
                                     .pay-status.pay-finish{
                                         color: var(--point-yellow-blackBG, #FFD24E);
-                                        @include f-16-700-24;
+                                        @include f-20-30-400;
                                     }
                                     .pay-status.pay-cancel{
                                         color: var(--font-disable-whiteBG, #A4A4A4);
-                                        @include f-16-700-24;
+                                        @include f-20-30-400;
                                     }
                                     .product-detail-bottom{
-                                        @include f-16-400-24;
+                                        @include f-20-30-400;
                                         .product-name{
                                             display: block;
                                         }
