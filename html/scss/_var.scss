@@ -89,6 +89,11 @@
 }
 
 // 폰트 수정후 (241018 최신)
+@mixin f-80-116-500{
+    font-size: 5rem;
+    line-height: 7.25rem;
+    font-weight: 500;
+}
 @mixin f-60-88-700{
     font-size: 3.75rem;
     line-height: 5.5rem;
