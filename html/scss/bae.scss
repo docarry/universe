@@ -1,28 +1,23 @@
 @import './_var.scss';
+/*공통클래스*/
 .dB-990,
 .dB-768,
 .dB-480{
     display: none;
 }
-
 .container-1280{
     width: 1280px;
     margin: 0 auto;
 }
-.sub-page-title{
-    margin-top: 80px;
-    text-align: center;
-    @include f-32-46-700;
-    display: none;
-}
-#sub-artist{
-    background-color: #fff;
-    padding-bottom: 6.25rem;
-    .artist-banner{
+.sub-page{
+    padding-bottom: 80px;
+    .sub-top-banner{
         width: 100%;
         max-width: 1920px;
+        height: 430px;
         position: relative;
-        background: url('/img/subArtist/artist-banner.jpg') no-repeat center / cover;
+        display: flex;
+        align-items: center;
         &::before { 
             content: "";
             position: absolute;
@@ -30,52 +25,74 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(106, 106, 106, 0.4);
             z-index: 1;
         }
         .banner-text{
             color: #fff; 
-            flex-direction: column;
-            align-items: flex-start;
             position: relative;
             z-index: 2;
-            padding: 6.25rem 0;
             .title{
                 @include f-50-72-700;
-                padding-bottom: 0.625rem;
+                padding-bottom: 10px;
             } 
             .sub-title{
-                @include f-24-36-700;
-                padding-bottom: 2.5rem; 
+                @include f-24-36-400; // 추후 500로 수정예정
+                padding-bottom: 40px; 
             }
             .detail{
                 @include f-16-24-400;
             }
         }
     }
-    .artist-wrap{
-        display: flex;
-        align-items: center;
-        .artist-content{
-            width: 100%;
+    .sub-wrap{
+        .sub-content{
+            .sub-page-title{
+                margin-top: 80px;
+                text-align: center;
+                @include f-32-46-700;
+                display: none;
+            }
             .artist-name{
-                margin: 5rem 0;
+                margin: 80px 0;
                 .nav-item{
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     .nav-link{
-                        color: #000;
                         @include f-24-36-400;
-                        padding: 0 4.75rem;
+                        padding: 0 76px;
                         &.active{
-                            background-color: transparent;
-                            @include f-24-36-700;
+                            @include f-24-36-700; 
                         }
                     }
                     .nav-line{
                         width: 1px;
                         height: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+/*공통클래스*/
+
+#sub-artist{
+    background-color: #fff;
+    .artist-banner{
+        background: url('/img/subArtist/artist-banner.jpg') no-repeat center / cover;
+    }
+    .artist-wrap{
+        .artist-content{
+            .sub-page-title{
+                color: #000;
+            }
+            .artist-name{
+                .nav-item{
+                    .nav-link{
+                        color: #000;
+                    }
+                    .nav-line{
                         background-color: #000;
                     }
                 }
@@ -83,7 +100,7 @@
             .sub-artist-detail{
                 h4,h5{
                     @include f-30-44-700;
-                    margin-bottom: 3.75rem;
+                    margin-bottom: 60px;
                 }
                 .tab-pane{
                     .artist-info{
@@ -93,7 +110,7 @@
                             display: flex;
                             justify-content: center;
                             align-items: end;
-                            gap: 2.1875rem;
+                            gap: 35px;
                             .frame{
                                 display: flex;
                                 justify-content: center;
@@ -136,7 +153,7 @@
                                 justify-content: center;
                                 align-items: center;
                                 position: relative;
-                                margin-top: 3rem;
+                                margin-top: 40px;
                                 bottom: 0;
                             }
                             .swiper-pagination-bullet {
@@ -152,14 +169,14 @@
                             position: absolute;
                             top: 0;
                             right: 0;
-                            padding-left: 2.1875rem;
+                            padding-left: 35px;
                             p{
-                                padding: .625rem 0 2.5rem;
+                                padding: 10px 0 40px;
                                 @include f-16-24-400;
                             }
                             .btn-wrap{
                                 display: flex;
-                                gap: 1.25rem;
+                                gap: 20px;
                                 .schedule-btn,
                                 .goods-btn{
                                     display: block;
@@ -183,7 +200,7 @@
                         }
                         // 2 대표작
                         .sub-artist-info-2{
-                            margin-top: 6.25rem;
+                            margin-top: 80px;
                             .info-detail{
                                 position: relative;
                                 width: 100%;
@@ -338,12 +355,12 @@
                                                 }
                                                 .text{
                                                     .best-title{
-                                                        margin-top: 1.25rem;
+                                                        margin-top: 20px;
                                                         @include f-20-30-700;
                                                         color: #000;
                                                     }
                                                     .best-sub{
-                                                        margin-top: .625rem;
+                                                        margin-top: 10px;
                                                         @include f-20-30-400;
                                                         color: #000;
                                                     }
@@ -358,7 +375,6 @@
                                         position: relative;
                                         margin-top: 3rem;
                                         bottom: 0;
-
                                     }
                                     .swiper-pagination-bullet {
                                         @include swiPagBul-000;
@@ -420,7 +436,7 @@
 
                         // 3 필모그래피
                         .sub-artist-info-3{
-                            margin-top: 6.25rem;
+                            margin-top: 80px;
                             .filmo-wrap{
                                 display: flex;
                                 justify-content: space-between;
@@ -429,26 +445,25 @@
                                     background-color: #f0f0f0;
                                     border-radius: 20px;
                                     box-sizing: border-box;
-                                    padding: 3.125rem;
+                                    padding: 50px;
                                     h6{
-                                        width: 130px;
-                                        @include f-24-700-36;
-                                        text-align: center;
-                                        padding-bottom: 8px;
-                                        border-bottom: 1px solid #000;
+                                        width: 100%;
+                                        @include f-24-36-700;
+                                        padding-bottom: 10px;
+                                        border-bottom: 1px solid #dadada;
                                     }
                                     ul{
-                                        margin-top: 2.5rem;
+                                        margin-top: 40px;
                                         display: flex;
                                         flex-direction: column;
-                                        gap: 2.5rem;
+                                        gap: 40px;
                                         li{
                                             @include f-16-24-400;
                                             display: flex;
-                                            gap: 1.25rem;
+                                            gap: 10px;
                                             .detail{
                                                 display: flex;
-                                                gap: .625rem;
+                                                gap: 10px;
                                                 .sub{
                                                     @include f-14-20-400;
                                                 }
@@ -487,72 +502,19 @@
 
 #sub-schedule{
     .schedule-banner{
-        width: 100%;
-        max-width: 1920px;
-        position: relative;
         background: url('/img/subSchedule/schedule-banner.jpg') no-repeat center / cover;
-        
-        &::before { 
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(49, 115, 137, 0.2);
-            z-index: 1;
-        }
-        &::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.4); /* 배경에 투명도 */
-            z-index: 0; /* 딤드 아래로 설정 */
-        }
-        .banner-text{
-            color: #fff; 
-            flex-direction: column;
-            align-items: flex-start;
-            position: relative;
-            z-index: 2;
-            padding: 6.25rem 0;
-            .title{
-                @include f-50-72-700;
-                padding-bottom: 0.625rem;
-            } 
-            .sub-title{
-                @include f-24-36-700;
-                padding-bottom: 2.5rem; 
-            }
-            .detail{
-                @include f-16-24-400;
-            }
-        }
     }
     .schedule-wrap{
-        margin: 80px auto;
         .schedule-content{
-            .schedule-name{
-                margin-bottom: 40px;
+            .sub-page-title{
+                color: #fff;
+            }
+            .artist-name{
                 .nav-item{
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
                     .nav-link{
-                        color: #FFF;
-                        @include f-24-36-400;
-                        padding: 0 4.75rem;
-                        &.active{
-                            background-color: transparent;
-                            @include f-24-36-700;
-                        }
+                        color: #fff;
                     }
                     .nav-line{
-                        width: 1px;
-                        height: 20px;
                         background-color: #fff;
                     }
                 }
@@ -563,17 +525,17 @@
                 flex-direction: column;
                 }
                 .tab-pane {
-                    gap: 2.5rem;
+                    gap: 40px;
                     .artist-schedule-name{
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
-                        padding: .4375rem 2.5rem;
+                        padding: 7px 40px;
                         background-color: #fff;
                         border-radius: 20px 20px 0px 0px;
                         h4{
-                        color: #000;
-                        @include f-30-44-700;
+                            color: #000;
+                            @include f-30-44-700;
                         }
                         img {
                             width: 110px;
@@ -625,6 +587,7 @@
                         @include f-16-24-700;
                         color: #000;
                     }
+                    // 타이틀 왼쪽
                     .fc-today-button.fc-button.fc-button-primary{
                         width: 100px;
                         height: 44px;
@@ -635,7 +598,16 @@
                         font-size: 1.5rem;
                         font-weight: 700;
                         line-height: 1.25rem;
-
+                        opacity: 1;
+                    }
+                    // 타이틀
+                    .fc-toolbar-title{
+                        @include f-30-44-700;
+                    }
+                    // 타이틀 오른쪽
+                    .fc .fc-button-group{
+                        width: 100px;
+                        height: 44px
                     }
                     .fc .fc-button .fc-icon{
                         font-size: 1.8rem;
@@ -650,15 +622,10 @@
                         background-color: #000;
                         border: 0;
                     }
+                    // 타이틀 여백
                     .fc .fc-toolbar.fc-header-toolbar{
                         padding: 80px 72px;
-                    }
-                    .fc .fc-button-group{
-                        width: 100px;
-                        height: 44px
-                    }
-                    .fc-toolbar-title{
-                        @include f-30-44-700;
+                        margin-bottom: 0;
                     }
                     .fc-theme-standard td, .fc-theme-standard th, .fc-scrollgrid-liquid{
                         border: 0 !important;
@@ -672,12 +639,19 @@
                         line-height: 140px;
                         text-align: center;
                     }
-                    .sub-calendar-container .fc-daygrid-day-number,
-                    .sub-calendar-container .fc-col-header-cell-cushion {
+                    // 달력 숫자
+                    .sub-calendar-container .fc-daygrid-day-number{
                         @include f-24-36-700;
                         text-align: center;
                         color: #000;
                     }
+                    // 달력 요일
+                    .sub-calendar-container .fc-col-header-cell-cushion {
+                        @include f-24-36-400;
+                        text-align: center;
+                        color: #000;
+                    }
+                    // 오늘 날짜 표시
                     .sub-calendar-container .fc-daygrid-day.fc-day-today .fc-daygrid-day-top > a {
                         border: solid 2px #333;
                         padding: 30px;
@@ -694,37 +668,39 @@
                     .sub-calendar-container .fc-scroller {
                         overflow: hidden !important;
                     }
+                    // 이벤트 날짜 표시
                     .sub-calendar-container .fc-daygrid-day-top > a.eventText {
                         border: solid 2px #f86666;
                         padding: 30px;
                         border-radius: 50%;
                         font-weight: bold;
                     }
+                    // 모바일 달력
                     .sub-calendar-m-container{
                         display: none;
-                        .name{
-                            @include f-24-700-36;
+                        > p{
+                            @include f-24-36-700;
                             color: #fff;
-                            margin-bottom: 2.5rem;
+                            text-align: center;
+                            margin: 80px 0 40px;
                         }
                         .sub-schedule-m-detail{
-                            
-                            width: 100%;
-                            height: 900px;
-                            border-radius: 1.25rem;
                             display: flex;
                             flex-direction: column;
-                            gap: 1.25rem;
                             justify-content: end;
+                            width: 100%;
+                            height: 900px;
+                            border-radius: 20px;
+                            gap: 20px;
                             .event-item{
                                 display: flex;
-                                gap: 1.25rem;
-                                padding: 1.875rem;
+                                gap: 20px;
+                                padding: 30px;
                                 background: rgba(255,255,255,0.5);
                                 border-radius: 20px;
                                 align-items: center;
                                 &:last-child{
-                                    margin-bottom: 2.5rem;
+                                    margin-bottom: 40px;
                                 }
                                 .event-time{
                                     width: 20%;
@@ -732,22 +708,21 @@
                                     height: 60px;
                                     border: solid 2px #f86666;
                                     border-radius: 30px;
-                                    font-size: 14px;
+                                    font-size: 16px;
                                     font-weight: 400;
-                                    line-height: 4;
+                                    line-height: 3.4;
                                     color: #000;
                                     text-align: center;
                                 }
                                 .event-detail{
                                     width: 70%;
                                     .event-title{
-                                        @include f-24-700-36;
+                                        @include f-20-30-700;
                                         color: #000;
-                                        margin-bottom: 1.25rem;
                                         text-transform: uppercase;
                                     }
                                     .event-date{
-                                        @include f-16-700-24;
+                                        @include f-16-24-400;
                                         color: #000;
                                     }
                                 }
@@ -781,7 +756,7 @@
                 width: 350px;
                 min-height: 160px;
                 border-radius: 20px;
-                background-color: #f8f8f8;
+                background-color: #fff;
                 color: #000;
                 box-sizing: border-box;
                 opacity: 0;
@@ -793,7 +768,7 @@
                     align-items: center;
                     margin-bottom: 10px;
                     strong{
-                        @include f-16-700-24;
+                        @include f-16-24-700;
                     }
                     .popup-close-btn {
                         font-size: 30px;
@@ -804,18 +779,16 @@
                     }
                 }
                 h5{
-                    @include f-16-400-24;
+                    @include f-16-24-400;
                     margin: 10px 0;
                 }
-                /* 선 추가 */
                 .event-divider {
                     display: block;
                     height: 1px;
-                    background-color: #ccc;
+                    background-color: #000;
                     margin-top: 10px;
                 }
                 &.show{
-                    background-color: #fff;
                     opacity: 1;
                     pointer-events: auto; /* 팝업이 활성화되면 클릭 가능 */
                 }
