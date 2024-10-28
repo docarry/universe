@@ -1,7 +1,216 @@
-
 <?php include_once("../layout/header-b.html"); ?>
 
-<main id="join">
+<main id="sub-join" class="sub-page">
+    <section class="sub-top-banner join-banner">
+        <div class="banner-text container-1280">
+            <h2 class="title" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">JOIN</h2>
+            <p class="sub-title" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" data-aos-delay="300">지금 UNIVERSE에 가입하고 특별한 여정을 시작하세요!</p>
+            <p class="detail" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" data-aos-delay="1000">
+            <!-- <span class="dN-768"> -->
+                지금 가입하고 유니버스 소식을 가장 먼저 만나보세요!<br>
+                우리와 함께하는 모든 순간, 당신의 열정과 사랑이 더욱 빛나는 특별한 시간이 기다립니다.
+            <!-- </span> -->
+            </p>
+        </div>
+    </section>
+
+    <section class="sub-wrap join-wrap container-1280">
+        <article class="sub-content join-content">
+            <div class="sub-page-title" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" data-aos-delay="1000">회원가입</div>
+            <form id="join-form" class="mx-auto d-flex flex-column">
+
+                <!-- 이름 -->
+                <div class="input-wrap input-text">
+                    <div class="name-required d-flex justify-content-between">
+                        <label for="join-name" class="required label-style">이름</label>
+                        <p class="required-text required">필수 입력사항입니다</p>
+                    </div>
+                    <input class="input-style" type="text" id="join-name" placeholder="이름" required>
+                </div>
+
+                <!-- 일반전화 -->
+                <div class="input-wrap input-select">
+                    <label for="join-number-1" class="label-style">일반전화</label>
+                    <div class="number-wrap d-flex">
+                        <select name="number" id="join-number-1" class="input-short-style input-style">
+                            <option disabled selected>지역번호</option>
+                            <option value="010">010</option>
+                            <option value="011">011</option>
+                            <option value="016">016</option>
+                            <option value="017">017</option>
+                            <option value="018">018</option>
+                            <option value="019">019</option>
+                        </select>
+                        <input class="input-short-style input-style" type="text">
+                        <input class="input-short-style input-style" type="text">
+                    </div>
+                </div>
+
+                <!-- 휴대전화 -->
+                <div class="input-wrap input-select">
+                    <label for="join-number-2" class="join-number label-style required">휴대전화</label>
+                    <div class="input-btn-wrap d-flex flex-column">
+                        <div class="number-wrap d-flex">
+                            <select name="number" id="join-number-2" class="input-short-style input-style">
+                                <option disabled selected>휴대번호</option>
+                                <option value="010">010</option>
+                                <option value="011">011</option>
+                                <option value="016">016</option>
+                                <option value="017">017</option>
+                                <option value="018">018</option>
+                                <option value="019">019</option>
+                            </select>
+                            <input class="input-short-style input-style" type="text" required>
+                            <input class="input-short-style input-style" type="text" required>
+                        </div>
+                        <button class="join-btn">인증번호 발송</button>
+                    </div>
+                </div>
+
+                <!-- 휴대전화 인증번호 -->
+                <div class="input-wrap input-text">
+                    <label for="join-number-check" class="required label-style">인증번호</label>
+                    <div class="input-btn-wrap d-flex flex-column">
+                        <input class="input-style" id="join-number-check" type="text" placeholder="인증번호 (숫자6자리)" maxlength="6" required>
+                        <button class="join-btn">인증번호 확인</button>
+                    </div>
+                </div>
+
+                <!-- 생년월일 -->
+                <div class="input-wrap input-select">
+                    <label class="join-number label-style required">생년월일</label>
+                    <div class="number-wrap d-flex">
+                        <select class="input-short-style input-style" name="yy" id="join-year" required>
+                            <option disabled selected>년</option>
+                        </select>
+                        <select class="input-short-style input-style" name="mm" id="join-month" required>
+                            <option disabled selected>월</option>
+                        </select>
+                        <select class="input-short-style input-style" name="dd" id="join-day" required>
+                            <option disabled selected>일</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- 이메일 -->
+                <div class="input-wrap input-select">
+                    <label class="join-email label-style required">이메일</label>
+                    <div class="input-btn-wrap d-flex flex-column">
+                        <div class="email-wrap d-flex">
+                            <input class="input-email-style input-style" type="text" placeholder="이메일" required>
+                            <img src="/img/icon/at-sign.svg" alt="이메일 특수문자">
+                            <select name="email" id="join-email" class="input-email-style input-style">
+                                <option disabled selected>이메일 선택</option>
+                                <option value="naver">naver.com</option>
+                                <option value="daum">daum.net</option>
+                                <option value="google">google.com</option>
+                                <option value="user-input">직접입력</option>
+                            </select>
+                            <input id="custom-email" class="input-email-style input-style" type="text" placeholder="직접입력" required>
+                        </div>
+                        <button class="join-btn">인증코드 발송</button>
+                    </div>
+                </div>
+
+                <!-- 이메일 인증코드 -->
+                <div class="input-wrap input-text">
+                    <label for="join-email-check" class="required label-style">인증코드</label>
+                    <div class="input-btn-wrap d-flex flex-column">
+                        <input class="input-style" id="join-email-check" type="text" placeholder="인증코드 (영문, 숫자 8자리)" maxlength="8" required>
+                        <button class="join-btn">인증코드 확인</button>
+                    </div>
+                </div>
+
+                <!-- 비밀번호 -->
+                <div class="input-wrap input-text">
+                    <label for="join-pw" class="required label-style">비밀번호</label>
+                    <div class="input-btn-wrap d-flex password-container">
+                        <input type="password" class="input-style password-input" id="join-pw" placeholder="영문, 특수문자, 숫자 포함 8-12자" minlength="8" maxlength="12" required>
+                        <img src="/img/icon/view.svg" alt="Toggle Password" class="toggle-password">
+                    </div>
+                </div>
+
+                <!-- 비밀번호 재입력 -->
+                <div class="input-wrap input-text">
+                    <label for="join-pw-check" class="required label-style">비밀번호 재입력</label>
+                    <div class="input-btn-wrap d-flex password-container">
+                        <input type="password" class="input-style password-input" id="join-pw-check" placeholder="영문, 특수문자, 숫자 포함 8-12자" minlength="8" maxlength="12" required>
+                        <img src="/img/icon/view.svg" alt="Toggle Password" class="toggle-password">
+                    </div>
+                </div>
+
+                <!-- 동의 -->
+                <div class="input-wrap">
+                    <div class="input-btn-wrap d-flex flex-column">
+                        <div class="agreement d-flex flex-column">
+                            <div class="d-flex join-all-check">
+                                <input type="checkbox" name="all-agree" id="all-agree" class="all-check">
+                                <label for="all-agree">전체 동의하기</label>
+                            </div>
+                            <div class="join-check-wrap d-flex flex-column">
+                                <div class="d-flex join-check">
+                                    <input type="checkbox" name="agree-1" id="agree-1" class="check">
+                                    <label for="agree-1" class="required">14세 이상입니다.</label>
+                                </div>
+                                <div class="d-flex join-check">
+                                    <input type="checkbox" name="agree-2" id="agree-2" class="check">
+                                    <div class="agree-wrap d-flex">
+                                        <label for="agree-2" class="required">전자금융거래 이용약관 동의</label>
+                                        <span><img src="/img/icon/btn-arrow-gray.svg" alt="회색 화살표"></span>
+                                    </div>
+                                    
+                                </div>
+                                <div class="d-flex join-check">
+                                    <input type="checkbox" name="agree-3" id="agree-3" class="check">
+                                    <div class="agree-wrap d-flex">
+                                        <label for="agree-3" class="required">개인정보 수집 및 이용 동의</label>
+                                        <span><img src="/img/icon/btn-arrow-gray.svg" alt="회색 화살표"></span>
+                                    </div>
+                                </div>
+                                <div class="d-flex join-check">
+                                    <input type="checkbox" name="agree-4" id="agree-4" class="check">
+                                    <div class="agree-wrap d-flex">
+                                        <label for="agree-4" class="required">개인정보 제3자 제공 동의</label>
+                                        <span><img src="/img/icon/btn-arrow-gray.svg" alt="회색 화살표"></span>
+                                    </div>
+                                </div>
+                                <div class="d-flex join-check">
+                                    <input type="checkbox" name="agree-5" id="agree-5" class="check">
+                                    <div class="agree-wrap d-flex">
+                                        <label for="agree-5">광고성 정보 수집 및 이용 동의</label>
+                                        <span><img src="/img/icon/btn-arrow-gray.svg" alt="회색 화살표"></span>
+                                    </div>
+                                    
+                                </div>
+                                <div class="sms-check d-flex flex-column">
+                                    <div class="d-flex join-check">
+                                        <input type="checkbox" name="agree-6" id="agree-6" class="check">
+                                        <div class="agree-wrap d-flex">
+                                            <label for="agree-6">이메일 수신 동의</label>
+                                            <span><img src="/img/icon/btn-arrow-gray.svg" alt="회색 화살표"></span>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="d-flex join-check">
+                                        <input type="checkbox" name="agree-6" id="agree-6" class="check">
+                                        <div class="agree-wrap d-flex">
+                                            <label for="agree-6">SMS 수신 동의</label>
+                                            <span><img src="/img/icon/btn-arrow-gray.svg" alt="회색 화살표"></span>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+                        <button class="join-btn">회원가입 완료</button>
+                    </div>
+                    
+                </div>
+
+                
+            </form>
+        </article>
+    </section>
 </main>
 
 <?php include_once("../layout/footer.html"); ?>

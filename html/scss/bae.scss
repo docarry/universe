@@ -5,46 +5,9 @@
 .dB-480{
     display: none;
 }
-.container-1280{
-    width: 1280px;
-    margin: 0 auto;
-}
+
 .sub-page{
     padding-bottom: 80px;
-    .sub-top-banner{
-        width: 100%;
-        max-width: 1920px;
-        height: 430px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        &::before { 
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(106, 106, 106, 0.4);
-            z-index: 1;
-        }
-        .banner-text{
-            color: #fff; 
-            position: relative;
-            z-index: 2;
-            .title{
-                @include f-50-72-700;
-                padding-bottom: 10px;
-            } 
-            .sub-title{
-                @include f-24-36-400; // 추후 500로 수정예정
-                padding-bottom: 40px; 
-            }
-            .detail{
-                @include f-16-24-400;
-            }
-        }
-    }
     .sub-wrap{
         .sub-content{
             .sub-page-title{
@@ -78,10 +41,7 @@
 /*공통클래스*/
 
 #sub-artist{
-    background-color: #fff;
-    .artist-banner{
-        background: url('/img/subArtist/artist-banner.jpg') no-repeat center / cover;
-    }
+    @include subPage (#fff, 'subArtist/artist-banner');
     .artist-wrap{
         .artist-content{
             .sub-page-title{
@@ -501,9 +461,7 @@
 }
 
 #sub-schedule{
-    .schedule-banner{
-        background: url('/img/subSchedule/schedule-banner.jpg') no-repeat center / cover;
-    }
+    @include subPage (#000, 'subSchedule/schedule-banner');
     .schedule-wrap{
         .schedule-content{
             .sub-page-title{
@@ -791,6 +749,133 @@
                 &.show{
                     opacity: 1;
                     pointer-events: auto; /* 팝업이 활성화되면 클릭 가능 */
+                }
+            }
+        }
+    }
+}
+
+#sub-join{
+    @include subPage (#fff, 'subJoin/bg');
+    .join-wrap{
+        margin-top: 80px;
+        .join-content{
+            #join-form{
+                max-width: 500px;
+                gap: 20px;
+                .required{
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                    &::after{
+                        background: url('/img/icon/star.svg');
+                        content: '';
+                        width: 8px;
+                        height: 8px;
+                    }
+                }
+                .label-style{
+                    @include f-20-30-500;
+                }
+                .input-wrap{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    .input-style{
+                        width: 100%;
+                        height: 52px;
+                        padding: 0px 20px;
+                        color: #000;
+                        border: solid 1px #767676;
+                        border-radius: 10px;
+                        box-sizing: border-box;
+                        &::placeholder{
+                            color: #a4a4a4;
+                            @include f-16-24-400;
+                        }
+                    }
+                    .input-short-style{
+                        max-width: 160px;
+                    }
+                    .input-email-style{
+                        max-width: 237px;
+                    }
+                    .name-required{
+                        .required-text{
+                            flex-direction: row-reverse;
+                            @include f-14-20-400;
+                        }
+                    }
+                    .number-wrap{
+                        gap: 10px;
+                    }
+                    .email-wrap{
+                        gap: 4px;
+                        #custom-email{
+                            display: none;
+                        }
+                    }
+                    .password-container{
+                        position: relative;
+                        img{
+                            position: absolute;
+                            top: 50%;
+                            right: 10px;
+                            transform: translateY(-50%);
+                            cursor: pointer;
+                            width: 24px;
+                            height: 24px;
+                            z-index: 10;
+                        }
+                    }
+                    .input-btn-wrap{
+                        gap: 10px;
+
+                    }
+                    .join-btn{
+                        cursor: pointer;
+                        color: #a4a4a4;
+                        border-radius: 10px;
+                        background-color: #ededed;
+                        line-height: 60px;
+                        text-align: center;
+                    }
+                }
+                .agreement{
+                    width: 100%;
+                    padding: 20px;
+                    gap: 20px;
+                    border-radius: 10px;
+                    box-sizing: border-box;
+                    border: solid 1px #767676;
+                    .join-all-check{
+                        gap: 8px;
+                        label{
+                            @include f-20-30-500;
+                        }
+                    }
+                    .join-check{
+                        gap: 8px;
+                        label{
+                            @include f-20-30-400;
+                        }
+                        .agree-wrap{
+                            width: 100%;
+                            align-items: center;
+                            justify-content: space-between;
+                            span{
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                    .join-check-wrap{
+                        gap: 20px;
+                        padding-left: 30px;
+                        .sms-check{
+                            gap: 20px;
+                            padding-left: 30px;
+                        }
+                    }
                 }
             }
         }
