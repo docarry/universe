@@ -15,428 +15,370 @@
 // 회사소개
 
 #sub-info{
-    .info-page{
-		.banner {
-			width: 100%;
-            height: 430px;
-			max-width: 1920px;
-			background: url("../img/info/info-banner-img1.jpg") no-repeat center/cover;
-			position: relative;
-			display: flex;
-			align-items: center;
-            overflow: hidden; // 침범하는 영역 숨기기
-            .banner-bg {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: inherit; // 부모의 배경 속성을 상속
-                transform: scale(1.3); // 초기 크기
-                animation: scaleImage 3s ease forwards; // 애니메이션 적용
-                z-index: 0; // 배경 이미지가 가장 뒤에 위치
-            }
-        
-            &.visible .banner-bg {
-                animation: scaleImage 3s ease forwards; // 클래스가 추가될 때 애니메이션 재시작
-            }
-			&::after {
-				content: "";
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				background: rgba(106,106,106,.7);
-				z-index: 1;
-			}
-			.banner-container {
-				width: 100%;
-				max-width: 1280px;
-				margin: 0 auto;
-				.banner-text {
-					color: #fff;
-					position: relative;
-					z-index: 2;
-					.main-title {
-						@include f-50-72-700;
-						margin-bottom: 10px;
-					}
-					.sub-title {
-						@include f-24-36-400;
-						padding-bottom: 2.5rem;
-					}
-					.sub-content {
-						@include f-16-24-700;
-                        font-weight: 400;
-					}
-				}
-			}
-		}
-        .info-container{
-            width: 100%;
-            max-width: 1280px;
-            margin: 0 auto;
-            .all-color{
-                margin: 100px 0;
-                ul{
-                    color: #fff;
-                    .main-color{
-                        h3{
-                            @include f-32-700-46;
-                            margin-bottom: 20px;
-                            // animation: blink 2s infinite ease-in; 
-                        }
-                        .color-chart-bg{
-                            max-width: 1280px;
-                            width: 100%;
+    @include subPage (#000, info/info-banner-img1);
+    .info-container{
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        .all-color{
+            margin: 100px 0;
+            ul{
+                color: #fff;
+                .main-color{
+                    h3{
+                        @include f-32-700-46;
+                        margin-bottom: 20px;
+                        // animation: blink 2s infinite ease-in; 
+                    }
+                    .color-chart-bg{
+                        max-width: 1280px;
+                        width: 100%;
+                        height: 100%;
+                        background-color: #ddd;
+                        padding: 16px 18px;
+                        .color-chart{
+                            @include f-16-700-24;
                             height: 100%;
-                            background-color: #ddd;
-                            padding: 16px 18px;
-                            .color-chart{
-                                @include f-16-700-24;
-                                height: 100%;
-                                display: flex;
-                                text-align: center;
-                                .color1{
-                                    width: 330.847px;
-                                    background-color: #fff;
-                                    color: #000;
-                                    span{
-                                        line-height: 84px;
-                                    }
+                            display: flex;
+                            text-align: center;
+                            .color1{
+                                width: 330.847px;
+                                background-color: #fff;
+                                color: #000;
+                                span{
+                                    line-height: 84px;
                                 }
-                                .color2{
-                                    width: 501.153px;
-                                    background: linear-gradient(270deg, #000 50%, #FFF 100%);
-                                    color: #fff;
-                                    span{
-                                        line-height: 84px;
-                                    }
+                            }
+                            .color2{
+                                width: 501.153px;
+                                background: linear-gradient(270deg, #000 50%, #FFF 100%);
+                                color: #fff;
+                                span{
+                                    line-height: 84px;
                                 }
-                                .color3{
-                                    width: 410.034px;
-                                    background: linear-gradient(270deg, #F4F4F4 50%, #000 100%);
-                                    color: #000;
-                                    span{
-                                        line-height: 84px;
-                                    }
+                            }
+                            .color3{
+                                width: 410.034px;
+                                background: linear-gradient(270deg, #F4F4F4 50%, #000 100%);
+                                color: #000;
+                                span{
+                                    line-height: 84px;
                                 }
                             }
                         }
                     }
-                    .point-color{
-                        margin-top: 40px;
-                        h3{
-                            @include f-32-700-46;
-                            margin-bottom: 20px; 
-                        }
-                        .color-chart-bg{
-                            max-width: 1280px;
-                            width: 100%;
-                            height: 100%;
-                            background-color: #ddd;
-                            padding: 16px 18px;
-                            .color-chart{
-                                display: flex;
-                                text-align: center;
-                                @include f-16-700-24;
-                                .color1{
-                                    width: 569.492px;
-                                    background: linear-gradient(270deg, #FFD24E 50%, rgba(255, 255, 255, 0.10) 100%);
-                                    color: #000;
-                                    span{
-                                        line-height: 84px;
-                                    }
+                }
+                .point-color{
+                    margin-top: 40px;
+                    h3{
+                        @include f-32-700-46;
+                        margin-bottom: 20px; 
+                    }
+                    .color-chart-bg{
+                        max-width: 1280px;
+                        width: 100%;
+                        height: 100%;
+                        background-color: #ddd;
+                        padding: 16px 18px;
+                        .color-chart{
+                            display: flex;
+                            text-align: center;
+                            @include f-16-700-24;
+                            .color1{
+                                width: 569.492px;
+                                background: linear-gradient(270deg, #FFD24E 50%, rgba(255, 255, 255, 0.10) 100%);
+                                color: #000;
+                                span{
+                                    line-height: 84px;
                                 }
-                                .color2{
-                                    width: 672.542px;
-                                    background: linear-gradient(270deg, #900404 0%, #FFD24E 100%);
-                                    color: #fff;
-                                    span{
-                                        line-height: 84px;
-                                    }
+                            }
+                            .color2{
+                                width: 672.542px;
+                                background: linear-gradient(270deg, #900404 0%, #FFD24E 100%);
+                                color: #fff;
+                                span{
+                                    line-height: 84px;
                                 }
                             }
                         }
                     }
                 }
             }
-            .info-CI {
-				border-top: 1px solid #fff;
-                border-bottom: 1px solid #fff;
-				h3 {
-					@include f-32-700-46;
-					color: #fff;
-					margin: 100px 0 40px 0;
-				}
-				.logo-grid {
-					color: #fff;
-					width: 100%;
-					height: 822px;
-					background: url("../img/info/info-logo-grid.png") no-repeat center / cover;
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
-					.main-logo-content {
-						@include f-24-700-36;
-						display: flex;
-						flex-direction: column;
-						align-items: center;
-						img {
-							display: block;
-							width: 64%;
-						}
-						h4 {
-							margin-top: 20px;
-						}
-					}
-					.sub-logo-content {
-						display: flex;
-						justify-content: center;
-						ul {
-							margin-top: 120px;
-							width: 64%;
-							display: flex;
-							justify-content: space-between;
-                            align-items: start;
-							text-align: center;
-                            li{
-                                height: 250px;
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: space-between;
-                            }
-							.symbol-logo {
-								width: 20%;
-								img {
-									display: block;
-									width: 100%;
-								}
-							}
-							.vertical-logo {
-								width: 30%;
-								img {
-									display: block;
-                                    width: 100%;
-								}
-							}
-						}
-					}
-				}
-			}
         }
-        .info-detail{
-            width: 100%;
-            position: relative;
-            background: url("../img/info/info-intro-img.jpg") no-repeat center / cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin-top: 100px;
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: linear-gradient(270deg, #656565 0%, #5E5E5E 38.13%, #5E5E5E 60.13%, #7A7A7A 100%);
-                mix-blend-mode: multiply; /* 믹스 블렌드 모드 적용 */
-                pointer-events: none; /* 클릭 이벤트 방지 */
+        .info-CI {
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+            h3 {
+                @include f-32-700-46;
+                color: #fff;
+                margin: 100px 0 40px 0;
             }
-            .info-story-container, .info-story-container02{
-                max-width: 1280px;
+            .logo-grid {
+                color: #fff;
                 width: 100%;
-                padding: 6.25rem 0;
-                margin: 0 auto;
+                height: 822px;
+                background: url("../img/info/info-logo-grid.png") no-repeat center / cover;
                 display: flex;
                 flex-direction: column;
-                gap: 30px;
-                .info-brandstory{
-                    position: relative;
-                    color: #fff;
-                    z-index: 1;
-                    .brandstory-title{
+                justify-content: center;
+                .main-logo-content {
+                    @include f-24-700-36;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    img {
                         display: block;
-                        font-size: 1.625rem;
-                        margin-bottom: 20px;
-                        font-weight: 700;
+                        width: 64%;
                     }
-                    .brandstory-de{
-                        display: block;
-                        font-size: 2.5rem;
-                        font-weight: 700;
-                        line-height: 50px;
-                        margin-bottom: 8px;
-                    }
-                    .brandstory-sub-de{
-                        display: block;
-                        font-weight: 700;
-                        font-size: 1.5rem;
-                        line-height: 40px;
+                    h4 {
+                        margin-top: 20px;
                     }
                 }
-                .detail-text {
-                    @include f-24-400-36;
-                    position: relative;
-                    color: #fff;
-                    z-index: 1;
-                    font-weight: 700;
-                    .detail-text01, .detail-text02{
-                        display: inline-block;
-                        font-size: 1rem;
-                        line-height: 26px;
-                        font-weight: 400;
+                .sub-logo-content {
+                    display: flex;
+                    justify-content: center;
+                    ul {
+                        margin-top: 120px;
+                        width: 64%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: start;
+                        text-align: center;
+                        li{
+                            height: 250px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                        }
+                        .symbol-logo {
+                            width: 20%;
+                            img {
+                                display: block;
+                                width: 100%;
+                            }
+                        }
+                        .vertical-logo {
+                            width: 30%;
+                            img {
+                                display: block;
+                                width: 100%;
+                            }
+                        }
                     }
                 }
-            }
-            .info-story-container02{
-                display: none;
             }
         }
-        .info-container{
-            width: 100%;
+    }
+    .info-detail{
+        width: 100%;
+        position: relative;
+        background: url("../img/info/info-intro-img.jpg") no-repeat center / cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 100px;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(270deg, #656565 0%, #5E5E5E 38.13%, #5E5E5E 60.13%, #7A7A7A 100%);
+            mix-blend-mode: multiply; /* 믹스 블렌드 모드 적용 */
+            pointer-events: none; /* 클릭 이벤트 방지 */
+        }
+        .info-story-container, .info-story-container02{
             max-width: 1280px;
+            width: 100%;
+            padding: 6.25rem 0;
             margin: 0 auto;
-            .info-location{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            .info-brandstory{
+                position: relative;
+                color: #fff;
+                z-index: 1;
+                .brandstory-title{
+                    display: block;
+                    font-size: 1.625rem;
+                    margin-bottom: 20px;
+                    font-weight: 700;
+                }
+                .brandstory-de{
+                    display: block;
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    line-height: 50px;
+                    margin-bottom: 8px;
+                }
+                .brandstory-sub-de{
+                    display: block;
+                    font-weight: 700;
+                    font-size: 1.5rem;
+                    line-height: 40px;
+                }
+            }
+            .detail-text {
+                @include f-24-400-36;
+                position: relative;
+                color: #fff;
+                z-index: 1;
+                font-weight: 700;
+                .detail-text01, .detail-text02{
+                    display: inline-block;
+                    font-size: 1rem;
+                    line-height: 26px;
+                    font-weight: 400;
+                }
+            }
+        }
+        .info-story-container02{
+            display: none;
+        }
+    }
+    .info-container{
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        .info-location{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 100px;
+            flex-wrap: wrap;
+            .loc-box{
+                width: calc(50% - 30px);
+                position: relative;
+                background: url("../img/info/info-loc-img.jpg") no-repeat center / cover;
                 display: flex;
-                justify-content: space-between;
-                margin-top: 100px;
-                flex-wrap: wrap;
-                .loc-box{
-                    width: calc(50% - 30px);
-                    position: relative;
-                    background: url("../img/info/info-loc-img.jpg") no-repeat center / cover;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    &::before{
-                        content: '';
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                        background: rgba(0, 0, 0, 0.50);
-                        mix-blend-mode: multiply; /* 믹스 블렌드 모드 적용 */
-                        pointer-events: none; /* 클릭 이벤트 방지 */
-                        z-index: 1;
-                    }
-                    .loc-text-box{
-                        width: 100%;
-                        color: #fff;
-                        text-align: center;
-                        position: relative;
-                        z-index: 2;
-                        h4{
-                            @include f-50-700-72;
-                        }
-                        .loc-ko{
-                            @include f-16-700-24;
-                            margin: 40px 0 10px
-                        }
-                        .loc-eg{
-                            @include f-16-700-24;
-                        }
-                    }
+                flex-direction: column;
+                justify-content: center;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(0, 0, 0, 0.50);
+                    mix-blend-mode: multiply; /* 믹스 블렌드 모드 적용 */
+                    pointer-events: none; /* 클릭 이벤트 방지 */
+                    z-index: 1;
                 }
-                #map-box{
-                    width: calc(50% - 30px);
-                    height: 560px;
-                    background-color: #fff;
-                }
-                .info-contact{
-                    color: #fff;
+                .loc-text-box{
                     width: 100%;
+                    color: #fff;
                     text-align: center;
-                    padding: 100px 0;
-                    border-top: 1px solid #FFF;
-                    border-bottom: 1px solid #FFF;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    margin: 100px 0;
-                    h3{
-                        @include f-24-700-36;
+                    position: relative;
+                    z-index: 2;
+                    h4{
+                        @include f-50-700-72;
                     }
-                    .info-email{
+                    .loc-ko{
                         @include f-16-700-24;
-                        margin: 10px 0;
+                        margin: 40px 0 10px
                     }
-                    .info-number{
+                    .loc-eg{
                         @include f-16-700-24;
                     }
                 }
             }
-            .info-location02{
-                display: none;
-                justify-content: space-between;
-                margin-top: 100px;
-                flex-wrap: wrap;
-                .loc-box{
-                    width: calc(50% - 30px);
-                    position: relative;
-                    background: url("../img/info/info-loc-img.jpg") no-repeat center / cover;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    &::before{
-                        content: '';
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                        background: rgba(0, 0, 0, 0.50);
-                        mix-blend-mode: multiply; /* 믹스 블렌드 모드 적용 */
-                        pointer-events: none; /* 클릭 이벤트 방지 */
-                        z-index: 1;
-                    }
-                    .loc-text-box{
-                        width: 100%;
-                        color: #fff;
-                        text-align: center;
-                        position: relative;
-                        z-index: 2;
-                        h4{
-                            @include f-50-700-72;
-                        }
-                        .loc-ko{
-                            @include f-16-700-24;
-                            margin: 40px 0 10px
-                        }
-                        .loc-eg{
-                            @include f-16-700-24;
-                        }
-                    }
+            #map-box{
+                width: calc(50% - 30px);
+                height: 560px;
+                background-color: #fff;
+            }
+            .info-contact{
+                color: #fff;
+                width: 100%;
+                text-align: center;
+                padding: 100px 0;
+                border-top: 1px solid #FFF;
+                border-bottom: 1px solid #FFF;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin: 100px 0;
+                h3{
+                    @include f-24-700-36;
                 }
-                #map-box{
-                    width: calc(50% - 30px);
-                    height: 560px;
-                    background-color: #fff;
+                .info-email{
+                    @include f-16-700-24;
+                    margin: 10px 0;
                 }
-                .info-contact{
-                    color: #fff;
+                .info-number{
+                    @include f-16-700-24;
+                }
+            }
+        }
+        .info-location02{
+            display: none;
+            justify-content: space-between;
+            margin-top: 100px;
+            flex-wrap: wrap;
+            .loc-box{
+                width: calc(50% - 30px);
+                position: relative;
+                background: url("../img/info/info-loc-img.jpg") no-repeat center / cover;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(0, 0, 0, 0.50);
+                    mix-blend-mode: multiply; /* 믹스 블렌드 모드 적용 */
+                    pointer-events: none; /* 클릭 이벤트 방지 */
+                    z-index: 1;
+                }
+                .loc-text-box{
                     width: 100%;
+                    color: #fff;
                     text-align: center;
-                    padding: 100px 0;
-                    border-top: 1px solid #FFF;
-                    border-bottom: 1px solid #FFF;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    margin: 100px 0;
-                    h3{
-                        @include f-24-700-36;
+                    position: relative;
+                    z-index: 2;
+                    h4{
+                        @include f-50-700-72;
                     }
-                    .info-email{
+                    .loc-ko{
                         @include f-16-700-24;
-                        margin: 10px 0;
+                        margin: 40px 0 10px
                     }
-                    .info-number{
+                    .loc-eg{
                         @include f-16-700-24;
                     }
+                }
+            }
+            #map-box{
+                width: calc(50% - 30px);
+                height: 560px;
+                background-color: #fff;
+            }
+            .info-contact{
+                color: #fff;
+                width: 100%;
+                text-align: center;
+                padding: 100px 0;
+                border-top: 1px solid #FFF;
+                border-bottom: 1px solid #FFF;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin: 100px 0;
+                h3{
+                    @include f-24-700-36;
+                }
+                .info-email{
+                    @include f-16-700-24;
+                    margin: 10px 0;
+                }
+                .info-number{
+                    @include f-16-700-24;
                 }
             }
         }
@@ -454,222 +396,374 @@
 
 
 #sub-order{
-    background-color: #fff;
-    .order-page{
-		.banner {
-			width: 100%;
-            height: 430px;
-			max-width: 1920px;
-			background: url("../img/order/order-banner.jpg") no-repeat center/cover;
-			position: relative;
-			display: flex;
-			align-items: center;
-            overflow: hidden; // 침범하는 영역 숨기기
-            .banner-bg {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: inherit; // 부모의 배경 속성을 상속
-                transform: scale(1.3); // 초기 크기
-                animation: scaleImage 3s ease forwards; // 애니메이션 적용
-                z-index: 0; // 배경 이미지가 가장 뒤에 위치
-            }
-            &.visible .banner-bg {
-                animation: scaleImage 3s ease forwards; // 클래스가 추가될 때 애니메이션 재시작
-            }
-			&::after {
-				content: "";
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				background: rgba(255, 255, 255, 0.10);
-				z-index: 1;
-			}
-			.banner-container {
-				width: 100%;
-				max-width: 1280px;
-				margin: 0 auto;
-				.banner-text {
-					color: #fff;
-					position: relative;
-					z-index: 2;
-					.main-title {
-						@include f-50-72-700;
-						margin-bottom: 10px;
-					}
-					.sub-title {
-						@include f-24-36-400;
-						padding-bottom: 2.5rem;
-					}
-					.sub-content {
-						@include f-16-24-700;
-                        font-weight: 400;
-					}
-				}
-			}
-		}
-        .product-type{
-            .order-container{
-                max-width: 1280px;
-                width: 100%;
-                margin: 0 auto;
-                padding: 100px 0;
-                .type-title{
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    padding-bottom: 60px;
-                    .title-left{
-                        @include f-24-700-36;
-                    }
-                    .title-right{
-                        display: inline-block;
-                        display: flex;
-                        align-items: center;
-                        gap: 8px;
-                        img{
-                            display: inline-block;
-                        }
-                        span{
-                            display: inline-block;
-                            @include f-16-400-24;
-                        }
-                    }
+    @include subPage (#fff, order/order-banner);
+    .banner {
+        width: 100%;
+        height: 430px;
+        max-width: 1920px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden; // 침범하는 영역 숨기기
+        .banner-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit; // 부모의 배경 속성을 상속
+            transform: scale(1.3); // 초기 크기
+            animation: scaleImage 3s ease forwards; // 애니메이션 적용
+            z-index: 0; // 배경 이미지가 가장 뒤에 위치
+        }
+        &.visible .banner-bg {
+            animation: scaleImage 3s ease forwards; // 클래스가 추가될 때 애니메이션 재시작
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.10);
+            z-index: 1;
+        }
+        .banner-container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            .banner-text {
+                color: #fff;
+                position: relative;
+                z-index: 2;
+                .main-title {
+                    @include f-50-700-72;
+                    margin-bottom: 10px;
                 }
-                .order-info-content{
-                    .second-order{
-                        padding: 60px 0;
-                    }
-                        .order-info{
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-                            padding: 20px 0;
-                            .order-info-left{
-                                display: flex;
-                                flex-direction: column;
-                                gap: 10px;
-                                @include f-20-30-400;
-                                .order-info-top{
-                                    color: #000;
-                                    .order-date{
-                                        margin-right: .5rem;
-                                    }
-                                }
-                                .order-info-bottom{
-                                    color: #A4A4A4;
-                                    .order-num-name{
-                                        margin-right: .5rem;
-                                    }
-                                }
-                            }
-                            img{
-                                display: block;
-                                width: 18px;
-                                height: 18px;
-                            }
-                        }
-                        .order-product-info{
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-                            padding: 30px 0;
-                            border-top: 1px solid var(--line-gray, #EDEDED);
-                            border-bottom: 1px solid var(--line-gray, #EDEDED);
-                            .product-info-left{
-                                display: flex;
-                                align-items: center;
-                                gap: 20px;
-                                width: 84%;
-                                img{
-                                    display: block;
-                                    width: 80px;
-                                    height: 80px;
-                                }
-                                .product-detail{
-                                    display: flex;
-                                    flex-direction: column;
-                                    justify-content: center;
-                                    gap: 8px;
-                                    color: #000;
-                                    .pay-status.pay-finish{
-                                        color: var(--point-yellow-blackBG, #FFD24E);
-                                        @include f-20-30-400;
-                                    }
-                                    .pay-status.pay-cancel{
-                                        color: var(--font-disable-whiteBG, #A4A4A4);
-                                        @include f-20-30-400;
-                                    }
-                                    .product-detail-bottom{
-                                        @include f-20-30-400;
-                                        .product-name{
-                                            display: block;
-                                        }
-                                        .product-option-menu, .product-option{
-                                            color: #A4A4A4;
-                                        }
-                                        .moblie-product-num{
-                                            display: none;
-                                            color: #a4a4a4;
-                                            margin-left: 10px;
-                                            &::before{
-                                                content: "";
-                                                display: inline-block;
-                                                width: 12px;
-                                                height: 10px;
-                                                border-left: solid 1px #a4a4a4;
-                                            }
-                                        }
-                                        .moblie-product-price{
-                                            display: none;
-                                        }
-                                    }
-                                }
-                            }
-                            .product-info-right{
-                                width: 16%;
-                                display: flex;
-                                justify-content: space-between;
-                                .product-num{
-                                    color: #A4A4A4;
-                                    @include f-16-400-24;
-                                }
-                                .product-price{
-                                    @include f-16-700-24;
-                                }
-                            }
-                        }
-                        .order-product-info.border-top-none{
-                            border-top: none;
-                            border-bottom: 1px solid var(--line-gray, #EDEDED);
-                        }
+                .sub-title {
+                    @include f-24-400-36;
+                    padding-bottom: 2.5rem;
                 }
-                .order-notice{
+                .sub-content {
+                    @include  f-16-700-24;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+    .product-type{
+        .order-container{
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 100px 0;
+            .type-title{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-bottom: 60px;
+                .title-left{
+                    @include f-24-700-36;
+                }
+                .title-right{
+                    display: inline-block;
                     display: flex;
-                    gap: 10px;
-                    margin-top: 10px;
                     align-items: center;
+                    gap: 8px;
                     img{
-                        display: block;
-                        width: 24px;
-                        height: 24px;
+                        display: inline-block;
                     }
                     span{
+                        display: inline-block;
                         @include f-16-400-24;
-                        color: #A4A4A4;
                     }
+                }
+            }
+            .order-info-content{
+                .second-order{
+                    padding: 60px 0;
+                }
+                    .order-info{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 20px 0;
+                        .order-info-left{
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+                            @include f-20-30-400;
+                            .order-info-top{
+                                color: #000;
+                                .order-date{
+                                    margin-right: .5rem;
+                                }
+                            }
+                            .order-info-bottom{
+                                color: #A4A4A4;
+                                .order-num-name{
+                                    margin-right: .5rem;
+                                }
+                            }
+                        }
+                        img{
+                            display: block;
+                            width: 18px;
+                            height: 18px;
+                        }
+                    }
+                    .order-product-info{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 30px 0;
+                        border-top: 1px solid var(--line-gray, #EDEDED);
+                        border-bottom: 1px solid var(--line-gray, #EDEDED);
+                        .product-info-left{
+                            display: flex;
+                            align-items: center;
+                            gap: 20px;
+                            width: 84%;
+                            img{
+                                display: block;
+                                width: 80px;
+                                height: 80px;
+                            }
+                            .product-detail{
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                gap: 8px;
+                                color: #000;
+                                .pay-status.pay-finish{
+                                    color: var(--point-yellow-blackBG, #FFD24E);
+                                    @include f-20-30-400;
+                                }
+                                .pay-status.pay-cancel{
+                                    color: var(--font-disable-whiteBG, #A4A4A4);
+                                    @include f-20-30-400;
+                                }
+                                .product-detail-bottom{
+                                    @include f-20-30-400;
+                                    .product-name{
+                                        display: block;
+                                    }
+                                    .product-option-menu, .product-option{
+                                        color: #A4A4A4;
+                                    }
+                                    .moblie-product-num{
+                                        display: none;
+                                        color: #a4a4a4;
+                                        margin-left: 10px;
+                                        &::before{
+                                            content: "";
+                                            display: inline-block;
+                                            width: 12px;
+                                            height: 10px;
+                                            border-left: solid 1px #a4a4a4;
+                                        }
+                                    }
+                                    .moblie-product-price{
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                        .product-info-right{
+                            width: 16%;
+                            display: flex;
+                            justify-content: space-between;
+                            .product-num{
+                                color: #A4A4A4;
+                                @include f-16-400-24;
+                            }
+                            .product-price{
+                                @include f-16-700-24;
+                            }
+                        }
+                    }
+                    .order-product-info.border-top-none{
+                        border-top: none;
+                        border-bottom: 1px solid var(--line-gray, #EDEDED);
+                    }
+            }
+            .order-notice{
+                display: flex;
+                gap: 10px;
+                margin-top: 10px;
+                align-items: center;
+                img{
+                    display: block;
+                    width: 24px;
+                    height: 24px;
+                }
+                span{
+                    @include f-16-400-24;
+                    color: #A4A4A4;
                 }
             }
         }
     }
 }
 
-//장바구니
 
-#cart{
-    background-color: #fff !important;
+// 문의하기
+
+#contact{
+    @include subPage (#fff, subContact/bg);
+    .container-800{
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        .tab-box{
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            > li{
+                border-radius: 20px;
+                border: 1px solid var(--Btn-Disable-Btn-login, #CBCBCB);
+                width: calc(33.333% - 14px);
+                height: 80px;
+                @include f-20-30-400;
+                .tab-btn{
+                    margin: 0 auto;
+                    width: 100%;
+                    height: 100%;
+                    color: #000;
+                }
+                .nav-link{
+                    border-radius: 20px;
+                }
+                .nav-link.active{
+                    background: #333;
+                    color: #fff;
+                }
+            }
+        }
+        .contact-top{
+            .inform-text{
+                @include f-16-24-400;
+                padding: 2.5rem 0 3.75rem;
+                text-align: center;
+            }
+            .line{
+                width: 100%;
+                height: 1px;
+                background-color: #EDEDED;
+            }
+        }
+        .tab-content{
+            .personal-contact-content{
+                width: 100%;
+                max-width: 500px;
+                margin: 0 auto;
+                margin-top: 60px;
+                .contact-first-box{
+                    margin-bottom: 40px;
+                    .content-top-box{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 40px;
+                        .contact-title{
+                            @include f-24-28-700;
+                        }
+                        .more-btn{
+                            border-radius: 20px;
+                            padding: 6px 16px;
+                            @include f-14-20-400;
+                            background-color: #fff;
+                            border: solid 1px #767676;
+                        }
+                    }
+                    .contact-type{
+                        .contact-type-text{
+                            display: flex;
+                            justify-content: space-between;
+                            margin-bottom: 10px;
+                            .type-title{
+                                display: flex;
+                                align-items: center;
+                                gap: 4px;
+                                h4{
+                                    @include f-20-30-500;
+                                }
+                            }
+                            .attention-text{
+                                display: flex;
+                                align-items: center;
+                                gap: 4px;
+                                @include f-14-20-400;
+                            }
+                        }
+                        .nav-tabs{
+                            justify-content: space-between;
+                            width: 100%;
+                            padding: 28px 20px;
+                            border-radius: 10px;
+                            border: solid 1px #767676;
+                            position: relative;
+                            .dropdown{
+                                .dropdown-toggle{
+                                    color: #A4A4A4;
+                                    &::after{
+                                        display: none;
+                                    }
+                                }
+                                #dropdown-menu.dropdown-menu{
+                                    inset: 100% auto auto 0;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+                .contact-second-box{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        margin-bottom: 40px;
+                        .type-title{
+                            display: flex;
+                            align-items: center;
+                            gap: 4px;
+                            h4{
+                                @include f-20-30-500;
+                            }
+                        }
+                        .input-box{
+                            width: 100%;         
+                            height: 250px;         
+                            border: 1px solid #767676; 
+                            border-radius: 10px;    
+                            box-sizing: border-box; 
+                            padding: 20px;
+                            .multiline-input{
+                                line-height: 1.2;
+                                border: none;
+                                width: 100%;
+                                text-indent: 20px;
+                                height: 100%;
+                                background: none;
+                                outline: none;
+                                &::placeholder{
+                                    color: #A4A4A4;      
+                                    line-height: 1;      
+                                }
+                            }
+                        }
+                    .contact-info{
+                        color: #A4A4A4;
+                        @include f-16-24-500;
+                    }
+                }
+                .contact-third-box{
+                    .type-title{
+                        @include f-20-30-500;
+                    }
+                }
+            }
+        }
+    }
 }
