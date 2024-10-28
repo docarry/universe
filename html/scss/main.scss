@@ -40,9 +40,16 @@
                     }
                     .main04{
                         right: 143px;
+                        
                     }
                 }
-            }
+                .swiper-slide.swiper-slide-active{
+                    .main_banner_Ani{
+                        animation: mainText-ani 0.8s .8s forwards;
+                        opacity: 0;
+                    }
+                }
+            } 
             .swiper-pagination{
                 bottom: 100px;
             }
@@ -119,24 +126,24 @@
             #artist-slide{
                 width: 100%;
                 .swiper-wrapper{
-                    height: 100vh;
-                    padding: 60px 0 72px;
+                    height: 50vh;
+                    padding: 8rem 0;
                     .swiper-slide {
                         opacity: 0;
                         &.swiper-slide-active {
-                            transform: scale(1.6) !important;
-                            background-size: 100% !important;
+                            transform: scale(1.2) !important;
+                            background-size: 80% !important;
                             opacity: 1;
                         }
                         &.swiper-slide-prev {
-                            transform: scale(1.8) translate(-5%, 0) !important;
-                            background-size: 100% !important;
-                            opacity: 0.2;
+                            transform: scale(1.4) translate(15%, 0) !important;
+                            background-size: 80% !important;
+                            opacity: .2;
                         }
                         &.swiper-slide-next {
-                            transform: scale(1.8) translate(5%, 0) !important;
-                            background-size: 100% !important;
-                            opacity: 0.2;
+                            transform: scale(1.4) translate(-15%, 0) !important;
+                            background-size: 80% !important;
+                            opacity: .2;
                         }
                     }
                 }
@@ -606,7 +613,6 @@
     }
     
 
-
     // 굿즈
     #goods{
         color: #fff;
@@ -740,7 +746,6 @@
             }
         }
     }
-
 
 
     // 메인 하단 인포
@@ -961,41 +966,20 @@
 
 // 서브 페이지 오디션
 #audition{
-    background-color: #000;
-    height: 100vh;
-    .audition-banner{
-        width: 100%;
-        max-width: 1920px;
-        position: relative;
-        background: url('/img/subAudition/bg.jpg') no-repeat center / cover;
-        height: 430px;
-        &::before { 
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(106, 106, 106, 0.4);
-            z-index: 1;
-        }
-        .banner-text{
-            color: #fff; 
-            flex-direction: column;
-            align-items: flex-start;
-            position: relative;
-            z-index: 2;
-            padding: 6.25rem 0;
-            .title{
-                @include f-50-72-700;
-                padding-bottom: 0.625rem;
-            } 
-            .sub-title{
-                @include f-24-36-700;
-                padding-bottom: 2.5rem; 
+    @include subPage (#000, 'subAudition/bg');
+    .audition-sub-banner{
+        .sub-bannder-list{
+            .sub01{
+                background: url('/img/subAudition/auditionimg01.jpg') no-repeat center / cover;
+                width: 45%;
             }
-            .detail{
-                @include f-16-24-400;
+            .sub02{
+                background-color: #FFD24E;
+                width: 28%;
+            }
+            .sub03{
+                background: url('/img/subAudition/auditionimg02.jpg') no-repeat center / cover;
+                width: 27%;
             }
         }
     }
@@ -1045,92 +1029,6 @@
 }
 
 
-// 서브 페이지 회원가입
-#join{
-    background-color: #000;
-    height: 100vh;
-    .join-banner{
-        width: 100%;
-        max-width: 1920px;
-        position: relative;
-        background: url('/img/subJoin/bg.jpg') no-repeat center 0 / cover;
-        height: 430px;
-        &::before { 
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(106, 106, 106, 0.4);
-            z-index: 1;
-        }
-        .banner-text{
-            color: #fff; 
-            flex-direction: column;
-            align-items: flex-start;
-            position: relative;
-            z-index: 2;
-            padding: 6.25rem 0;
-            text-transform: uppercase;
-            .title{
-                @include f-50-72-700;
-                padding-bottom: 0.625rem;
-            } 
-            .sub-title{
-                @include f-24-36-700;
-                padding-bottom: 2.5rem; 
-            }
-            .detail{
-                @include f-16-24-400;
-            }
-        }
-    }
-}
-
-// 서브 페이지 문의하기
-#contact{
-    background-color: #000;
-    height: 100vh;
-    .contact-banner{
-        width: 100%;
-        max-width: 1920px;
-        position: relative;
-        background: url('/img/subContact/bg.jpg') no-repeat center / cover;
-        height: 430px;
-        &::before { 
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(106, 106, 106, 0.4);
-            z-index: 1;
-        }
-        .banner-text{
-            color: #fff; 
-            flex-direction: column;
-            align-items: flex-start;
-            position: relative;
-            z-index: 2;
-            padding: 6.25rem 0;
-            text-transform: uppercase;
-            .title{
-                @include f-50-72-700;
-                padding-bottom: 0.625rem;
-            } 
-            .sub-title{
-                @include f-24-36-700;
-                padding-bottom: 2.5rem; 
-            }
-            .detail{
-                @include f-16-24-400;
-            }
-        }
-    }
-}
-
 // 서브 페이지 멤버십
 #membership{
     background-color: #000;
@@ -1173,6 +1071,7 @@
         }
     }
 }
+
 
 // 서브 페이지 제품상세
 #product{
@@ -1217,6 +1116,7 @@
     }
 }
 
+
 // 서브 페이지 리뷰
 #review{
     background-color: #000;
@@ -1260,6 +1160,7 @@
     }
 }
 
+
 // 서브 페이지 장바구니
 #cart{
     background-color: #000;
@@ -1300,5 +1201,17 @@
                 @include f-16-24-400;
             }
         }
+    }
+}
+
+
+@keyframes mainText-ani {
+	0% {
+        transform: translateY(100px); 
+        opacity: 0;
+    }
+	100% {
+        transform: translateY(0px); 
+        opacity: 1;
     }
 }

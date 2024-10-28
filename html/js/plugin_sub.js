@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', function () {
         scheduleContainer.innerHTML = '';
 
         if (upcomingEvents.length === 0) {
-            scheduleContainer.innerHTML = '<p>최근 60일내 스케쥴만 나타납니다.</p>';
+            scheduleContainer.innerHTML = '<p>최근 60일내 스케줄만 나타납니다.</p>';
         } else {
             upcomingEvents.forEach(event => {
                 const eventDate = new Date(event.start);
@@ -286,15 +286,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
 
                 const eventHtml = `
-                    <div class="event-item">
+                    <div class="event-item" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
                         <p class="event-time">${formatTime(new Date(event.start))}</p> 
                         <div class="event-detail">
-                            <p class="event-title"><strong>${event.title}</strong></p>
+                            <p class="event-title">${event.title}</p>
                             <p class="event-date">${formattedDate}</p>
                         </div>
                     </div>
                 `;
-
+                function formatDate(date) {
+                    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+                    const day = date.getDate().toString().padStart(2, '0');
+                    const dayOfWeek = ["일", "월", "화", "수", "목", "금", "토"][date.getDay()]; // 요일 이름
+                    
+                    return `${month}월 ${day}일 (${dayOfWeek})`;
+                }
                 scheduleContainer.insertAdjacentHTML('beforeend', eventHtml);
             });
         }
@@ -308,7 +314,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 center: 'title',
                 right: 'prev,next'
             },
-            contentHeight: 820,
+            // contentHeight: 970,
             locale: 'ko',
             initialView: 'dayGridMonth',
             titleFormat: {
@@ -319,9 +325,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 today: '오늘'
             },
             events: events,
-            datesSet: function () {
-                updateUpcomingSchedule(events, tabName);
-            },
             eventDidMount: function(event) {
                 let dayGridDay = event.el.closest('.fc-daygrid-day');
                 let dayNumberElem = dayGridDay.querySelector('.fc-daygrid-day-number');
@@ -360,47 +363,61 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             },
             datesSet: function() {
+                updateUpcomingSchedule(events, tabName);
                 const popup = document.querySelector('.event-popup');
                 popup.classList.remove('show'); // 팝업 숨기기
+                document.querySelectorAll('.fc-daygrid-day-number').forEach(function (dayElem) {
+                    let date = new Date(dayElem.closest('.fc-day').getAttribute('data-date'));
+                    let day = date.getDate().toString().padStart(2, '0');
+                    dayElem.textContent = day;
+                });
             },
             dayCellDidMount: function (info) {
-                const date = info.date;
+                const date = new Date(info.date);
                 const dayNumElem = info.el.querySelector('.fc-daygrid-day-number');
-            
-                // 주말 처리
-                if (date.getDay() === 0 || date.getDay() === 6) {
-                    dayNumElem.style.color = '#f86666'; // 일요일과 토요일 빨간색
-                } else {
-                    dayNumElem.style.color = ''; // 평일 색상 초기화
+
+                if (dayNumElem) {
+                    if (!isNaN(date.getTime())) {
+                        const day = date.getDate().toString().padStart(2, '0');
+                        // 날짜가 비어있을 때만 설정
+                        if (dayNumElem.textContent === "") {
+                                dayNumElem.textContent = day; // '일'을 제외하고 숫자만 설정
+                        }
+                    } else {
+                        console.warn('Invalid date:', dateAttr); 
+                    }
+                    // 주말 처리
+                    if (date.getDay() === 0 || date.getDay() === 6) {
+                        dayNumElem.style.color = '#f86666'; // 일요일과 토요일 빨간색
+                    } else {
+                        dayNumElem.style.color = ''; // 평일 색상 초기화
+                    }
+                    // 오늘 날짜 처리
+                    if (date.toDateString() === new Date().toDateString()) {
+                        const todayLink = info.el.querySelector('.fc-daygrid-day-top a');
+                        if (todayLink) {
+                            todayLink.style.border = 'solid 2px #333';
+                        }
+                    }
                 }
-            
-                // 날짜를 '일' 없이 두 자리로 설정
-                const day = date.getDate(); // '일'을 제외하고 숫자만 가져옴
-                dayNumElem.textContent = day; // 이전 날짜를 덮어쓰기
-            
                 // 이벤트가 있는 경우 팝업 설정
                 const eventsOnDate = events.filter(event => {
                     return new Date(event.start).toDateString() === date.toDateString();
                 });
-            
                 if (eventsOnDate.length > 0) {
                     const closePopup = () => {
                         const popup = document.querySelector('.event-popup');
                         popup.classList.remove('show');
                     };
-
                     info.el.addEventListener('mouseenter', function () {
                         const popup = document.querySelector('.event-popup');
                         popup.innerHTML = ''; // 이전 팝업 내용 초기화
-            
+
                         eventsOnDate.forEach(event => {
                             const eventDate = new Date(event.start);
                             const formattedDate = formatDate(eventDate);
-                            
-            
                             // 요일을 계산
                             const dayOfWeek = eventDate.getDay();
-            
                             // 팝업 내용 설정
                             const popupContent = `
                                 <div class="popup-header">
@@ -411,18 +428,17 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <h5>${event.title}</h5>
                             `;
                             popup.innerHTML += popupContent;
-            
                             // 팝업 위치 계산 및 표시
                             const popupWidth = popup.offsetWidth;
                             const popupHeight = popup.offsetHeight;
                             const rect = info.el.getBoundingClientRect();
-            
+
                             const fcDayCenterX = rect.left + rect.width / 2;
-                            const fcDayCenterY = rect.top + rect.height / 2;
-            
+                            // const fcDayCenterY = rect.top + rect.height / 2;
+
                             let popupLeft, popupTop;
                             const offset = -10;
-            
+
                             if (dayOfWeek === 0 || dayOfWeek === 1 || dayOfWeek === 2) {
                                 popupLeft = fcDayCenterX;
                                 popupTop = rect.top - popupHeight / 2 + offset;
@@ -448,11 +464,19 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
                 }
             }
-            
-            
-            
-
         });
+        function setInitialHeight() {
+            let newHeight;
+            if (window.innerWidth <= 480) {
+                newHeight = 450;
+            } else if (window.innerWidth <= 768) {
+                newHeight = 750;
+            } else {
+                newHeight = 970;
+            }
+            calendar.setOption('contentHeight', newHeight);
+        }
+        setInitialHeight(); // 초기 높이 설정;
 
         return calendar;
     }

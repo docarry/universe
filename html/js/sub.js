@@ -15,8 +15,43 @@ $(function() {
             $('.toggle-nav').removeClass('active'); // active 클래스 제거
         }
     });
-    
-// sub-artist -----
+
+    // sub-artist -----
+    // sub-join -----
+    const now = new Date();
+    const year = now.getFullYear();
+    const mon = (now.getMonth() + 1) > 9 ? '' + (now.getMonth() + 1) : '0' + (now.getMonth() + 1);
+    const day = (now.getDate()) > 9 ? '' + (now.getDate()) : '0' + (now.getDate());
+    //년도 selectbox만들기               
+    for (let i = 1900; i <= year; i++) {
+        $('#join-year').append('<option value="' + i + '">' + i + '</option>');
+    }
+
+    // 월별 selectbox 만들기            
+    for (let i = 1; i <= 12; i++) {
+        let mm = i > 9 ? i : "0" + i;
+        $('#join-month').append('<option value="' + mm + '">' + mm + '</option>');
+    }
+
+    // 일별 selectbox 만들기
+    for (let i = 1; i <= 31; i++) {
+        let dd = i > 9 ? i : "0" + i;
+        $('#join-day').append('<option value="' + dd + '">' + dd + '</option>');
+    }
+    $("#year  > option[value=" + year + "]").attr("selected", "true");
+    $("#month  > option[value=" + mon + "]").attr("selected", "true");
+    $("#day  > option[value=" + day + "]").attr("selected", "true");
+
+    $('#join-email').change(function() {
+        if ($(this).val() === 'user-input') {
+            $('#custom-email').show();
+            $('#join-email').hide(); // 기본 이메일 입력 숨기기
+        } else {
+            $('#custom-email').hide();
+            $('#join-email').show(); // 기본 이메일 입력 보여주기
+        }
+    });
+
 
 });
 
@@ -122,7 +157,66 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 // SUB_Goods END --------------------------------------
 
+// PW Icon Click Event START --------------------------------
+    const togglePasswordElements = document.querySelectorAll('.toggle-password');
 
+    togglePasswordElements.forEach(toggleIcon => {
+        // 토글할 비밀번호 입력란을 찾기 위해 부모 요소의 비밀번호 입력란 선택
+        const passwordInput = toggleIcon.closest('.password-container').querySelector('.password-input');
+
+        toggleIcon.addEventListener('click', function() {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.src = '/img/icon/hide.svg';  // 비밀번호 표시 이미지
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.src = '/img/icon/view.svg';   // 비밀번호 숨김 이미지
+            }
+        });
+    });
+// PW Icon Click Event END ---------------------------------
+
+// SUB_Login START --------------------------------
+    // 로그인 상태 유지 기능
+    const keepCheckbox = document.getElementById('keep');
+
+    // 페이지가 로드될 때 체크박스 상태 복원
+    window.onload = function() {
+        const isChecked = localStorage.getItem('keepLoggedIn') === 'true';
+        keepCheckbox.checked = isChecked;
+
+        if (isChecked) {
+            const savedUsername = localStorage.getItem('savedUsername');
+            const savedPassword = localStorage.getItem('savedPassword');
+
+            document.getElementById('login_id').value = savedUsername || '';
+            document.getElementById('login_pw').value = savedPassword || '';
+        }
+    };
+
+    // 로그인 폼 제출 이벤트
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // 기본 제출 이벤트 방지
+
+        // 사용자가 로그인할 때 체크박스 상태에 따라 로컬 스토리지에 저장
+        if (keepCheckbox.checked) {
+            const username = document.getElementById('login_id').value;
+            const password = document.getElementById('login_pw').value;
+
+            localStorage.setItem('keepLoggedIn', 'true');
+            localStorage.setItem('savedUsername', username);
+            localStorage.setItem('savedPassword', password);
+        } else {
+            // 체크박스가 체크되지 않았다면 로컬 스토리지 삭제
+            localStorage.removeItem('keepLoggedIn');
+            localStorage.removeItem('savedUsername');
+            localStorage.removeItem('savedPassword');
+        }
+
+        // 여기서 로그인 로직을 추가하세요 (예: 서버에 로그인 요청)
+        alert('로그인 성공!'); // 예시
+    });
+// SUB_Login END ----------------------------------
 
 // kakao api---------------------------------------
     var mapContainer = document.getElementById('map-box'), // 지도를 표시할 div 
