@@ -1,23 +1,6 @@
 // 믹스인
 @import './_var.scss';
-@mixin subGoodsTopBannerTitle {
-    width: 100%;
-    max-width: 1280px;
-    gap: 2.5rem;
-    color: #fff;
-    .textBox01{
-        gap: 0.625rem;
-        .bannerText01{
-            @include f-50-700-72;
-        }
-        .bannerText02{
-            @include f-24-700-36;
-        }
-    }
-    .textBox02{
-        @include f-16-500-24;
-    }
-}
+
 @mixin goods ($width: 60%) {
     width: $width;
     height: auto;
@@ -29,58 +12,9 @@
 
 // PC 스타일
 #subGoods{
-    background-color: #fff;
-    padding-bottom: 100px;
+    @include subPage (#fff, 'subGoods/subGoodsTopBanner');
     a{
         color: #fff;
-    }
-    // 상단 배너 디자인
-    #subGoodsTopBanner{
-        position: relative;
-        width: 100%;
-        max-width: 1920px;
-        height: 430px;
-        filter: grayscale(100%);
-        background: url(/img/subGoods/subGoodsTopBanner.jpg) no-repeat center/cover;
-        &::before{
-            content: '';
-            display: block;
-            height: 100%;
-            background: rgba(0, 0, 0, .6);
-        }
-        .textBox-PC{
-            position: absolute;
-            left: calc((100% - 1280px) / 2);
-            bottom: calc((100% - 230px) / 2);
-            @include subGoodsTopBannerTitle;
-        }
-        .textBox-MT{
-            position: absolute;
-            left: 0;
-            bottom: calc(50% - 200px);
-            width: 100%;
-            max-width: 767px;
-            text-align: center;
-            gap: 2.5rem;
-            color: #fff;
-            .bannerText01{
-                @include f-36-700-52;
-            }
-            .bannerText02{
-                @include f-24-400-36;
-            }
-        }
-    }
-    .contentTitle{
-        width: 100%;
-        max-width: 1280px;
-        color: #000;
-        h3{
-            @include f-32-700-46;
-        }
-        p{
-            @include f-16-500-24;
-        }
     }
     #bestBox{
         width: 100%;
@@ -368,54 +302,60 @@
     }
 }
 
-
-
-
-// 로그인
-
-#login{
-    background-color: #fff;
-    .login-banner{
-        width: 100%;
-        max-width: 1920px;
-        position: relative;
-        background: url('/img/subLogin/bg.jpg') no-repeat center 0 / cover;
-        height: 430px;
-        &::before { 
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(106, 106, 106, 0.4);
-            z-index: 1;
-        }
-        .banner-text{
-            color: #fff; 
-            flex-direction: column;
-            align-items: flex-start;
-            position: relative;
-            z-index: 2;
-            padding: 6.25rem 0;
-            text-transform: uppercase;
-            .title{
-                @include f-50-72-700;
-                padding-bottom: 0.625rem;
-            } 
-            .sub-title{
-                @include f-24-36-700;
-                padding-bottom: 2.5rem; 
+#sub_login{
+    @include subPage (#fff, 'subLogin/bg');
+    .loginContainer{
+        width: 500px;
+        form{
+            width: 100%;
+            fieldset{
+                > div{
+                    width: 100%;
+                    .input_container{
+                        width: 100%;
+                        height: 80px;
+                        padding: 0 20px;
+                        @include f-16-24-400;
+                        color: #000;
+                        border: solid 1px #767676;
+                        border-radius: 10px;
+                        ::placeholder{
+                            color: #A4A4A4;
+                        }
+                    }
+                
+                    .password-container {
+                        width: 100%;
+                        position: relative;
+                        .toggle-password {
+                            position: absolute;
+                            top: 50%;
+                            right: 20px;
+                            transform: translateY(-50%);
+                            cursor: pointer;
+                            width: 24px;
+                            height: 24px;
+                            z-index: 10; /* z-index 추가 */
+                        }
+                    }
+            
+                    .keep_find_box{
+                        width: 100%;
+                        padding: 0px 20px 0px 16px;
+                        ul{
+                            li:first-child{
+                                &::after{
+                                    content: '';
+                                    width: 1px;
+                                    height: 16px;
+                                    display: inline-block;
+                                    background-color: #A4A4A4;
+                                }
+                            }
+                        }
+                    }
+                }
             }
-            .detail{
-                @include f-16-24-400;
-            }
         }
-    }
-    .inputContainer{
-        width: 100%;
-        max-width: 500px;
-        text-align: center;
-        padding: 80px 0;
     }
 }
