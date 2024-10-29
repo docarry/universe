@@ -7,7 +7,7 @@ var mainSwiper = new Swiper("#main-banner.mySwiper", {
     slidesPerView: 1,
     spaceBetween: 30,
     effect: "fade",
-    speed:800,
+    speed: 800,
     loop: true,
     autoplay: {
         delay: 3000,
@@ -25,7 +25,6 @@ var mainSwiper = new Swiper("#main-banner.mySwiper", {
         enabled: true,
     },
 });
-
 
 
 // 아티스트 슬라이드
