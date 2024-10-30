@@ -49,24 +49,166 @@
 
         <!-- 탭 컨텐츠 -->
         <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active faq-content" id="pills-faq" role="tabpanel" aria-labelledby="pills-faq-tab" tabindex="0">faq입니다.</div>
 
+            <!-- 자주묻는질문 -->
+            <div class="tab-pane fade show active faq-content" id="pills-faq" role="tabpanel" aria-labelledby="pills-faq-tab" tabindex="0">
+                <h3 class="faq-title">FAQ</h3>
+                <!-- 자주묻는질문 -->
+                <div class="faq-first-box">
+                    <h4 class="faq-first-title">자주묻는질문</h4>
+                    <dl>
+                        <dt><span>1. 배송기간은 어떻게 되나요?</span><span class="bottom-toggle"></span></dt>
+                        <dd>
+                            <ul>
+                                <li class="style-none"><strong>유니버스 직접 배송</strong></li>
+                                <li>주문 시 제조업체에 요청하여 입고가 시작됩니다.</li>
+                                <li>평균 상품 준비 기간은 3~7일(주말/공휴일 제외) 정도 소요됩니다.</li>
+                            </ul>
+
+                            <ul>
+                                <li class="style-none"><strong>마켓 직접 배송</strong></li>
+                                <li>마켓에서 직접 출고하며, 마켓 정보 페이지를 통해 평균 상품 준비 기간 등을
+                                    <br>확인하실 수  있습니다.</li> 
+                            </ul>
+                        </dd>
+
+                        <dt><span>2. 취소(반품)했는데 사용한 쿠폰/포인트 복원되나요?</span><span class="bottom-toggle"></span></dt>
+                        <dd>
+                            <ul>
+                                <li>취소 및 반품 시 사용한 쿠폰, 포인트는 유니버스 정책에 따라 복원됩니다.</li>
+                                <li>전체 취소 및 반품: 취소, 반품 완료 시 쿠폰 유효 기간까지 사용할 수 있는 쿠폰으로 복원</li>
+                                <li>유효 기간 만료 시 취소 및 반품 완료일 기준 48시간 이내 사용 가능한 쿠폰으로 복원</li>
+                                <li>부분 취소 및 반품: 쿠폰 유효 기간과 관계없이 취소 및 반품 완료일 기준</li>
+                                48시간 이내 사용할 수 있는 쿠폰으로 복원
+                                <br>단순 변심의 사유로 취소 및 반품을 했을 경우, 쿠폰은 복원되지 않을 수 있습니다.
+                                <br>(품절/배송 지연 등의 사유로 쿠폰이 복원되지 않았다면 앱 문의하기를 남겨 주시기를 바랍니다.
+                            </ul>
+                            <ul>
+                                <li class="style-none"><strong>포인트 복원 기준</strong></li>
+                                <li>전체 취소 및 반품: 취소, 반품 완료 시 자동 복원</li>
+                                <li>부분 취소 및 반품: 취소, 반품 완료 시 적용되었던 포인트만큼 자동 복원</li>
+                                취소/반품이 완료되면 유효 기간이 많이 남은 포인트부터 복원됩니다. 
+                                <br>(다만, 포인트의 유효 기간이 지났다면 복원되지 않을 수 있습니다.)
+                            </ul>
+                        </dd>
+        
+                        <dt><span>3. 취소(반품)했는데 언제 환불 되나요?</span><span class="bottom-toggle"></span></dt>
+                        <dd>
+                            <p>결제 수단에 따라서 환불 일정은 다를 수 있습니다. 상세 내용은 아래와 같습니다.</p>
+                            <ul>
+                                <li class="style-none"><strong>유니버스 포인트 결제</strong></li>
+                                <li>취소/반품 완료일로부터 영업일 기준 1~2일 이내 유니버스에 등록된 결제 계좌로 입금</li>
+                                <li>유니버스포인트 계좌 확인 경로: [앱 > 마이페이지 > 포인트 내역</li>
+                                <li>취소/반품 완료일로부터 2~5 영업일 이내 간편 결제 취소</li>
+                            </ul>
+                            <ul>
+                                <li class="style-none"><strong>포인트 복원 기준</strong></li>
+                                <li>전체 취소 및 반품: 취소, 반품 완료 시 자동 복원
+                                <li>부분 취소 및 반품: 취소, 반품 완료 시 적용되었던 포인트만큼 자동 복원
+                                <br>취소/반품이 완료되면 유효 기간이 많이 남은 포인트부터 복원됩니다. 
+                                <br>(다만, 포인트의 유효 기간이 지났다면 복원되지 않을 수 있습니다.)
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <!-- 주문/결제 -->
+                <div class="faq-second-box">
+                    <h4 class="faq-second-title">주문 / 결제</h4>
+                    <dl>
+                        <dt><span>1. 현금 결제는 어떻게 하나요?</span><span class="bottom-toggle"></span></dt>
+                        <dd>
+                            <p>주문 마지막 단계에서 현금 결제 선택 후 결제하실 수 있습니다. 상세 내용은 아래와 같습니다.</p>
+                            <ul>
+                                <li class="style-none"><strong>무통장 입금</strong></li>
+                                <li>
+                                    입금 기한 : 가상 계좌 발급 후 24시간 이내
+                                    <br>입금자명이 상이하더라도 입금 금액이 일치하면 정상 처리 됩니다.
+                                    <br>( 단, 주문 금액과 입금 금액이 일치하지 않으면 입금 불가 )
+                                    <br>발급 받은 가상 계좌로 정상 입금 시, 최대 5분 내로 입금 확인되며 적립금의 1% 추가 적립 됩니다.
+                                </li>
+                            </ul>
+                        </dd>
+
+                        <dt><span>2. 입금자 명을 바꾸고 싶어요.</span><span class="bottom-toggle"></span></dt>
+                        <dd>
+                            무통장 입금 결제의 경우, 입금자명이 다르더라도 금액만 일치하다면 정상적으로 확인 가능합니다.
+                        </dd>
+        
+                        <dt><span>3. 현금영수증 발급은 어떻게 받나요?</span><span class="bottom-toggle"></span></dt>
+                        <dd>
+                            <ul>
+                                <li class="style-none"><strong>무통장 입금</strong></li>
+                                <li>
+                                    입금 은행 선택 후 현금영수증 발행 여부를 통해 신청 가능
+                                    <br>당사는 현금 영수증 자진 발급 가맹점입니다
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <!-- 배송문의 -->
+                <div class="faq-third-box">
+                    <h4 class="faq-third-title">배송문의</h4>
+                    <dl>
+                        <dt><span>1. 배송기간은 어떻게 되나요?</span><span class="bottom-toggle"></span></dt>
+                        <dd>
+                            <ul>
+                                <li class="style-none"><strong>유니버스 직접 배송</strong></li>
+                                <li>주문 시 제조업체에 요청하여 입고가 시작됩니다.</li>
+                                <li>평균 상품 준비 기간은 3~7일(주말/공휴일 제외) 정도 소요됩니다.</li>
+                            </ul>
+
+                            <ul>
+                                <li class="style-none"><strong>마켓 직접 배송</strong></li>
+                                <li>마켓에서 직접 출고하며, 마켓 정보 페이지를 통해 평균 상품 준비 기간 등을 확인하실 수  있습니다.</li>
+                            </ul>
+                        </dd>
+
+                        <dt><span>2. 배송지를 변경하고 싶어요.</span><span class="bottom-toggle"></span></dt>
+                        <dd>
+                            <ul>
+                                <li>배송지 변경은 " 배송 상태" 에 따라 다릅니다.</li>
+                                <li class="style-none"><strong>주문 접수 / 결제 완료</strong></li>
+                                <li>상품 준비 전 단계로, 앱을 통해 직접 변경 가능합니다.</li>
+                                <li>2개 이상의 주문인 경우, 전체 상품이 "결제 완료" 상태일 때 변경 가능합니다.</li>
+                            </ul>
+                            <ul>
+                                <li class="style-none"><strong>상품 준비 중</strong></li>
+                                <li>상품 배송을 위한 포장/검수 등을 진행하고 있기에 사이트를 통한 배송지 변경은 어렵습니다.</li>
+                                <li>마켓 직접 배송 상품의 경우, 주문한 각 마켓의 고객센터로 문의 부탁드립니다.</li>
+                                <li>유니버스 직접 배송 상품/ 오늘출발 인 경우, 유니버스 1:1 문의 부탁드립니다.</li>
+                                <li>※ 이미 상품이 출고되었다면, 배송지 변경은 불가합니다.</li>
+                            </ul>
+                        </dd>
+        
+                        <dt><span>3. 해외 배송도 가능한가요?</span><span class="bottom-toggle"></span></dt>
+                        <dd>
+                            <p>현재 유니버스는 해외 배송을 진행하고 있지 않습니다.
+                            <br>보다 더 좋은 서비스가 이뤄질 수 있도록 노력하겠습니다.</p>
+                        </dd>
+                    </dl>
+                </div>
+
+            </div>
+            <!-- 배송문의 -->
             <div class="tab-pane fade d-contact-content" id="pills-d-contact" role="tabpanel" aria-labelledby="pills-d-contact-tab" tabindex="0">배송문의입니다.</div>
-
+            <!-- 상품문의 -->
             <div class="tab-pane fade p-contact-content" id="pills-p-contact" role="tabpanel" aria-labelledby="pills-p-contact-tab" tabindex="0">상품문의입니다.</div>
-
+            <!-- 교환문의 -->
             <div class="tab-pane fade c-contact-content" id="pills-c-contact" role="tabpanel" aria-labelledby="pills-c-contact-tab" tabindex="0">교환문의입니다.</div>
-
+            <!-- 반품문의 -->
             <div class="tab-pane fade r-contact-content" id="pills-r-contact" role="tabpanel" aria-labelledby="pills-r-contact-tab" tabindex="0">반품문의입니다.</div>
-            
+            <!-- 1:1문의 -->
             <div class="tab-pane fade personal-contact-content" id="pills-personal-contact" role="tabpanel" aria-labelledby="pills-personal-contact-tab" tabindex="0">
-                <form action="">
+                <form action="" id="as">
                     <!-- 문의내역 보러가기 및 문의 유형 선택 -->
                     <div class="contact-first-box">
+
                         <div class="content-top-box">
                             <h3 class="contact-title">문의하기</h3>
                             <button class="more-btn">문의내역 보러가기</button>
                         </div>
+
                         <div class="contact-type">
                             <div class="contact-type-text">
                                 <span class="type-title">
@@ -75,46 +217,94 @@
                                 </span>
                                 <span class="attention-text">
                                     <img src="/img/contact/contact-importantIcon-img.svg" alt="필수 표시 아이콘입니다.">
-                                    <span>필수 입력사항입니다.</span>
+                                    <span class="essential-form">필수 입력사항입니다.</span>
                                 </span>
                             </div>
-        
-                            <!-- 드롭다운 탭 -->
-                            <ul class="nav nav-tabs">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">1:1 문의하기</a>
-                                    <ul id="dropdown-menu" class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                        <li><hr class="dropdown-divider"></li>
-                                    </ul>
-                                </li>
-                                <img src="/img/contact/arrival-icon.svg" alt="화살표 이미지입니다.">
-                            </ul>
+
+                            <div class="selectBox">
+                                <div class="custom-select">
+                                    <div class="selected">1:1 문의하기</div>
+                                    <div class="options">
+                                        <div class="option" data-value="delivery-contact">배송문의</div>
+                                        <div class="option" data-value="product-contact">상품문의</div>
+                                        <div class="option" data-value="change-contact">교환문의</div>
+                                        <div class="option" data-value="return-contact">반품문의</div>
+                                    </div>
+                                </div>
+                                <span class="icoArrow"><img src="/img/contact/arrival-icon.svg" alt="화살표 이미지입니다."></span>
+                            </div>
+                            
         
                         </div>
                     </div>
+
                     <!-- 문의내용 -->
                     <div class="contact-second-box">
+
                         <span class="type-title">
                             <h4>문의내용</h4>
                             <img src="/img/contact/contact-importantIcon-img.svg" alt="필수 표시 아이콘입니다.">
                         </span>
+
                         <div class="input-box">
-                            <textarea class="multiline-input" placeholder="문의내용을 적어주세요."></textarea>
+                            <textarea class="multiline-input" placeholder="문의내용을 적어주세요." required></textarea>
                         </div>
+
                         <span class="contact-info">문의 관련 스크린샷을 첨부하면 빠른 확인이 가능합니다.</span>
+
                     </div>
+
                     <!-- 파일첨부 -->
                     <div class="contact-third-box">
                         <h4 class="type-title">파일첨부</h4>
-                        <input type="file" id="file-upload" name="file-upload" multiple>
+                        <label for="file-upload" class="custom-button">+ 파일 업로드</label>
+                        <input type="file" id="file-upload" name="file-upload" class="file-upload" multiple>
                     </div>
+
+                    <!-- 제출버튼 -->
+                    <input type="submit" value="제출" class="submit-btn" disabled>
                 </form>
             </div>
         </div>
-
     </section>
 </main>
 
+
+<script>
+    // submit 데이터 전송
+    document.querySelector('#as').addEventListener('submit', function(){
+        alert('전송되었습니다.');
+    });
+
+    // dl dt
+    document.addEventListener('DOMContentLoaded', function() {
+        const dtElements = document.querySelectorAll('dt'); // 모든 dt 요소 선택
+    
+        dtElements.forEach(function(dt) {
+            dt.addEventListener('click', function() {
+                const dd = this.nextElementSibling; // 클릭한 dt 다음의 dd 요소 선택
+                
+                // dd가 이미 보이는 경우 숨기고, 그렇지 않으면 보여줌
+                if (dd.style.display === 'block') {
+                    dd.style.display = 'none'; // 숨기기
+                } else {
+                    // 모든 dd 숨기기
+                    document.querySelectorAll('dd').forEach(function(ddElem) {
+                        ddElem.style.display = 'none';
+                    });
+                    dd.style.display = 'block'; // 보여주기
+                }
+            });
+        });
+    
+        // dd 요소 클릭 시 숨기기
+        const ddElements = document.querySelectorAll('dd');
+        ddElements.forEach(function(dd) {
+            dd.addEventListener('click', function() {
+                this.style.display = 'none'; // 클릭한 dd 숨기기
+            });
+        });
+    });
+    
+    </script>
 <?php include_once("../layout/footer.html"); ?>

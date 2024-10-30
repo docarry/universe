@@ -615,6 +615,7 @@
     .container-800{
         width: 100%;
         max-width: 800px;
+        padding: 80px;
         margin: 0 auto;
         .tab-box{
             justify-content: space-between;
@@ -654,6 +655,81 @@
             }
         }
         .tab-content{
+            .faq-content{
+                .faq-title{
+                    @include f-30-44-700;
+                    text-align: center;
+                    margin-top: 60px;
+                }
+                .faq-first-box, .faq-second-box, .faq-third-box{
+                    margin-top: 60px;
+                    .faq-first-title, .faq-second-title, .faq-third-title{
+                        @include f-24-36-700;
+                    }
+                    dl{
+                        dt{
+                            background-color: #fff;
+                            padding: 40px 0;
+                            border-bottom: solid 1px #ddd;
+                            position: relative;
+                            cursor: pointer;
+                            font-weight: 400;
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+                            .bottom-toggle{
+                                content: "";
+                                display: block;
+                                width: 10px;
+                                height: 10px;
+                                border-right: solid 2px #A4A4A4;
+                                border-bottom: solid 2px #A4A4A4;
+                                transform: rotate(var(--arrow-rotation, 45deg));
+                                transition: all 0.3s ease;
+                                align-items: center;
+                            }
+                            .faq-menu{
+                                display: inline-block;
+                                width: 140px;
+                                text-align: center;
+                                color: #5f5f5f;
+                                font-weight: 700;
+                            }
+                            .content{
+                                display: inline-block;
+                                width: calc(100% - 260px);
+                                overflow: hidden; /* 넘치는 내용 숨김 */
+                                white-space: nowrap; /* 한 줄로 표시 */
+                                text-overflow: ellipsis; /* 말줄임(...) 표시 */
+                            }
+                        }
+                        dd{
+                            display: none;
+                            margin-bottom: 0;
+                            border-bottom: solid 1px #ddd;
+                            cursor: pointer;
+                            padding: 40px 0;
+                            transition: all 0.3s ease-in-out;
+                            ul{
+                                margin-bottom: 20px;
+                                li{
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 6px;
+                                }
+                                li:not(.style-none)::before {
+                                    content: ""; // 기본 불릿 또는 원하는 내용
+                                    display: inline-block;
+                                    width: 4px;
+                                    height: 4px;
+                                    border-radius: 50px;
+                                    background-color: #000;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             .personal-contact-content{
                 width: 100%;
                 max-width: 500px;
@@ -697,23 +773,55 @@
                                 @include f-14-20-400;
                             }
                         }
-                        .nav-tabs{
-                            justify-content: space-between;
-                            width: 100%;
-                            padding: 28px 20px;
-                            border-radius: 10px;
-                            border: solid 1px #767676;
+                        
+                        .selectBox {
                             position: relative;
-                            .dropdown{
-                                .dropdown-toggle{
-                                    color: #A4A4A4;
-                                    &::after{
-                                        display: none;
+                            width: 100%;
+                            @include f-16-24-400;
+                            color: #a4a4a4;
+                        
+                            .custom-select {
+                                border: 1px solid var(--Btn-Disable-Btn-blackBG, #767676);
+                                cursor: pointer;
+                                padding: 10px;
+                                background: #fff;
+                                border-radius: 10px;
+                                padding: 28px 20px;
+                                .options {
+                                    @include f-16-24-500;
+                                    display: none; // 기본적으로 숨김
+                                    position: absolute;
+                                    width: 100%;
+                                    z-index: 1;
+                                    top: 100%;
+                                    left: 0;
+                                    border-radius: 10px;
+                                    border: 1px solid #848484;
+                                    background: #FFF;
+                                    padding: 10px;
+                                    .option {
+                                        padding: 14px 10px;
+                                        padding: 10px;
+                                        border-radius: 6px;
+                                        &:hover {
+                                            background: var(--Btn-Disable-Btn-whiteBG, #EDEDED);
+                                            color: #000;
+                                        }
                                     }
                                 }
-                                #dropdown-menu.dropdown-menu{
-                                    inset: 100% auto auto 0;
-                                    width: 100%;
+                            }
+                            .icoArrow{
+                                position: absolute; 
+                                top: calc(50% - 9px);
+                                right: 20px; 
+                                z-index: 1;
+                                height: inherit;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                cursor: pointer;
+                                img{
+                                    display: block;
                                 }
                             }
                         }
@@ -743,10 +851,10 @@
                                 line-height: 1.2;
                                 border: none;
                                 width: 100%;
-                                text-indent: 20px;
                                 height: 100%;
                                 background: none;
                                 outline: none;
+                                @include f-16-24-400;
                                 &::placeholder{
                                     color: #A4A4A4;      
                                     line-height: 1;      
@@ -759,8 +867,257 @@
                     }
                 }
                 .contact-third-box{
+                    margin-bottom: 40px;
                     .type-title{
                         @include f-20-30-500;
+                        margin-bottom: 10px;
+                    }
+                    .file-upload {
+                        display: none; /* 기본 파일 입력 숨김 */
+                        @include f-16-24-500;
+                    }
+                    .custom-button {
+                        background-color: #fff;
+                        color: #A4A4A4;
+                        width: 100%;
+                        height: 80px;
+                        border: solid 1px #767676;
+                        text-align: center;
+                        border-radius: 10px;
+                        line-height: 80px;
+                        cursor: pointer;
+                    }
+                }
+                .submit-btn{
+                    width: 100%;
+                    height: 80px;
+                    border-radius: 10px;
+                    background: #EDEDED;
+                    color: #A4A4A4;
+                    border: none;
+                    @include f-16-24-500;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+// 서브 페이지 멤버쉽
+
+#membership{
+    width: 100%;
+    @include subPage (#fff, subMembership/bg);
+    .my-membership{
+        background: var(--Btn-Disable-Btn-whiteBG, #EDEDED);
+        text-align: center;
+        .membership-container{
+            width: 100%;
+            max-width: 410px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding: 80px 0;
+            .text1{
+                @include f-28-42-700;
+                .user-name{
+                    @include f-28-42-700;
+                }
+            }
+            .my-membership-img{
+                width: 200px;
+                height: 200px;
+                border-radius: 125px;
+                background: #A4A4A4;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .text2{
+                @include f-42-52-700;
+            }
+            .text3{
+                @include f-16-24-500;
+                border-radius: 10px;
+                background: var(--Btn-defalt, #333);
+                color: #fff;
+                padding: 18px 0;
+            }
+            .text4{
+                @include f-28-42-700;
+                .strong{
+                    @include f-28-42-700;
+                }
+                .grade-color{
+                    color: #FFD24E;
+                    @include f-28-42-700;
+                }
+            }
+        }
+    }
+    .benefit{
+        max-width: 800px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        padding: 100px 0;
+        .benefit-title{
+            text-align: center;
+            .benefit-text1{
+                @include f-24-36-700;
+                margin-bottom: 10px;
+            }
+            .benefit-text2{
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                justify-content: center;
+                @include f-20-30-400;
+            }
+        }
+
+        .benefit-gragh{
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 25px;
+            text-align: center;
+            > li{
+                cursor: pointer;
+                > div{
+                    width: 140px;
+                    border-radius: 20px;
+                    img{
+                        display: block;
+                        padding-top: 40px;
+                        margin: 0 auto;
+                    }
+                }
+                p{
+                    @include f-20-30-700;
+                    margin-top: 10px;
+                }
+            }
+            .vvip-gragh-box{
+                .vvip-gragh{
+                    height: 440px;
+                    border: 1px solid #000;
+                    background: url('../img/icon/uni-symbol-img.svg') no-repeat center 20px / 40px;
+                }
+                .vvip-gragh.active{
+                    background: #000 url('../img/icon/click-mem-logo.svg') no-repeat center 20px / 40px;
+                }
+                p{
+                    color: #000;
+                }
+            }
+            .vip-gragh-box{
+                .vip-gragh{
+                    height: 388px;
+                    border: 1px solid #C8B20A;
+                    background: url('../img/icon/mem-v.svg') no-repeat center 20px / 40px;
+                }
+                .vip-gragh.active{
+                    background: #C8B20A url('../img/icon/click-mem-v.svg') no-repeat center 20px / 40px;
+                }
+                p{
+                    color: #C8B20A;
+                }
+            }
+            .r-gragh-box{
+                .r-gragh{
+                    height: 346px;
+                    border: 1px solid #900404;
+                    background: url('../img/icon/mem-r.svg') no-repeat center 20px / 40px;
+                }
+                .r-gragh.active{
+                    background: #900404 url('../img/icon/click-mem-r.svg') no-repeat center 20px / 40px;
+                }
+                p{
+                    color: #900404;
+                }
+            }
+            .y-gragh-box{
+                .y-gragh{
+                    height: 304px;
+                    border: 1px solid var(--point-yellow-blackBG, #FFD24E);
+                    background: url('../img/icon/mem-y.svg') no-repeat center 20px / 40px;
+                }
+                .y-gragh.active{
+                    background: #FFD24E url('../img/icon/click-mem-y.svg') no-repeat center 20px / 40px;
+                }
+                p{
+                    color: #FFD24E;
+                }
+            }
+            .w-gragh-box{
+                .w-gragh{
+                    height: 246px;
+                    border: 1px solid var(--font-disable-blackBG, #767676);
+                    background: url('../img/icon/mem-w.svg') no-repeat center 20px / 40px;
+                }
+                .w-gragh.active{
+                    background: #767676 url('../img/icon/click-mem-w.svg') no-repeat center 20px / 40px;
+                }
+                p{
+                    color: #767676;
+                }
+            }
+        }
+
+        .benefit-box{
+            display: flex;
+            justify-content: center;
+            gap: 140px;
+            width: 100%;
+            border-radius: 20px;
+            border: 1px solid var(--font-gray_01, #767676);
+            padding: 2.5rem;
+            text-align: center;
+            .benefit-text{
+                // width: 200px;
+                strong{
+                    @include f-24-36-700;
+                    margin-bottom: 40px;
+                    display: block;
+                }
+                .benefit-inner-text{
+                    @include f-24-36-400;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+            }
+        }
+        #benefit-box4, #benefit-box5{
+            gap: 80px;
+        }
+    }
+    .membership-info{
+        background-color: #ededed;
+        padding: 80px 0;
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+            text-align: center;
+            .inner-info{
+                .inner-info-title{
+                    @include f-24-36-700;
+                    margin-bottom: 20px;
+                }
+                .inner-info-content{
+                    @include f-16-24-400;
+                    color: #767676;
+                    p{
+                        margin-bottom: 10px;
+                        &:last-child{
+                            margin-bottom: 0;
+                        }
                     }
                 }
             }

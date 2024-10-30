@@ -4,21 +4,21 @@
 
 // 회사소개
 @media (max-width: 1440px) {
-    #sub-info .info-page .banner .banner-container .banner-text{
+    #sub-info.info-page .banner .banner-container .banner-text{
         width: 90%;
         margin: 0 auto;
     }
-    #sub-info .info-page .info-container .info-CI .logo-grid .sub-logo-content ul li {
+    #sub-info.info-page .info-container .info-CI .logo-grid .sub-logo-content ul li {
         height: 230px;
     }
-    #sub-info .info-page .info-detail .info-story-container{
+    #sub-info.info-page .info-detail .info-story-container{
         width: 90%;
         margin: 0 auto;
     }
 }
 
 @media (max-width: 1440px) {
-    #sub-info .info-page{
+    #sub-info.info-page{
         .info-container.info-top-container{
             padding: 0 1rem;
         }
@@ -26,8 +26,8 @@
 }
 
 @media (max-width: 1280px) {
-    #sub-info .info-page{
-        .banner .banner-container .banner-text{
+    #sub-info.info-page{
+        .banner .banner-text{
             .main-title {
                 font-size: 2.625rem;
                 margin-bottom: 0;
@@ -68,7 +68,7 @@
 }
 
 @media (max-width: 1280px) {
-    #sub-info .info-page{
+    #sub-info.info-page{
         .banner .banner-container .banner-text .sub-content {
             .info-b-disN{
                 display: block;
@@ -89,20 +89,20 @@
 }
 
 @media (max-width: 1180px) {
-    #sub-info .info-page .info-container .info-CI .logo-grid .sub-logo-content ul li {
+    #sub-info.info-page .info-container .info-CI .logo-grid .sub-logo-content ul li {
         height: 220px;
     }
 }
 
 @media (max-width: 1024px) {
-    #sub-info .info-page .info-container .info-CI .logo-grid .sub-logo-content ul li {
+    #sub-info.info-page .info-container .info-CI .logo-grid .sub-logo-content ul li {
         height: 190px;
     }
 }
 
 
 @media (max-width: 990px) {
-    #sub-info .info-page{
+    #sub-info.info-page{
         .banner .banner-container .banner-text .sub-content {
             .info-b-disN2{
                 display: block;
@@ -191,28 +191,28 @@
 }
 
 @media (max-width: 950px) {
-    #sub-info .info-page .info-container .info-CI .logo-grid .sub-logo-content ul li {
+    #sub-info.info-page .info-container .info-CI .logo-grid .sub-logo-content ul li {
         height: 180px;
     }
 }
 
 @media (max-width: 850px) {
-    #sub-info .info-page .info-container .info-CI .logo-grid {
+    #sub-info.info-page .info-container .info-CI .logo-grid {
         height: 580px;
     }
-    #sub-info .info-page .info-container .info-CI .logo-grid .sub-logo-content ul li {
+    #sub-info.info-page .info-container .info-CI .logo-grid .sub-logo-content ul li {
         height: 170px;
     }
 }
 
 @media (min-width: 769px) {
-    #sub-info .info-page .info-container .info-CI {
+    #sub-info.info-page .info-container .info-CI {
         border-bottom: none;
     }
 }
 
 @media (max-width: 768px) {
-    #sub-info .info-page{
+    #sub-info.info-page{
         .banner {
             height: 370px;
             .banner-container{
@@ -369,16 +369,16 @@
 }
 
 @media (max-width: 650px) {
-    #sub-info .info-page .info-container .info-CI .logo-grid {
+    #sub-info.info-page .info-container .info-CI .logo-grid {
         height: 465px;
     }
-    #sub-info .info-page .info-container .info-CI .logo-grid .sub-logo-content ul li {
+    #sub-info.info-page .info-container .info-CI .logo-grid .sub-logo-content ul li {
         height: 130px;
     }
 }
 
 @media (max-width: 580px) {
-    #sub-info .info-page{
+    #sub-info.info-page{
         .banner{
             height: 250px;
             .banner-container .banner-text{
@@ -452,7 +452,7 @@
 }
 
 @media (max-width: 540px){
-    #sub-info .info-page .info-container .info-CI .logo-grid{
+    #sub-info.info-page .info-container .info-CI .logo-grid{
         .sub-logo-content{
             ul li {
                 height: 110px;
@@ -465,7 +465,7 @@
 }
 
 @media (max-width: 500px){
-    #sub-info .info-page .banner{
+    #sub-info.info-page .banner{
         height: 210px;
         .banner-container .banner-text{
             padding: 6.25rem 0;
@@ -480,7 +480,7 @@
 }
 
 @media (max-width: 480px) {
-    #sub-info .info-page{
+    #sub-info.info-page{
         .info-container{
             .info-location{
                 .loc-box {
@@ -528,13 +528,13 @@
 }
 
 @media (max-width: 420px) {
-    #sub-info .info-page .info-container .info-CI .logo-grid .sub-logo-content ul li {
+    #sub-info.info-page .info-container .info-CI .logo-grid .sub-logo-content ul li {
         height: 85px;
     }
 }
 
 @media (max-width: 400px) {
-    #sub-info .info-page{  
+    #sub-info.info-page{  
         .info-container{
             .info-location{
                 .info-contact {
@@ -597,7 +597,7 @@
 
 
 @media (max-width: 320px) {
-    #sub-info .info-page{
+    #sub-info.info-page{
         .info-container{
             .all-color{
                 margin: 30px 0;
@@ -626,7 +626,7 @@
             }
         } 
     } 
-    #sub-info .info-page{
+    #sub-info.info-page{
         .info-container{
             .info-CI{
                 padding: 30px 0;
@@ -686,20 +686,20 @@
 
 // 주문내역
 @media (max-width: 1440px) {
-    #sub-order .order-page .banner .banner-container .banner-text {
+    #sub-order .banner .banner-container .banner-text {
         width: 90%;
         margin: 0 auto;
     }
 }
 
 @media (max-width: 1320px) {
-    #sub-order .order-page .product-type .order-container {
+    #sub-order .product-type .order-container {
         padding: 100px 1rem;
     }
 }
 
 @media (max-width: 1280px) {
-    #sub-order .order-page{
+    #sub-order{
         .banner .banner-container .banner-text{
             .main-title {
                 font-size: 2.625rem;
@@ -720,7 +720,7 @@
 }
 
 @media (max-width: 990px) {
-    #sub-order .order-page{
+    #sub-order{
         .product-type .order-container .order-info-content{
             .first-order, .second-order, .third-order{
                 .order-product-info{
@@ -737,7 +737,7 @@
 }
 
 @media (max-width: 768px) {
-    #sub-order .order-page{
+    #sub-order{
         .banner{
             height: 370px;
             .banner-container .banner-text{
@@ -772,7 +772,7 @@
 }
 
 @media (max-width: 580px) { 
-    #sub-order .order-page{
+    #sub-order{
         .banner {
             height: 250px;
             .banner-container .banner-text{
@@ -841,7 +841,7 @@
 
 
 @media (max-width: 500px) {
-    #sub-order .order-page{
+    #sub-order{
         .banner .banner-container .banner-text{
             .main-title {
                 font-size: 20px;
@@ -879,7 +879,7 @@
 }
 
 @media (max-width: 480px) {
-    #sub-order .order-page .banner {
+    #sub-order .banner {
         .banner-container{
             padding: 5rem 0;
             .banner-text{
@@ -895,7 +895,7 @@
 
 
 @media (max-width: 400px) {
-    #sub-order .order-page{
+    #sub-order{
         .product-type .order-container{
             .order-info-content{
                 .first-order, .second-order, .third-order{
