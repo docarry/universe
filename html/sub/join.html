@@ -25,7 +25,7 @@
                         <label for="join-name" class="required label-style">이름</label>
                         <p class="required-text required">필수 입력사항입니다</p>
                     </div>
-                    <input class="input-style" type="text" id="join-name" placeholder="이름" required>
+                    <input class="input-style" type="text" id="join-name" placeholder="이름" minlength="2" maxlength="17" required>
                 </div>
 
                 <!-- 일반전화 -->
@@ -34,15 +34,25 @@
                     <div class="number-wrap d-flex">
                         <select name="number" id="join-number-1" class="input-short-style input-style">
                             <option disabled selected>지역번호</option>
-                            <option value="010">010</option>
-                            <option value="011">011</option>
-                            <option value="016">016</option>
-                            <option value="017">017</option>
-                            <option value="018">018</option>
-                            <option value="019">019</option>
+                            <option value="02">02</option>
+                            <option value="031">031</option>
+                            <option value="032">032</option> 
+                            <option value="033">033</option>
+                            <option value="041">041</option>
+                            <option value="042">042</option>
+                            <option value="043">043</option>
+                            <option value="051">051</option>
+                            <option value="052">052</option>
+                            <option value="053">053</option>
+                            <option value="054">054</option>
+                            <option value="055">055</option>
+                            <option value="061">061</option>
+                            <option value="062">062</option>
+                            <option value="063">063</option>
+                            <option value="064">064</option>
                         </select>
-                        <input class="input-short-style input-style" type="text">
-                        <input class="input-short-style input-style" type="text">
+                        <input class="input-short-style input-style" type="text" minlength="3" maxlength="4">
+                        <input class="input-short-style input-style" type="text" minlength="4" maxlength="4">
                     </div>
                 </div>
 
@@ -60,8 +70,8 @@
                                 <option value="018">018</option>
                                 <option value="019">019</option>
                             </select>
-                            <input class="input-short-style input-style" type="text" required>
-                            <input class="input-short-style input-style" type="text" required>
+                            <input class="input-short-style input-style" type="text" minlength="3" maxlength="4" required>
+                            <input class="input-short-style input-style" type="text" minlength="4" maxlength="4" required>
                         </div>
                         <button class="join-btn">인증번호 발송</button>
                     </div>
@@ -145,17 +155,17 @@
                         <div class="agreement d-flex flex-column">
                             <div class="d-flex join-all-check">
                                 <input type="checkbox" name="all-agree" id="all-agree" class="all-check">
-                                <label for="all-agree">전체 동의하기</label>
+                                <label for="all-agree" class="agr-check">전체 동의하기</label>
                             </div>
                             <div class="join-check-wrap d-flex flex-column">
                                 <div class="d-flex join-check">
                                     <input type="checkbox" name="agree-1" id="agree-1" class="check">
-                                    <label for="agree-1" class="required">14세 이상입니다.</label>
+                                    <label for="agree-1" class="required agr-check">14세 이상입니다.</label>
                                 </div>
                                 <div class="d-flex join-check">
                                     <input type="checkbox" name="agree-2" id="agree-2" class="check">
                                     <div class="agree-wrap d-flex">
-                                        <label for="agree-2" class="required">전자금융거래 이용약관 동의</label>
+                                        <label for="agree-2" class="required agr-check">전자금융거래 이용약관 동의</label>
                                         <span><img src="/img/icon/btn-arrow-gray.svg" alt="회색 화살표"></span>
                                     </div>
                                     
@@ -163,21 +173,21 @@
                                 <div class="d-flex join-check">
                                     <input type="checkbox" name="agree-3" id="agree-3" class="check">
                                     <div class="agree-wrap d-flex">
-                                        <label for="agree-3" class="required">개인정보 수집 및 이용 동의</label>
+                                        <label for="agree-3" class="required agr-check">개인정보 수집 및 이용 동의</label>
                                         <span><img src="/img/icon/btn-arrow-gray.svg" alt="회색 화살표"></span>
                                     </div>
                                 </div>
                                 <div class="d-flex join-check">
                                     <input type="checkbox" name="agree-4" id="agree-4" class="check">
                                     <div class="agree-wrap d-flex">
-                                        <label for="agree-4" class="required">개인정보 제3자 제공 동의</label>
+                                        <label for="agree-4" class="required agr-check">개인정보 제3자 제공 동의</label>
                                         <span><img src="/img/icon/btn-arrow-gray.svg" alt="회색 화살표"></span>
                                     </div>
                                 </div>
                                 <div class="d-flex join-check">
                                     <input type="checkbox" name="agree-5" id="agree-5" class="check">
                                     <div class="agree-wrap d-flex">
-                                        <label for="agree-5">광고성 정보 수집 및 이용 동의</label>
+                                        <label for="agree-5" class="agr-check">광고성 정보 수집 및 이용 동의</label>
                                         <span><img src="/img/icon/btn-arrow-gray.svg" alt="회색 화살표"></span>
                                     </div>
                                     
@@ -186,15 +196,15 @@
                                     <div class="d-flex join-check">
                                         <input type="checkbox" name="agree-6" id="agree-6" class="check">
                                         <div class="agree-wrap d-flex">
-                                            <label for="agree-6">이메일 수신 동의</label>
+                                            <label for="agree-6" class="agr-check">이메일 수신 동의</label>
                                             <span><img src="/img/icon/btn-arrow-gray.svg" alt="회색 화살표"></span>
                                         </div>
                                         
                                     </div>
                                     <div class="d-flex join-check">
-                                        <input type="checkbox" name="agree-6" id="agree-6" class="check">
+                                        <input type="checkbox" name="agree-7" id="agree-7" class="check">
                                         <div class="agree-wrap d-flex">
-                                            <label for="agree-6">SMS 수신 동의</label>
+                                            <label for="agree-7" class="agr-check">SMS 수신 동의</label>
                                             <span><img src="/img/icon/btn-arrow-gray.svg" alt="회색 화살표"></span>
                                         </div>
                                         
@@ -202,7 +212,7 @@
                                 </div>
                             </div>    
                         </div>
-                        <button class="join-btn">회원가입 완료</button>
+                        <button class="join-btn" type="submit">회원가입 완료</button>
                     </div>
                     
                 </div>
