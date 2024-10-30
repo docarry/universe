@@ -1,7 +1,7 @@
 <?php include_once("../layout/header-b.html"); ?>
 
 <main id="sub_login" class="d-flex flex-column align-items-center">
-    <section class="sub-top-banner goods-banner">
+    <section class="sub-top-banner">
         <div class="banner-text container-1280">
             <h2 class="title" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">LOGIN</h2>
             <p class="sub-title" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" data-aos-delay="300">UNIVERSE, 당신만의 세계가 펼쳐집니다</p>
@@ -13,24 +13,48 @@
     </section>
     <section class="loginContainer d-flex flex-column align-items-center">
         <form>
-            <fieldset>
-                <legend class="d-none d-md-block">로그인</legend>
-                <div class="d-flex flex-column align-items-center gap-20">
+            <fieldset class="d-flex flex-column gap-40">
+                <legend class="d-block d-md-none m-0">로그인</legend>
+                <div class="firstDiv d-flex flex-column align-items-center gap-20">
                     <input type="text" id="login_id" class="input_container" placeholder="아이디" minlength="6" maxlength="10" required autofocus>
                     <div class="password-container">
-                        <input type="password" class="password-input input_container" id="login_pw" placeholder="비밀번호를 입력하세요" minlength="8" maxlength="12" required>
+                        <input type="password" class="password-input input_container" id="login_pw" placeholder="비밀번호" minlength="8" maxlength="12" required>
                         <img src="/img/icon/view.svg" alt="Toggle Password" class="toggle-password">
                     </div>
                     <div class="keep_find_box d-flex justify-content-between">
                         <div class="keep_check">
-                            <input type="checkbox" id="keep" name="nvlong" class="input_keep"  value="off">
-                            <label for="keep" class="keep_text">로그인 상태 유지</label>
+                            <input type="checkbox" id="keep" name="nvlong" class="input_keep d-none"  value="off">
+                            <label for="keep" class="keep_text d-flex align-items-center">로그인 상태 유지</label>
                         </div>
-                        <ul class="find_wrap d-flex" id="find_wrap">
-                            <li><a target="_blank" href="/sub/find.html" class="find_text">아이디 찾기</a></li>
-                            <li><a target="_blank" href="/sub/find.html" class="find_text">비밀번호 찾기</a></li>
+                        <ul class="find_wrap d-flex align-items-center">
+                            <li class="d-flex align-items-center"><a href="/sub/find.html" class="find_text">아이디 찾기</a></li>
+                            <li><a href="/sub/find.html" class="find_text">비밀번호 찾기</a></li>
                         </ul>
                     </div>
+                </div>
+                <div class="secondDiv d-flex flex-column gap-20">
+                    <button type="submit" class="btn_login btn_container">
+                        <span class="btn_text">로그인</span>
+                    </button>
+                    <p class="d-flex justify-content-center align-items-center gap-10">
+                        <span>아직 UNIVERSE 계정이 없다면?</span>
+                        <span><a href="/sub/join.html">회원가입</a>하기</span>
+                    </p>
+                </div>
+                <div class="thirdDiv d-flex flex-column gap-20">
+                    <p class="d-flex justify-content-between align-items-center">소셜 계정으로 로그인하기</p>
+                    <button class="google-login d-flex justify-content-center align-items-center gap-10">
+                        <img src="/img/icon/google.svg" alt="Icon">
+                        <span>구글 로그인</span>
+                    </button>
+                    <button class="kakao-login d-flex justify-content-center align-items-center gap-10">
+                        <img src="/img/icon/kakao.svg" alt="Icon">
+                        <span>카카오 로그인</span>
+                    </button>
+                    <button class="naver-login d-flex justify-content-center align-items-center gap-10">
+                        <img src="/img/icon/naver.svg" alt="Icon">
+                        <span>네이버 로그인</span>
+                    </button>
                 </div>
             </fieldset>
         </form>

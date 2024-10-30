@@ -1,18 +1,262 @@
 <?php include_once("../layout/header-b.html"); ?>
 
-<main id="review">
-    <section class="review-banner">
+<main id="sub_review">
+    <section class="sub-top-banner">
         <div class="banner-text container-1280">
             <h2 class="title" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">MY REVIEW</h2>
             <p class="sub-title" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" data-aos-delay="300">소중한 경험을 공유하고, 다른 사람들과 소통하는 공간입니다.</p>
             <p class="detail" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" data-aos-delay="1000">
-            <span class="dN-768">
                 내 리뷰 페이지에서는 고객님이 남기신 소중한 후기를 확인할 수 있습니다.<br>
                 모든 리뷰는 쉽게 관리하고, 다른 고객들과 공유할 수 있도록 구성되어 있습니다.
-            </span>
             </p>
         </div>
     </section>
+    <section class="sub_review_container d-flex flex-column gap-60 mx-auto">
+        <ul class="nav gap-20" id="review_tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="write_review_tab" data-bs-toggle="pill" data-bs-target="#write_review_tab_contents" type="button" role="tab" aria-controls="write_review_tab_contents" aria-selected="true">
+                    작성 가능한 리뷰 <span id="write_review_count"></span>
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="written_review_tab" data-bs-toggle="pill" data-bs-target="#written_review_tab_contents" type="button" role="tab" aria-controls="written_review_tab_contents" aria-selected="false">
+                    작성한 리뷰 <span id="written_review_count"></span>
+                </button>
+            </li>
+        </ul>
+        <div class="tab-content" id="review_tab_contents">
+            <div class="tab-pane fade show active" id="write_review_tab_contents" role="tabpanel" aria-labelledby="write_review_tab" tabindex="0">
+                <ul>
+                    <li>
+                        <div class="sub_review_order_info d-flex flex-column gap-10">
+                            <span>주문일</span>
+                            <span class="d-flex gap-10"><span>2024.11.12</span><span>23:42</span></span>
+                            <span class="d-flex gap-10"><span>주문번호</span><span>2639476294685490</span></span>
+                        </div>
+                        <div class="sub_review_order_goods d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-20">
+                                <span class="sub_review_goods_img d-flex justify-content-center align-items-center">
+                                    <img src="/img/subGoods/goodsNam01.png" alt="남우현 공식응원봉">
+                                </span>
+                                <div class="sub_review_goods_info d-flex flex-column gap-10">
+                                    <strong class="confirmed">상품준비중</strong>
+                                    <div class="d-flex flex-column">
+                                        <span>남우현 공식응원봉</span>
+                                        <span class="qty_wrap d-flex gap-10">
+                                            <span>수량 :</span>
+                                            <span>1</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="write_review_btn">리뷰 쓰기</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="sub_review_order_info d-flex flex-column gap-10">
+                            <span>주문일</span>
+                            <span class="d-flex gap-10"><span>2024.11.10</span><span>08:35</span></span>
+                            <span class="d-flex gap-10"><span>주문번호</span><span>2639476294056472</span></span>
+                        </div>
+                        <div class="sub_review_order_goods d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-20">
+                                <span class="sub_review_goods_img d-flex justify-content-center align-items-center">
+                                    <img src="/img/subGoods/goodsYoon03.png" alt="윤계상 체인 키링">
+                                </span>
+                                <div class="sub_review_goods_info d-flex flex-column gap-10">
+                                    <strong class="confirmed">결제완료</strong>
+                                    <div class="d-flex flex-column">
+                                        <span>윤계상 체인 키링</span>
+                                        <span class="qty_wrap d-flex gap-10">
+                                            <span>수량 :</span>
+                                            <span>3</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="write_review_btn">리뷰 쓰기</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="sub_review_order_info d-flex flex-column gap-10">
+                            <span>주문일</span>
+                            <span class="d-flex gap-10"><span>2024.11.09</span><span>21:02</span></span>
+                            <span class="d-flex gap-10"><span>주문번호</span><span>2639476294058484</span></span>
+                        </div>
+                        <div class="sub_review_order_goods d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-20">
+                                <span class="sub_review_goods_img d-flex justify-content-center align-items-center">
+                                    <img src="/img/subGoods/goodsLee02.png" alt="이지은 모먼트 마스킹테이프 세트">
+                                </span>
+                                <div class="sub_review_goods_info d-flex flex-column gap-10">
+                                    <strong class="confirmed">상품준비중</strong>
+                                    <div class="d-flex flex-column">
+                                        <span>이지은 모먼트 마스킹테이프 세트</span>
+                                        <span class="qty_wrap d-flex gap-10">
+                                            <span>수량 :</span>
+                                            <span>5</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="write_review_btn">리뷰 쓰기</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="sub_review_order_info d-flex flex-column gap-10">
+                            <span>주문일</span>
+                            <span class="d-flex gap-10"><span>2024.11.08</span><span>11:40</span></span>
+                            <span class="d-flex gap-10"><span>주문번호</span><span>2639476294054532</span></span>
+                        </div>
+                        <div class="sub_review_order_goods d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-20">
+                                <span class="sub_review_goods_img d-flex justify-content-center align-items-center">
+                                    <img src="/img/subGoods/goodsYoon02.png" alt="윤계상 니트 담요">
+                                </span>
+                                <div class="sub_review_goods_info d-flex flex-column gap-10">
+                                    <strong class="confirmed">배송중</strong>
+                                    <div class="d-flex flex-column">
+                                        <span>윤계상 니트 담요</span>
+                                        <span class="qty_wrap d-flex gap-10">
+                                            <span>수량 :</span>
+                                            <span>1</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="write_review_btn">리뷰 쓰기</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="sub_review_order_info d-flex flex-column gap-10">
+                            <span>주문일</span>
+                            <span class="d-flex gap-10"><span>2024.11.06</span><span>12:20</span></span>
+                            <span class="d-flex gap-10"><span>주문번호</span><span>2639476294058753</span></span>
+                        </div>
+                        <div class="sub_review_order_goods d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-20">
+                                <span class="sub_review_goods_img d-flex justify-content-center align-items-center">
+                                    <img src="/img/subGoods/goodsByun03.png" alt="변우석 우체통 볼캡 모자">
+                                </span>
+                                <div class="sub_review_goods_info d-flex flex-column gap-10">
+                                    <strong class="confirmed">배송완료</strong>
+                                    <div class="d-flex flex-column">
+                                        <span>변우석 우체통 볼캡 모자</span>
+                                        <span class="qty_wrap d-flex gap-10">
+                                            <span>수량 :</span>
+                                            <span>1</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="write_review_btn">리뷰 쓰기</button>
+                        </div>
+                        <div></div>
+                    </li>
+                    <li>
+                        <div class="sub_review_order_info d-flex flex-column gap-10">
+                            <span>주문일</span>
+                            <span class="d-flex gap-10"><span>2024.11.06</span><span>12:20</span></span>
+                            <span class="d-flex gap-10"><span>주문번호</span><span>2639476294058753</span></span>
+                        </div>
+                        <div class="sub_review_order_goods d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-20">
+                                <span class="sub_review_goods_img d-flex justify-content-center align-items-center">
+                                    <img src="/img/subGoods/goodsByun02.png" alt="변우석 우체통 인형 키링">
+                                </span>
+                                <div class="sub_review_goods_info d-flex flex-column gap-10">
+                                    <strong class="confirmed">배송완료</strong>
+                                    <div class="d-flex flex-column">
+                                        <span>변우석 우체통 인형 키링</span>
+                                        <span class="qty_wrap d-flex gap-10">
+                                            <span>수량 :</span>
+                                            <span>2</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="write_review_btn">리뷰 쓰기</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-pane fade" id="written_review_tab_contents" role="tabpanel" aria-labelledby="written_review_tab" tabindex="0">
+                <ul>
+                    <li>
+                        <div class="sub_review_order_goods d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-20">
+                                <span class="sub_review_goods_img d-flex justify-content-center align-items-center">
+                                    <img src="/img/subGoods/goodsByun03.png" alt="변우석 우체통 볼캡 모자">
+                                </span>
+                                <div class="sub_review_goods_info d-flex flex-column gap-10">
+                                    <div class="d-flex gap-10">
+                                        <strong>구매확정</strong>
+                                        <span>500P 지급완료</span>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <span>변우석 우체통 볼캡 모자</span>
+                                        <span class="qty_wrap d-flex gap-10">
+                                            <span>작성일</span>
+                                            <span>2024.10.31</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="write_review_btn">리뷰 수정</button>
+                        </div>
+                        <div class="sub_review_my_review d-flex justify-content-between">
+                            <div>
+                                <h3 class="sub_review_my_review_title">리뷰 제목입니다.</h3>
+                                <p class="sub_review_my_review_content d-none">후기 내용이 여기에 들어갑니다. 제품에 대한 자세한 설명이나 개인적인 경험을 작성하세요.</p>
+                            </div>
+                            <ul class="sub_review_my_review_images d-flex gap-20">
+                                <li><img src="https://via.placeholder.com/150" alt="후기 이미지 1"></li>
+                                <li><img src="https://via.placeholder.com/150" alt="후기 이미지 2"></li>
+                                <li><img src="https://via.placeholder.com/150" alt="후기 이미지 3"></li>
+                                <li class="my_review_additional_images d-none"><img src="https://via.placeholder.com/150" alt="후기 이미지 4"></li>
+                                <li class="my_review_additional_images d-none"><img src="https://via.placeholder.com/150" alt="후기 이미지 5"></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>6</li>
+                    <li>7</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // 모든 리뷰 항목을 가져옵니다.
+        const reviewItems = document.querySelectorAll('#write_review_tab_contents > ul > li');
+
+        // 리뷰 항목 클릭 시 추가 이미지 li 토글
+        reviewItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const additionalImageItems = item.querySelectorAll('.my_review_additional_images'); // li 요소 선택
+                const reviewContainer = item.querySelector('.sub_review_my_review');
+                const reviewContent = item.querySelector('.sub_review_my_review_content');
+
+                additionalImageItems.forEach(li => {
+                    li.classList.toggle('d-none'); // li 요소에 d-none 클래스 토글
+                });
+
+                // flex-column과 justify-content-between 클래스 토글
+                reviewContainer.classList.toggle('flex-column');
+                reviewContainer.classList.toggle('gap-40');
+                reviewContainer.classList.toggle('justify-content-between');
+                reviewContent.classList.toggle('d-none');
+            });
+
+            // 배송완료면 클래스 추가
+            const strongElement = item.querySelector('.confirmed');
+            if (strongElement && strongElement.textContent.trim() === '배송완료') { // trim()으로 공백 제거
+                const writeReviewButton = item.querySelector('.write_review_btn');
+                if (writeReviewButton) {
+                    writeReviewButton.classList.add('write_able');
+                }
+            }
+        });
+    </script>
 </main>
 
 <?php include_once("../layout/footer.html"); ?>

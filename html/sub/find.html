@@ -1,0 +1,175 @@
+<?php include_once("../layout/header-b.html"); ?>
+
+<main id="sub_find" class="d-flex flex-column align-items-center">
+    <section class="sub-top-banner">
+        <div class="banner-text container-1280">
+            <h2 class="title" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">FORGOT ID OR PASSWORD?</h2>
+            <p class="sub-title" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" data-aos-delay="300">아이디 또는 비밀번호를 잊으셨나요?</p>
+            <p class="detail" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" data-aos-delay="1000">
+                혹시 아이디 또는 비밀번호를 잊으셨나요? 걱정하지 마세요.<br>
+                등록된 정보를 바탕으로 간편하게 계정 정보를 복구할 수 있습니다.
+            </p>
+        </div>
+    </section>
+    <section class="findContainer d-flex flex-column align-items-center gap-40">
+        <ul class="nav justify-content-center gap-20" id="find_tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="find_id_tab" data-bs-toggle="tab" data-bs-target="#find_id_tab_contents" type="button" role="tab" aria-controls="find_id_tab_contents" aria-selected="true">아이디 찾기</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="find_pw_tab" data-bs-toggle="tab" data-bs-target="#find_pw_tab_contents" type="button" role="tab" aria-controls="find_pw_tab_contents" aria-selected="false">비밀번호 찾기</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="find_tab_contents">
+            <div class="tab-pane fade show active" id="find_id_tab_contents" role="tabpanel" aria-labelledby="find_id_tab" tabindex="0">
+                <ul class="d-flex flex-column gap-40">
+                    <li class="by_num d-flex flex-column gap-40">
+                        <form>
+                            <fieldset class="d-flex flex-column align-items-center gap-20">
+                                <legend class="m-0">전화번호로 찾기</legend>
+                                <div class="d-flex flex-column gap-10">
+                                    <label for="find_id_by_num_name" class="required_info d-flex justify-content-between">
+                                        <span class="required_info_right d-flex align-items-center gap_4">이름</span>
+                                        <span class="required_info_left d-flex align-items-center gap_4">필수 입력사항입니다</span>
+                                    </label>
+                                    <input type="text" id="find_id_by_num_name" class="input_container" placeholder="이름" minlength="2" maxlength="17" required autofocus>
+                                </div>
+                                <div class="d-flex flex-column gap-10">
+                                    <span class="required_info_right d-flex align-items-center gap_4">휴대전화</span>
+                                    <span class="d-flex justify-content-between gap-10">
+                                        <input type="text" id="find_id_by_num_num1" class="input_container" placeholder="전화번호" minlength="3" maxlength="3" required>
+                                        <input type="text" id="find_id_by_num_num2" class="input_container" minlength="3" maxlength="4" required>
+                                        <input type="text" id="find_id_by_num_num3" class="input_container" minlength="3" maxlength="4" required>
+                                    </span>
+                                    <button type="button" class="send_code btn_container">인증번호 발송</button>
+                                </div>
+                                <div class="d-flex flex-column gap-10">
+                                    <label for="find_id_by_num_code" class="required_info_right d-flex align-items-center gap_4">인증번호</label>
+                                    <input type="text" id="find_id_by_num_code" class="input_container" placeholder="인증번호" minlength="6" maxlength="6" required>
+                                    <button type="button" class="verify_code btn_container">인증번호 확인</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </li>
+                    <li class="by_email">
+                        <form>
+                            <fieldset class="d-flex flex-column align-items-center gap-20">
+                                <legend class="m-0">이메일로 찾기</legend>
+                                <div class="d-flex flex-column gap-10">
+                                    <label for="find_id_by_email_name" class="required_info d-flex justify-content-between">
+                                        <span class="required_info_right d-flex align-items-center gap_4">이름</span>
+                                        <span class="required_info_left d-flex align-items-center gap_4">필수 입력사항입니다</span>
+                                    </label>
+                                    <input type="text" id="find_id_by_num_name" class="input_container" placeholder="이름" minlength="2" maxlength="17" required autofocus>
+                                </div>
+                                <div class="d-flex flex-column gap-10">
+                                    <span class="required_info_right d-flex align-items-center gap_4">이메일</span>
+                                    <span class="d-flex justify-content-between align-items-center gap_4">
+                                        <input type="text" id="find_id_by_email_username" class="input_container" placeholder="이메일" minlength="3" maxlength="3" required>
+                                        <img src="/img/icon/at-sign.svg" alt="이메일 특수문자">
+                                        <div class="email-select select_container">
+                                            <select id="find_id_by_email_domain" class="d-none" required>
+                                                <option value="naver">naver.com</option>
+                                                <option value="daum">daum.net</option>
+                                                <option value="gmail">gmail.com</option>
+                                                <option value="nate">nate.com</option>
+                                                <option value="yahoo">yahoo.co.kr</option>
+                                                <option value="self" selected>직접 입력</option>
+                                            </select>
+                                        </div>                                    
+                                    </span>
+                                    <button type="button" class="send_code btn_container">인증코드 발송</button>
+                                </div>
+                                <div class="d-flex flex-column gap-10">
+                                    <label for="find_id_by_email_code" class="required_info_right d-flex align-items-center gap_4">인증코드</label>
+                                    <input type="text" id="find_id_by_email_code" class="input_container" placeholder="인증코드" minlength="6" maxlength="6" required>
+                                    <button type="button" class="verify_code btn_container">인증코드 확인</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-pane fade" id="find_pw_tab_contents" role="tabpanel" aria-labelledby="find_pw_tab" tabindex="0">
+                <ul class="d-flex flex-column gap-40">
+                    <li class="by_num d-flex flex-column gap-40">
+                        <form>
+                            <fieldset class="d-flex flex-column align-items-center gap-20">
+                                <legend class="m-0">전화번호로 찾기</legend>
+                                <div class="d-flex flex-column gap-10">
+                                    <label for="find_pw_by_num_name" class="required_info d-flex justify-content-between">
+                                        <span class="required_info_right d-flex align-items-center gap_4">이름</span>
+                                        <span class="required_info_left d-flex align-items-center gap_4">필수 입력사항입니다</span>
+                                    </label>
+                                    <input type="text" id="find_pw_by_num_name" class="input_container" placeholder="이름" minlength="2" maxlength="17" required autofocus>
+                                </div>
+                                <div class="d-flex flex-column gap-10">
+                                    <label for="find_pw_by_num_id" class="required_info_right d-flex align-items-center gap_4">아이디</label>
+                                    <input type="text" id="find_pw_by_num_id" class="input_container" placeholder="아이디" minlength="6" maxlength="10" required>
+                                </div>
+                                <div class="d-flex flex-column gap-10">
+                                    <span class="required_info_right d-flex align-items-center gap_4">휴대전화</span>
+                                    <span class="d-flex justify-content-between gap-10">
+                                        <input type="text" id="find_pw_by_num_num1" class="input_container" placeholder="전화번호" minlength="3" maxlength="3" required>
+                                        <input type="text" id="find_pw_by_num_num2" class="input_container" minlength="3" maxlength="4" required>
+                                        <input type="text" id="find_pw_by_num_num3" class="input_container" minlength="3" maxlength="4" required>
+                                    </span>
+                                    <button type="button" class="send_code btn_container">인증번호 발송</button>
+                                </div>
+                                <div class="d-flex flex-column gap-10">
+                                    <label for="find_pw_by_num_code" class="required_info_right d-flex align-items-center gap_4">인증번호</label>
+                                    <input type="text" id="find_pw_by_num_code" class="input_container" placeholder="인증번호" minlength="6" maxlength="6" required>
+                                    <button type="button" class="verify_code btn_container">인증번호 확인</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </li>
+                    <li class="by_email">
+                        <form>
+                            <fieldset class="d-flex flex-column align-items-center gap-20">
+                                <legend class="m-0">이메일로 찾기</legend>
+                                <div class="d-flex flex-column gap-10">
+                                    <label for="find_pw_by_email_name" class="required_info d-flex justify-content-between">
+                                        <span class="required_info_right d-flex align-items-center gap_4">이름</span>
+                                        <span class="required_info_left d-flex align-items-center gap_4">필수 입력사항입니다</span>
+                                    </label>
+                                    <input type="text" id="find_pw_by_num_name" class="input_container" placeholder="이름" minlength="2" maxlength="17" required autofocus>
+                                </div>
+                                <div class="d-flex flex-column gap-10">
+                                    <label for="find_pw_by_email_id" class="required_info_right d-flex align-items-center gap_4">아이디</label>
+                                    <input type="text" id="find_pw_by_email_id" class="input_container" placeholder="아이디" minlength="6" maxlength="10" required>
+                                </div>
+                                <div class="d-flex flex-column gap-10">
+                                    <span class="required_info_right d-flex align-items-center gap_4">이메일</span>
+                                    <span class="d-flex justify-content-between align-items-center gap_4">
+                                        <input type="text" id="find_pw_by_email_username" class="input_container" placeholder="이메일" minlength="3" maxlength="3" required>
+                                        <img src="/img/icon/at-sign.svg" alt="이메일 특수문자">
+                                        <div class="email-select select_container">
+                                            <select id="find_pw_by_email_domain" class="d-none" required>
+                                                <option value="naver">naver.com</option>
+                                                <option value="daum">daum.net</option>
+                                                <option value="gmail">gmail.com</option>
+                                                <option value="nate">nate.com</option>
+                                                <option value="yahoo">yahoo.co.kr</option>
+                                                <option value="self" selected>직접 입력</option>
+                                            </select>
+                                        </div>                                    
+                                    </span>
+                                    <button type="button" class="send_code btn_container">인증코드 발송</button>
+                                </div>
+                                <div class="d-flex flex-column gap-10">
+                                    <label for="find_pw_by_email_code" class="required_info_right d-flex align-items-center gap_4">인증코드</label>
+                                    <input type="text" id="find_pw_by_email_code" class="input_container" placeholder="인증코드" minlength="6" maxlength="6" required>
+                                    <button type="button" class="verify_code btn_container">인증코드 확인</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+<?php include_once("../layout/footer.html"); ?>
