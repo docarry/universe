@@ -44,6 +44,25 @@ html, body{
         }
     }
 }
+input[type="checkbox"]{
+    display: none;
+    &:checked + .label-check::before,
+    &:checked + .check-wrap .label-check::before{
+        background: url('/img/icon/check-after.svg') no-repeat center / cover;
+    }
+}
+.label-check{
+    display: flex;
+    align-items: center;
+    &::before{
+        content: '';
+        background: url('/img/icon/check-before.svg') no-repeat center / cover;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        margin-right: 10px;
+    }
+}
 
 // 한수지
 .gap-10{
@@ -90,6 +109,16 @@ html, body{
 .info-b-disN2{
     display: none;
 }
+.audiN{
+    display: none;
+}
+.audiB{
+    display: block;
+}
+.myPgN{
+    display: none;
+}
+
 // ************************************************************************************************
 
 

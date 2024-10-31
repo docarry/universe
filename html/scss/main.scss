@@ -2,7 +2,7 @@
 @import './_var.scss';
 
 
-
+// 메인 컨텐츠
 #main{
     position: relative;
     transform: translateY(-80px);
@@ -962,13 +962,59 @@
         }
     }
 }
-
+// 메인 배너 키프레임
+@keyframes mainText-ani {
+	0% {
+        transform: translateY(100px); 
+        opacity: 0;
+    }
+	100% {
+        transform: translateY(0px); 
+        opacity: 1;
+    }
+}
 
 // 서브 페이지 오디션
 #audition{
     @include subPage (#000, 'subAudition/bg');
+    h2{
+        @include f-32-46-700;
+    }
+    // 오디션 서브 배너
     .audition-sub-banner{
+        margin: 5rem auto;
         .sub-bannder-list{
+            li{
+                height: 25rem;
+                a{
+                    display: block;
+                    gap: .625rem;
+                    height: 100%;
+                    .text01{
+                        @include f-50-72-700;
+                    }
+                    .text02{
+                        @include f-24-36-700;
+                    }
+                    .text03{
+                        @include f-16-24-500;
+                    }
+                }
+                .sub01-link{
+                    color: #fff;
+                    padding: 2.5rem 0 0 2.5rem;
+                    background: rgba(0, 0, 0, 0.20); 
+                }
+                .sub02-link{
+                    color: #000;
+                    padding: 2.5rem 0 0 1.875rem;
+                }
+                .sub03-link{
+                    color: #fff;
+                    padding: 2.5rem 0 0 1.875rem;
+                    background: rgba(82, 82, 82, 0.50);
+                }
+            }
             .sub01{
                 background: url('/img/subAudition/auditionimg01.jpg') no-repeat center / cover;
                 width: 45%;
@@ -983,235 +1029,618 @@
             }
         }
     }
+    // 오디션 절차
+    .audition-process{
+        color: #fff;
+        gap: 3.75rem;
+        padding: 0 0 6.25rem 0;
+        .audition-process-list{
+            li{
+                width: 15rem;
+                height: 15rem;
+                border: solid 1px #fff;
+                border-radius: 50%;
+                @include f-24-36-700;
+                opacity: 0;
+                animation: bounceInUp 1.6s ease-out 3s forwards;
+                overflow: hidden;
+            }
+        }
+        .audition-process-list li:nth-child(1) {
+            animation-delay: 1.4s;
+        }
+        .audition-process-list li:nth-child(2) {
+            animation-delay: 1.8s;
+        }
+        .audition-process-list li:nth-child(3) {
+            animation-delay: 2.2s;
+        }
+        .audition-process-list li:nth-child(4) {
+            animation-delay: 2.6s;
+        }
+    }
+    // 오디션 지원하기
+    .apply{
+        background-color: #fff;
+        padding: 5rem 0;
+        .apply-t01{
+            color: #F86666;
+            @include f-14-20-400;
+            margin: 1.25rem 0 2.5rem;
+        }
+        #apply-form{
+            max-width: 500px;
+            width: 100%;
+            gap: 20px;
+            .required{
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                &::after{
+                    background: url('/img/icon/star.svg');
+                    content: '';
+                    width: 8px;
+                    height: 8px;
+                }
+            }
+            .label-style{
+                @include f-20-30-500;
+            }
+            .input-wrap{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                .input-style{
+                    width: 100%;
+                    height: 52px;
+                    padding: 0px 20px;
+                    color: #000;
+                    border: solid 1px #767676;
+                    border-radius: 10px;
+                    box-sizing: border-box;
+                    &::placeholder{
+                        color: #a4a4a4;
+                        @include f-16-24-400;
+                    }
+                }
+                .input-short-style{
+                    max-width: 160px;
+                }
+                .input-email-style{
+                    max-width: 237px;
+                }
+                .name-required{
+                    .required-text{
+                        flex-direction: row-reverse;
+                        @include f-14-20-400;
+                    }
+                }
+                .number-wrap{
+                    gap: 10px;
+                }
+                .email-wrap{
+                    gap: 4px;
+                    #custom-email{
+                        display: none;
+                    }
+                }
+                .input-btn-wrap{
+                    gap: 10px;
+                }
+                .address-btn,
+                .file-btn{
+                    cursor: pointer;
+                    color: #000;
+                    border-radius: 10px;
+                    background-color: #ededed;
+                    line-height: 52px;
+                    text-align: center;
+                    &:hover{
+                        background-color: #000;
+                        color: #fff;
+                    }
+                }
+                .address-container{
+                    position: relative;
+                    img{
+                        position: absolute;
+                        top: 50%;
+                        left: 10px;
+                        transform: translateY(-50%);
+                        cursor: pointer;
+                        width: 24px;
+                        height: 24px;
+                        z-index: 10;
+                    }
+                    #sample2_address{
+                        text-indent: 1.2rem;
+                    }
+                }
+                .button-container{
+                    button{
+                        width: calc((100% - 30px) / 4);
+                        cursor: pointer;
+                        color: #000;
+                        border-radius: 10px;
+                        background-color: #ededed;
+                        line-height: 52px;
+                        text-align: center;
+                    }
+                    button.active {
+                        background-color: #000;
+                        color: #fff;
+                    }
+                }
+            }
+            .file-wrap{
+                margin-top: 1.25rem;
+                .file-text01{
+                    @include f-14-20-400;
+                }
+                .file-text02{
+                    @include f-20-30-400;
+                    color: #A4A4A4;
+                    margin-top: 1.875rem;
+                }
+                .file-text03{
+                    padding: 1.25rem;
+                    @include f-14-20-400;
+                    border: 1px solid #767676;
+                    border-radius: 20px;
+                    margin: 1.875rem 0 1.25rem;
+                }
+            }
+            .agree-wrap{
+                .agreement-check{
+                    gap: 10px;
+                    @include f-16-24-700;
+                    margin-bottom: 1.875rem;
+                }
+                .agree-text{
+                    @include f-16-24-400;
+                    margin-bottom: 4.375rem;
+                }
+                .apply-btn{
+                    cursor: pointer;
+                    color: #a4a4a4;
+                    border-radius: 10px;
+                    background-color: #ededed;
+                    line-height: 52px;
+                    text-align: center;
+                    font-weight: 500;
+                    &:hover{
+                        background-color: #000;
+                        color: #fff;
+                    }
+                }
+            }
+            .address-layer{
+                
+            }
+        }
+    }
 }
+// 오디션 절차 키프레임
+@keyframes bounceInUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    30% {
+        transform: translateY(-70px); /* 위로 크게 튕김 */
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(50px); /* 아래로 크게 내려옴 */
+        opacity: 1;
+    }
+    70% {
+        transform: translateY(-30px); /* 다시 강하게 위로 튕기기 */
+        opacity: 1;
+    }
+    80% {
+        transform: translateY(25px); /* 아래로 내려옴 */
+        opacity: 1;
+    }
+    90% {
+        transform: translateY(-15px); /* 마지막 강한 위로 튕김 */
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0); /* 원래 위치로 고정 */
+        opacity: 1;
+    }
+}
+
 
 // 서브 페이지 마이페이지
 #mypage{
-    background-color: #000;
-    height: 100vh;
-    .mypage-banner{
+    @include subPage (#fff, 'subMypage/bg');
+    h2{
+        @include f-32-46-700;
+    }
+    .mypage-w{
+        background-color: #fff;
+    }
+    .mypage-b{
+        background-color: #000;
+    }
+    .subTitle1{
+        @include f-24-36-700;
+        color: #000;
+    }
+    .subTitle2{
+        @include f-24-36-700;
+        color: #fff;
+    }
+    .text-g{
+        @include f-24-36-500;
+        color: #A4A4A4;
+    }
+    .text-util{
+        @include f-32-46-700;
+        color: #000;
+    }
+    .wrap-column{
+        display: flex;
+        flex-direction: column;
+    }
+    .list{
         width: 100%;
-        max-width: 1920px;
-        position: relative;
-        background: url('/img/subMypage/bg.jpg') no-repeat center / cover;
-        height: 430px;
-        &::before { 
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(106, 106, 106, 0.5);
-            z-index: 1;
+        border-radius: 20px;
+        border: solid 1px #ccc;
+        height: 12.5rem;
+    }
+    .mypage-btn{
+        display: inline-block;
+        width: 8.625rem;
+        border-radius: 1.875rem;
+        border: solid 1px #767676;
+        text-align: center ;
+        font-size: .875rem;
+        font-weight: 500;
+        line-height: 2rem;
+        color: #767676;
+        &:hover{
+            background-color: #000;
+            color: #fff;
         }
-        .banner-text{
-            color: #fff; 
-            flex-direction: column;
-            align-items: flex-start;
-            position: relative;
-            z-index: 2;
-            padding: 6.25rem 0;
-            text-transform: uppercase;
-            .title{
-                @include f-50-72-700;
-                padding-bottom: 0.625rem;
-            } 
-            .sub-title{
+    }
+    .userInfo01,
+    .userInfo02,
+    .delivery{
+        gap: 1.25rem;
+        li{
+            strong{
+                color: #000;
+                @include f-20-30-500;
+            }
+            span{
+                @include f-20-30-400;
+                color: #000;
+            }
+        }
+    }
+    .userInfo01,
+    .userInfo02{
+        li{
+            strong{
+                display: inline-block;
+                width: 80px;
+                margin-right: 10px;
+            }
+        }
+        .phone{
+            gap: 5px;
+        }
+    }
+    .delivery{
+        li{
+            strong{
+                display: inline-block;
+                width: 100px;
+            }
+        }
+    }
+
+    .mypage-more-btn{
+        width: 100px;
+        line-height: 36px;
+        border-radius: 30px;
+        border: 1px solid #767676;
+        color: #767676;
+        &:hover{
+            color: #000;
+            background-color: #fff;
+            border: 1px solid #fff;
+        }
+        &:hover img{
+            content: url('/img/icon/btn-more-black-plus.svg');
+        }
+    }
+
+    .w1{
+        margin: 5rem 0;
+        .mypage-w1-left{
+            gap: 2.5rem;
+            max-width: 25rem;
+            a{
+                width: 100%;
+                gap: 2.5rem;
+                .img01{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 12.5rem;
+                    height: 12.5rem;
+                    background-color: #A4A4A4;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    img{
+                        width: 80%;
+                    }
+                    &:hover{
+                        background-color: #000;
+                    }
+                }
+                .text02{
+                    @include f-42-52-700;
+                    color: #000;
+                }
+                .text03{
+                    display: block;
+                    width: 100%;
+                    background-color: #000;
+                    border-radius: .625rem;
+                    line-height: 3.75rem;
+                    color: #fff;
+                    font-weight: 500;
+                }
+            }
+            .text01{
+                @include f-28-42-400;
+                color: #000;
+            }
+        }
+        .mypage-w1-right{
+            max-width: 50rem;
+            width: 100%;
+            .right1{
+                position: relative;
+            }
+            .mypg-util{
+                gap: 8px ;
+                position: absolute;
+                top: 18%;
+                right: 0;
+                width: max-content;
+                .badgeimg::after{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    content: "1";
+                    width: 20px;
+                    height: 20px;
+                    background-color: #FFD24E;
+                    color: #000;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: -10px;
+                    right: -6px;
+                }
+                span{
+                    cursor: pointer;
+                }
+            }
+            .right2-list{
+                margin-top: 3.75rem;
+                li{
+                    width: calc(100% / 3);
+                }
+            }
+            .right3-list{
+                margin-top: 2.5rem;
+                li{
+                    width: calc(100% / 4);
+                }
+            }
+        }
+    }
+    .w2{
+        .w2-box{
+            > div{
+                width: 50%;
+            }
+        }
+        .w2-line{
+            border-top: 1px solid #EDEDED;
+            border-bottom: 1px solid #EDEDED;
+            padding: 5rem 0;
+        }
+        .w2-title{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.875rem;
+        }
+        .userInfoBox{
+            gap: 5rem;
+        }
+    }
+    .w3{
+        margin: 5rem 0;
+        .delivery-text{
+            gap: 1.25rem;
+            .text01{
                 @include f-24-36-700;
-                padding-bottom: 2.5rem; 
+                color: #000;
             }
-            .detail{
-                @include f-16-24-400;
+            .text02{
+                @include f-20-30-500;
+                color: #000;
+            }
+            .text03{
+                @include f-20-30-400;
+                color: #767676;
+            }
+        }
+        .delivery-btn-wrap{
+            gap: 1.25rem;
+            margin-top: 1.875rem;
+            .delivery-btn{
+                display: inline-block;
+                width: 14.625rem;
+                line-height: 3.75rem;
+                border-radius: 10px;
+                font-weight: 500;
+                text-align: center;
+            }
+            .btn1{
+                background-color: #EDEDED;
+                color: #000;
+                &:hover{
+                    background-color: #333;
+                    color: #fff;
+                }
+            }
+            .btn2{
+                background-color: #333;
+                color: #fff;
+                border: solid 1px transparent;
+                &:hover{
+                    background-color: #fff;
+                    color: #000;
+                    border-color : #000;
+                }
+            }
+        }
+        .mypage-w3-right{
+            gap: 20px;
+            li{
+                width: 12.5rem;
+                height: 12.5rem;
+                background-color: #EDEDED;
+                border-radius: 20px;
+                a{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                    height: 100%;
+                    img{
+                        width: 70%;
+                    }
+                }
             }
         }
     }
-}
-
-
-// 서브 페이지 멤버십
-#membership{
-    background-color: #000;
-    height: 100vh;
-    .membership-banner{
-        width: 100%;
-        max-width: 1920px;
-        position: relative;
-        background: url('/img/subMembership/bg.jpg') no-repeat center / cover;
-        height: 430px;
-        &::before { 
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(106, 106, 106, 0.4);
-            z-index: 1;
+    .b1{
+        .b2-title{
+            gap: 20px;
         }
-        .banner-text{
-            color: #fff; 
-            flex-direction: column;
-            align-items: flex-start;
-            position: relative;
-            z-index: 2;
-            padding: 6.25rem 0;
-            text-transform: uppercase;
-            .title{
-                @include f-50-72-700;
-                padding-bottom: 0.625rem;
-            } 
-            .sub-title{
-                @include f-24-36-700;
-                padding-bottom: 2.5rem; 
-            }
-            .detail{
-                @include f-16-24-400;
-            }
+        .b1-text{
+            @include f-20-30-500;
+            color: #fff;
+            margin-top: 10px;
         }
-    }
-}
-
-
-// 서브 페이지 제품상세
-#product{
-    background-color: #000;
-    height: 100vh;
-    .product-banner{
-        width: 100%;
-        max-width: 1920px;
-        position: relative;
-        background: url('/img/subProduct/bg.jpg') no-repeat center / cover;
-        height: 430px;
-        &::before { 
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(106, 106, 106, 0.4);
-            z-index: 1;
+        .b1-line{
+            border-bottom: 1px solid #767676;
+            padding: 5rem 0;
         }
-        .banner-text{
-            color: #fff; 
-            flex-direction: column;
-            align-items: flex-start;
-            position: relative;
-            z-index: 2;
-            padding: 6.25rem 0;
-            text-transform: uppercase;
-            .title{
-                @include f-50-72-700;
-                padding-bottom: 0.625rem;
-            } 
-            .sub-title{
-                @include f-24-36-700;
-                padding-bottom: 2.5rem; 
-            }
-            .detail{
-                @include f-16-24-400;
+        .mypage-b1-right{
+            gap: 40px;
+            li{
+                width: 12.5rem;
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+                .link-img{
+                    background-color: #EDEDED;
+                    border-radius: 20px;
+                    width: 100%;
+                    height: 12.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                    text-align: center;
+                    .plus-icon{
+                        width: 2.5rem;
+                        height: 2.5rem;
+                    }
+                    img{
+                        width: 50%;
+                        transform: scale(1);
+                        transition: all .4s ease-in-out;
+                    }
+                    &:hover img{
+                        transform: scale(1.1);
+                    }
+                    .lee03{
+                        width: 60%;
+                    }
+                }
+                .link-text{
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    color: #fff;
+                    @include f-20-30-400;
+                    gap: 20px;
+                    strong{
+                        font-weight: 500;
+                    }
+                }
             }
         }
     }
-}
-
-
-// 서브 페이지 리뷰
-#review{
-    background-color: #000;
-    height: 100vh;
-    .review-banner{
-        width: 100%;
-        max-width: 1920px;
-        position: relative;
-        background: url('/img/subReview/bg.jpg') no-repeat center / cover;
-        height: 430px;
-        &::before { 
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(106, 106, 106, 0.4);
-            z-index: 1;
-        }
-        .banner-text{
-            color: #fff; 
-            flex-direction: column;
-            align-items: flex-start;
-            position: relative;
-            z-index: 2;
-            padding: 6.25rem 0;
-            text-transform: uppercase;
-            .title{
-                @include f-50-72-700;
-                padding-bottom: 0.625rem;
-            } 
-            .sub-title{
-                @include f-24-36-700;
-                padding-bottom: 2.5rem; 
-            }
-            .detail{
-                @include f-16-24-400;
-            }
-        }
-    }
-}
-
-
-// 서브 페이지 장바구니
-#cart{
-    background-color: #000;
-    height: 100vh;
-    .cart-banner{
-        width: 100%;
-        max-width: 1920px;
-        position: relative;
-        background: url('/img/subCart/bg.jpg') no-repeat center / cover;
-        height: 430px;
-        &::before { 
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(106, 106, 106, 0.4);
-            z-index: 1;
-        }
-        .banner-text{
-            color: #fff; 
-            flex-direction: column;
-            align-items: flex-start;
-            position: relative;
-            z-index: 2;
-            padding: 6.25rem 0;
-            text-transform: uppercase;
-            .title{
-                @include f-50-72-700;
-                padding-bottom: 0.625rem;
-            } 
-            .sub-title{
-                @include f-24-36-700;
-                padding-bottom: 2.5rem; 
-            }
-            .detail{
-                @include f-16-24-400;
+    .b2{
+        padding: 5rem 0;
+        .pro-list{
+            gap: 40px;
+            margin-top: 2.5rem;
+            li{
+                width: 25rem;
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+                .link-img{
+                    background-color: #EDEDED;
+                    border-radius: 20px;
+                    width: 100%;
+                    height: 26.25rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                    text-align: center;
+                    img{
+                        width: 50%;
+                        transform: scale(1);
+                        transition: all .4s ease-in-out;
+                    }
+                    &:hover img{
+                        transform: scale(1.1);
+                    }
+                    .byun01{
+                        width: 40%;
+                    }
+                    .byun03{
+                        width: 70%;
+                    }
+                }
+                .link-text{
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    color: #fff;
+                    @include f-20-30-400;
+                    gap: 20px;
+                    strong{
+                        font-weight: 500;
+                    }
+                }
             }
         }
-    }
-}
-
-
-@keyframes mainText-ani {
-	0% {
-        transform: translateY(100px); 
-        opacity: 0;
-    }
-	100% {
-        transform: translateY(0px); 
-        opacity: 1;
     }
 }
