@@ -10,6 +10,34 @@
     }   
 }
 
+@mixin subGoodsHoverBtn {
+    position: relative;
+    .goodsHoverBtn{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        // background-color: rgb(0, 0, 0, 0.6);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.4s ease-in-out;
+        z-index: 3;
+        img{
+            display: block;
+            width: 24px;
+            height: 24px;
+            object-fit: cover;
+        }
+    }
+    &:hover .goodsHoverBtn{
+        display: flex;
+    }
+}
+
 // 공통스타일
 .input_container{
     width: 100%;
@@ -86,6 +114,10 @@
 .gap_4{
     gap: 4px
 }
+.write_able{
+    color: #fff;
+    background-color: #333;
+}
 
 // PC 스타일
 #subGoods{
@@ -105,28 +137,11 @@
                     height: 630px;
                     border-radius: 20px;
                     overflow: hidden;
+                    @include subGoodsHoverBtn;
                     a{
                         width: 100%;
                         height: 100%;
                         position: relative;
-                        .likeBtn{
-                            position: absolute;
-                            top: 10px;
-                            right: 10px;
-                            justify-content: center;
-                            cursor: pointer;
-                            transition: all 0.4s ease-in-out;
-                            z-index: 3;
-                            > img{
-                                display: block;
-                                width: 48px;
-                                height: 48px;
-                                object-fit: cover;
-                            }
-                        }
-                        &:hover .likeBtn{
-                            display: flex;
-                        }
                         > img{
                             width: 100%;
                             transition: all 0.4s ease-in-out;
@@ -194,33 +209,11 @@
             }
             ul{
                 li{
+                    position: relative;
                     width: calc((100% - 40px) / 3);
+                    @include subGoodsHoverBtn;
                     a{
                         gap: 20px;
-                        .likeBtn{
-                            position: absolute;
-                            top: 10px;
-                            right: 10px;
-                            display: none;
-                            align-items: center;
-                            justify-content: center;
-                            width: 36px;
-                            height: 36px;
-                            // background-color: rgb(0, 0, 0, 0.6);
-                            border-radius: 50%;
-                            cursor: pointer;
-                            transition: all 0.4s ease-in-out;
-                            z-index: 3;
-                            > img{
-                                display: block;
-                                width: 24px;
-                                height: 24px;
-                                object-fit: cover;
-                            }
-                        }
-                        &:hover .likeBtn{
-                            display: flex;
-                        }
                         .goodsContainer{
                             position: relative;
                             width: 100%;
@@ -549,6 +542,17 @@
         width: 100%;
         max-width: 1280px;
         padding: 80px 0;
+        .write_review_btn{
+            width: 140px;
+            height: 44px;
+            border-radius: 10px;
+            background-color: #EDEDED;
+            color: #A4A4A4;
+            &.write_able{
+                color: #fff;
+                background-color: #333;
+            }
+        }
         .nav{
             .nav-item{
                 .nav-link{
@@ -593,7 +597,7 @@
                                 .sub_review_goods_info{
                                     strong{
                                         @include f-20-30-700;
-                                        color: #FFD24E;
+                                        color: #A4A4A4;
                                     }
                                     > div:first-child{
                                         span{
@@ -613,17 +617,6 @@
                                             color: #A4A4A4;
                                         }
                                     }
-                                }
-                            }
-                            .write_review_btn{
-                                width: 140px;
-                                height: 44px;
-                                border-radius: 10px;
-                                background-color: #EDEDED;
-                                color: #A4A4A4;
-                                &.write_able{
-                                    color: #fff;
-                                    background-color: #333;
                                 }
                             }
                         }
