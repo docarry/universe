@@ -1,30 +1,185 @@
 <?php include_once("../layout/header-b.html"); ?>
 
-<main id="cart">
-    <section class="cart-banner">
+<main id="sub-cart" class="sub-page">
+    <section class="sub-top-banner cart-banner">
         <div class="banner-text container-1280">
             <h2 class="title" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">SHOPPING CART</h2>
             <p class="sub-title" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" data-aos-delay="300">담았던 상품을 한번에 확인해보세요!</p>
             <p class="detail" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" data-aos-delay="1000">
-            <span class="dN-768">
+            <!-- <span class="dN-768"> -->
                 장바구니에 상품을 추가하면 언제든지 확인 가능합니다.<br>
                 할인 혜택이나 특별 프로모션과 함께 쇼핑할 수 있는 기회를 제공합니다.
-            </span>
+            <!-- </span> -->
             </p>
         </div>
     </section>
-    <section class="cart-content">
-        <div class="check">
-            <span>
-                <input type="radio">
-                <span>전체선택</span>
-            </span>
-            <span>
-                <img src="" alt="">
-                <span>Cart에 담긴 상품은 50일 동안 보관 후 삭제합니다.</span>
-                <button>품절삭제</button>
-            </span>
-        </div>
+
+    <section class="sub-wrap cart-wrap container-1280">
+        <article class="sub-content cart-content">
+            <div class="sub-page-title" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" data-aos-delay="1000">장바구니</div>
+            <form id="cart-form" class="mx-auto d-flex flex-column">
+                <div class="cart-wrap d-flex flex-column">
+                    <div class="cart-all-select">
+                        <div class="cart-all-check d-flex justify-content-between">
+                            <span class="cart-check-box d-flex">
+                                <input type="checkbox" id="cart-all">
+                                <label for="cart-all" class="label-check">전체선택</label>
+                            </span>
+                            <span class="cart-guide d-flex align-items-center">
+                                <img src="/img/icon/danger-circle-icon.svg" alt="안내">
+                                <span class="text-guide">Cart에 담긴 상품은 50일 동안 보관 후 삭제합니다.</span>
+                                <button class="del-btn" type="button">품절삭제</button>
+                            </span>
+                        </div>
+                    </div>
+
+                    <ul class="cart-list d-flex flex-column">
+                        <li class="goods-name-wrap d-flex">
+                            <input type="checkbox" id="goods-name-check-1">
+                            <label for="goods-name-check-1" class="label-check d-flex justify-content-between align-items-center">
+                                <div class="goods-check-box d-flex justify-content-between">
+                                    <span class="goods-detail d-flex">
+                                        <span class="goods-img"><img src="/img/subGoods/goodsPark02.png" alt="박서준 키링"></span>
+                                        <span class="price-list d-flex flex-column">
+                                            <span class="sold-out">품절</span>
+                                            <a href="#none"><span class="goods-name">박서준 하늘강아지 키링</span></a>
+                                            <span class="goods-price">18,000 원</span>
+                                        </span>
+                                    </span>
+    
+                                    <span class="goods-price-wrap d-flex">
+                                        <span class="num-btn-wrap d-flex">
+                                            <button class="minus">
+                                                <img src="/img/icon/btn-minus-black.svg" alt="빼기">
+                                            </button>
+                                            <input type="number" class="num" value="1" min="1">
+                                            <button class="plus">
+                                                <img src="/img/icon/btn-more-plus-black.svg" alt="더하기">
+                                            </button>
+                                        </span>
+                                        <span class="price">18,000 원</span>
+                                        <button class="close">
+                                            <img src="/img/icon/close-black.svg" alt="삭제">
+                                        </button>
+                                    </span>
+                                </div>
+                            </label>
+                        </li>
+
+                        <li class="goods-name-wrap d-flex">
+                            <input type="checkbox" id="goods-name-check-2">
+                            <label for="goods-name-check-2" class="label-check d-flex justify-content-between align-items-center">
+                                <div class="goods-check-box d-flex justify-content-between">
+                                    <span class="goods-detail d-flex">
+                                        <span class="goods-img"><img src="/img/subGoods/goodsLee01.png" alt="이지은 응원봉"></span>
+                                        <span class="price-list d-flex flex-column">
+                                            <span class="always">상시판매</span>
+                                            <a href="#none"><span class="goods-name">이지은 공식 응원봉</span></a>
+                                            <span class="goods-price">47,000 원</span>
+                                        </span>
+                                    </span>
+    
+                                    <span class="goods-price-wrap d-flex">
+                                        <span class="num-btn-wrap d-flex">
+                                            <button class="minus">
+                                                <img src="/img/icon/btn-minus-black.svg" alt="빼기">
+                                            </button>
+                                            <input type="number" class="num" value="1" min="1">
+                                            <button class="plus">
+                                                <img src="/img/icon/btn-more-plus-black.svg" alt="더하기">
+                                            </button>
+                                        </span>
+                                        <span class="price">47,000 원</span>
+                                        <button class="close">
+                                            <img src="/img/icon/close-black.svg" alt="삭제">
+                                        </button>
+                                    </span>
+                                </div>
+                            </label>
+                        </li>
+
+                        <li class="goods-name-wrap d-flex">
+                            <input type="checkbox" id="goods-name-check-3">
+                            <label for="goods-name-check-3" class="label-check d-flex justify-content-between align-items-center">
+                                <div class="goods-check-box d-flex justify-content-between">
+                                    <span class="goods-detail d-flex">
+                                        <span class="goods-img"><img src="/img/subGoods/goodsByun02.png" alt="변우석 키링"></span>
+                                        <span class="price-list d-flex flex-column">
+                                            <span class="always">상시판매</span>
+                                            <a href="#none"><span class="goods-name">변우석 우체통 인형 키링</span></a>
+                                            <span class="goods-price">22,000 원</span>
+                                        </span>
+                                    </span>
+    
+                                    <span class="goods-price-wrap d-flex">
+                                        <span class="num-btn-wrap d-flex">
+                                            <button class="minus">
+                                                <img src="/img/icon/btn-minus-black.svg" alt="빼기">
+                                            </button>
+                                            <input type="number" class="num" value="1" min="1">
+                                            <button class="plus">
+                                                <img src="/img/icon/btn-more-plus-black.svg" alt="더하기">
+                                            </button>
+                                        </span>
+                                        <span class="price">22,000 원</span>
+                                        <button class="close">
+                                            <img src="/img/icon/close-black.svg" alt="삭제">
+                                        </button>
+                                    </span>
+                                </div>
+                            </label>
+                        </li>
+
+                        <li class="goods-name-wrap d-flex">
+                            <input type="checkbox" id="goods-name-check-4">
+                            <label for="goods-name-check-4" class="label-check d-flex justify-content-between align-items-center">
+                                <div class="goods-check-box d-flex justify-content-between">
+                                    <span class="goods-detail d-flex">
+                                        <span class="goods-img"><img src="/img/subGoods/goodsLee03.png" alt="이지은 후드"></span>
+                                        <span class="price-list d-flex flex-column">
+                                            <span class="always">상시판매</span>
+                                            <a href="#none"><span class="goods-name">이지은 더 골든 아워 후드 티셔츠</span></a>
+                                            <span class="goods-price">47,000 원</span>
+                                        </span>
+                                    </span>
+    
+                                    <span class="goods-price-wrap d-flex">
+                                        <span class="num-btn-wrap d-flex">
+                                            <button class="minus">
+                                                <img src="/img/icon/btn-minus-black.svg" alt="빼기">
+                                            </button>
+                                            <input type="number" class="num" value="1" min="1">
+                                            <button class="plus">
+                                                <img src="/img/icon/btn-more-plus-black.svg" alt="더하기">
+                                            </button>
+                                        </span>
+                                        <span class="price">18,000 원</span>
+                                        <button class="close">
+                                            <img src="/img/icon/close-black.svg" alt="삭제">
+                                        </button>
+                                    </span>
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+
+                    <div class="all-price-box d-flex flex-column">
+                        <div class="delivery-wrap d-flex justify-content-between">
+                            <p class="name">배송비</p>
+                            <p class="delivery d-flex">3,000 원</p>
+                        </div>
+
+                        <div class="cart-all-price-wrap d-flex justify-content-between align-items-center">
+                            <p class="all-num">총 상품금액 (<span class="goods-num">1개</span>)</p>
+                            <div class="price-btn-wrap d-flex align-items-center">
+                                <span class="all-price d-flex"></span>
+                                <button class="payment" type="submit">결제하기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </article>
     </section>
 </main>
 
