@@ -34,7 +34,7 @@ const hearts = document.querySelectorAll('.likeBtn img'); // 위시리스트 아
                     currentShoppingBag.src = '/img/subGoods/icon/fullBagIcon.svg'; // 채워진 장바구니 이미지로 변경
                     parent.classList.remove('shim_dNHover'); // 부모 요소 클래스 제거
                     alert("상품이 장바구니에 추가되었습니다."); // 장바구니 추가 메시지 출력
-                    location.href = "http://universe.dothome.co.kr/sub/mypage.html";
+                    location.href = "http://universe.dothome.co.kr/sub/cart.html";
                 }
             } else {
                 currentShoppingBag.src = '/img/subGoods/icon/bagIcon.svg'; // 빈 장바구니 이미지로 변경

@@ -51,7 +51,39 @@ $(function() {
                 $('#join-email').show(); // 기본 이메일 입력 보여주기
             }
         });
+        // // 전체 동의 체크박스 상태 변경
+        $('#all-agree').change(function() {
+            const isChecked = $(this).is(':checked');
+            $('.check').prop('checked', isChecked);
+        });
 
+        // 개별 체크박스 상태 변경 시 전체 동의 체크박스 업데이트
+        $('.agreement').on('change', '.check', function() {
+            const allChecked = $('.check:checked').length === $('.check').length;
+            $('#all-agree').prop('checked', allChecked);
+        });
+
+        // 광고성 정보 체크박스 상태 변경 시 이메일 및 SMS 체크박스 업데이트
+        $('#agree-5').change(function() {
+            const isChecked = $(this).is(':checked');
+            
+            // 광고성 정보 체크박스가 체크되면 이메일 및 SMS 체크박스를 체크
+            $('#agree-6').prop('checked', isChecked);
+            $('#agree-7').prop('checked', isChecked);
+        });
+
+        // 이메일 및 SMS 체크박스 상태 변경 시 광고성 정보 체크박스 업데이트
+        $('.sms-check').on('change', '.check', function() {
+            const emailChecked = $('#agree-6').is(':checked');
+            const smsChecked = $('#agree-7').is(':checked');
+
+            // 이메일과 SMS 체크박스가 모두 체크되면 광고성 정보 체크박스 체크
+            if (emailChecked && smsChecked) {
+                $('#agree-5').prop('checked', true);
+            } else {
+                $('#agree-5').prop('checked', false);
+            }
+        });
         // sub-join -----
         // sub-cart -----
         // 전체 선택 체크박스 상태 변경
@@ -71,8 +103,11 @@ $(function() {
     
         // 품절 삭제 버튼 클릭 시 선택된 항목 삭제
         $('.del-btn').click(function() {
-            $('.goods-name-wrap input[type="checkbox"]:checked').each(function() {
-                $(this).closest('.goods-name-wrap').remove();
+            $('.goods-name-wrap').each(function() {
+                const $wrap = $(this).closest('.goods-name-wrap');
+                if ($wrap.find('.sold-out').length > 0) {
+                    $wrap.remove();
+                }
             });
             updateTotal(); // 전체 가격 및 수량 업데이트
         });
@@ -108,7 +143,8 @@ $(function() {
             $('.all-price').text(total.toLocaleString() + ' 원');
         }
     
-        $('.cart-list').on('click', '.plus', function() {
+        $('.cart-list').on('click', '.plus', function(e) {
+            e.preventDefault(); // 기본 동작 방지
             const item = $(this).closest('.goods-name-wrap');
             const numElem = item.find('.num');
             const minusBtn = item.find('.minus');
@@ -127,7 +163,8 @@ $(function() {
             updateTotal(); // 전체 가격 및 수량 업데이트
         });
     
-        $('.cart-list').on('click', '.minus', function() {
+        $('.cart-list').on('click', '.minus', function(e) {
+            e.preventDefault(); // 기본 동작 방지
             const item = $(this).closest('.goods-name-wrap');
             const numElem = item.find('.num');
             const minusBtn = item.find('.minus');
@@ -176,5 +213,54 @@ $(function() {
         // 초기 총 가격 및 수량 업데이트
         updateTotal();
         // sub-cart -----   
+        // sub-product -----
+
+        const productPrice = 52000; // 상품 가격
+
+        function updatePrices() {
+            const quantity = parseInt($('.num').val());
+            $('.pro-goods-num').text(quantity + "개");
+            const totalPrice = quantity * productPrice;
+            $('.product-all-price').text(totalPrice.toLocaleString() + "원"); // 가격 포맷
+        }
+    
+        // // 마이너스 버튼 클릭
+        $('.product-detail .minus').click(function() {
+            let currentValue = parseInt($('.num').val());
+            if (currentValue > 1) {
+                currentValue--;
+                $('.num').val(currentValue);
+                updatePrices();
+            }
+        });
+    
+        // 플러스 버튼 클릭
+        $('.product-detail .plus').click(function() {
+            let currentValue = parseInt($('.num').val());
+            currentValue++;
+            $('.num').val(currentValue);
+            updatePrices();
+        });
+    
+        // 장바구니 추가 버튼 클릭
+        $('.cart-plus').click(function() {
+
+            alert('해당 상품이 장바구니에 추가되었습니다.'); // 알림
+            window.location.href = '/sub/cart.html'; // 장바구니 페이지로 이동
+
+        });
+
+        // 공유 버튼 클릭
+        $('.send-btn').click(function() {
+            alert('해당 상품이 공유되었습니다.'); // 알림
+        });
+
+
+
+        // 초기화
+        updatePrices();
+
+
+        // sub-product ------
     });
     
