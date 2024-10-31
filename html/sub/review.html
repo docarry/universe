@@ -1,18 +1,579 @@
 <?php include_once("../layout/header-b.html"); ?>
 
-<main id="review">
-    <section class="review-banner">
+<main id="sub_review">
+    <style>
+        /* 배경 어둡게 및 팝업 창 스타일 */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+}
+
+button {
+    margin-top: 10px;
+}
+
+.write_able{
+    color: #fff;
+    background-color: #333;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup_content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+}
+
+.d-none {
+    display: none;
+}
+    </style>
+
+    <section class="sub-top-banner">
         <div class="banner-text container-1280">
             <h2 class="title" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">MY REVIEW</h2>
             <p class="sub-title" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" data-aos-delay="300">소중한 경험을 공유하고, 다른 사람들과 소통하는 공간입니다.</p>
             <p class="detail" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" data-aos-delay="1000">
-            <span class="dN-768">
                 내 리뷰 페이지에서는 고객님이 남기신 소중한 후기를 확인할 수 있습니다.<br>
                 모든 리뷰는 쉽게 관리하고, 다른 고객들과 공유할 수 있도록 구성되어 있습니다.
-            </span>
             </p>
         </div>
     </section>
+    <section class="sub_review_container d-flex flex-column gap-60 mx-auto">
+        <ul class="nav gap-20" id="review_tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="write_review_tab" data-bs-toggle="pill" data-bs-target="#write_review_tab_contents" type="button" role="tab" aria-controls="write_review_tab_contents" aria-selected="true">
+                    작성 가능한 리뷰 <span id="write_review_count"></span>
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="written_review_tab" data-bs-toggle="pill" data-bs-target="#written_review_tab_contents" type="button" role="tab" aria-controls="written_review_tab_contents" aria-selected="false">
+                    작성한 리뷰 <span id="written_review_count"></span>
+                </button>
+            </li>
+        </ul>
+        <div class="tab-content" id="review_tab_contents">
+            <div class="tab-pane fade show active" id="write_review_tab_contents" role="tabpanel" aria-labelledby="write_review_tab" tabindex="0">
+                <ul>
+                    <li class="write_review_my_review">
+                        <div class="sub_review_order_info d-flex flex-column gap-10">
+                            <span>주문일</span>
+                            <span class="d-flex gap-10"><span class="sub_review_date orderDate"></span><span>23:42</span></span>
+                            <span class="d-flex gap-10"><span>주문번호</span><span>2639476294685490</span></span>
+                        </div>
+                        <div class="sub_review_order_goods d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-20">
+                                <span class="sub_review_goods_img d-flex justify-content-center align-items-center">
+                                    <img src="/img/subGoods/goodsNam01.png" alt="남우현 공식응원봉">
+                                </span>
+                                <div class="sub_review_goods_info d-flex flex-column gap-10">
+                                    <strong class="confirmed">상품준비중</strong>
+                                    <div class="d-flex flex-column">
+                                        <span>남우현 공식응원봉</span>
+                                        <span class="qty_wrap d-flex gap-10">
+                                            <span>수량 :</span>
+                                            <span>1</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="write_review_btn">리뷰 쓰기</button>
+                        </div>
+                        <div class="reviewPopup popup-overlay">
+                            <div class="popup-content">
+                                <span class="close-btn" onclick="closeReviewPopup()">X</span>
+                                <h2>리뷰 작성</h2>
+                                <textarea class="reviewText" placeholder="리뷰를 작성해주세요"></textarea>
+                                <button onclick="submitReview()">저장</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="write_review_my_review">
+                        <div class="sub_review_order_info d-flex flex-column gap-10">
+                            <span>주문일</span>
+                            <span class="d-flex gap-10"><span class="sub_review_date orderDate"></span><span>08:35</span></span>
+                            <span class="d-flex gap-10"><span>주문번호</span><span>2639476294056472</span></span>
+                        </div>
+                        <div class="sub_review_order_goods d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-20">
+                                <span class="sub_review_goods_img d-flex justify-content-center align-items-center">
+                                    <img src="/img/subGoods/goodsYoon03.png" alt="윤계상 체인 키링">
+                                </span>
+                                <div class="sub_review_goods_info d-flex flex-column gap-10">
+                                    <strong class="confirmed">결제완료</strong>
+                                    <div class="d-flex flex-column">
+                                        <span>윤계상 체인 키링</span>
+                                        <span class="qty_wrap d-flex gap-10">
+                                            <span>수량 :</span>
+                                            <span>3</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="write_review_btn">리뷰 쓰기</button>
+                        </div>
+                    </li>
+                    <li class="write_review_my_review">
+                        <div class="sub_review_order_info d-flex flex-column gap-10">
+                            <span>주문일</span>
+                            <span class="d-flex gap-10"><span class="sub_review_date orderDate1"></span><span>21:02</span></span>
+                            <span class="d-flex gap-10"><span>주문번호</span><span>2639476294058484</span></span>
+                        </div>
+                        <div class="sub_review_order_goods d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-20">
+                                <span class="sub_review_goods_img d-flex justify-content-center align-items-center">
+                                    <img src="/img/subGoods/goodsLee02.png" alt="이지은 모먼트 마스킹테이프 세트">
+                                </span>
+                                <div class="sub_review_goods_info d-flex flex-column gap-10">
+                                    <strong class="confirmed">상품준비중</strong>
+                                    <div class="d-flex flex-column">
+                                        <span>이지은 모먼트 마스킹테이프 세트</span>
+                                        <span class="qty_wrap d-flex gap-10">
+                                            <span>수량 :</span>
+                                            <span>5</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="write_review_btn">리뷰 쓰기</button>
+                        </div>
+                    </li>
+                    <li class="write_review_my_review">
+                        <div class="sub_review_order_info d-flex flex-column gap-10">
+                            <span>주문일</span>
+                            <span class="d-flex gap-10"><span class="sub_review_date orderDate3"></span><span>11:40</span></span>
+                            <span class="d-flex gap-10"><span>주문번호</span><span>2639476294054532</span></span>
+                        </div>
+                        <div class="sub_review_order_goods d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-20">
+                                <span class="sub_review_goods_img d-flex justify-content-center align-items-center">
+                                    <img src="/img/subGoods/goodsYoon02.png" alt="윤계상 니트 담요">
+                                </span>
+                                <div class="sub_review_goods_info d-flex flex-column gap-10">
+                                    <strong class="confirmed">배송중</strong>
+                                    <div class="d-flex flex-column">
+                                        <span>윤계상 니트 담요</span>
+                                        <span class="qty_wrap d-flex gap-10">
+                                            <span>수량 :</span>
+                                            <span>1</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="write_review_btn">리뷰 쓰기</button>
+                        </div>
+                    </li>
+                    <li class="write_review_my_review">
+                        <div class="sub_review_order_info d-flex flex-column gap-10">
+                            <span>주문일</span>
+                            <span class="d-flex gap-10"><span class="sub_review_date orderDate4"></span><span>12:20</span></span>
+                            <span class="d-flex gap-10"><span>주문번호</span><span>2639476294058753</span></span>
+                        </div>
+                        <div class="sub_review_order_goods d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-20">
+                                <span class="sub_review_goods_img d-flex justify-content-center align-items-center">
+                                    <img src="/img/subGoods/goodsByun03.png" alt="변우석 우체통 볼캡 모자">
+                                </span>
+                                <div class="sub_review_goods_info d-flex flex-column gap-10">
+                                    <strong class="confirmed">배송완료</strong>
+                                    <div class="d-flex flex-column">
+                                        <span>변우석 우체통 볼캡 모자</span>
+                                        <span class="qty_wrap d-flex gap-10">
+                                            <span>수량 :</span>
+                                            <span>1</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="write_review_btn">리뷰 쓰기</button>
+                        </div>
+                        <div></div>
+                    </li>
+                    <li class="write_review_my_review">
+                        <div class="sub_review_order_info d-flex flex-column gap-10">
+                            <span>주문일</span>
+                            <span class="d-flex gap-10"><span class="sub_review_date orderDate6"></span><span>12:20</span></span>
+                            <span class="d-flex gap-10"><span>주문번호</span><span>2639476294058753</span></span>
+                        </div>
+                        <div class="sub_review_order_goods d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-20">
+                                <span class="sub_review_goods_img d-flex justify-content-center align-items-center">
+                                    <img src="/img/subGoods/goodsByun02.png" alt="변우석 우체통 인형 키링">
+                                </span>
+                                <div class="sub_review_goods_info d-flex flex-column gap-10">
+                                    <strong class="confirmed">배송완료</strong>
+                                    <div class="d-flex flex-column">
+                                        <span>변우석 우체통 인형 키링</span>
+                                        <span class="qty_wrap d-flex gap-10">
+                                            <span>수량 :</span>
+                                            <span>2</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="write_review_btn">리뷰 쓰기</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-pane fade" id="written_review_tab_contents" role="tabpanel" aria-labelledby="written_review_tab" tabindex="0">
+                <p>작성일로부터 30일이 경과되면 리뷰 수정이 불가합니다.</p>
+                <ul>
+                    <li class="written_review_my_review">
+                        <div class="sub_review_order_goods d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-20">
+                                <span class="sub_review_goods_img d-flex justify-content-center align-items-center">
+                                    <img src="/img/subGoods/goodsByun03.png" alt="변우석 우체통 볼캡 모자">
+                                </span>
+                                <div class="sub_review_goods_info d-flex flex-column gap-10">
+                                    <div class="d-flex gap-10">
+                                        <strong class="confirmed">구매확정</strong>
+                                        <span>500P 지급완료</span>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <span>변우석 우체통 볼캡 모자</span>
+                                        <span class="qty_wrap d-flex gap-10">
+                                            <span>작성일</span>
+                                            <span class="sub_review_date writtenDate7"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="edit_review_btn write_review_btn">리뷰 수정</button>
+                        </div>
+                        <div class="sub_review_my_review d-flex justify-content-between">
+                            <div>
+                                <h3 class="sub_review_my_review_title">리뷰 제목입니다.</h3>
+                                <p class="sub_review_my_review_content d-none">후기 내용이 여기에 들어갑니다. 제품에 대한 자세한 설명이나 개인적인 경험을 작성하세요.</p>
+                            </div>
+                            <ul class="sub_review_my_review_images d-flex gap-20">
+                                <li><img src="https://via.placeholder.com/150" alt="후기 이미지 1"></li>
+                                <li><img src="https://via.placeholder.com/150" alt="후기 이미지 2"></li>
+                                <li><img src="https://via.placeholder.com/150" alt="후기 이미지 3"></li>
+                                <li class="my_review_additional_images d-none"><img src="https://via.placeholder.com/150" alt="후기 이미지 4"></li>
+                                <li class="my_review_additional_images d-none"><img src="https://via.placeholder.com/150" alt="후기 이미지 5"></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="written_review_my_review">
+                        <div class="sub_review_order_goods d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-20">
+                                <span class="sub_review_goods_img d-flex justify-content-center align-items-center">
+                                    <img src="/img/subGoods/goodsByun03.png" alt="변우석 우체통 볼캡 모자">
+                                </span>
+                                <div class="sub_review_goods_info d-flex flex-column gap-10">
+                                    <div class="d-flex gap-10">
+                                        <strong class="confirmed">구매확정</strong>
+                                        <span>500P 지급완료</span>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <span>변우석 우체통 볼캡 모자</span>
+                                        <span class="qty_wrap d-flex gap-10">
+                                            <span>작성일</span>
+                                            <span class="sub_review_date writtenDate34"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="edit_review_btn review_btn write_review_btn">리뷰 수정</button>
+                        </div>
+                        <div class="sub_review_my_review d-flex justify-content-between">
+                            <div>
+                                <h3 class="sub_review_my_review_title">리뷰 제목입니다.</h3>
+                                <p class="sub_review_my_review_content d-none">후기 내용이 여기에 들어갑니다. 제품에 대한 자세한 설명이나 개인적인 경험을 작성하세요.</p>
+                            </div>
+                            <ul class="sub_review_my_review_images d-flex gap-20">
+                                <li><img src="https://via.placeholder.com/150" alt="후기 이미지 1"></li>
+                                <li><img src="https://via.placeholder.com/150" alt="후기 이미지 2"></li>
+                                <li><img src="https://via.placeholder.com/150" alt="후기 이미지 3"></li>
+                                <li class="my_review_additional_images d-none"><img src="https://via.placeholder.com/150" alt="후기 이미지 4"></li>
+                                <li class="my_review_additional_images d-none"><img src="https://via.placeholder.com/150" alt="후기 이미지 5"></li>
+                            </ul>
+                        </div>
+                        <div id="editReviewPopup" class="popup d-none">
+                            <div class="popup_content">
+                                <h2>리뷰 수정</h2>
+                                <textarea id="reviewText" rows="5" placeholder="수정할 리뷰를 입력하세요."></textarea>
+                                <button id="saveReviewBtn">저장</button>
+                                <button id="closePopupBtn">닫기</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="written_review_my_review">
+                        <div class="sub_review_order_goods d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-20">
+                                <span class="sub_review_goods_img d-flex justify-content-center align-items-center">
+                                    <img src="/img/subGoods/goodsByun03.png" alt="변우석 우체통 볼캡 모자">
+                                </span>
+                                <div class="sub_review_goods_info d-flex flex-column gap-10">
+                                    <div class="d-flex gap-10">
+                                        <strong class="confirmed">구매확정</strong>
+                                        <span>500P 지급완료</span>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <span>변우석 우체통 볼캡 모자</span>
+                                        <span class="qty_wrap d-flex gap-10">
+                                            <span>작성일</span>
+                                            <span class="sub_review_date writtenDate365"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="edit_review_btn review_btn write_review_btn">리뷰 수정</button>
+                        </div>
+                        <div class="sub_review_my_review d-flex justify-content-between">
+                            <div>
+                                <h3 class="sub_review_my_review_title">리뷰 제목입니다.</h3>
+                                <p class="sub_review_my_review_content d-none">후기 내용이 여기에 들어갑니다. 제품에 대한 자세한 설명이나 개인적인 경험을 작성하세요.</p>
+                            </div>
+                            <ul class="sub_review_my_review_images d-flex gap-20">
+                                <li><img src="https://via.placeholder.com/150" alt="후기 이미지 1"></li>
+                                <li><img src="https://via.placeholder.com/150" alt="후기 이미지 2"></li>
+                                <li><img src="https://via.placeholder.com/150" alt="후기 이미지 3"></li>
+                                <li class="my_review_additional_images d-none"><img src="https://via.placeholder.com/150" alt="후기 이미지 4"></li>
+                                <li class="my_review_additional_images d-none"><img src="https://via.placeholder.com/150" alt="후기 이미지 5"></li>
+                            </ul>
+                        </div>
+                        <div id="editReviewPopup" class="popup d-none">
+                            <div class="popup_content">
+                                <h2>리뷰 수정</h2>
+                                <textarea id="reviewText" rows="5" placeholder="수정할 리뷰를 입력하세요."></textarea>
+                                <button id="saveReviewBtn">저장</button>
+                                <button id="closePopupBtn">닫기</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // 모든 리뷰 항목을 가져옵니다.
+        const reviewItems = document.querySelectorAll('.write_review_my_review');
+        const writtenReviewItems = document.querySelectorAll('.written_review_my_review');
+
+        // '리뷰 쓰기' 버튼에 이벤트 리스너 추가
+        document.querySelectorAll('.write_review_btn').forEach(button => {
+            button.addEventListener('click', openReviewPopup);
+        });
+
+        function openReviewPopup() {
+            document.querySelector('.reviewPopup').style.display = 'flex';
+        }
+
+        function closeReviewPopup() {
+            document.querySelector('.reviewPopup').style.display = 'none';
+        }
+
+        function submitReview() {
+            const reviewText = document.querySelector('.reviewText').value;
+            if (reviewText) {
+                alert("리뷰가 등록되었습니다.");
+                closeReviewPopup();
+            } else {
+                alert("리뷰 내용을 입력해주세요.");
+            }
+        }
+
+        // 오늘 날짜에서 n일 전의 날짜 계산
+        function formatDate(daysAgo) {
+            return new Date(Date.now() - daysAgo * 24 * 60 * 60 * 1000)
+                .toISOString()
+                .slice(0, 10)
+                .replace(/-/g, '.');
+        }
+        const formattedDate = formatDate(0);
+        const formattedDate1 = formatDate(1);
+        const formattedDate3 = formatDate(3);
+        const formattedDate4 = formatDate(4);
+        const formattedDate6 = formatDate(6);
+        const formattedDate7 = formatDate(7);
+        const formattedDate34 = formatDate(34);
+        const oneYearAgo = formatDate(365);
+
+        // HTML에 날짜 삽입
+        document.querySelectorAll('.orderDate').forEach(element => {
+            element.innerHTML = formattedDate;
+        });
+        document.querySelectorAll('.orderDate1').forEach(element => {
+            element.innerHTML = formattedDate1;
+        });
+        document.querySelectorAll('.orderDate3').forEach(element => {
+            element.innerHTML = formattedDate3;
+        });
+        document.querySelectorAll('.orderDate4').forEach(element => {
+            element.innerHTML = formattedDate4;
+        });
+        document.querySelectorAll('.orderDate6').forEach(element => {
+            element.innerHTML = formattedDate6;
+        });
+        document.querySelectorAll('.writtenDate7').forEach(element => {
+            element.innerHTML = formattedDate7;
+        });
+        document.querySelectorAll('.writtenDate34').forEach(element => {
+            element.innerHTML = formattedDate34;
+        });
+        document.querySelectorAll('.writtenDate365').forEach(element => {
+            element.innerHTML = oneYearAgo;
+        });
+
+        const today = new Date(); // 오늘 날짜 가져오기
+        const reviewDates = document.querySelectorAll('.sub_review_date'); // .sub_review_date 클래스를 가진 모든 요소 선택
+
+        // 리뷰 날짜와 버튼 상태 업데이트
+        reviewDates.forEach(dateElement => {
+            const formattedDateString = dateElement.textContent.trim().replace(/\./g, '-'); // '.'을 '-'로 바꾸기
+            const reviewDate = new Date(formattedDateString); // 변환된 날짜 문자열로 Date 객체 생성
+
+            const daysDiff = Math.floor((today - reviewDate) / (1000 * 60 * 60 * 24)); // 오늘 날짜에서 리뷰 날짜를 빼기
+
+            const orderGoodsElement = dateElement.closest('.sub_review_order_goods'); // review_btn의 부모 요소 선택
+
+            // orderGoodsElement가 null인지 확인
+            if (orderGoodsElement) {
+                const reviewButton = orderGoodsElement.querySelector('.write_review_btn');
+                if (reviewButton) {
+                    updateReviewButton(reviewButton, daysDiff);
+                }
+            }
+        });
+
+        // 리뷰 버튼 활성화 및 비활성화 로직
+        function updateReviewButton(button, daysDiff) {
+            if (daysDiff > 37) {
+                button.textContent = '리뷰 확정';
+                button.disabled = false; // 버튼 활성화
+            } else {
+                button.textContent = '리뷰 수정'; // 기본 텍스트로 되돌리기
+                button.disabled = true; // 비활성화
+            }
+        }
+
+        // 리뷰 항목 클릭 시 이벤트 설정
+        writtenReviewItems.forEach(item => {
+            const review = item.querySelector('.sub_review_my_review');
+            const reviewContent = item.querySelector('.sub_review_my_review_content');
+            const additionalImages = item.querySelectorAll('.my_review_additional_images');
+
+            // 리뷰 제목 클릭 시 내용 토글
+            if (review) {
+                review.addEventListener('click', () => {
+                    review.classList.toggle('justify-content-between');
+                    review.classList.toggle('flex-column');
+                    review.classList.toggle('gap-40');
+                    reviewContent.classList.toggle('d-none'); // d-none 클래스를 토글
+                    additionalImages.forEach(image => {
+                        image.classList.toggle('d-none'); // 추가 이미지 토글
+                    });
+                });
+            }
+        });
+
+        // 리뷰 버튼 상태 업데이트
+        function updateButtonStates() {
+            reviewItems.forEach(item => {
+                const strongElement = item.querySelector('.confirmed');
+                const writeReviewButton = item.querySelector('.write_review_btn');
+
+                if (strongElement && strongElement.textContent.trim() === '배송완료') {
+                    strongElement.style.color = '#FFD24E'; // 텍스트 색상 설정
+                    writeReviewButton.disabled = false; // 활성화
+                    writeReviewButton.classList.add('write_able');
+                } else {
+                    writeReviewButton.disabled = true; // 비활성화
+                    writeReviewButton.style.color = '#A4A4A4'; // 비활성화된 상태의 색상 설정
+                }
+            });
+            
+            // 리뷰 수정 버튼을 찾습니다.
+            const editReviewButtons = document.querySelectorAll('.edit_review_btn');
+
+            // 각 버튼에 대해 처리합니다.
+            editReviewButtons.forEach(button => {
+                if (button.textContent.trim() === '리뷰 수정') {
+                    button.disabled = false; // 활성화
+                    button.classList.add('write_able');
+                } else {
+                    button.disabled = true; // 비활성화
+                }
+
+                // 클릭 이벤트 추가
+                button.addEventListener('click', () => {
+                    showEditReviewPopup(); // 팝업 창 표시
+                });
+            });
+        }
+
+        // 팝업 창 표시 함수
+        function showEditReviewPopup() {
+            const popup = document.getElementById('editReviewPopup');
+            popup.classList.remove('d-none'); // 팝업 창 표시
+        }
+
+        // 팝업 닫기 버튼 클릭 이벤트
+        document.getElementById('closePopupBtn').addEventListener('click', () => {
+            const popup = document.getElementById('editReviewPopup');
+            popup.classList.add('d-none'); // 팝업 창 숨기기
+        });
+
+        // 리뷰 저장 버튼 클릭 이벤트
+        document.getElementById('saveReviewBtn').addEventListener('click', () => {
+            // 리뷰 수정이 완료되었다는 알림
+            alert('리뷰가 수정되었습니다.'); // 알림 메시지 표시
+
+            const popup = document.getElementById('editReviewPopup');
+            popup.classList.add('d-none'); // 팝업 창 숨기기
+
+            // 필요한 경우 수정된 리뷰 내용을 저장하는 추가 로직을 여기에 추가할 수 있습니다.
+        });
+
+        updateButtonStates(); // 버튼 상태 업데이트 호출
+    </script>
 </main>
 
 <?php include_once("../layout/footer.html"); ?>
