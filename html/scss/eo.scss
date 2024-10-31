@@ -730,7 +730,7 @@
                     }
                 }
             }
-            .personal-contact-content{
+            .personal-contact-content, .r-contact-content, .c-contact-content, .p-contact-content, .d-contact-content{
                 width: 100%;
                 max-width: 500px;
                 margin: 0 auto;
@@ -751,6 +751,11 @@
                             @include f-14-20-400;
                             background-color: #fff;
                             border: solid 1px #767676;
+                            transition: all 0.1s ease-in-out;
+                            &:hover{
+                                background-color: #333;
+                                color: #fff;
+                            }
                         }
                     }
                     .contact-type{
@@ -773,7 +778,14 @@
                                 @include f-14-20-400;
                             }
                         }
-                        
+                        .custom-select{
+                            border: 1px solid var(--Btn-Disable-Btn-blackBG, #767676);
+                            padding: 10px;
+                            background: #fff;
+                            border-radius: 10px;
+                            padding: 28px 20px;
+                        }
+
                         .selectBox {
                             position: relative;
                             width: 100%;
@@ -897,6 +909,70 @@
                     border: none;
                     @include f-16-24-500;
                     transition: all 0.3s ease-in-out;
+                }
+            }
+        }
+
+        .my-contact-list{
+            display: flex;
+            flex-direction: column;
+            gap: 100px;
+            .my-first-contact, .my-second-contact{
+                padding: 30px 20px;
+                border-radius: 20px;
+                box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.20);
+                .my-con-text-box1{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .top-title{
+                        @include f-30-44-700;
+                    }
+                    .more-contact-btn{
+                        @include f-16-24-500;
+                        padding: 6px 18px;
+                        color: #767676;
+                        border: solid 1px #767676;
+                        border-radius: 30px;
+                        &:hover{
+                            background-color: #333;
+                            color: #fff
+                        }
+                    }
+                }
+                .my-contact-title{
+                    @include f-24-36-400;
+                    margin-top: 16px;
+                }
+                .my-con-text-box2{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 10px;
+                    .answer-delay{
+                        background: #ededed;
+                        padding: 8px 10px;
+                        color: #a4a4a4; 
+                        border-radius: 6px;                   
+                    }
+                    .answer-finish{
+                        background: #333;
+                        padding: 8px 10px;
+                        color: #fff;  
+                        border-radius: 6px;
+                    }
+                    .answer-date{
+                        color: #a4a4a4;
+                        @include f-16-24-500;
+                    }
+                }
+                .my-contact-content{
+                    width: 100%;
+                    padding: 20px 32px;
+                    border: solid 1px #848484;
+                    border-radius: 10px;
+                    margin-top: 30px;
+                    @include f-16-24-400;
                 }
             }
         }

@@ -43,33 +43,33 @@
             <!-- 혜택 등급 시각적 이미지 -->
             <ul class="benefit-gragh">
 
-                <li class="vvip-gragh-box">
+                <li class="vvip-gragh-box" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
                     <div class="vvip-gragh"></div>
                     <p>VVIP</p>
                 </li>
 
-                <li class="vip-gragh-box">
+                <li class="vip-gragh-box" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
                     <div class="vip-gragh"></div>
                     <p>VIP</p>
                 </li>
 
-                <li class="r-gragh-box">
+                <li class="r-gragh-box" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
                     <div  class="r-gragh"></div>
                     <p>RED</p>
                 </li>
 
-                <li class="y-gragh-box">
+                <li class="y-gragh-box" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
                     <div class="y-gragh"></div>
                     <p>YELLOW</p>
                 </li>
 
-                <li class="w-gragh-box">
+                <li class="w-gragh-box" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
                     <div class="w-gragh"></div>
                     <p>WHITE</p>
                 </li>
             </ul>
             <!-- 혜택 안내 텍스트 -->
-            <div id="benefit-box1" class="benefit-box">
+            <div id="benefit-box1" class="benefit-box" data-aos="zoom-in">
                 <div class="benefit-text">
                     <strong>혜택</strong>
                     <div class="benefit-inner-text">
@@ -241,38 +241,45 @@
 
 
 <script>
-const benefitArr = document.querySelectorAll('.benefit-gragh > li > div');
-const benefitBoxes = document.querySelectorAll('.benefit-box');
-
-benefitArr.forEach((box, index) => {
-    box.addEventListener('click', () => {
-        // 모든 혜택 박스 숨기기
-        benefitBoxes.forEach((b) => {
-            b.style.display = 'none';
+    const benefitArr = document.querySelectorAll('.benefit-gragh > li > div');
+    const benefitBoxes = document.querySelectorAll('.benefit-box');
+    
+    // 기본적으로 vvip-gragh에 active 클래스 추가
+    const defaultBox = document.querySelector('.vvip-gragh');
+    if (defaultBox) {
+        defaultBox.classList.add('active');
+        document.getElementById('benefit-box1').style.display = 'flex';
+    }
+    
+    benefitArr.forEach((box, index) => {
+        box.addEventListener('click', () => {
+            // 모든 혜택 박스 숨기기
+            benefitBoxes.forEach((b) => {
+                b.style.display = 'none';
+            });
+    
+            // 클릭한 요소에 따라 혜택 박스 표시하기
+            if (box.classList.contains('vvip-gragh')) {
+                document.getElementById('benefit-box1').style.display = 'flex';
+            } else if (box.classList.contains('vip-gragh')) {
+                document.getElementById('benefit-box2').style.display = 'flex';
+            } else if (box.classList.contains('r-gragh')) {
+                document.getElementById('benefit-box3').style.display = 'flex';
+            } else if (box.classList.contains('y-gragh')) {
+                document.getElementById('benefit-box4').style.display = 'flex';
+            } else if (box.classList.contains('w-gragh')) {
+                document.getElementById('benefit-box5').style.display = 'flex';
+            }
+    
+            // 모든 active 클래스 제거 후 클릭한 요소에 추가
+            benefitArr.forEach((item) => {
+                item.classList.remove('active');
+            });
+            box.classList.add('active');
         });
-
-        // 클릭한 요소에 따라 혜택 박스 표시하기
-        if (box.classList.contains('vvip-gragh')) {
-            document.getElementById('benefit-box1').style.display = 'flex';
-        } else if (box.classList.contains('vip-gragh')) {
-            document.getElementById('benefit-box2').style.display = 'flex';
-        } else if (box.classList.contains('r-gragh')) {
-            document.getElementById('benefit-box3').style.display = 'flex';
-        } else if (box.classList.contains('y-gragh')) {
-            document.getElementById('benefit-box4').style.display = 'flex';
-        } else if (box.classList.contains('w-gragh')) {
-            document.getElementById('benefit-box5').style.display = 'flex';
-        }
-
-        // 모든 active 클래스 제거 후 클릭한 요소에 추가
-        benefitArr.forEach((item) => {
-            item.classList.remove('active');
-        });
-        box.classList.add('active');
     });
-});
-
-</script>
+    </script>
+    
 
 
 <?php include_once("../layout/footer.html"); ?>
